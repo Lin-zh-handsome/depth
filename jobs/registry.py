@@ -21,6 +21,7 @@ def connect():
     );
     CREATE VIEW IF NOT EXISTS train_jobs AS SELECT * FROM jobs WHERE kind='train';
     CREATE VIEW IF NOT EXISTS eval_jobs AS SELECT * FROM jobs WHERE kind='eval';
+    CREATE VIEW IF NOT EXISTS analysis_jobs AS SELECT * FROM jobs WHERE kind='analysis';
     ''')
     return db
 

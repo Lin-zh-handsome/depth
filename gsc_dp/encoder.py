@@ -45,6 +45,7 @@ class _ResNetGeometryView(nn.Module):
         net.fc = nn.Identity()
         if rgbd:
             net.conv1 = nn.Conv2d(4, 64, 7, stride=2, padding=3, bias=False)
+            nn.init.kaiming_normal_(net.conv1.weight, mode='fan_out', nonlinearity='relu')
         self.net = replace_submodules(
             root_module=net,
             predicate=lambda x: isinstance(x, nn.BatchNorm2d),

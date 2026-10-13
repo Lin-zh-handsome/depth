@@ -87,6 +87,11 @@ def main():
                     record=dict(optimizer_updates=updates,data_epoch=epoch,next_batch=next_batch,
                         train_loss=float(loss.detach()),lr=optimizer.param_groups[0]['lr'],
                         wall_seconds=time.time()-begin,gpu_peak_bytes=torch.cuda.max_memory_allocated())
+                    if updates==100:
+                        for family,needle in [('gsa','attention'),('token','token_learner')]:
+                            terms=[p.grad.detach().square().sum() for name,p in model.named_parameters()
+                                if needle in name and p.grad is not None]
+                            if terms:record[family+'_gradient_l2']=float(torch.stack(terms).sum().sqrt())
                     log.write(json.dumps(record)+'\n');print(json.dumps(record),flush=True)
                 if updates%cfg['interval']==0: save(run,payload(next_batch),scheduled=True)
                 if stop[0]:
