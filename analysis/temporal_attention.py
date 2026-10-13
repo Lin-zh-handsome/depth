@@ -17,7 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'source/diffusion_policy'))
 import imageio.v2 as imageio
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import torch
 from gsc_dp.policy_factory import create
 
@@ -48,6 +48,11 @@ def colored_heatmap(a):
 
 def rgb8(rgb):return np.clip(np.moveaxis(rgb,0,-1)*255,0,255).astype('u1')
 
+def draw_text(image,xy,text,fill='black',size=14):
+    path=ROOT/'assets/fonts/NotoSansCJKsc-Regular.otf'
+    font=ImageFont.truetype(str(path),size) if path.exists() else ImageFont.load_default()
+    ImageDraw.Draw(image).text(xy,text,fill=fill,font=font)
+
 def overlay(rgb,heat,origin=(0,0),crop_size=None):
     base=Image.fromarray(rgb8(rgb));w,h=base.size
     origin=tuple(map(int,origin));cw,ch=crop_size or (w,h)
@@ -59,7 +64,7 @@ def overlay(rgb,heat,origin=(0,0),crop_size=None):
 def panel(image,label,size=256):
     out=Image.new('RGB',(size,size+32),'white')
     out.paste(image.resize((size,size),Image.Resampling.NEAREST),(0,32))
-    ImageDraw.Draw(out).text((7,9),label,fill='black')
+    draw_text(out,(7,7),label,size=12)
     return out
 
 def stage_at(annotation,step):
@@ -233,13 +238,13 @@ def collect(args):
 def render_row(row,camera):
     with np.load(row['raw_path']) as a:
         rgb=a[camera+'_image'];data=row['cameras'][camera]
-        images=[panel(Image.fromarray(rgb8(rgb)),'RGB')]
+        images=[panel(Image.fromarray(rgb8(rgb)),'RGB（彩色观测）')]
         if camera+'_gsa_query' in a:
             img=overlay(rgb,a[camera+'_gsa_query'],data['crop_origin_xy'],data['crop_size_wh'])
             draw=ImageDraw.Draw(img);x,y=data['query_original_xy'];draw.ellipse((x-2,y-2,x+2,y+2),fill='white')
-            images.append(panel(img,'GSA: derived axial attention'))
+            images.append(panel(img,'GSA（真实轴向传播注意力）'))
         elif camera+'_saliency' in a:
-            images.append(panel(overlay(rgb,a[camera+'_saliency']),'Input-gradient saliency (not attention)'))
+            images.append(panel(overlay(rgb,a[camera+'_saliency']),'Input-gradient（输入梯度显著性）'))
         else:images.append(panel(Image.fromarray(rgb8(rgb)),'Attention unavailable'))
         if camera+'_token_weights' in a:
             masks=a[camera+'_token_weights'];K=len(masks)
@@ -250,20 +255,20 @@ def render_row(row,camera):
                 u=float(a[camera+'_token_u'][k]);v=float(a[camera+'_token_v'][k])
                 d=float(a[camera+'_token_depth_m'][k].reshape(-1)[0]);rho=float(a[camera+'_token_rho'][k].reshape(-1)[0])
                 draw=ImageDraw.Draw(tile);draw.rectangle((0,0,tile_w,25),fill='white')
-                draw.text((2,1),f'{k}:d={d:.2f}',fill='black');draw.text((2,13),f'rho={rho:.2f}',fill='black')
+                draw_text(tile,(2,1),f'{k}:d={d:.2f}',size=9);draw_text(tile,(2,13),f'rho={rho:.2f}',size=9)
                 full_h,full_w=rgb.shape[-2:];ox,oy=data['crop_origin_xy'];cw,ch=data['crop_size_wh']
                 cx=(ox+u*cw)/full_w*tile_w;cy=(oy+v*ch)/full_h*tile_h
                 draw.ellipse((cx-2,cy-2,cx+2,cy+2),outline='white')
                 tokens.paste(tile,((k%columns)*tile_w,(k//columns)*tile_h))
-            images.append(panel(tokens,f'TokenLearner K={K}, depth in m'))
+            images.append(panel(tokens,f'TokenLearner（空间权重）K={K}, m'))
         else:images.append(panel(Image.new('RGB',(256,256),'white'),'Token weights: not present'))
         depth=a[camera+'_depth'][0]
-        images.append(panel(Image.fromarray(colored_heatmap(depth)),'Depth (m, display scaled)'))
+        images.append(panel(Image.fromarray(colored_heatmap(depth)),'Depth（深度，m；显示缩放）'))
         canvas=Image.new('RGB',(sum(x.width for x in images),images[0].height+28),'white')
         cursor=0
         for image in images:canvas.paste(image,(cursor,28));cursor+=image.width
         label=row['stage']['name'] if row.get('stage') else 'timepoint (stage unannotated)'
-        ImageDraw.Draw(canvas).text((8,8),f"plan {row['plan_id']}, step {row['env_step']}, {row['time_seconds']:.2f}s | {label}",fill='black')
+        draw_text(canvas,(8,6),f"plan（规划）{row['plan_id']}, step（步）{row['env_step']}, {row['time_seconds']:.2f}s | {label}")
         return canvas
 
 def key_indices(rows):
@@ -327,7 +332,7 @@ def compare(outputs,dest,camera=None):
         grid=Image.new('RGB',(pictures[0].width,len(pictures)*pictures[0].height),'white')
         for i,picture in enumerate(pictures):
             grid.paste(picture,(0,i*picture.height))
-            ImageDraw.Draw(grid).text((8,i*picture.height+8),f"{episodes[i]['method']} actual step {selected[i]['env_step']} | success={episodes[i]['success_at_end']}",fill='black')
+            draw_text(grid,(8,i*picture.height+6),f"{episodes[i]['method']} step（实际步）{selected[i]['env_step']} | success（成功）={episodes[i].get('success',episodes[i]['success_at_end'])}")
         path=dest/f'paired_step_{step:04d}.png';grid.save(path);rendered.append(path)
         sources.append(dict(requested_step=int(step),actual_steps=[r['env_step'] for r in selected],
             source_npz=[r['raw_path'] for r in selected]))
