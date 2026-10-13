@@ -4,6 +4,7 @@ import fcntl
 import json
 import os
 import signal
+import shutil
 import subprocess
 import sys
 import time
@@ -89,7 +90,7 @@ def main():
         register_temporal(db)
         load=os.getloadavg()[0]
         free=gpu_free()
-        if load<140 and free>20000:
+        if load<140 and free>20000 and shutil.disk_usage(ROOT).free>50*1024**3:
             # Reserve one evaluation slot as soon as a snapshot is available;
             # only this selected physical GPU is ever exposed to any worker.
             ready=(ROOT/'logs/eval_env.ready').exists()
