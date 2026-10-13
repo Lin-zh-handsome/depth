@@ -1,0 +1,8 @@
+source/
+data/
+runs/
+logs/
+jobs/*.db*
+jobs/*.lock
+__pycache__/
+*.pyc

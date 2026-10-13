@@ -1,0 +1,80 @@
+user-SYS-821GE-TNHR
+uid=1016(linzhenghong) gid=1017(linzhenghong) 组=1017(linzhenghong),1016(sharedpublic)
+2026-10-13T16:26:08+08:00
+index, uuid, name, memory.total [MiB], memory.free [MiB], utilization.gpu [%]
+0, GPU-004222f6-8072-edd6-ea8e-2ecfeff6b336, NVIDIA H200, 143771 MiB, 23982 MiB, 0 %
+1, GPU-fbb77757-29c8-2e42-5ce7-daccc1d85b0a, NVIDIA H200, 143771 MiB, 27121 MiB, 100 %
+2, GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, NVIDIA H200, 143771 MiB, 54105 MiB, 99 %
+3, GPU-44a9c60e-a1a9-5ffa-3a21-3df5f30bcc01, NVIDIA H200, 143771 MiB, 47401 MiB, 32 %
+4, GPU-d80a5ad0-87dc-4bdf-4090-a6271693ec20, NVIDIA H200, 143771 MiB, 47399 MiB, 100 %
+5, GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f, NVIDIA H200, 143771 MiB, 136272 MiB, 0 %
+6, GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314, NVIDIA H200, 143771 MiB, 136271 MiB, 0 %
+7, GPU-66d3f503-bf4f-56dd-bb79-74ca7cda66e5, NVIDIA H200, 143771 MiB, 134512 MiB, 0 %
+gpu_uuid, pid, process_name, used_gpu_memory [MiB]
+GPU-004222f6-8072-edd6-ea8e-2ecfeff6b336, 470222, /home/lichu/anaconda3/envs/memvla/bin/python3.10, 118798 MiB
+GPU-fbb77757-29c8-2e42-5ce7-daccc1d85b0a, 470223, /home/lichu/anaconda3/envs/memvla/bin/python3.10, 116022 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3392383, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8866 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3076937, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8866 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510711, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8998 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510701, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8842 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510717, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8904 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510645, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8998 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510673, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8830 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510708, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8842 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510695, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8998 MiB
+GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 3510719, /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python, 8842 MiB
+GPU-44a9c60e-a1a9-5ffa-3a21-3df5f30bcc01, 467530, /home/lichu/anaconda3/envs/go1/bin/python3.10, 95708 MiB
+GPU-d80a5ad0-87dc-4bdf-4090-a6271693ec20, 467532, /home/lichu/anaconda3/envs/go1/bin/python3.10, 95710 MiB
+GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f, 3872945, /home/fz1/anaconda3/envs/go1_libero/bin/python, 6872 MiB
+GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314, 3891810, /home/fz1/anaconda3/envs/go1_libero/bin/python, 6872 MiB
+GPU-66d3f503-bf4f-56dd-bb79-74ca7cda66e5, 535222, python, 8632 MiB
+192
+               total        used        free      shared  buff/cache   available
+内存：      2.0Ti       774Gi        27Gi        35Gi       1.2Ti       1.2Ti
+交换：      2.0Gi       2.0Gi       0.0Ki
+文件系统                   大小  已用  可用 已用% 挂载点
+/dev/mapper/rhome-lv_home   25T   22T  2.2T   91% /home
+总计 24
+drwxrwxr-x  6 linzhenghong linzhenghong 4096 10月 12 14:54 .
+drwxr-x--- 29 linzhenghong linzhenghong 4096 10月 13 12:37 ..
+drwxrwxr-x  6 linzhenghong linzhenghong 4096 10月 12 15:09 gsc_dp_chapter3
+drwxrwxr-x  7 linzhenghong linzhenghong 4096 10月  7 20:36 lingbot
+drwxrwxr-x 14 linzhenghong linzhenghong 4096  9月 23 16:17 lingbot-vla-v2
+drwxrwxr-x 11 linzhenghong linzhenghong 4096  9月 23 23:39 RoboTwin-competition
+    PID    PPID %CPU %MEM COMMAND
+3510701 3510069 99.9  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e1 task=can_rgbd training.seed=42 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e1/seed_42 logging.name=can_rgbd_e1_seed_42
+3510711 3510116 99.9  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e3 task=can_rgbd training.seed=43 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e3/seed_43 logging.name=can_rgbd_e3_seed_43
+3510717 3510144 99.9  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e4 task=can_rgbd training.seed=42 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e4/seed_42 logging.name=can_rgbd_e4_seed_42
+3510673 3510064 99.8  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e0 task=can_rgbd training.seed=44 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e0/seed_44 logging.name=can_rgbd_e0_seed_44
+3510708 3510094 99.8  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e1 task=can_rgbd training.seed=44 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e1/seed_44 logging.name=can_rgbd_e1_seed_44
+3510719 3510080 99.8  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e1 task=can_rgbd training.seed=43 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e1/seed_43 logging.name=can_rgbd_e1_seed_43
+3510695 3510130 99.7  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e3 task=can_rgbd training.seed=44 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e3/seed_44 logging.name=can_rgbd_e3_seed_44
+3510645 3510104 99.6  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e3 task=can_rgbd training.seed=42 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e3/seed_42 logging.name=can_rgbd_e3_seed_42
+3392383 3392299 96.7  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e0 task=can_rgbd training.seed=42 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e0/seed_42 logging.name=can_rgbd_e0_seed_42
+3076937 3076844 95.1  0.1 /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python train.py --config-name=train_gsc_e0 task=can_rgbd training.seed=43 hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/can_rgbd/e0/seed_43 logging.name=can_rgbd_e0_seed_43
+3081811 3076937  0.4  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpq8auh0ve/port-3076937.txt --pid 3076937
+3515313 3510645  0.4  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpi872zi_1/port-3510645.txt --pid 3510645
+3398156 3392383  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpk6vmo4cq/port-3392383.txt --pid 3392383
+3511566 3510711  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpkgpc5tzp/port-3510711.txt --pid 3510711
+3512079 3510701  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpz8s4vogz/port-3510701.txt --pid 3510701
+3512581 3510717  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpajnkc3mm/port-3510717.txt --pid 3510717
+3513195 3510708  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpu5mdgnwi/port-3510708.txt --pid 3510708
+3513784 3510673  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmp_uy16k83/port-3510673.txt --pid 3510673
+3514301 3510719  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmplqz7nwrv/port-3510719.txt --pid 3510719
+3514771 3510695  0.3  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-core --port-filename /tmp/tmpv1uxgiqz/port-3510695.txt --pid 3510695
+3081882 3081811  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-1112278493 --parent-pid 3081811
+3398228 3398156  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-3717327079 --parent-pid 3398156
+3511641 3511566  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-270321346 --parent-pid 3511566
+3512167 3512079  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-3823792144 --parent-pid 3512079
+3512679 3512581  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-1290851946 --parent-pid 3512581
+3513288 3513195  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-2194285564 --parent-pid 3513195
+3513847 3513784  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-845983271 --parent-pid 3513784
+3514362 3514301  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-1936678892 --parent-pid 3514301
+3514865 3514771  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-4180208800 --parent-pid 3514771
+3515375 3515313  0.2  0.0 /home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/wandb/bin/wandb-xpu --portfile /tmp/wandb-xpu-portfile-2065840610 --parent-pid 3515313
+ 242353       1  0.0  0.0 ./clash -d .
+ 628407       1  0.0  0.0 SCREEN -S lingbot_clean50_normstats
+ 628408  628407  0.0  0.0 /bin/bash
+2318575       1  0.0  0.0 /lib/systemd/systemd --user
+/home/linzhenghong/miniconda3
+/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/README.md
