@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 import egl_probe
 import robomimic
+import mimicgen  # official Core task registration before the converter runs
 
 # robomimic may otherwise select the first probed physical EGL GPU even when
 # CUDA_VISIBLE_DEVICES exposes a different device. This changes only device

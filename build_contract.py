@@ -67,6 +67,9 @@ for kind, rows in [('Table',tables),('Fig',figs)]:
             source_manifest=f'thesis/source_manifests/{name}.json',
             draft_number=draft, reproducibility_status='pending',
             unavailable_rule='NA(reason) when required result or GT is absent'))
+existing=ROOT/'thesis/figure_table_contract.yaml'
+if existing.exists():
+    records += [r for r in json.loads(existing.read_text())['records'] if r['id']=='Fig 3-15']
 write('thesis/figure_table_contract.yaml',dict(schema_version=1, records=records,
     numbering='canonical final protocol; draft crosswalk recorded separately',
     token_gt_association='highest weighted overlap with target instance; overlap>=0.5; failures counted',

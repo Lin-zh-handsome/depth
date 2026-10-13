@@ -830,7 +830,7 @@
       "reproducibility_status": "implementation_ready; actual rollout artifacts pending specified trained checkpoint",
       "unavailable_rule": "no explicit attention in E0/E1: saliency only; missing success/failure outcome or stages explicitly unavailable",
       "stage_selection": "first actual occurrence of annotated stages; fill 4–6 neutral timepoints without inventing stage labels",
-      "automatic_trigger": "final scheduled E0/E1/E6 evaluations for same task/seed/step completed; independent analysis queue",
+      "automatic_trigger": "first or final scheduled E0/E1/E6 evaluations for same task/seed/step completed; independent analysis queue",
       "scope": "analysis only; no change to training budget, scheduled evaluation, episode counts, or formal success rates",
       "figure_layout": "4–6 actual moments with RGB, GSA query attention and all K TokenLearner maps",
       "storage_policy": "capture only in dedicated analysis; formal evaluate.py never stores attention tensors"

@@ -16,8 +16,9 @@ def atomic_save(path, payload):
     finally: os.close(fd)
 
 def save(run, payload, scheduled=False):
-    progress=payload['optimizer_updates']
-    path=run/'checkpoints'/('update_%06d.pt'%progress if scheduled else 'recovery.pt')
+    progress=payload.get('checkpoint_step',payload['optimizer_updates'])
+    tag='epoch' if payload['config']['benchmark']=='mimicgen' else 'update'
+    path=run/'checkpoints'/(f'{tag}_{progress:06d}.pt' if scheduled else 'recovery.pt')
     if scheduled and path.exists():
         raise FileExistsError(f'immutable scheduled snapshot exists: {path}')
     atomic_save(path,payload)

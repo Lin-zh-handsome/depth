@@ -22,8 +22,7 @@ class ManiSkillRGBDImageDataset(BaseImageDataset):
         self.n_obs_steps = n_obs_steps
         val_mask = get_val_mask(self.replay_buffer.n_episodes, val_ratio, seed)
         self.train_mask = ~val_mask
-        self.obs_keys = ("base_camera_image", "base_camera_depth",
-                         "hand_camera_image", "hand_camera_depth", "agent_pos")
+        self.obs_keys = tuple(sorted(k for k in self.replay_buffer.keys() if k != 'action'))
         self.sampler = SequenceSampler(
             replay_buffer=self.replay_buffer, sequence_length=horizon,
             pad_before=pad_before, pad_after=pad_after,
@@ -44,9 +43,9 @@ class ManiSkillRGBDImageDataset(BaseImageDataset):
         normalizer.fit({"action": self.replay_buffer["action"][:],
                         "agent_pos": self.replay_buffer["agent_pos"][:]},
                        last_n_dims=1, mode="limits", **kwargs)
-        for key in ("base_camera_image", "hand_camera_image"):
+        for key in (k for k in self.obs_keys if k.endswith('_image')):
             normalizer[key] = get_image_range_normalizer()
-        for key in ("base_camera_depth", "hand_camera_depth"):
+        for key in (k for k in self.obs_keys if k.endswith('_depth')):
             normalizer[key] = SingleFieldLinearNormalizer.create_identity()
         return normalizer
 

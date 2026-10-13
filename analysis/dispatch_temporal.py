@@ -22,7 +22,7 @@ def main():
     # Fixed selection: smallest common reset for each E6 official end-outcome.
     selected=[];unavailable=[]
     for outcome in [True,False]:
-        candidates=sorted(i for i in common if bool(runs['e6']['episodes'][i].get('success_at_end',runs['e6']['episodes'][i].get('success')))==outcome)
+        candidates=sorted(i for i in common if bool(runs['e6']['episodes'][i].get('success') if args.benchmark=='mimicgen' else runs['e6']['episodes'][i].get('success_at_end'))==outcome)
         if candidates:selected.append(dict(reset_id=candidates[0],reference_outcome=outcome))
         else:unavailable.append(dict(reference_outcome=outcome,reason='no matching E6 outcome in actual paired eval episodes'))
     dest=ROOT/'analysis/temporal_paired'/args.task/f'seed_{args.seed}'/tag

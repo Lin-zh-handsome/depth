@@ -201,7 +201,7 @@ def collect(args):
                 np.savez_compressed(file,**arrays)
                 record=dict(episode_id=f"{cfg['task']}/reset_{args.reset_id}",reset_id=args.reset_id,
                     plan_id=len(rows),env_step=step,time_seconds=step/args.control_hz,method=cfg['method'],seed=cfg['seed'],
-                    checkpoint_path=str(args.checkpoint),checkpoint_step=payload['optimizer_updates'],
+                    checkpoint_path=str(args.checkpoint),checkpoint_step=payload.get('checkpoint_step',payload['optimizer_updates']),
                     code_revision=payload['code_revision'],analysis_revision=analysis_revision,
                     cameras=summaries,raw_path=str(file),
                     robot_state={k:numpy(obs[k][0,-1]).tolist() for k,v in cfg['shape_meta']['obs'].items() if v.get('type')=='low_dim'},offline_gt=env.gt(),
@@ -222,6 +222,7 @@ def collect(args):
     summary=dict(task=cfg['task'],method=cfg['method'],seed=cfg['seed'],reset_id=args.reset_id,
         checkpoint_path=str(args.checkpoint),code_revision=payload['code_revision'],analysis_revision=analysis_revision,
         policy_noise_seed=args.reset_id,success_at_end=last,success_once=once,
+        success=once if cfg['benchmark']=='mimicgen' else last,
         steps=step,replans=len(rows),stage_annotation_path=str(args.stages) if args.stages else None,
         stage_policy='names only from explicit environment events or offline annotations; otherwise neutral timepoints',
         control_hz=args.control_hz,primary_metric_status='analysis only; not added to formal success-rate results',

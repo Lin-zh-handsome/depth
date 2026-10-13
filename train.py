@@ -28,7 +28,7 @@ from gsc_dp.checkpoints import save
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--config',type=Path,required=True);a=ap.parse_args()
     cfg=json.loads(a.config.read_text())
-    if cfg['benchmark']!='maniskill': raise NotImplementedError('MimicGen epoch adapter not yet registered')
+    is_mimic=cfg['benchmark']=='mimicgen'
     run=ROOT/'runs'/cfg['benchmark']/cfg['task']/cfg['method']/f"seed_{cfg['seed']}"
     run.mkdir(parents=True,exist_ok=True)
     frozen=run/'config_resolved.json'
@@ -41,7 +41,8 @@ def main():
     model=create(cfg);model.set_normalizer(dataset.get_normalizer());ema_model=copy.deepcopy(model)
     model.to('cuda:0');ema_model.to('cuda:0')
     optimizer=torch.optim.AdamW(model.parameters(),lr=1e-4,betas=(0.95,0.999),eps=1e-8,weight_decay=1e-6)
-    scheduler=get_scheduler('cosine',optimizer=optimizer,num_warmup_steps=500,num_training_steps=cfg['budget'])
+    total_updates=math.ceil(len(dataset)/cfg['batch_size'])*cfg['budget'] if is_mimic else cfg['budget']
+    scheduler=get_scheduler('cosine',optimizer=optimizer,num_warmup_steps=500,num_training_steps=total_updates)
     ema=EMAModel(ema_model,update_after_step=0,inv_gamma=1,power=.75,min_value=0,max_value=.9999)
     updates=epoch=batch_offset=0
     candidates=list((run/'checkpoints').glob('*.pt'))
@@ -70,7 +71,7 @@ def main():
             code_revision=revision,gpu_uuid=uuid)
     begin=time.time()
     with (run/'train_metrics.jsonl').open('a',buffering=1) as log:
-        while updates<cfg['budget']:
+        while updates<total_updates:
             generator=torch.Generator().manual_seed(seed+epoch*1000003)
             loader=torch.utils.data.DataLoader(dataset,batch_size=cfg['batch_size'],shuffle=True,
                 generator=generator,num_workers=0,pin_memory=False,drop_last=False)
@@ -93,12 +94,15 @@ def main():
                                 if needle in name and p.grad is not None]
                             if terms:record[family+'_gradient_l2']=float(torch.stack(terms).sum().sqrt())
                     log.write(json.dumps(record)+'\n');print(json.dumps(record),flush=True)
-                if updates%cfg['interval']==0: save(run,payload(next_batch),scheduled=True)
+                if not is_mimic and updates%cfg['interval']==0: save(run,payload(next_batch),scheduled=True)
                 if stop[0]:
                     save(run,payload(next_batch));print('recoverable stop',updates,flush=True);return 75
-                if updates>=cfg['budget']: break
+                if updates>=total_updates: break
             epoch+=1;batch_offset=0
-    (run/'training_complete.json').write_text(json.dumps(dict(optimizer_updates=updates,
+            if is_mimic and epoch%cfg['interval']==0:
+                completed=payload(0);completed['checkpoint_step']=epoch
+                save(run,completed,scheduled=True)
+    (run/'training_complete.json').write_text(json.dumps(dict(optimizer_updates=updates,completed_epochs=epoch,
         expected_savepoints=cfg['savepoints'],code_revision=revision)))
     return 0
 

@@ -16,6 +16,9 @@ TRAIN_PY='/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python'
 EVAL_PY='/home/linzhenghong/miniconda3/envs/gsc-thesis-eval/bin/python'
 MIMIC_PY='/home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/bin/python'
 def now():return datetime.now(timezone.utc).isoformat()
+def record_progress(message):
+    path=ROOT.parent/'.planning/protocol_v1/progress.md'
+    with path.open('a',encoding='utf-8') as f:f.write('\n'+now()+' '+message+'\n')
 def gpu_free():
     s=subprocess.check_output(['nvidia-smi','-i',GPU,'--query-gpu=memory.free','--format=csv,noheader,nounits'],text=True)
     return int(s.strip())
@@ -31,7 +34,7 @@ def snapshot(db):
     os.replace(tmp,target)
 
 def register_temporal(db):
-    for r in db.execute("SELECT * FROM eval_jobs WHERE status='finished' AND method='e6' AND ((benchmark='maniskill' AND checkpoint_step=100000) OR (benchmark='mimicgen' AND checkpoint_step=250))").fetchall():
+    for r in db.execute("SELECT * FROM eval_jobs WHERE status='finished' AND method='e6' AND ((benchmark='maniskill' AND checkpoint_step IN (5000,100000)) OR (benchmark='mimicgen' AND checkpoint_step IN (5,250)))").fetchall():
         count=db.execute("SELECT count(*) FROM eval_jobs WHERE benchmark=? AND task=? AND seed=? AND checkpoint_step=? AND method IN ('e0','e1','e6') AND status='finished'",
             (r['benchmark'],r['task'],r['seed'],r['checkpoint_step'])).fetchone()[0]
         if count==3:
@@ -47,6 +50,7 @@ def main():
         OPENBLAS_NUM_THREADS='2',NUMEXPR_NUM_THREADS='2',PYTHONNOUSERSITE='1',
         PYTHONPATH=str(ROOT)+':'+str(ROOT/'source/diffusion_policy'),PYTHONUNBUFFERED='1')
     db=connect();children={}
+    seen_manifests=set()
     # Recover statuses after dispatcher interruption, preserving live workers.
     for r in db.execute("SELECT * FROM jobs WHERE status='running'").fetchall():
         if not pid_alive(r['pid']):
@@ -54,6 +58,11 @@ def main():
     db.commit()
     print('single GPU scheduler active',GPU,'pid',os.getpid(),flush=True)
     while True:
+        manifests=set((ROOT/'data/manifests').glob('*.json'))
+        if manifests!=seen_manifests:
+            subprocess.run([TRAIN_PY,str(ROOT/'generate_run_configs.py')],cwd=ROOT,env=env,check=True)
+            seen_manifests=manifests
+            record_progress('Dataset manifests available: '+', '.join(sorted(p.name for p in manifests))+'. Runnable configs refreshed without reducing any budget.')
         for r in db.execute("SELECT * FROM jobs WHERE status='running'").fetchall():
             if r['id'] in children or pid_alive(r['pid']):continue
             run=ROOT/'runs'/r['benchmark']/r['task']/r['method']/f"seed_{r['seed']}"
@@ -72,8 +81,10 @@ def main():
                 (status,now(),code,None if code==0 else f'worker exit {code}; see logs/job_{id}.log',id))
             db.commit();del children[id]
             print('worker completed',id,status,code,flush=True)
+            record_progress(f"Job {id} {r['kind']} {r['task']}/{r['method']}/seed_{r['seed']} {status}, exit={code}; logs/job_{id}.log")
         live=db.execute("SELECT * FROM jobs WHERE status='running'").fetchall()
         ntrain=sum(r['kind']=='train' for r in live);neval=sum(r['kind']=='eval' for r in live)
+        nmimic=sum(r['kind']=='train' and r['benchmark']=='mimicgen' for r in live)
         nanalysis=sum(r['kind']=='analysis' for r in live)
         register_temporal(db)
         load=os.getloadavg()[0]
@@ -82,17 +93,24 @@ def main():
             # Reserve one evaluation slot as soon as a snapshot is available;
             # only this selected physical GPU is ever exposed to any worker.
             ready=(ROOT/'logs/eval_env.ready').exists()
-            kind='eval' if neval<1 and ready and db.execute("SELECT 1 FROM eval_jobs WHERE status='queued' LIMIT 1").fetchone() else 'analysis' if nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' LIMIT 1").fetchone() else 'train'
-            cap=6 if kind=='train' else 1
+            kind='eval' if neval<2 and ready and db.execute("SELECT 1 FROM eval_jobs WHERE status='queued' LIMIT 1").fetchone() else 'analysis' if nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' LIMIT 1").fetchone() else 'train'
+            cap=8 if kind=='train' else 2 if kind=='eval' else 1
             if {'train':ntrain,'eval':neval,'analysis':nanalysis}[kind]<cap:
                 rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY seed, CASE method WHEN 'e0' THEN 0 WHEN 'e1' THEN 1 WHEN 'e6' THEN 2 ELSE 3 END, id",(kind,)).fetchall()
                 # Snapshot eval dependencies are already atomic-complete.
                 if kind=='eval':
                     rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' ORDER BY checkpoint_step,id").fetchall()
+                if kind=='train':
+                    # Keep two resource slots for the independently prepared
+                    # MimicGen benchmark rather than filling them with further
+                    # ManiSkill seeds while its RGB-D conversion finishes.
+                    rows=[r for r in rows if (r['benchmark']=='mimicgen' and nmimic<2) or
+                        (r['benchmark']=='maniskill' and ntrain-nmimic<6)]
                 if rows:
                     r=rows[0]
                     if kind=='train': cmd=[TRAIN_PY,str(ROOT/'train.py'),'--config',r['config_path']]
-                    elif kind=='eval':cmd=[EVAL_PY,str(ROOT/'evaluate.py'),'--checkpoint',r['checkpoint_path']]
+                    elif kind=='eval':cmd=[MIMIC_PY if r['benchmark']=='mimicgen' else EVAL_PY,
+                        str(ROOT/'evaluate.py'),'--checkpoint',r['checkpoint_path']]
                     else:cmd=[MIMIC_PY if r['benchmark']=='mimicgen' else EVAL_PY,
                         str(ROOT/'analysis/dispatch_temporal.py'),'--benchmark',r['benchmark'],
                         '--task',r['task'],'--seed',str(r['seed']),'--step',str(r['checkpoint_step'])]
@@ -101,6 +119,7 @@ def main():
                     children[r['id']]=process
                     db.execute("UPDATE jobs SET status='running',pid=?,started=?,attempts=attempts+1,error=NULL WHERE id=?",(process.pid,now(),r['id']));db.commit()
                     print('launched',r['id'],kind,r['task'],r['method'],r['seed'],'pid',process.pid,'freeMiB',free,flush=True)
+                    record_progress(f"Job {r['id']} {kind} {r['task']}/{r['method']}/seed_{r['seed']}/point_{r['checkpoint_step']} launched PID={process.pid}, GPU={GPU}, freeMiB={free}; logs/job_{r['id']}.log")
         snapshot(db)
         time.sleep(30)
 

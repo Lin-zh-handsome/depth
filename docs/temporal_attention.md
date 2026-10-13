@@ -20,7 +20,7 @@ PY=/home/linzhenghong/miniconda3/envs/gsc-thesis-eval/bin/python
 "$PY" analysis/dispatch_temporal.py --task StackCube-v1 --seed 0 --step 100000
 ```
 
-默认调度器在相同任务/种子/100000更新的E0/E1/E6正式评测全部完成后，自动进入独立 `analysis_jobs`（分析队列）。其他指定保存点可用上面的命令直接分析。若没有真实成功或失败样本，选择清单明确写缺失原因，不补假轨迹。
+默认调度器在相同任务/种子的E0/E1/E6首个或最终保存点正式评测全部完成后，自动进入独立 `analysis_jobs`（分析队列）：ManiSkill为5000/100000更新，MimicGen为5/250 epoch（训练遍数）。早期轨迹明确保留训练进度，不作为最终模型结果。其他指定保存点可用上面的命令直接分析。若没有真实成功或失败样本，选择清单明确写缺失原因，不补假轨迹。
 
 每个重新规划时刻记录：原始RGB、米制Depth、机器人本体状态、规划动作块、实际执行动作、回合/重置ID；E6另外记录真实GSA轴向权重、指定Query派生传播权重、K个Token空间Softmax（归一化）权重及uv/d/rho。数据只在此分析流程采集，正式 `evaluate.py` 不存储注意力张量。
 
