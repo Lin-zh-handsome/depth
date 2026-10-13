@@ -60,6 +60,7 @@ def main():
         with path.open('a',buffering=1) as log:
             for reset in cfg['reset_ids']:
                 if reset in completed:continue
+                torch.manual_seed(reset);torch.cuda.manual_seed_all(reset)
                 raw,_=env.reset(seed=reset);frame=flat(raw)
                 history=deque([frame]*2,maxlen=2);once=False;at_end=False;steps=0;trajectory=[]
                 policy.reset()

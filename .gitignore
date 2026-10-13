@@ -1,8 +1,9 @@
-source/
-data/
-runs/
-logs/
-jobs/*.db*
-jobs/*.lock
+/source/
+/data/raw/
+/data/processed/
+/runs/
+/logs/
+/jobs/*.db*
+/jobs/*.lock
 __pycache__/
 *.pyc

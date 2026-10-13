@@ -9,6 +9,8 @@ from collections import deque
 from contextlib import contextmanager
 import json
 import os
+import subprocess
+import time
 from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[1]
@@ -71,9 +73,12 @@ def environment_stage(task_id,info,step):
     if task_id=='StackCube-v1':
         mapping=[('is_cubeA_on_cubeB','placement_event'),('is_cubeA_grasped','grasp_event')]
         source='mani_skill/envs/tasks/tabletop/stack_cube.py::evaluate'
-    else:
+    elif task_id=='PegInsertionSide-v1':
         mapping=[('success','insertion_success_event')]
         source='mani_skill/envs/tasks/tabletop/peg_insertion_side.py::evaluate'
+    else:
+        mapping=[('success','official_task_success_event')]
+        source='MimicGen official task::_check_success'
     for key,name in mapping:
         if key in info:
             value=numpy(info[key])
@@ -116,33 +121,36 @@ def denoiser_saliency(policy,obs,timestep=50):
     return gradients
 
 def collect(args):
-    import gymnasium as gym
-    import mani_skill.envs
-    from mani_skill.utils.wrappers import CPUGymWrapper
-    from evaluate import flat,scalar,gt
+    from gsc_dp.analysis_env import create_analysis_env
     if os.environ.get('CUDA_VISIBLE_DEVICES')!='GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9':
         raise RuntimeError('analysis must bind the same selected physical GPU2')
     payload=torch.load(args.checkpoint,map_location='cpu',weights_only=False);cfg=payload['config']
-    if cfg['benchmark']!='maniskill':raise NotImplementedError('MimicGen temporal adapter pending RGB-D rollout adapter')
     policy=create(cfg);policy.load_state_dict(payload['ema_model']);policy.to('cuda:0').eval().requires_grad_(False)
     output=args.output or ROOT/'analysis/temporal'/cfg['task']/cfg['method']/f"seed_{cfg['seed']}"/args.checkpoint.stem/f'reset_{args.reset_id}'
-    if (output/'episode.json').exists():raise FileExistsError(f'completed analysis output exists: {output}')
+    output=output.resolve()
+    if (output/'episode.json').exists():
+        saved=json.loads((output/'episode.json').read_text())
+        if saved['checkpoint_path']!=str(args.checkpoint) or saved['reset_id']!=args.reset_id:
+            raise ValueError('completed output belongs to a different checkpoint/reset')
+        export(output,args.camera,saved['control_hz']);return
+    if (output/'replans.jsonl').exists():
+        output.rename(output.with_name(output.name+f'.partial_{time.time_ns()}'))
     output.mkdir(parents=True,exist_ok=True);(output/'raw').mkdir(exist_ok=True)
     annotation=json.loads(args.stages.read_text())['events'] if args.stages else []
     for item in annotation:
         if item.get('source_kind') not in ['environment_event','offline_annotation'] or not item.get('source'):
             raise ValueError('each stage requires explicit source_kind and source')
-    env=CPUGymWrapper(gym.make(cfg['task'],obs_mode='rgbd',control_mode=cfg['control_mode'],
-        sim_backend='physx_cpu',render_backend='sapien_cuda:0',reconfiguration_freq=1,
-        max_episode_steps=cfg['horizon'],render_mode='rgb_array'),ignore_terminations=True,record_metrics=True)
-    actual_hz=float(env.unwrapped.control_freq)
+    env=create_analysis_env(cfg)
+    actual_hz=float(env.control_freq)
     if args.control_hz is not None and args.control_hz!=actual_hz:
         raise ValueError('requested control_hz differs from actual environment control frequency')
     args.control_hz=actual_hz
-    render_device=str(env.unwrapped.backend.render_device)
+    render_device=env.render_device
+    analysis_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     rows=[];step=0;once=False;last=False
     try:
-        raw,info=env.reset(seed=args.reset_id);frame=flat(raw);policy.reset()
+        torch.manual_seed(args.reset_id);torch.cuda.manual_seed_all(args.reset_id)
+        frame,info=env.reset(seed=args.reset_id);policy.reset()
         history=deque([frame]*2,maxlen=2)
         with (output/'replans.jsonl').open('a',buffering=1) as log:
             while step<cfg['horizon']:
@@ -194,24 +202,26 @@ def collect(args):
                 record=dict(episode_id=f"{cfg['task']}/reset_{args.reset_id}",reset_id=args.reset_id,
                     plan_id=len(rows),env_step=step,time_seconds=step/args.control_hz,method=cfg['method'],seed=cfg['seed'],
                     checkpoint_path=str(args.checkpoint),checkpoint_step=payload['optimizer_updates'],
-                    code_revision=payload['code_revision'],cameras=summaries,raw_path=str(file),
-                    robot_state=arrays['agent_pos'].tolist(),offline_gt=gt(env.unwrapped),
+                    code_revision=payload['code_revision'],analysis_revision=analysis_revision,
+                    cameras=summaries,raw_path=str(file),
+                    robot_state={k:numpy(obs[k][0,-1]).tolist() for k,v in cfg['shape_meta']['obs'].items() if v.get('type')=='low_dim'},offline_gt=env.gt(),
                     planned_actions=planned.tolist(),executed_actions=[],
                     stage=stage_at(annotation,step) or environment_stage(cfg['task'],info,step),
                     collection_mode='independent_analysis_rollout',control_hz=args.control_hz)
                 for action in planned:
-                    raw,_,terminated,truncated,info=env.step(action);step+=1
-                    last=scalar(info.get('success',False));once|=last
+                    frame,_,terminated,truncated,info=env.step(action);step+=1
+                    last=bool(numpy(info.get('success',False)).reshape(-1)[0]);once|=last
                     record['executed_actions'].append(dict(step=step,action=action.tolist(),success=last,
                         environment_event=environment_stage(cfg['task'],info,step)))
-                    frame=flat(raw);history.append(frame)
+                    history.append(frame)
                     if step>=cfg['horizon'] or terminated or truncated:break
                 log.write(json.dumps(record)+'\n');rows.append(record)
                 print('recorded',record['episode_id'],'plan',record['plan_id'],'step',step,flush=True)
                 if step>=cfg['horizon'] or terminated or truncated:break
     finally:env.close()
     summary=dict(task=cfg['task'],method=cfg['method'],seed=cfg['seed'],reset_id=args.reset_id,
-        checkpoint_path=str(args.checkpoint),code_revision=payload['code_revision'],success_at_end=last,success_once=once,
+        checkpoint_path=str(args.checkpoint),code_revision=payload['code_revision'],analysis_revision=analysis_revision,
+        policy_noise_seed=args.reset_id,success_at_end=last,success_once=once,
         steps=step,replans=len(rows),stage_annotation_path=str(args.stages) if args.stages else None,
         stage_policy='names only from explicit environment events or offline annotations; otherwise neutral timepoints',
         control_hz=args.control_hz,primary_metric_status='analysis only; not added to formal success-rate results',
@@ -238,7 +248,11 @@ def render_row(row,camera):
                 tile=overlay(rgb,mask,data['crop_origin_xy'],data['crop_size_wh']).resize((tile_w,tile_h))
                 u=float(a[camera+'_token_u'][k]);v=float(a[camera+'_token_v'][k])
                 d=float(a[camera+'_token_depth_m'][k].reshape(-1)[0]);rho=float(a[camera+'_token_rho'][k].reshape(-1)[0])
-                draw=ImageDraw.Draw(tile);draw.rectangle((0,0,tile_w,20),fill='white');draw.text((2,1),f'{k}:d={d:.2f}',fill='black')
+                draw=ImageDraw.Draw(tile);draw.rectangle((0,0,tile_w,25),fill='white')
+                draw.text((2,1),f'{k}:d={d:.2f}',fill='black');draw.text((2,13),f'rho={rho:.2f}',fill='black')
+                full_h,full_w=rgb.shape[-2:];ox,oy=data['crop_origin_xy'];cw,ch=data['crop_size_wh']
+                cx=(ox+u*cw)/full_w*tile_w;cy=(oy+v*ch)/full_h*tile_h
+                draw.ellipse((cx-2,cy-2,cx+2,cy+2),outline='white')
                 tokens.paste(tile,((k%columns)*tile_w,(k//columns)*tile_h))
             images.append(panel(tokens,f'TokenLearner K={K}, depth in m'))
         else:images.append(panel(Image.new('RGB',(256,256),'white'),'Token weights: not present'))
@@ -281,6 +295,7 @@ def export(output,camera=None,hz=None):
     for i,p in enumerate(panels):grid.paste(p,(0,i*p.height))
     figure=output/f'{camera}_spatial_attention_evolution.png';grid.save(figure)
     metadata=dict(figure_id='Fig 3-15',title='Spatial attention evolution during closed-loop robot execution',
+        title_zh='机器人执行过程中的空间关注演化分析',
         raw_rows=str(output/'replans.jsonl'),episode=str(output/'episode.json'),video=str(video),
         figure=str(figure),key_frames=[dict(path=str(p),plan_id=rows[i]['plan_id'],env_step=rows[i]['env_step'],
             stage=rows[i].get('stage')) for p,i in zip(paths,keys)],camera=camera,
@@ -337,9 +352,10 @@ def main():
     m=sub.add_parser('compare');m.add_argument('--inputs',nargs='+',type=Path,required=True);m.add_argument('--output',type=Path,required=True);m.add_argument('--camera')
     a=p.parse_args()
     if a.mode=='collect':
+        a.checkpoint=a.checkpoint.resolve()
         if any(x<0 or x>1 for x in a.query):p.error('query is normalized original-image x/y in [0,1]')
         collect(a)
-    elif a.mode=='export':export(a.input,a.camera)
-    else:compare(a.inputs,a.output,a.camera)
+    elif a.mode=='export':export(a.input.resolve(),a.camera)
+    else:compare([x.resolve() for x in a.inputs],a.output.resolve(),a.camera)
 
 if __name__=='__main__':main()

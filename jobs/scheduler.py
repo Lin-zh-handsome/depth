@@ -14,6 +14,7 @@ from registry import ROOT, connect
 GPU='GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9'
 TRAIN_PY='/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python'
 EVAL_PY='/home/linzhenghong/miniconda3/envs/gsc-thesis-eval/bin/python'
+MIMIC_PY='/home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/bin/python'
 def now():return datetime.now(timezone.utc).isoformat()
 def gpu_free():
     s=subprocess.check_output(['nvidia-smi','-i',GPU,'--query-gpu=memory.free','--format=csv,noheader,nounits'],text=True)
@@ -30,7 +31,7 @@ def snapshot(db):
     os.replace(tmp,target)
 
 def register_temporal(db):
-    for r in db.execute("SELECT * FROM eval_jobs WHERE status='finished' AND method='e6' AND checkpoint_step=100000").fetchall():
+    for r in db.execute("SELECT * FROM eval_jobs WHERE status='finished' AND method='e6' AND ((benchmark='maniskill' AND checkpoint_step=100000) OR (benchmark='mimicgen' AND checkpoint_step=250))").fetchall():
         count=db.execute("SELECT count(*) FROM eval_jobs WHERE benchmark=? AND task=? AND seed=? AND checkpoint_step=? AND method IN ('e0','e1','e6') AND status='finished'",
             (r['benchmark'],r['task'],r['seed'],r['checkpoint_step'])).fetchone()[0]
         if count==3:
@@ -92,7 +93,9 @@ def main():
                     r=rows[0]
                     if kind=='train': cmd=[TRAIN_PY,str(ROOT/'train.py'),'--config',r['config_path']]
                     elif kind=='eval':cmd=[EVAL_PY,str(ROOT/'evaluate.py'),'--checkpoint',r['checkpoint_path']]
-                    else:cmd=[EVAL_PY,str(ROOT/'analysis/dispatch_temporal.py'),'--task',r['task'],'--seed',str(r['seed']),'--step',str(r['checkpoint_step'])]
+                    else:cmd=[MIMIC_PY if r['benchmark']=='mimicgen' else EVAL_PY,
+                        str(ROOT/'analysis/dispatch_temporal.py'),'--benchmark',r['benchmark'],
+                        '--task',r['task'],'--seed',str(r['seed']),'--step',str(r['checkpoint_step'])]
                     log=(ROOT/'logs'/f"job_{r['id']}.log").open('a')
                     process=subprocess.Popen(cmd,cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);log.close()
                     children[r['id']]=process

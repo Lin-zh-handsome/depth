@@ -38,4 +38,4 @@ E0/E1使用输入梯度显著性：固定扩散t=50、零归一化带噪动作�
 
 产物：完整MP4、每个关键时刻PNG、4–6时刻拼图、原始NPZ、`replans.jsonl`、`episode.json`、`temporal_manifest.json`；成对导出另外提供 `selection_manifest.json`、`comparison.json`、三方法同步MP4/PNG。视频在各动作执行期间保持对应重新规划观测，不把保持帧说成新的注意力采样。保留显示归一化方法与真实原始数值。
 
-当前实现支持ManiSkill两任务；MimicGen适配依赖其真实RGB-D环境接口完成。没有指定的已训练新协议E6检查点时，不生成随机模型的论文结果。
+当前实现提供ManiSkill及MimicGen独立分析适配器。MimicGen在Conda `gsc-thesis-mimic`运行，从实际数据manifest读取官方环境元数据，以同一84×84双相机、米制深度及明确垂直翻转规则观测；其训练数据需先按相同规则转换。真实MimicGen数据/新协议checkpoint未准备好时，不把接口代码视为已完成闭环验证。没有指定的已训练新协议E6检查点时，不生成随机模型的论文结果。
