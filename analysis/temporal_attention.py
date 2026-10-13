@@ -53,10 +53,18 @@ def draw_text(image,xy,text,fill='black',size=14):
     font=ImageFont.truetype(str(path),size) if path.exists() else ImageFont.load_default()
     ImageDraw.Draw(image).text(xy,text,fill=fill,font=font)
 
-def overlay(rgb,heat,origin=(0,0),crop_size=None):
+def overlay(rgb,heat,origin=(0,0),crop_size=None,stride=None):
     base=Image.fromarray(rgb8(rgb));w,h=base.size
     origin=tuple(map(int,origin));cw,ch=crop_size or (w,h)
-    color=Image.fromarray(colored_heatmap(heat)).resize((cw,ch),Image.Resampling.BILINEAR)
+    if stride:
+        # ResNet feature centers are at j*stride relative to the crop origin;
+        # resizing to equal-width cells would shift the query/center markers.
+        values=np.asarray(heat,dtype='f4')
+        horizontal=np.stack([np.interp(np.arange(cw)/stride,np.arange(values.shape[1]),row) for row in values])
+        values=np.stack([np.interp(np.arange(ch)/stride,np.arange(values.shape[0]),horizontal[:,i]) for i in range(cw)],axis=1)
+        color=Image.fromarray(colored_heatmap(values))
+    else:
+        color=Image.fromarray(colored_heatmap(heat)).resize((cw,ch),Image.Resampling.BILINEAR)
     tile=base.crop((origin[0],origin[1],origin[0]+cw,origin[1]+ch))
     base.paste(Image.blend(tile,color,.45),origin)
     return base
@@ -88,7 +96,9 @@ def environment_stage(task_id,info,step):
         if key in info:
             value=numpy(info[key])
             if value.size==1 and bool(value.reshape(-1)[0]):
-                return dict(name=name,source_kind='environment_event',source=source,
+                label={'placement_event':'放置事件（官方环境谓词）','grasp_event':'抓取事件（官方环境谓词）',
+                    'insertion_success_event':'插入成功事件（官方环境谓词）','official_task_success_event':'任务成功事件（官方环境谓词）'}[name]
+                return dict(name=name,display_name=label,source_kind='environment_event',source=source,
                     predicate=key,start_step=step,end_step=step)
     return None
 
@@ -175,14 +185,18 @@ def collect(args):
                     query_full=(args.query[0]*(W-1),args.query[1]*(H-1))
                     data=dict(kind='unavailable',query_original_xy=query_full,crop_origin_xy=origin,
                         crop_size_wh=[crop_w,crop_h])
+                    view=policy.obs_encoder.views[key] if hasattr(policy.obs_encoder,'views') else None
+                    stride=8 if view is not None and view.insert_after=='layer2' else 16
+                    data['feature_stride_px']=stride if view is not None else None
                     if 'attention_width' in art:
                         h,w=art['feature_after'].shape[-2:]
-                        x=int(np.clip((query_full[0]-origin[0])/crop_w*w,0,w-1))
-                        y=int(np.clip((query_full[1]-origin[1])/crop_h*h,0,h-1))
+                        x=int(np.clip(round((query_full[0]-origin[0])/stride),0,w-1))
+                        y=int(np.clip(round((query_full[1]-origin[1])/stride),0,h-1))
                         if not (origin[0]<=query_full[0]<origin[0]+crop_w and origin[1]<=query_full[1]<origin[1]+crop_h):
                             raise ValueError('query lies outside the encoder crop')
                         arrays[camera+'_gsa_query']=query_attention(art['attention_width'],art['attention_height'],y,x)
                         data.update(kind='derived_axial_gsa_attention',query_grid_yx=[y,x],
+                            query_grid_center_original_xy=[origin[0]+x*stride,origin[1]+y*stride],
                             formula='mean_heads(Ah[query_x,head,query_y,key_y]*Aw[key_y,head,query_x,key_x])',
                             excludes='residual and LEPE; not a full attention matrix')
                         if args.save_axes:
@@ -240,34 +254,36 @@ def render_row(row,camera):
         rgb=a[camera+'_image'];data=row['cameras'][camera]
         images=[panel(Image.fromarray(rgb8(rgb)),'RGB（彩色观测）')]
         if camera+'_gsa_query' in a:
-            img=overlay(rgb,a[camera+'_gsa_query'],data['crop_origin_xy'],data['crop_size_wh'])
-            draw=ImageDraw.Draw(img);x,y=data['query_original_xy'];draw.ellipse((x-2,y-2,x+2,y+2),fill='white')
+            img=overlay(rgb,a[camera+'_gsa_query'],data['crop_origin_xy'],data['crop_size_wh'],data.get('feature_stride_px'))
+            draw=ImageDraw.Draw(img);x,y=data.get('query_grid_center_original_xy',data['query_original_xy']);draw.ellipse((x-2,y-2,x+2,y+2),fill='white')
             images.append(panel(img,'GSA（真实轴向传播注意力）'))
         elif camera+'_saliency' in a:
-            images.append(panel(overlay(rgb,a[camera+'_saliency']),'Input-gradient（输入梯度显著性）'))
-        else:images.append(panel(Image.fromarray(rgb8(rgb)),'Attention unavailable'))
+            images.append(panel(overlay(rgb,a[camera+'_saliency']),'Input-gradient（显著性，非注意力）'))
+        else:images.append(panel(Image.fromarray(rgb8(rgb)),'注意力：不适用'))
         if camera+'_token_weights' in a:
             masks=a[camera+'_token_weights'];K=len(masks)
             tokens=Image.new('RGB',(256,256),'white');columns=4;rows=int(np.ceil(K/columns))
             tile_w,tile_h=256//columns,256//rows
             for k,mask in enumerate(masks):
-                tile=overlay(rgb,mask,data['crop_origin_xy'],data['crop_size_wh']).resize((tile_w,tile_h))
+                tile=overlay(rgb,mask,data['crop_origin_xy'],data['crop_size_wh'],data.get('feature_stride_px')).resize((tile_w,tile_h))
                 u=float(a[camera+'_token_u'][k]);v=float(a[camera+'_token_v'][k])
                 d=float(a[camera+'_token_depth_m'][k].reshape(-1)[0]);rho=float(a[camera+'_token_rho'][k].reshape(-1)[0])
                 draw=ImageDraw.Draw(tile);draw.rectangle((0,0,tile_w,25),fill='white')
                 draw_text(tile,(2,1),f'{k}:d={d:.2f}',size=9);draw_text(tile,(2,13),f'rho={rho:.2f}',size=9)
                 full_h,full_w=rgb.shape[-2:];ox,oy=data['crop_origin_xy'];cw,ch=data['crop_size_wh']
-                cx=(ox+u*cw)/full_w*tile_w;cy=(oy+v*ch)/full_h*tile_h
+                stride=data.get('feature_stride_px') or 1
+                cx=(ox+u*(mask.shape[1]-1)*stride)/full_w*tile_w
+                cy=(oy+v*(mask.shape[0]-1)*stride)/full_h*tile_h
                 draw.ellipse((cx-2,cy-2,cx+2,cy+2),outline='white')
                 tokens.paste(tile,((k%columns)*tile_w,(k//columns)*tile_h))
             images.append(panel(tokens,f'TokenLearner（空间权重）K={K}, m'))
-        else:images.append(panel(Image.new('RGB',(256,256),'white'),'Token weights: not present'))
+        else:images.append(panel(Image.new('RGB',(256,256),'white'),'Token（空间权重）：无该模块'))
         depth=a[camera+'_depth'][0]
         images.append(panel(Image.fromarray(colored_heatmap(depth)),'Depth（深度，m；显示缩放）'))
         canvas=Image.new('RGB',(sum(x.width for x in images),images[0].height+28),'white')
         cursor=0
         for image in images:canvas.paste(image,(cursor,28));cursor+=image.width
-        label=row['stage']['name'] if row.get('stage') else 'timepoint (stage unannotated)'
+        label=row['stage'].get('display_name',row['stage']['name']) if row.get('stage') else '时间点（阶段未标注）'
         draw_text(canvas,(8,6),f"plan（规划）{row['plan_id']}, step（步）{row['env_step']}, {row['time_seconds']:.2f}s | {label}")
         return canvas
 
