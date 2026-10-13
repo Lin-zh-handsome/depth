@@ -22,7 +22,7 @@ for task in protocol['tasks']:
             crop_shape=[76,76] if task['benchmark']=='mimicgen' else [112,112],
             zarr_path=m['processed_path'],dataset_manifest=str(manifest),batch_size=64,
             optimizer='AdamW',lr=1e-4,ddpm_steps=100,observation_horizon=2,prediction_horizon=16,
-            action_horizon=8,control_mode=m['control_mode'],weight_initialization='random; no pretrained weights',
+            action_horizon=8,control_mode=m.get('control_mode',m.get('action_semantics','metadata_pending')),weight_initialization='random; no pretrained weights',
             budget_source='IJRR 2026 250 epochs' if task['benchmark']=='mimicgen' else 'StackCube official visual DP; Peg visual CNN-DP budget fixed by this study')
         if 'env_meta' in m:
             cfg['env_meta']=m['env_meta']

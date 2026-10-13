@@ -55,7 +55,11 @@ def main():
     # Recover statuses after dispatcher interruption, preserving live workers.
     for r in db.execute("SELECT * FROM jobs WHERE status='running'").fetchall():
         if not pid_alive(r['pid']):
-            db.execute("UPDATE jobs SET status='queued',error='dispatcher recovery: worker no longer alive' WHERE id=?",(r['id'],))
+            run=ROOT/'runs'/r['benchmark']/r['task']/r['method']/f"seed_{r['seed']}"
+            tag='epoch' if r['benchmark']=='mimicgen' else 'update'
+            marker=run/'training_complete.json' if r['kind']=='train' else run/'eval'/f"{tag}_{r['checkpoint_step']:06d}"/'eval_summary.json'
+            status='finished' if marker.exists() else 'queued'
+            db.execute("UPDATE jobs SET status=?,error=? WHERE id=?",(status,None if status=='finished' else 'dispatcher recovery: worker no longer alive',r['id']))
     db.commit()
     print('single GPU scheduler active',GPU,'pid',os.getpid(),flush=True)
     while True:
