@@ -1,118 +1,87 @@
 {
-  "code_revision": "9ac6274ba6fc12d3dac1fb218c49992e556c3f7d",
-  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-  "jobs": [
+  "captured_at_asia_shanghai": "2026-10-13T22:24:55.496485+08:00",
+  "server_project": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1",
+  "queue_counts": [
     {
       "kind": "eval",
-      "task": "StackCube-v1",
-      "method": "e0",
-      "seed": 0,
-      "pid": 4190691,
-      "update": 9400,
-      "checkpoint_count": 1,
-      "episodes_completed": 25,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_163.log"
+      "status": "finished",
+      "count": 2
     },
     {
       "kind": "eval",
-      "task": "PegInsertionSide-v1",
-      "method": "e0",
-      "seed": 0,
-      "pid": 59060,
-      "update": 8100,
-      "checkpoint_count": 1,
-      "episodes_completed": 2,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_164.log"
+      "status": "queued",
+      "count": 31
+    },
+    {
+      "kind": "eval",
+      "status": "running",
+      "count": 2
     },
     {
       "kind": "train",
-      "task": "StackCube-v1",
-      "method": "e0",
-      "seed": 0,
-      "pid": 4125008,
-      "update": 9400,
-      "checkpoint_count": 1,
-      "episodes_completed": 25,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_91.log"
+      "status": "queued",
+      "count": 154
     },
     {
       "kind": "train",
-      "task": "StackCube-v1",
-      "method": "e1",
-      "seed": 0,
-      "pid": 4160002,
-      "update": 1200,
-      "checkpoint_count": 0,
-      "episodes_completed": 0,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_94.log"
-    },
-    {
-      "kind": "train",
-      "task": "StackCube-v1",
-      "method": "e6",
-      "seed": 0,
-      "pid": 4163170,
-      "update": 1000,
-      "checkpoint_count": 0,
-      "episodes_completed": 0,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_103.log"
-    },
-    {
-      "kind": "train",
-      "task": "PegInsertionSide-v1",
-      "method": "e0",
-      "seed": 0,
-      "pid": 4126518,
-      "update": 8100,
-      "checkpoint_count": 1,
-      "episodes_completed": 2,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_127.log"
-    },
-    {
-      "kind": "train",
-      "task": "PegInsertionSide-v1",
-      "method": "e1",
-      "seed": 0,
-      "pid": 4161579,
-      "update": 1000,
-      "checkpoint_count": 0,
-      "episodes_completed": 0,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_130.log"
-    },
-    {
-      "kind": "train",
-      "task": "PegInsertionSide-v1",
-      "method": "e6",
-      "seed": 0,
-      "pid": 4164805,
-      "update": 900,
-      "checkpoint_count": 0,
-      "episodes_completed": 0,
-      "planned_checkpoints": 20,
-      "planned_episodes": 2000,
-      "latest_sr": "pending full scheduled evaluation",
-      "log": "logs/job_139.log"
+      "status": "running",
+      "count": 8
     }
-  ]
+  ],
+  "finished_evaluation_summaries": [
+    {
+      "path": "artifacts/snapshot_20261013/runs/maniskill/PegInsertionSide-v1/e0/seed_0/eval/update_005000/eval_summary.json",
+      "result": {
+        "benchmark": "maniskill",
+        "task": "PegInsertionSide-v1",
+        "method": "e0",
+        "seed": 0,
+        "checkpoint_step": 5000,
+        "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_005000.pt",
+        "code_revision": "28a14443b6c0cabedd6179c2f5f4e93f3de89b8b",
+        "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/PegInsertionSide-v1_100.json",
+        "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+        "optimizer_and_ema_saved": true,
+        "write_status": "atomic_complete",
+        "integrity": "atomic completed file + recorded metadata; no redundant hashing",
+        "success_count": 0,
+        "n_episodes": 100,
+        "success_rate": 0.0,
+        "success_definition": "success_at_end",
+        "success_once_count": 0,
+        "episodes_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/eval/update_005000/episodes.jsonl",
+        "latency_status": "unavailable: this concurrent rollout is not an isolated timing measurement"
+      }
+    },
+    {
+      "path": "artifacts/snapshot_20261013/runs/maniskill/StackCube-v1/e0/seed_0/eval/update_005000/eval_summary.json",
+      "result": {
+        "benchmark": "maniskill",
+        "task": "StackCube-v1",
+        "method": "e0",
+        "seed": 0,
+        "checkpoint_step": 5000,
+        "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_005000.pt",
+        "code_revision": "28a14443b6c0cabedd6179c2f5f4e93f3de89b8b",
+        "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/StackCube-v1_100.json",
+        "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+        "optimizer_and_ema_saved": true,
+        "write_status": "atomic_complete",
+        "integrity": "atomic completed file + recorded metadata; no redundant hashing",
+        "success_count": 4,
+        "n_episodes": 100,
+        "success_rate": 0.04,
+        "success_definition": "success_at_end",
+        "success_once_count": 6,
+        "episodes_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/eval/update_005000/episodes.jsonl",
+        "latency_status": "unavailable: this concurrent rollout is not an isolated timing measurement"
+      }
+    }
+  ],
+  "excluded_dataset_directories": [
+    "data/raw",
+    "data/processed"
+  ],
+  "excluded_checkpoints": "All *.pt / *.ckpt weight files; see checkpoint_catalog.json",
+  "note": "This is a snapshot during ongoing experiments. Partial episode logs are not final success rates."
 }

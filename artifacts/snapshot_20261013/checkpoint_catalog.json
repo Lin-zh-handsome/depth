@@ -1,0 +1,212 @@
+[
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/checkpoints/epoch_000005.pt",
+    "bytes": 5269865522,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/checkpoints/epoch_000005.pt",
+    "bytes": 5269865522,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e1/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284699934,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e1/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284699934,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e6/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5304511522,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e6/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5304511522,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_050000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_035000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_030000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_045000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_055000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_025000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_040000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e0/seed_0/checkpoints/update_060000.pt",
+    "bytes": 5284601442,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e1/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284699934,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e1/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284699934,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e6/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5304511522,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e6/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5304511522,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_065000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_050000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_035000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_030000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_045000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_055000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_025000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_040000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e0/seed_0/checkpoints/update_060000.pt",
+    "bytes": 5284601378,
+    "included": false,
+    "reason": "model checkpoint exceeds ordinary GitHub Git file size limit"
+  }
+]

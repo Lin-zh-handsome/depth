@@ -1,0 +1,208 @@
+2 channel Terms of Service accepted
+Source:      /home/linzhenghong/miniconda3/envs/gsc-robodiff
+Destination: /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic
+Packages: 32
+Files: 115640
+
+Downloading and Extracting Packages: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic
+
+  added / updated specs:
+    - anaconda/pkgs/main/linux-64::_libgcc_mutex==0.1=main
+    - anaconda/pkgs/main/linux-64::_openmp_mutex==5.1=52_gnu
+    - anaconda/pkgs/main/linux-64::bzip2==1.0.8=h5eee18b_6
+    - anaconda/pkgs/main/linux-64::ca-certificates==2026.9.25=h06a4308_0
+    - anaconda/pkgs/main/linux-64::ld_impl_linux-64==2.44=h9e0c5a2_3
+    - anaconda/pkgs/main/linux-64::libexpat==2.8.5=h7354ed3_1
+    - anaconda/pkgs/main/linux-64::libffi==3.4.8=h06d3fd0_3
+    - anaconda/pkgs/main/linux-64::libgcc-ng==15.2.0=h166f726_8
+    - anaconda/pkgs/main/linux-64::libgcc==15.2.0=h69a1729_8
+    - anaconda/pkgs/main/linux-64::libnsl==2.0.0=h5eee18b_0
+    - anaconda/pkgs/main/linux-64::libstdcxx==15.2.0=h39759b7_8
+    - anaconda/pkgs/main/linux-64::libuuid==1.41.5=h5eee18b_0
+    - anaconda/pkgs/main/linux-64::libxcb==1.17.0=h9b100fa_0
+    - anaconda/pkgs/main/linux-64::libzlib==1.3.2=h47b2149_0
+    - anaconda/pkgs/main/linux-64::ncurses==6.6=hfaaeb4e_0
+    - anaconda/pkgs/main/linux-64::openssl==3.5.9=h1b28b03_0
+    - anaconda/pkgs/main/linux-64::packaging==26.3=py310h06a4308_0
+    - anaconda/pkgs/main/linux-64::pthread-stubs==0.3=h47b2149_2
+    - anaconda/pkgs/main/linux-64::python==3.10.22=hd9cb797_0
+    - anaconda/pkgs/main/linux-64::readline==8.3=hc2a1206_0
+    - anaconda/pkgs/main/linux-64::setuptools==83.0.0=py310h06a4308_0
+    - anaconda/pkgs/main/linux-64::sqlite==3.53.4=h795bf6d_0
+    - anaconda/pkgs/main/linux-64::tk==8.6.15=h54e0aa7_0
+    - anaconda/pkgs/main/linux-64::wheel==0.47.0=py310h06a4308_0
+    - anaconda/pkgs/main/linux-64::xorg-libx11==1.8.13=h65de747_0
+    - anaconda/pkgs/main/linux-64::xorg-libxau==1.0.12=h9b100fa_0
+    - anaconda/pkgs/main/linux-64::xorg-libxdmcp==1.1.5=h9b100fa_0
+    - anaconda/pkgs/main/linux-64::xorg-xorgproto==2025.1=h47b2149_0
+    - anaconda/pkgs/main/linux-64::xz==5.8.4=h140a991_0
+    - anaconda/pkgs/main/linux-64::zlib==1.3.2=h47b2149_0
+    - anaconda/pkgs/main/noarch::pip==26.2.1=pyhc872135_0
+    - anaconda/pkgs/main/noarch::tzdata==2026c=he532380_0
+
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      anaconda/pkgs/main/linux-64::_libgcc_mutex-0.1-main 
+  _openmp_mutex      anaconda/pkgs/main/linux-64::_openmp_mutex-5.1-52_gnu 
+  bzip2              anaconda/pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6 
+  ca-certificates    anaconda/pkgs/main/linux-64::ca-certificates-2026.9.25-h06a4308_0 
+  ld_impl_linux-64   anaconda/pkgs/main/linux-64::ld_impl_linux-64-2.44-h9e0c5a2_3 
+  libexpat           anaconda/pkgs/main/linux-64::libexpat-2.8.5-h7354ed3_1 
+  libffi             anaconda/pkgs/main/linux-64::libffi-3.4.8-h06d3fd0_3 
+  libgcc             anaconda/pkgs/main/linux-64::libgcc-15.2.0-h69a1729_8 
+  libgcc-ng          anaconda/pkgs/main/linux-64::libgcc-ng-15.2.0-h166f726_8 
+  libnsl             anaconda/pkgs/main/linux-64::libnsl-2.0.0-h5eee18b_0 
+  libstdcxx          anaconda/pkgs/main/linux-64::libstdcxx-15.2.0-h39759b7_8 
+  libuuid            anaconda/pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0 
+  libxcb             anaconda/pkgs/main/linux-64::libxcb-1.17.0-h9b100fa_0 
+  libzlib            anaconda/pkgs/main/linux-64::libzlib-1.3.2-h47b2149_0 
+  ncurses            anaconda/pkgs/main/linux-64::ncurses-6.6-hfaaeb4e_0 
+  openssl            anaconda/pkgs/main/linux-64::openssl-3.5.9-h1b28b03_0 
+  packaging          anaconda/pkgs/main/linux-64::packaging-26.3-py310h06a4308_0 
+  pip                anaconda/pkgs/main/noarch::pip-26.2.1-pyhc872135_0 
+  pthread-stubs      anaconda/pkgs/main/linux-64::pthread-stubs-0.3-h47b2149_2 
+  python             anaconda/pkgs/main/linux-64::python-3.10.22-hd9cb797_0 
+  readline           anaconda/pkgs/main/linux-64::readline-8.3-hc2a1206_0 
+  setuptools         anaconda/pkgs/main/linux-64::setuptools-83.0.0-py310h06a4308_0 
+  sqlite             anaconda/pkgs/main/linux-64::sqlite-3.53.4-h795bf6d_0 
+  tk                 anaconda/pkgs/main/linux-64::tk-8.6.15-h54e0aa7_0 
+  tzdata             anaconda/pkgs/main/noarch::tzdata-2026c-he532380_0 
+  wheel              anaconda/pkgs/main/linux-64::wheel-0.47.0-py310h06a4308_0 
+  xorg-libx11        anaconda/pkgs/main/linux-64::xorg-libx11-1.8.13-h65de747_0 
+  xorg-libxau        anaconda/pkgs/main/linux-64::xorg-libxau-1.0.12-h9b100fa_0 
+  xorg-libxdmcp      anaconda/pkgs/main/linux-64::xorg-libxdmcp-1.1.5-h9b100fa_0 
+  xorg-xorgproto     anaconda/pkgs/main/linux-64::xorg-xorgproto-2025.1-h47b2149_0 
+  xz                 anaconda/pkgs/main/linux-64::xz-5.8.4-h140a991_0 
+  zlib               anaconda/pkgs/main/linux-64::zlib-1.3.2-h47b2149_0 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: - done
+Verifying transaction: | / - \ | / - done
+Executing transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | done
+#
+# To activate this environment, use
+#
+#     $ conda activate gsc-thesis-mimic
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting robosuite==1.4.1
+  Downloading robosuite-1.4.1-py3-none-any.whl (193.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.5/193.5 MB 158.9 kB/s  0:08:18
+Collecting robomimic==0.3.0
+  Downloading robomimic-0.3.0.tar.gz (215 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.13.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (1.26.4)
+Requirement already satisfied: numba>=0.49.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (0.68.0)
+Requirement already satisfied: scipy>=1.2.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (1.15.3)
+Requirement already satisfied: mujoco>=2.3.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (3.2.3)
+Requirement already satisfied: Pillow in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (11.3.0)
+Requirement already satisfied: opencv-python in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (4.11.0.86)
+Requirement already satisfied: pynput in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (1.8.2)
+Requirement already satisfied: termcolor in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (3.3.0)
+Requirement already satisfied: h5py in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (3.16.0)
+Requirement already satisfied: psutil in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (7.2.2)
+Requirement already satisfied: tqdm in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (4.70.1)
+Requirement already satisfied: tensorboard in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (2.21.0)
+Collecting tensorboardX (from robomimic==0.3.0)
+  Downloading tensorboardx-2.6.5-py3-none-any.whl (87 kB)
+Requirement already satisfied: imageio in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (2.34.2)
+Requirement already satisfied: imageio-ffmpeg in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (0.6.0)
+Requirement already satisfied: matplotlib in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (3.10.9)
+Requirement already satisfied: egl_probe>=1.0.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (1.0.2)
+Requirement already satisfied: torch in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (2.4.1)
+Requirement already satisfied: torchvision in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robomimic==0.3.0) (0.19.1)
+Requirement already satisfied: absl-py in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (2.5.1)
+Requirement already satisfied: etils[epath] in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (1.13.0)
+Requirement already satisfied: glfw in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (2.10.2)
+Requirement already satisfied: pyopengl in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (3.1.10)
+Requirement already satisfied: llvmlite<0.51,>=0.50.0dev0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from numba>=0.49.1->robosuite==1.4.1) (0.50.0)
+Requirement already satisfied: fsspec in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (2026.9.0)
+Requirement already satisfied: importlib_resources in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (7.1.0)
+Requirement already satisfied: typing_extensions in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.16.0)
+Requirement already satisfied: zipp in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.1.1)
+Requirement already satisfied: contourpy>=1.0.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (4.65.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (26.3)
+Requirement already satisfied: pyparsing>=3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from matplotlib->robomimic==0.3.0) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib->robomimic==0.3.0) (1.17.0)
+Requirement already satisfied: evdev>=1.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from pynput->robosuite==1.4.1) (1.9.3)
+Requirement already satisfied: python-xlib>=0.17 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from pynput->robosuite==1.4.1) (0.33)
+Requirement already satisfied: grpcio<2.0,>=1.74.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from tensorboard->robomimic==0.3.0) (1.84.0)
+Requirement already satisfied: markdown>=2.6.8 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from tensorboard->robomimic==0.3.0) (3.10.3)
+Requirement already satisfied: protobuf<8.0.0,>=6.31.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from tensorboard->robomimic==0.3.0) (7.36.2)
+Requirement already satisfied: setuptools>=41.0.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from tensorboard->robomimic==0.3.0) (69.5.1)
+Requirement already satisfied: tensorboard-data-server<0.8.0,>=0.7.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from tensorboard->robomimic==0.3.0) (0.7.2)
+Requirement already satisfied: werkzeug>=1.0.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from tensorboard->robomimic==0.3.0) (3.1.9)
+Requirement already satisfied: markupsafe>=2.1.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from werkzeug>=1.0.1->tensorboard->robomimic==0.3.0) (3.0.4)
+Requirement already satisfied: filelock in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (4.0.12)
+Requirement already satisfied: sympy in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (1.14.0)
+Requirement already satisfied: networkx in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (3.4.2)
+Requirement already satisfied: jinja2 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (12.1.105)
+Requirement already satisfied: triton==3.0.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from torch->robomimic==0.3.0) (3.0.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch->robomimic==0.3.0) (12.9.86)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from sympy->torch->robomimic==0.3.0) (1.3.0)
+Building wheels for collected packages: robomimic
+  Building wheel for robomimic (pyproject.toml): started
+  Building wheel for robomimic (pyproject.toml): finished with status 'done'
+  Created wheel for robomimic: filename=robomimic-0.3.0-py3-none-any.whl size=251475 sha256=e817e71786ed6b7d7a51a01323e184caaa8d945ec1da50afa143dd3e7ee2f89d
+  Stored in directory: /home/linzhenghong/.cache/pip/wheels/e9/c8/4b/72d6ec0f734a558542bda016e268a24d1d8b9bb746c25a49f1
+Successfully built robomimic
+Installing collected packages: tensorboardX, robosuite, robomimic
+  Attempting uninstall: robosuite
+    Found existing installation: robosuite 1.5.1
+    Uninstalling robosuite-1.5.1:
+      Successfully uninstalled robosuite-1.5.1
+  Attempting uninstall: robomimic
+    Found existing installation: robomimic 0.4.0
+    Uninstalling robomimic-0.4.0:
+      Successfully uninstalled robomimic-0.4.0
+
+Successfully installed robomimic-0.3.0 robosuite-1.4.1 tensorboardX-2.6.5
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Obtaining file:///home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/source/mimicgen
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: mimicgen
+  Building editable for mimicgen (pyproject.toml): started
+  Building editable for mimicgen (pyproject.toml): finished with status 'done'
+  Created wheel for mimicgen: filename=mimicgen-1.0.0-0.editable-py3-none-any.whl size=6295 sha256=a5b898a204649293a3b378671c1454a7164a49f33e399b37d90d2d71550cd571
+  Stored in directory: /tmp/pip-ephem-wheel-cache-77k6sj5y/wheels/52/04/11/068eee1bc68df128d5978349da7624b5cc2d29f0a6f9ee1e11
+Successfully built mimicgen
+Installing collected packages: mimicgen
+Successfully installed mimicgen-1.0.0

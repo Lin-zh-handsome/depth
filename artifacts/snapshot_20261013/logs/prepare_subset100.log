@@ -1,0 +1,14 @@
+StackCube-v1 action 10717
+StackCube-v1 agent_pos 10717
+StackCube-v1 base_camera_depth 10717
+StackCube-v1 base_camera_image 10717
+StackCube-v1 hand_camera_depth 10717
+StackCube-v1 hand_camera_image 10717
+ready StackCube-v1
+PegInsertionSide-v1 action 14997
+PegInsertionSide-v1 agent_pos 14997
+PegInsertionSide-v1 base_camera_depth 14997
+PegInsertionSide-v1 base_camera_image 14997
+PegInsertionSide-v1 hand_camera_depth 14997
+PegInsertionSide-v1 hand_camera_image 14997
+ready PegInsertionSide-v1

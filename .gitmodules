@@ -1,0 +1,11 @@
+[submodule "source/diffusion_policy"]
+	path = source/diffusion_policy
+	url = https://github.com/real-stanford/diffusion_policy.git
+
+[submodule "source/DFormer"]
+	path = source/DFormer
+	url = https://github.com/VCIP-RGBD/DFormer.git
+
+[submodule "source/mimicgen"]
+	path = source/mimicgen
+	url = https://github.com/NVlabs/mimicgen.git

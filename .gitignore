@@ -7,3 +7,8 @@
 /jobs/*.lock
 __pycache__/
 *.pyc
+
+# Dataset contents and multi-GB model weights remain on the research server.
+*.pt
+*.ckpt
+*.pth

@@ -1,0 +1,218 @@
+2 channel Terms of Service accepted
+Retrieving notices: - \ | done
+Source:      /home/linzhenghong/miniconda3/envs/gsc-robodiff
+Destination: /home/linzhenghong/miniconda3/envs/gsc-thesis-eval
+Packages: 32
+Files: 115640
+
+Downloading and Extracting Packages: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/linzhenghong/miniconda3/envs/gsc-thesis-eval
+
+  added / updated specs:
+    - anaconda/pkgs/main/linux-64::_libgcc_mutex==0.1=main
+    - anaconda/pkgs/main/linux-64::_openmp_mutex==5.1=52_gnu
+    - anaconda/pkgs/main/linux-64::bzip2==1.0.8=h5eee18b_6
+    - anaconda/pkgs/main/linux-64::ca-certificates==2026.9.25=h06a4308_0
+    - anaconda/pkgs/main/linux-64::ld_impl_linux-64==2.44=h9e0c5a2_3
+    - anaconda/pkgs/main/linux-64::libexpat==2.8.5=h7354ed3_1
+    - anaconda/pkgs/main/linux-64::libffi==3.4.8=h06d3fd0_3
+    - anaconda/pkgs/main/linux-64::libgcc-ng==15.2.0=h166f726_8
+    - anaconda/pkgs/main/linux-64::libgcc==15.2.0=h69a1729_8
+    - anaconda/pkgs/main/linux-64::libnsl==2.0.0=h5eee18b_0
+    - anaconda/pkgs/main/linux-64::libstdcxx==15.2.0=h39759b7_8
+    - anaconda/pkgs/main/linux-64::libuuid==1.41.5=h5eee18b_0
+    - anaconda/pkgs/main/linux-64::libxcb==1.17.0=h9b100fa_0
+    - anaconda/pkgs/main/linux-64::libzlib==1.3.2=h47b2149_0
+    - anaconda/pkgs/main/linux-64::ncurses==6.6=hfaaeb4e_0
+    - anaconda/pkgs/main/linux-64::openssl==3.5.9=h1b28b03_0
+    - anaconda/pkgs/main/linux-64::packaging==26.3=py310h06a4308_0
+    - anaconda/pkgs/main/linux-64::pthread-stubs==0.3=h47b2149_2
+    - anaconda/pkgs/main/linux-64::python==3.10.22=hd9cb797_0
+    - anaconda/pkgs/main/linux-64::readline==8.3=hc2a1206_0
+    - anaconda/pkgs/main/linux-64::setuptools==83.0.0=py310h06a4308_0
+    - anaconda/pkgs/main/linux-64::sqlite==3.53.4=h795bf6d_0
+    - anaconda/pkgs/main/linux-64::tk==8.6.15=h54e0aa7_0
+    - anaconda/pkgs/main/linux-64::wheel==0.47.0=py310h06a4308_0
+    - anaconda/pkgs/main/linux-64::xorg-libx11==1.8.13=h65de747_0
+    - anaconda/pkgs/main/linux-64::xorg-libxau==1.0.12=h9b100fa_0
+    - anaconda/pkgs/main/linux-64::xorg-libxdmcp==1.1.5=h9b100fa_0
+    - anaconda/pkgs/main/linux-64::xorg-xorgproto==2025.1=h47b2149_0
+    - anaconda/pkgs/main/linux-64::xz==5.8.4=h140a991_0
+    - anaconda/pkgs/main/linux-64::zlib==1.3.2=h47b2149_0
+    - anaconda/pkgs/main/noarch::pip==26.2.1=pyhc872135_0
+    - anaconda/pkgs/main/noarch::tzdata==2026c=he532380_0
+
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      anaconda/pkgs/main/linux-64::_libgcc_mutex-0.1-main 
+  _openmp_mutex      anaconda/pkgs/main/linux-64::_openmp_mutex-5.1-52_gnu 
+  bzip2              anaconda/pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6 
+  ca-certificates    anaconda/pkgs/main/linux-64::ca-certificates-2026.9.25-h06a4308_0 
+  ld_impl_linux-64   anaconda/pkgs/main/linux-64::ld_impl_linux-64-2.44-h9e0c5a2_3 
+  libexpat           anaconda/pkgs/main/linux-64::libexpat-2.8.5-h7354ed3_1 
+  libffi             anaconda/pkgs/main/linux-64::libffi-3.4.8-h06d3fd0_3 
+  libgcc             anaconda/pkgs/main/linux-64::libgcc-15.2.0-h69a1729_8 
+  libgcc-ng          anaconda/pkgs/main/linux-64::libgcc-ng-15.2.0-h166f726_8 
+  libnsl             anaconda/pkgs/main/linux-64::libnsl-2.0.0-h5eee18b_0 
+  libstdcxx          anaconda/pkgs/main/linux-64::libstdcxx-15.2.0-h39759b7_8 
+  libuuid            anaconda/pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0 
+  libxcb             anaconda/pkgs/main/linux-64::libxcb-1.17.0-h9b100fa_0 
+  libzlib            anaconda/pkgs/main/linux-64::libzlib-1.3.2-h47b2149_0 
+  ncurses            anaconda/pkgs/main/linux-64::ncurses-6.6-hfaaeb4e_0 
+  openssl            anaconda/pkgs/main/linux-64::openssl-3.5.9-h1b28b03_0 
+  packaging          anaconda/pkgs/main/linux-64::packaging-26.3-py310h06a4308_0 
+  pip                anaconda/pkgs/main/noarch::pip-26.2.1-pyhc872135_0 
+  pthread-stubs      anaconda/pkgs/main/linux-64::pthread-stubs-0.3-h47b2149_2 
+  python             anaconda/pkgs/main/linux-64::python-3.10.22-hd9cb797_0 
+  readline           anaconda/pkgs/main/linux-64::readline-8.3-hc2a1206_0 
+  setuptools         anaconda/pkgs/main/linux-64::setuptools-83.0.0-py310h06a4308_0 
+  sqlite             anaconda/pkgs/main/linux-64::sqlite-3.53.4-h795bf6d_0 
+  tk                 anaconda/pkgs/main/linux-64::tk-8.6.15-h54e0aa7_0 
+  tzdata             anaconda/pkgs/main/noarch::tzdata-2026c-he532380_0 
+  wheel              anaconda/pkgs/main/linux-64::wheel-0.47.0-py310h06a4308_0 
+  xorg-libx11        anaconda/pkgs/main/linux-64::xorg-libx11-1.8.13-h65de747_0 
+  xorg-libxau        anaconda/pkgs/main/linux-64::xorg-libxau-1.0.12-h9b100fa_0 
+  xorg-libxdmcp      anaconda/pkgs/main/linux-64::xorg-libxdmcp-1.1.5-h9b100fa_0 
+  xorg-xorgproto     anaconda/pkgs/main/linux-64::xorg-xorgproto-2025.1-h47b2149_0 
+  xz                 anaconda/pkgs/main/linux-64::xz-5.8.4-h140a991_0 
+  zlib               anaconda/pkgs/main/linux-64::zlib-1.3.2-h47b2149_0 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: - \ | done
+Verifying transaction: - \ | / - \ | / - \ | / - done
+Executing transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+#
+# To activate this environment, use
+#
+#     $ conda activate gsc-thesis-eval
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting mani_skill==3.0.1
+  Using cached mani_skill-3.0.1-py3-none-any.whl (101.7 MB)
+Requirement already satisfied: numpy>=1.22 in /home/linzhenghong/.local/lib/python3.10/site-packages (from mani_skill==3.0.1) (1.26.4)
+Requirement already satisfied: scipy in /home/linzhenghong/.local/lib/python3.10/site-packages (from mani_skill==3.0.1) (1.15.3)
+Collecting dacite (from mani_skill==3.0.1)
+  Using cached dacite-1.9.2-py3-none-any.whl (16 kB)
+Requirement already satisfied: gymnasium>=0.29.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (0.29.1)
+Requirement already satisfied: h5py in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (3.16.0)
+Requirement already satisfied: pyyaml in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (6.0.3)
+Requirement already satisfied: tqdm in /home/linzhenghong/.local/lib/python3.10/site-packages (from mani_skill==3.0.1) (4.67.3)
+Collecting GitPython (from mani_skill==3.0.1)
+  Using cached gitpython-3.2.0-py3-none-any.whl (228 kB)
+Collecting tabulate (from mani_skill==3.0.1)
+  Using cached tabulate-0.10.0-py3-none-any.whl (39 kB)
+Requirement already satisfied: transforms3d in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (0.4.2)
+Requirement already satisfied: trimesh in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (4.4.3)
+Requirement already satisfied: imageio in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (2.34.2)
+Collecting mplib==0.1.1 (from mani_skill==3.0.1)
+  Using cached mplib-0.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)
+Requirement already satisfied: IPython in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (8.39.0)
+Collecting pytorch_kinematics==0.7.6 (from mani_skill==3.0.1)
+  Using cached pytorch_kinematics-0.7.6-py3-none-any.whl (60 kB)
+Collecting defusedxml (from mani_skill==3.0.1)
+  Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Collecting nvidia-ml-py (from mani_skill==3.0.1)
+  Using cached nvidia_ml_py-13.615.71-py3-none-any.whl (58 kB)
+Collecting tyro>=0.8.5 (from mani_skill==3.0.1)
+  Using cached tyro-1.0.16-py3-none-any.whl (216 kB)
+Requirement already satisfied: huggingface_hub in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mani_skill==3.0.1) (0.20.3)
+Collecting sapien>=3.0.0 (from mani_skill==3.0.1)
+  Using cached sapien-3.0.3-cp310-cp310-manylinux_2_28_x86_64.whl (51.3 MB)
+Requirement already satisfied: toppra>=0.4.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from mplib==0.1.1->mani_skill==3.0.1) (0.6.10)
+Requirement already satisfied: absl-py in /home/linzhenghong/.local/lib/python3.10/site-packages (from pytorch_kinematics==0.7.6->mani_skill==3.0.1) (2.4.0)
+Requirement already satisfied: lxml in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from pytorch_kinematics==0.7.6->mani_skill==3.0.1) (6.1.3)
+Requirement already satisfied: torch in /home/linzhenghong/.local/lib/python3.10/site-packages (from pytorch_kinematics==0.7.6->mani_skill==3.0.1) (2.6.0)
+Requirement already satisfied: matplotlib in /home/linzhenghong/.local/lib/python3.10/site-packages (from pytorch_kinematics==0.7.6->mani_skill==3.0.1) (3.10.9)
+Collecting pytorch-seed (from pytorch_kinematics==0.7.6->mani_skill==3.0.1)
+  Using cached pytorch_seed-0.2.0-py3-none-any.whl (4.2 kB)
+Collecting arm-pytorch-utilities (from pytorch_kinematics==0.7.6->mani_skill==3.0.1)
+  Using cached arm_pytorch_utilities-0.5.0-py3-none-any.whl (41 kB)
+Requirement already satisfied: cloudpickle>=1.2.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from gymnasium>=0.29.1->mani_skill==3.0.1) (3.1.2)
+Requirement already satisfied: typing-extensions>=4.3.0 in /home/linzhenghong/.local/lib/python3.10/site-packages (from gymnasium>=0.29.1->mani_skill==3.0.1) (4.15.0)
+Requirement already satisfied: farama-notifications>=0.0.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from gymnasium>=0.29.1->mani_skill==3.0.1) (0.0.6)
+Requirement already satisfied: requests>=2.22 in /home/linzhenghong/.local/lib/python3.10/site-packages (from sapien>=3.0.0->mani_skill==3.0.1) (2.33.1)
+Requirement already satisfied: networkx in /home/linzhenghong/.local/lib/python3.10/site-packages (from sapien>=3.0.0->mani_skill==3.0.1) (3.4.2)
+Requirement already satisfied: pyperclip in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from sapien>=3.0.0->mani_skill==3.0.1) (1.11.0)
+Requirement already satisfied: opencv-python>=4.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from sapien>=3.0.0->mani_skill==3.0.1) (4.11.0.86)
+Requirement already satisfied: setuptools in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from sapien>=3.0.0->mani_skill==3.0.1) (69.5.1)
+Requirement already satisfied: importlib_resources in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from sapien>=3.0.0->mani_skill==3.0.1) (7.1.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/linzhenghong/.local/lib/python3.10/site-packages (from requests>=2.22->sapien>=3.0.0->mani_skill==3.0.1) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from requests>=2.22->sapien>=3.0.0->mani_skill==3.0.1) (3.20)
+Requirement already satisfied: urllib3<3,>=1.26 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from requests>=2.22->sapien>=3.0.0->mani_skill==3.0.1) (2.8.0)
+Requirement already satisfied: certifi>=2023.5.7 in /home/linzhenghong/.local/lib/python3.10/site-packages (from requests>=2.22->sapien>=3.0.0->mani_skill==3.0.1) (2026.4.22)
+Collecting docstring-parser>=0.16 (from tyro>=0.8.5->mani_skill==3.0.1)
+  Using cached docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+Collecting typeguard>=4.0.0 (from tyro>=0.8.5->mani_skill==3.0.1)
+  Using cached typeguard-4.6.0-py3-none-any.whl (36 kB)
+Collecting gitdb<5,>=4.0.1 (from GitPython->mani_skill==3.0.1)
+  Using cached gitdb-4.0.12-py3-none-any.whl (62 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->GitPython->mani_skill==3.0.1)
+  Using cached smmap-5.0.3-py3-none-any.whl (24 kB)
+Requirement already satisfied: filelock in /home/linzhenghong/.local/lib/python3.10/site-packages (from huggingface_hub->mani_skill==3.0.1) (3.29.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /home/linzhenghong/.local/lib/python3.10/site-packages (from huggingface_hub->mani_skill==3.0.1) (2024.3.1)
+Requirement already satisfied: packaging>=20.9 in /home/linzhenghong/.local/lib/python3.10/site-packages (from huggingface_hub->mani_skill==3.0.1) (26.2)
+Requirement already satisfied: pillow>=8.3.2 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from imageio->mani_skill==3.0.1) (11.3.0)
+Requirement already satisfied: imageio-ffmpeg in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from imageio[ffmpeg]->mani_skill==3.0.1) (0.6.0)
+Requirement already satisfied: psutil in /home/linzhenghong/.local/lib/python3.10/site-packages (from imageio[ffmpeg]->mani_skill==3.0.1) (7.2.2)
+Requirement already satisfied: decorator in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (5.3.1)
+Requirement already satisfied: exceptiongroup in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (1.3.1)
+Requirement already satisfied: jedi>=0.16 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (0.20.0)
+Requirement already satisfied: matplotlib-inline in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (0.2.2)
+Requirement already satisfied: pexpect>4.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (4.9.0)
+Requirement already satisfied: prompt_toolkit<3.1.0,>=3.0.41 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (3.0.53)
+Requirement already satisfied: pygments>=2.4.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (2.21.0)
+Requirement already satisfied: stack_data in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (0.6.3)
+Requirement already satisfied: traitlets>=5.13.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from IPython->mani_skill==3.0.1) (5.16.1)
+Requirement already satisfied: wcwidth>=0.1.4 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from prompt_toolkit<3.1.0,>=3.0.41->IPython->mani_skill==3.0.1) (0.9.2)
+Requirement already satisfied: parso<0.9.0,>=0.8.6 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from jedi>=0.16->IPython->mani_skill==3.0.1) (0.8.7)
+Requirement already satisfied: ptyprocess>=0.5 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from pexpect>4.3->IPython->mani_skill==3.0.1) (0.7.0)
+Requirement already satisfied: contourpy>=1.0.1 in /home/linzhenghong/.local/lib/python3.10/site-packages (from matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in /home/linzhenghong/.local/lib/python3.10/site-packages (from matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /home/linzhenghong/.local/lib/python3.10/site-packages (from matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /home/linzhenghong/.local/lib/python3.10/site-packages (from matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (1.5.0)
+Requirement already satisfied: pyparsing>=3 in /home/linzhenghong/.local/lib/python3.10/site-packages (from matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (3.3.2)
+Requirement already satisfied: python-dateutil>=2.7 in /home/linzhenghong/.local/lib/python3.10/site-packages (from matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (1.17.0)
+Requirement already satisfied: executing>=1.2.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from stack_data->IPython->mani_skill==3.0.1) (2.2.1)
+Requirement already satisfied: asttokens>=2.1.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from stack_data->IPython->mani_skill==3.0.1) (3.0.2)
+Requirement already satisfied: pure-eval in /home/linzhenghong/miniconda3/envs/gsc-thesis-eval/lib/python3.10/site-packages (from stack_data->IPython->mani_skill==3.0.1) (0.2.4)
+Requirement already satisfied: jinja2 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.4.127)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.4.5.8)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.3.1.170)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.4.127)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (12.4.127)
+Requirement already satisfied: triton==3.2.0 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in /home/linzhenghong/.local/lib/python3.10/site-packages (from torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/linzhenghong/.local/lib/python3.10/site-packages (from sympy==1.13.1->torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/linzhenghong/.local/lib/python3.10/site-packages (from jinja2->torch->pytorch_kinematics==0.7.6->mani_skill==3.0.1) (3.0.3)
+Installing collected packages: nvidia-ml-py, typeguard, tabulate, smmap, docstring-parser, defusedxml, dacite, tyro, sapien, gitdb, GitPython, pytorch-seed, mplib, arm-pytorch-utilities, pytorch_kinematics, mani_skill
+  Attempting uninstall: sapien
+    Found existing installation: sapien 3.0.0b1
+    Uninstalling sapien-3.0.0b1:
+      Successfully uninstalled sapien-3.0.0b1
+  Attempting uninstall: mplib
+    Found existing installation: mplib 0.2.1
+    Uninstalling mplib-0.2.1:
+      Successfully uninstalled mplib-0.2.1
+
+Successfully installed GitPython-3.2.0 arm-pytorch-utilities-0.5.0 dacite-1.9.2 defusedxml-0.7.1 docstring-parser-0.18.0 gitdb-4.0.12 mani_skill-3.0.1 mplib-0.1.1 nvidia-ml-py-13.615.71 pytorch-seed-0.2.0 pytorch_kinematics-0.7.6 sapien-3.0.3 smmap-5.0.3 tabulate-0.10.0 typeguard-4.6.0 tyro-1.0.16
+environment_ready

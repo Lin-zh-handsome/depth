@@ -1,0 +1,66 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: robosuite==1.4.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (1.4.1)
+Requirement already satisfied: numpy>=1.13.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (1.26.4)
+Requirement already satisfied: numba>=0.49.1 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (0.68.0)
+Requirement already satisfied: scipy>=1.2.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (1.15.3)
+Requirement already satisfied: mujoco>=2.3.0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (3.2.3)
+Requirement already satisfied: Pillow in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (11.3.0)
+Requirement already satisfied: opencv-python in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (4.11.0.86)
+Requirement already satisfied: pynput in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (1.8.2)
+Requirement already satisfied: termcolor in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from robosuite==1.4.1) (3.3.0)
+Requirement already satisfied: absl-py in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (2.5.1)
+Requirement already satisfied: etils[epath] in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (1.13.0)
+Requirement already satisfied: glfw in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (2.10.2)
+Requirement already satisfied: pyopengl in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (3.1.10)
+Requirement already satisfied: llvmlite<0.51,>=0.50.0dev0 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from numba>=0.49.1->robosuite==1.4.1) (0.50.0)
+Requirement already satisfied: fsspec in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (2026.9.0)
+Requirement already satisfied: importlib_resources in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (7.1.0)
+Requirement already satisfied: typing_extensions in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.16.0)
+Requirement already satisfied: zipp in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.1.1)
+Requirement already satisfied: six in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from pynput->robosuite==1.4.1) (1.17.0)
+Requirement already satisfied: evdev>=1.3 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from pynput->robosuite==1.4.1) (1.9.3)
+Requirement already satisfied: python-xlib>=0.17 in /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages (from pynput->robosuite==1.4.1) (0.33)
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Obtaining file:///home/linzhenghong/project/gsc_dp_chapter3/third_party/robomimic_v0_4
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: robomimic
+  Building editable for robomimic (pyproject.toml): started
+  Building editable for robomimic (pyproject.toml): finished with status 'done'
+  Created wheel for robomimic: filename=robomimic-0.4.0-0.editable-py3-none-any.whl size=6085 sha256=9aa49d7c944fa9ce91563c4dc94fe01cbd06542db6a274b67db8ce797e19a9ba
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9xwgn1vf/wheels/2d/b3/8d/f32b0e9d9b3cb5b9095214a5d1dd1f131d7f400c73a97ffbf5
+Successfully built robomimic
+Installing collected packages: robomimic
+  Attempting uninstall: robomimic
+    Found existing installation: robomimic 0.3.0
+    Uninstalling robomimic-0.3.0:
+      Successfully uninstalled robomimic-0.3.0
+Successfully installed robomimic-0.4.0
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Obtaining file:///home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/source/mimicgen
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: mimicgen
+  Building editable for mimicgen (pyproject.toml): started
+  Building editable for mimicgen (pyproject.toml): finished with status 'done'
+  Created wheel for mimicgen: filename=mimicgen-1.0.0-0.editable-py3-none-any.whl size=6295 sha256=a087e87b2946a305088ab50943852dba976e1b355b916d0a774491141e1884a7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-b1jqgn1r/wheels/52/04/11/068eee1bc68df128d5978349da7624b5cc2d29f0a6f9ee1e11
+Successfully built mimicgen
+Installing collected packages: mimicgen
+  Attempting uninstall: mimicgen
+    Found existing installation: mimicgen 1.0.0
+    Uninstalling mimicgen-1.0.0:
+      Successfully uninstalled mimicgen-1.0.0
+Successfully installed mimicgen-1.0.0
