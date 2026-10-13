@@ -28,6 +28,6 @@ git clone --recurse-submodules https://github.com/Lin-zh-handsome/depth.git
 
 数据集原文件及转换后的训练数据位于服务器 `data/raw/`、`data/processed/`，按用户要求不上传。来源、示范编号、单位及控制模式保留在数据清单和 `docs/protocol_sources.md`。
 
-单个完整训练检查点约 5.3 GB，超过普通 GitHub Git 单文件限制，权重继续保留在服务器。实际保存点和对应元数据记录在 `artifacts/snapshot_20261013/checkpoint_catalog.json`，本仓库没有可直接下载的训练权重。
+按用户要求，不上传任何模型权重。单个完整训练检查点约 5.3 GB，权重继续保留在服务器。实际保存点和对应元数据记录在 `artifacts/snapshot_20261013/checkpoint_catalog.json`，本仓库没有可直接下载的训练权重。
 
 时序注意力任务及数据效率等后续实验的完成情况以规划文件和真实产物为准。未产生的论文视频、图或最终统计不以示意结果代替。

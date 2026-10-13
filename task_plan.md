@@ -64,3 +64,8 @@ Status: pending
 Phase A协议/资源/官方源码/图表契约落盘；Phase B两ManiSkill固定100条子集完成；Phase C原版E0及官方GSA迁移代码已部署；Phase D两ManiSkill E0 seed0真实训练启动，首批>1000 updates。队列162项，48项核心/扩展ManiSkill配置已具备条件。MimicGen Threading/Coffee原始文件下载完成，Stack Three国内源中断待断点续传。
 
 新增任务G-T部署状态：代码、两benchmark适配和契约已落盘，早期/最终保存点自动独立分析已入调度逻辑；尚未产生新协议E6时序MP4/PNG。该项不可标为真实结果完成。
+
+
+## GitHub 发布追加任务
+Status: complete
+仓库 https://github.com/Lin-zh-handsome/depth，main分支。当前工程、规划及真实结果快照已发布；数据集和模型权重不上传。训练和评测继续在原服务器单卡队列运行。
