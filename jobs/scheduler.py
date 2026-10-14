@@ -35,12 +35,10 @@ def snapshot(db):
     os.replace(tmp,target)
 
 def register_temporal(db):
-    for r in db.execute("SELECT * FROM eval_jobs WHERE status='finished' AND method='e6' AND ((benchmark='maniskill' AND checkpoint_step IN (5000,100000)) OR (benchmark='mimicgen' AND checkpoint_step IN (5,250)))").fetchall():
-        count=db.execute("SELECT count(*) FROM eval_jobs WHERE benchmark=? AND task=? AND seed=? AND checkpoint_step=? AND method IN ('e0','e3','e6') AND status='finished'",
-            (r['benchmark'],r['task'],r['seed'],r['checkpoint_step'])).fetchone()[0]
-        if count==3:
-            db.execute("INSERT OR IGNORE INTO jobs(kind,benchmark,task,method,seed,checkpoint_step,prerequisite) VALUES('analysis',?,?,'paired_e0_e3_e6',?,?,NULL)",
-                (r['benchmark'],r['task'],r['seed'],r['checkpoint_step']))
+    groups=db.execute("SELECT benchmark,task,seed,count(*) n FROM eval_jobs WHERE status='finished' GROUP BY benchmark,task,seed HAVING n=15").fetchall()
+    for r in groups:
+        db.execute("INSERT OR IGNORE INTO jobs(kind,benchmark,task,method,seed,checkpoint_step,prerequisite) VALUES('analysis',?,?,'paired_best',?,?,NULL)",
+            (r['benchmark'],r['task'],r['seed'],250 if r['benchmark']=='mimicgen' else 100000))
     db.commit()
 
 def main():
@@ -54,7 +52,7 @@ def main():
         OPENBLAS_NUM_THREADS='2',NUMEXPR_NUM_THREADS='2',PYTHONNOUSERSITE='1',
         PYTHONPATH=str(ROOT)+':'+str(ROOT/'source/diffusion_policy'),PYTHONUNBUFFERED='1')
     db=connect();children={}
-    seen_manifests=set()
+    seen_manifests={}
     # Recover statuses after dispatcher interruption, preserving live workers.
     for r in db.execute("SELECT * FROM jobs WHERE status='running'").fetchall():
         if not pid_alive(r['pid']):
@@ -66,7 +64,7 @@ def main():
     db.commit()
     print('single GPU scheduler active',GPU,'pid',os.getpid(),flush=True)
     while True:
-        manifests=set((ROOT/'data/manifests').glob('*.json'))
+        manifests={p:(p.stat().st_mtime_ns,p.stat().st_size) for p in (ROOT/'data/manifests').glob('*.json')}
         if manifests!=seen_manifests:
             subprocess.run([TRAIN_PY,str(ROOT/'generate_run_configs.py')],cwd=ROOT,env=env,check=True)
             seen_manifests=manifests
@@ -87,10 +85,10 @@ def main():
             retry=code!=0 and r['attempts']<r['max_attempts']
             status='finished' if code==0 else 'queued' if retry else 'failed'
             db.execute('UPDATE jobs SET status=?,finished=?,exit_code=?,error=? WHERE id=?',
-                (status,now(),code,None if code==0 else f'worker exit {code}; see logs/ch3_job_{id}.log',id))
+                (status,now(),code,None if code==0 else f'worker exit {code}; see logs/final_job_{id}.log',id))
             db.commit();del children[id]
             print('worker completed',id,status,code,flush=True)
-            record_progress(f"Job {id} {r['kind']} {r['task']}/{r['method']}/seed_{r['seed']} {status}, exit={code}; logs/ch3_job_{id}.log")
+            record_progress(f"Job {id} {r['kind']} {r['task']}/{r['method']}/seed_{r['seed']} {status}, exit={code}; logs/final_job_{id}.log")
         live=db.execute("SELECT * FROM jobs WHERE status='running'").fetchall()
         ntrain=sum(r['kind']=='train' for r in live);neval=sum(r['kind']=='eval' for r in live)
         nmimic=sum(r['kind']=='train' and r['benchmark']=='mimicgen' for r in live)
@@ -121,13 +119,14 @@ def main():
                     else:cmd=[MIMIC_PY if r['benchmark']=='mimicgen' else EVAL_PY,
                         str(ROOT/'analysis/dispatch_temporal.py'),'--benchmark',r['benchmark'],
                         '--task',r['task'],'--seed',str(r['seed']),'--step',str(r['checkpoint_step'])]
-                    log=(ROOT/'logs'/f"ch3_job_{r['id']}.log").open('a')
+                    log=(ROOT/'logs'/f"final_job_{r['id']}.log").open('a')
                     process=subprocess.Popen(cmd,cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);log.close()
                     children[r['id']]=process
                     db.execute("UPDATE jobs SET status='running',pid=?,started=?,attempts=attempts+1,error=NULL WHERE id=?",(process.pid,now(),r['id']));db.commit()
                     print('launched',r['id'],kind,r['task'],r['method'],r['seed'],'pid',process.pid,'freeMiB',free,flush=True)
-                    record_progress(f"Job {r['id']} {kind} {r['task']}/{r['method']}/seed_{r['seed']}/point_{r['checkpoint_step']} launched PID={process.pid}, GPU={GPU}, freeMiB={free}; logs/ch3_job_{r['id']}.log")
+                    record_progress(f"Job {r['id']} {kind} {r['task']}/{r['method']}/seed_{r['seed']}/point_{r['checkpoint_step']} launched PID={process.pid}, GPU={GPU}, freeMiB={free}; logs/final_job_{r['id']}.log")
         snapshot(db)
+        subprocess.run([TRAIN_PY,str(ROOT/'jobs/maintain_checkpoints.py')],cwd=ROOT,env=env,stdout=subprocess.DEVNULL)
         try:
             subprocess.run([TRAIN_PY,str(ROOT/'jobs/export_ch3.py')],cwd=ROOT,env=env,check=True,stdout=subprocess.DEVNULL)
         except Exception as exc:

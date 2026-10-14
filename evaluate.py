@@ -9,6 +9,9 @@ ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'source/diffusion_policy'))
 import numpy as np
 import torch
+from importlib.metadata import version
+from gsc_dp.checkpoints import atomic_json,same_training_config
+from jobs.registry import connect
 from gsc_dp.policy_factory import create
 from gsc_dp.analysis_env import create_analysis_env
 
@@ -42,7 +45,11 @@ def main():
     payload=torch.load(ckpt,map_location='cpu',weights_only=False);cfg=payload['config']
     policy=create(cfg);policy.load_state_dict(payload['ema_model']);policy.to('cuda:0').eval()
     run=ROOT/'runs'/cfg['benchmark']/cfg['task']/cfg['method']/f"seed_{cfg['seed']}"
+    locked=json.loads((run/'config_resolved.json').read_text())
+    if not same_training_config(cfg,locked):raise ValueError('evaluation scientific configuration mismatch')
+    cfg=locked
     coordinate=payload.get('checkpoint_step',payload['optimizer_updates'])
+    if coordinate not in cfg['eval_positions']:raise ValueError('evaluation outside five prescribed positions')
     tag='epoch' if cfg['benchmark']=='mimicgen' else 'update'
     output=run/'eval'/f"{tag}_{coordinate:06d}"
     output.mkdir(parents=True,exist_ok=True)
@@ -75,6 +82,9 @@ def main():
                 traj=output/f'reset_{reset}_trajectory.json'
                 traj.write_text(json.dumps(trajectory))
                 record=dict(benchmark=cfg['benchmark'],task=cfg['task'],method=cfg['method'],seed=cfg['seed'],
+                    eval_index=cfg['eval_positions'].index(coordinate)+1,progress=coordinate,
+                    env_version=version('robosuite' if cfg['benchmark']=='mimicgen' else 'mani_skill'),control_mode=cfg['control_mode'],
+                    checkpoint_sha=None,checkpoint_provenance='actual path/config/code revision; no hashing per user instruction',
                     reset_id=reset,checkpoint_step=coordinate,optimizer_updates=payload['optimizer_updates'],checkpoint_path=str(ckpt),
                     code_revision=payload['code_revision'],dataset_manifest=cfg['dataset_manifest'],
                     camera=cfg['cameras'],horizon=cfg['horizon'],actual_steps=steps,
@@ -89,7 +99,10 @@ def main():
     summary=dict(meta,success_count=numerator,n_episodes=denominator,success_rate=numerator/denominator,
         success_definition='official task success over rollout (original DP max reward convention)' if cfg['benchmark']=='mimicgen' else 'success_at_end',success_once_count=sum(r['success_once'] for r in completed.values()),
         episodes_path=str(path),latency_status='unavailable: this concurrent rollout is not an isolated timing measurement')
-    (output/'eval_summary.json').write_text(json.dumps(summary,indent=2))
+    atomic_json(output/'eval_summary.json',summary)
+    db=connect()
+    db.execute("UPDATE jobs SET status='finished',error=NULL WHERE kind='eval' AND benchmark=? AND task=? AND method=? AND seed=? AND checkpoint_step=?",(cfg['benchmark'],cfg['task'],cfg['method'],cfg['seed'],coordinate))
+    db.commit();db.close()
     print(json.dumps(summary),flush=True)
 
 if __name__=='__main__':main()

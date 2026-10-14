@@ -1,52 +1,25 @@
-# 第三章 GSC-DP：文件化实验总计划
+# 研究计划｜仅硕士论文第三章GSC-DP
 
-> 2026-10-14 初始化。此计划是执行合同，不表示服务器上的任何任务已启动。由 Codex 使用其实际已安装的 `planning-with-files` 技能读取和持续维护。
+本文件为Codex可持续更新的planning-with-files合同。2026-10-14更新：**取代旧1710次eval/Last10SR规则**。预生成状态不表示服务器已启动作业。
 
-## 固定范围与验收
+## 固定目标
 
-- 仅第三章，唯一正式网络：M0 原始 RGB CNN-DP，M1 原始 CNN-DP+GSA，M2 在 M1 基础上+Geometry-associated TokenLearner。
-- 仅五项任务：MimicGen Core `stack_three_d1`、`threading_d2`、`coffee_d2`；ManiSkill3 `StackCube-v1`、`PegInsertionSide-v1`。
-- 3 个独立种子 `[0, 1, 2]`，共 45 个唯一训练 run；按已确定协议共 1,710 个 checkpoint eval、103,500 个仿真 episodes（全部完成且没有可复用结果时）。
-- 数据预处理、算法定义、官方基线不变、模型 checkpoint 独立评测、3-seed 成功率统计、真实注意力和 Token 权重可视化，详见 `EXPERIMENT_SPEC.md`。
-- 完成的定义：所有可用 run 的逐 seed BestSR / Last10SR、每次 checkpoint rollout 原始 episode、真实表图和可追溯脚本；不以队列创建代替完成。
-- 不做：计算效率（FLOPs/参数量/推理时延/显存）对比；附加注意力、编码器、RGB-D baseline、无 GSA Token、数据效率、深度扰动或第四章等训练组；不重训 ACT/DP3/EquiDiff。
+- 仅三网络M0、M1、M2；两个Benchmark五任务；seed 0/1/2。
+- 45个独立训练run、每run5次周期性rollout，共225个eval点、15750个episodes（无复用的满额理论值）。
+- MimicGen每任务200 demos，250 dataset epochs；ManiSkill每任务100 demos，100000 optimizer updates。
+- 主结果为`Best-of-5`：各seed5个checkpoint取最大SR，再跨3种子算mean±sample_std。
+- 只做SR对比、递进式模块增益、5点评测曲线、GSA/TokenLearner真实可视化及执行案例；不做效率、编码器、注意力变体、数据效率、第四章。
+- checkpoint best推理权重一份/run + latest训练状态一份/活跃run + 有界短生命周期eval临时权重；不堆积历史模型。
 
-## 全部任务一次性入队（以下为工作项而非需依次完成的阶段）
+## 一次性创建全部任务，不设置人工审批阶段
 
-- [ ] **A / 现存资产接管**：读取旧规划文件、服务器仓库/data/checkpoints/eval/logs，建立每项运行的配置、数据 hash 与 checkpoint SHA；在 `experiments/ch3/run_manifest.csv` 和 `eval_manifest.csv` 中标出 DONE/RUNNING/MISSING/INVALID，复用合法结果；不得重启合法的在训进程。
-- [ ] **B / 模型与数据就绪**：忠实保留 M0 CNN-DP；对齐 GSA 与 TokenLearner 的实现、RGB-D、多相机时序、Depth 单位、动作与观测；做最少必要的真实数值/梯度/独立 checkpoint 加载检查，随后直接正式运行。
-- [ ] **C / 训练调度**：一次性入队全部 45 个任务，调度优先 `M2 > M1 > M0`、任务顺序 `threading_d2 > PegInsertionSide-v1 > stack_three_d1 > coffee_d2 > StackCube-v1`；资源足够并行，不设置先后完成门槛；可恢复任务日志。
-- [ ] **D / 异步评测**：每个有效 checkpoint 写盘后即可排队独立闭环 rollout，不等待整模型训练完；固定同任务评测 reset manifest；原子写盘与去重。
-- [ ] **E / 成绩统计**：计算每 seed 各 checkpoint SR、BestSR、按时间最后十个 checkpoint 的平均 Last10SR、3-seed mean±sample std、M1-M0 与 M2-M1 递进增益。
-- [ ] **F / 可视化**：M1/M2 的真实 GSA attention、TokenLearner 8 个空间权重、逐时刻执行图/MP4、同初态对照成功/失败关键帧；只用已训练模型，不追加训练组。
-- [ ] **G / 论文交付**：`thesis/chapter3/` 下自动导出实验协议、五任务成功率表、曲线、模块递进表、真实注意力/Token 可视化、视频、中文说明；文献外部数字明确单列 Published。
-- [ ] **H / 持久化与恢复**：维护本文件、`findings.md`、`progress.md`、manifest、异常及准确恢复命令；说明服务器进程 PID、GPU 与日志；队列状态不能凭空更新。
+- [ ] A 接管当前H200仓库、正在运行的45run候选与旧eval队列，收集数据/配置/版本/日志hash，标注历史可复用结果。禁止把预生成状态当实际情况。
+- [ ] B 使训练入口与固定预算、指定5个评测时点一致；GSA及关联TokenLearner实现完全吻合CNN-DP骨干；Depth数据/动作控制模式统一。
+- [ ] C 取消旧周期性快照逻辑，实现225条新eval manifest、独立加载磁盘快照的rollout、可恢复队列、最佳权重安全更新与快照回收。
+- [ ] D H200资源可用时优先M2、并行M1/M0；全部45run一次性入队；不重复合法的已完成训练。
+- [ ] E 完成225个真实评测点或复用合规同位置旧数据，保留每个episode完整记录；汇总Best-of-5的三种子mean±std，不生成Last10。
+- [ ] F 导出五任务表、5点SR曲线、真实GSA/TokenLearner热图、操作关键帧与MP4，记录其checkpoint SHA。
+- [ ] G 审计并安全回收旧已失效checkpoint，维护安全清理清单、磁盘占用、PID/GPU与可恢复命令。
+- [ ] H 将真实结果同步写入`thesis/chapter3/`，填补图表和中文分析。未完成项目保持TODO，不能虚构。
 
-## 优先级说明
-
-所有 A–H 工作都必须执行，优先级仅影响有限资源下抢先获取本方法 M2 及 M1/M0 受控成功率的顺序，不表示延后其他任务立项；模型代码准备与下载可并行推进，训练/评测/绘图可以同时运行。
-
-## 训练/评测协议
-
-| Benchmark | Task | Demos | Budget | Save/eval every | Episodes | Max horizon |
-|---|---|---:|---|---|---:|---:|
-| MimicGen Core | stack_three_d1 | 200 | 250 epochs | 5 epochs | 50 | 400 |
-| MimicGen Core | threading_d2 | 200 | 250 epochs | 5 epochs | 50 | 400 |
-| MimicGen Core | coffee_d2 | 200 | 250 epochs | 5 epochs | 50 | 400 |
-| ManiSkill 3 | StackCube-v1 | 100 | 100,000 updates | 5,000 updates | 100 | 200 |
-| ManiSkill 3 | PegInsertionSide-v1 | 100 | 100,000 updates | 5,000 updates | 100 | 300 |
-
-**禁止**因 250 epochs 历时较久而自行减少训练量、评测频率、种子或单 checkpoint episodes。可优化数据缓存、实际运行并行、使用已有结果。
-
-## 固定论文表图
-
-- 表：任务协议；M0/M1/M2 的五任务 BestSR；五任务 Last10SR；可选文献参考表（标明来源与协议差异）。
-- 图：三模型关键结构图；五任务 checkpoint SR 曲线；真实 GSA Query 级空间权重；M2 八个 TokenLearner 分配图 `(u,v,d,rho)`；机器人执行阶段的图/视频和同 reset 成功/失败案例。
-- 没有真实数据不填数字。禁止效率对比表。
-
-## 项目状态
-
-2026-10-14 当前状态：**本地仅创建了执行文件和初始 manifest；服务器状态尚未接管，所有 run/eval 都标记 `PENDING_UNVERIFIED`。** Codex 首次工作必须先扫描并纠正这批状态，而不是假定全部尚未训练。
-
-## 实际接管状态
-A in_progress：已核实服务器、数据与旧暂停状态。B in_progress：MimicGen数据可复用；ManiSkill需官方动作转换。C/D in_progress：部署45-run/1710-eval专用队列；正式启动待记录真实PID。E/F/G pending真实结果。H in_progress。
+执行优先级仅用于队列排序，不代表分阶段开工。所有报告都需要区分PENDING与DONE。

@@ -2,6 +2,9 @@
 import csv,json
 from pathlib import Path
 from registry import ROOT,connect,initialize
+import sys
+sys.path.insert(0,str(ROOT))
+from gsc_dp.checkpoints import same_training_config
 
 def main():
     initialize();db=connect()
@@ -15,8 +18,9 @@ def main():
         frozen=run/'config_resolved.json'
         if not cfg_path.exists():continue
         cfg=json.loads(cfg_path.read_text())
-        if frozen.exists() and json.loads(frozen.read_text())!=cfg:
+        if frozen.exists() and not same_training_config(json.loads(frozen.read_text()),cfg):
             db.execute("UPDATE jobs SET status='failed',prerequisite='frozen configuration mismatch',error='cannot merge or resume incompatible configuration' WHERE id=?",(r['id'],));continue
+        if frozen.exists():frozen.write_text(json.dumps(cfg,indent=2))
         complete=run/'training_complete.json'
         if complete.exists():
             x=json.loads(complete.read_text())
@@ -25,7 +29,7 @@ def main():
                 db.execute("UPDATE jobs SET status='finished',error=NULL WHERE id=?",(r['id'],))
         for meta in (run/'checkpoints').glob('*.json'):
             m=json.loads(meta.read_text());cp=meta.with_suffix('.pt');point=m['checkpoint_step']
-            if not cp.exists() or m.get('write_status')!='atomic_complete':continue
+            if point not in cfg['eval_positions'] or not cp.exists() or m.get('write_status')!='atomic_complete':continue
             if any(m[k]!=cfg[k] for k in ['benchmark','task','method','seed']):continue
             db.execute("UPDATE jobs SET checkpoint_path=?,config_path=?,prerequisite=NULL WHERE kind='eval' AND benchmark=? AND task=? AND method=? AND seed=? AND checkpoint_step=?",
                 (str(cp),str(frozen),r['benchmark'],r['task'],r['method'],r['seed'],point))

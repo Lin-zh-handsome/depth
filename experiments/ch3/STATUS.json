@@ -1,19 +1,18 @@
 {
-  "timestamp": "2026-10-14T03:34:45.067171+00:00",
+  "timestamp": "2026-10-14T04:06:02.257805+00:00",
   "counts": {
     "train": {
       "queued": 45
     },
     "eval": {
-      "finished": 13,
-      "queued": 1697
+      "queued": 225
     },
     "analysis": {}
   },
-  "scheduled_checkpoint_files": 86,
-  "complete_rollout_episodes": 650,
+  "scheduled_checkpoint_files": 8,
+  "complete_rollout_episodes": 0,
   "running": [],
   "gpu": "physical GPU2 only",
   "remaining_gpu_hours": "UNKNOWN: no stable per-task throughput estimate",
-  "resume_command": "cd /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1 && PYTHONNOUSERSITE=1 nohup /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python jobs/scheduler.py > logs/ch3_scheduler.log 2>&1 &"
+  "resume_command": "cd /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1 && PYTHONNOUSERSITE=1 nohup /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python jobs/scheduler.py > logs/final_scheduler.log 2>&1 &"
 }

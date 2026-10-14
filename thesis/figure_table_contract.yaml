@@ -41,25 +41,6 @@
       "status": "pending_real_results"
     },
     {
-      "id": "Table 3-3",
-      "name": "last10_sr",
-      "script": "jobs/export_ch3.py",
-      "methods": [
-        "e0",
-        "e3",
-        "e6"
-      ],
-      "output": "thesis/chapter3/last10_sr",
-      "formats": [
-        "csv",
-        "json",
-        "png",
-        "pdf"
-      ],
-      "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
-    },
-    {
       "id": "Figure 3-1",
       "name": "model_structure",
       "script": "jobs/export_ch3.py",
@@ -174,5 +155,6 @@
       "source_manifest": "experiments/ch3/eval_manifest.csv",
       "status": "pending_real_results"
     }
-  ]
+  ],
+  "statistics": "Best-of-5, mean and sample std over three seeds; ties earliest"
 }

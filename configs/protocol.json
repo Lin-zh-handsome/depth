@@ -1,5 +1,5 @@
 {
-  "protocol": "20261013_final_v1",
+  "protocol": "20261014_final_45_train_225_eval",
   "tasks": [
     {
       "benchmark": "mimicgen",
@@ -7,8 +7,8 @@
       "demos": 200,
       "budget": 250,
       "progress_unit": "epoch",
-      "interval": 5,
-      "savepoints": 50,
+      "interval": 50,
+      "savepoints": 5,
       "episodes": 50,
       "horizon": 400,
       "seeds": [
@@ -78,6 +78,13 @@
       "image_resolution": [
         84,
         84
+      ],
+      "eval_positions": [
+        50,
+        100,
+        150,
+        200,
+        250
       ]
     },
     {
@@ -86,8 +93,8 @@
       "demos": 200,
       "budget": 250,
       "progress_unit": "epoch",
-      "interval": 5,
-      "savepoints": 50,
+      "interval": 50,
+      "savepoints": 5,
       "episodes": 50,
       "horizon": 400,
       "seeds": [
@@ -157,6 +164,13 @@
       "image_resolution": [
         84,
         84
+      ],
+      "eval_positions": [
+        50,
+        100,
+        150,
+        200,
+        250
       ]
     },
     {
@@ -165,8 +179,8 @@
       "demos": 200,
       "budget": 250,
       "progress_unit": "epoch",
-      "interval": 5,
-      "savepoints": 50,
+      "interval": 50,
+      "savepoints": 5,
       "episodes": 50,
       "horizon": 400,
       "seeds": [
@@ -236,6 +250,13 @@
       "image_resolution": [
         84,
         84
+      ],
+      "eval_positions": [
+        50,
+        100,
+        150,
+        200,
+        250
       ]
     },
     {
@@ -244,8 +265,8 @@
       "demos": 100,
       "budget": 100000,
       "progress_unit": "optimizer_update",
-      "interval": 5000,
-      "savepoints": 20,
+      "interval": 20000,
+      "savepoints": 5,
       "episodes": 100,
       "horizon": 200,
       "seeds": [
@@ -365,6 +386,13 @@
       "image_resolution": [
         128,
         128
+      ],
+      "eval_positions": [
+        20000,
+        40000,
+        60000,
+        80000,
+        100000
       ]
     },
     {
@@ -373,8 +401,8 @@
       "demos": 100,
       "budget": 100000,
       "progress_unit": "optimizer_update",
-      "interval": 5000,
-      "savepoints": 20,
+      "interval": 20000,
+      "savepoints": 5,
       "episodes": 100,
       "horizon": 300,
       "seeds": [
@@ -494,6 +522,13 @@
       "image_resolution": [
         128,
         128
+      ],
+      "eval_positions": [
+        20000,
+        40000,
+        60000,
+        80000,
+        100000
       ]
     }
   ],
@@ -504,8 +539,7 @@
   },
   "checkpoint_integrity": "atomic write + metadata + git revision; no redundant weight hashing per direct user instruction",
   "primary_statistics": {
-    "best": "max of all scheduled checkpoints, upward selection bias acknowledged",
-    "last10": "mean of final 10 scheduled points in chronological order",
+    "best": "Best-of-5: max over the five preregistered positions; earliest position on ties",
     "cross_seed": "mean and sample std, ddof=1"
   }
 }

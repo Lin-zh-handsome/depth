@@ -104,3 +104,40 @@ Phase D：首个StackCube E0 seed0 5000更新pt已原子保存，独立正式评
 
 ## 2026-10-14 新45-run协议接管
 已读取planning-with-files完整SKILL及执行包全部文件。此前暂停已由本次正式启动指令撤销。范围M0=e0、M1=e3、M2=e6；只保留五任务三种子。旧关节位置控制ManiSkill结果保留为历史，不能合并末端增量控制协议。GPU2独卡；可用显存143152MiB、RAM1.3TiB、/home可用1.3TiB。MimicGen M0两恢复点约200/230epochs可复用。新专用ch3_queue.db保留旧queue.db记录。哈希字段不重算，按用户要求使用真实配置、示范ID、源提交、原子保存元数据及逐reset日志溯源。
+
+2026-10-14T03:34:46.928070+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-14T03:34:47.150526+00:00 Job 52 eval stack_three_d1/e0/seed_0/point_35 launched PID=3329385, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=143152; logs/ch3_job_52.log
+
+2026-10-14T03:35:17.687840+00:00 Job 53 eval stack_three_d1/e0/seed_0/point_40 launched PID=3331302, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=139777; logs/ch3_job_53.log
+
+2026-10-14T03:35:48.618006+00:00 Job 10 train threading_d2/e6/seed_0/point_-1 launched PID=3332790, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=137306; logs/ch3_job_10.log
+
+2026-10-14T03:36:19.285797+00:00 Job 11 train threading_d2/e6/seed_1/point_-1 launched PID=3334281, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=128406; logs/ch3_job_11.log
+
+2026-10-14T03:36:50.247743+00:00 Job 13 train threading_d2/e3/seed_0/point_-1 launched PID=3336087, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=119507; logs/ch3_job_13.log
+
+2026-10-14T03:37:20.723819+00:00 Job 14 train threading_d2/e3/seed_1/point_-1 launched PID=3337903, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=110645; logs/ch3_job_14.log
+
+2026-10-14T03:37:51.179433+00:00 Job 16 train threading_d2/e0/seed_0/point_-1 launched PID=3339537, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=101781; logs/ch3_job_16.log
+
+2026-10-14T03:38:21.660162+00:00 Job 17 train threading_d2/e0/seed_1/point_-1 launched PID=3341194, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=96136; logs/ch3_job_17.log
+
+2026-10-14T03:38:51.958697+00:00 Job 16 train threading_d2/e0/seed_0 queued, exit=1; logs/ch3_job_16.log
+
+2026-10-14T03:38:52.218531+00:00 Job 16 train threading_d2/e0/seed_0/point_-1 launched PID=3343109, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=93082; logs/ch3_job_16.log
+
+2026-10-14T03:39:52.768834+00:00 Job 16 train threading_d2/e0/seed_0 failed, exit=1; logs/ch3_job_16.log
+
+2026-10-14T03:39:52.910842+00:00 Job 18 train threading_d2/e0/seed_2/point_-1 launched PID=3346517, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=93082; logs/ch3_job_18.log
+
+
+## 用户暂停本次GPU2训练 2026-10-14T03:50:24.925544+00:00
+已设置持久暂停标记，停止调度器，向6个本次GPU2训练发送SIGTERM保存恢复点。GPU5明确排除。现有独立评测/数据转换未收到停止信号。训练退出待确认。
+
+
+停止已确认：本次GPU2的6个训练进程均退出，6个recovery.pt完整文件已保存。持久暂停标记阻止重新调度。GPU2已有2项评测和1项官方数据转换继续。GPU5当前无计算进程；其seed42旧训练PID3245588在上一轮收敛45-run范围时已收到SIGTERM，本次停止指令未向GPU5发送信号。
+
+
+## 最终225评测协议接管
+45训练、225评测、15750回合；取消Last10和旧1710队列。MimicGen50/100/150/200/250，ManiSkill20k/40k/60k/80k/100k；并列最佳选最早位置。正式训练继续只用GPU2，GPU5不操作。旧35/40epoch评测停止保留部分日志，全部旧结果仅精确五位置可合并。修复M0恢复后normalizer留CPU问题；checkpoint保留best+latest及有界临时快照。用户禁止冗余哈希，因此字段留空并记录元数据溯源。

@@ -31,14 +31,14 @@ def main():
             row['notes']=r['error'] or r['prerequisite'] or 'real config/demo IDs/git revision/atomic metadata; hashing omitted by user instruction'
             run=ROOT/'runs'/r['benchmark']/r['task']/r['method']/f"seed_{r['seed']}"
             if kind=='train':
-                row['checkpoint_root']=str(run/'checkpoints');row['log_path']=str(ROOT/'logs'/f"ch3_job_{r['id']}.log")
+                row['best_inference_path']=str(run/'best/best.pt') if (run/'best/best.pt').exists() else '';row['latest_resume_path']=str(run/'checkpoints/recovery.pt') if (run/'checkpoints/recovery.pt').exists() else '';row['log_path']=str(ROOT/'logs'/f"final_job_{r['id']}.log")
                 frozen=run/'gpu_job.json'
                 row['git_sha']=json.loads(frozen.read_text())['code_revision'] if frozen.exists() else ''
             else:
                 resets=root/'eval_resets'/f"{r['task']}.json";row['eval_reset_manifest']=str(resets)
                 tag='epoch' if r['benchmark']=='mimicgen' else 'update'
                 summary=run/'eval'/f"{tag}_{r['checkpoint_step']:06d}"/'eval_summary.json'
-                row['result_path']=str(summary) if summary.exists() else ''
+                row['result_path']=str(summary) if summary.exists() else '';row['eval_snapshot_path']=r['checkpoint_path'] or '';row['snapshot_artifact_state']='PRESENT' if r['checkpoint_path'] and Path(r['checkpoint_path']).exists() else 'RECLAIMED' if state=='finished' else 'NOT_CREATED'
                 if r['checkpoint_path'] and Path(r['checkpoint_path']).exists():checkpoint_count+=1
                 if state=='finished':
                     s=json.loads(summary.read_text());episodes+=s['n_episodes']
@@ -49,9 +49,9 @@ def main():
     now=datetime.now(timezone.utc).isoformat();live=[r for r in jobs if r['status']=='running']
     status=dict(timestamp=now,counts=counts,scheduled_checkpoint_files=checkpoint_count,complete_rollout_episodes=episodes,
         running=live,gpu='physical GPU2 only',remaining_gpu_hours='UNKNOWN: no stable per-task throughput estimate',
-        resume_command='cd '+str(ROOT)+' && PYTHONNOUSERSITE=1 nohup /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python jobs/scheduler.py > logs/ch3_scheduler.log 2>&1 &')
+        resume_command='cd '+str(ROOT)+' && PYTHONNOUSERSITE=1 nohup /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python jobs/scheduler.py > logs/final_scheduler.log 2>&1 &')
     (root/'STATUS.json').write_text(json.dumps(status,indent=2))
-    (root/'STATUS.md').write_text('# 第三章实际状态\n\n'+now+'\n\n'+json.dumps(counts)+'\n\n完整回合 '+str(episodes)+'；已保存规定检查点 '+str(checkpoint_count)+'。剩余GPU小时 UNKNOWN。\n\n恢复：\n```bash\n'+status['resume_command']+'\n```\n\n磁盘不足时资源门槛会暂停新作业；不删除真实权重。\n')
+    (root/'STATUS.md').write_text('# 第三章实际状态\n\n'+now+'\n\n'+json.dumps(counts)+'\n\n完整回合 '+str(episodes)+'；已保存规定检查点 '+str(checkpoint_count)+'。剩余GPU小时 UNKNOWN。\n\n恢复：\n```bash\n'+status['resume_command']+'\n```\n\n磁盘不足时资源门槛会暂停新作业；每个run保留best，临时权重评测完成后按引用清单回收。\n')
     protocol_rows=[]
     for t in protocols:
         protocol_rows.append({k:t[k] for k in ['benchmark','task','demos','budget','progress_unit','interval','episodes','horizon','control_mode']})
@@ -65,19 +65,25 @@ def main():
     stats=[];delta=[]
     for t in protocols:
         for m in METHODS.values():
-            best=[];last=[]
+            best=[]
             for seed in t['seeds']:
                 values=sorted(grouped[(t['task'],m,seed)],key=lambda p:p['progress'])
                 if len(values)==t['savepoints']:
-                    sr=[p['sr'] for p in values];best.append(max(sr));last.append(float(np.mean(sr[-10:])))
+                    sr=[p['sr'] for p in values];best.append(max(sr))
             stats.append(dict(task=t['task'],method=m,complete_seeds=len(best),best_mean=float(np.mean(best)) if len(best)==3 else '',
-                best_std=float(np.std(best,ddof=1)) if len(best)==3 else '',last10_mean=float(np.mean(last)) if len(last)==3 else '',
-                last10_std=float(np.std(last,ddof=1)) if len(last)==3 else '',status='DONE' if len(best)==3 else 'TODO'))
-    write_csv(out/'tables/table3_2_best.csv',[{k:v for k,v in r.items() if not k.startswith('last10')} for r in stats])
-    write_csv(out/'tables/table3_3_last10.csv',[{k:v for k,v in r.items() if not k.startswith('best')} for r in stats])
+                best_std=float(np.std(best,ddof=1)) if len(best)==3 else '',status='DONE' if len(best)==3 else 'TODO'))
+    write_csv(out/'tables/table3_2_best.csv',stats)
+    write_csv(root/'final_results.csv',stats)
+    seed_stats=[]
+    for key,values in grouped.items():
+        if len(values)==5:
+            winner=min(values,key=lambda p:(-p['sr'],p['progress']))
+            seed_stats.append(dict(task=key[0],method=key[1],seed=key[2],best_sr=winner['sr'],best_checkpoint_progress=winner['progress'],best_checkpoint_path=str(ROOT/'runs'/('mimicgen' if key[0] in ['stack_three_d1','threading_d2','coffee_d2'] else 'maniskill')/key[0]/{v:k for k,v in METHODS.items()}[key[1]]/f'seed_{key[2]}'/'best/best.pt'),status='DONE'))
+    write_csv(root/'best_per_seed.csv',seed_stats,['task','method','seed','best_sr','best_checkpoint_progress','best_checkpoint_path','status'])
+    write_csv(root/'eval_results.csv',points,['task','method','seed','progress','sr','episodes','successes','checkpoint_path','eval_manifest','episodes_path'])
     for t in protocols:
         s={r['method']:r for r in stats if r['task']==t['task']}
-        for metric in ['best','last10']:
+        for metric in ['best']:
             ready=all(r['status']=='DONE' for r in s.values())
             delta.append(dict(task=t['task'],metric=metric,gsa_pp=100*(s['M1'][metric+'_mean']-s['M0'][metric+'_mean']) if ready else '',
                 token_given_gsa_pp=100*(s['M2'][metric+'_mean']-s['M1'][metric+'_mean']) if ready else '',
@@ -85,28 +91,65 @@ def main():
     write_csv(out/'tables/module_deltas.csv',delta)
     marker=out/'source_data/exported_eval_count.json'
     changed=not marker.exists() or json.loads(marker.read_text())!=len(points)
+    structure=out/'figures/model_structure.pdf'
+    if not structure.exists():
+        import matplotlib;matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        fig,ax=plt.subplots(figsize=(11,4.2));ax.axis('off')
+        for y,name,middle in [(0.82,'M0','RGB ResNet18: layer2'),(0.50,'M1','layer2 + gamma * GSA(RGB features, Depth)'),(0.18,'M2','same GSA + 8 TokenLearner weights')]:
+            texts=[name+'\nRGB + robot state',middle,'ResNet18 layer3/4\n512 features per camera','global_cond + state\noriginal ConditionalUnet1D / FiLM']
+            for x,txt in zip([.08,.35,.60,.86],texts):ax.text(x,y,txt,ha='center',va='center',fontsize=8,bbox=dict(boxstyle='round,pad=0.6',fc='#eaf2f8',ec='#36566c'),transform=ax.transAxes)
+            for x1,x2 in [(.16,.24),(.45,.52),(.69,.76)]:ax.annotate('',xy=(x2,y),xytext=(x1,y),xycoords='axes fraction',arrowprops=dict(arrowstyle='->'))
+        ax.text(.50,.02,'M2: same spatial weights -> visual tokens + (u,v,d,rho) -> projection -> residual to global visual features',ha='center',fontsize=8,transform=ax.transAxes)
+        structure.parent.mkdir(exist_ok=True);fig.tight_layout()
+        for ext in ['pdf','png']:fig.savefig(structure.with_suffix('.'+ext),dpi=200)
+        plt.close(fig)
+        structure.with_suffix('.json').write_text(json.dumps(dict(sources=['gsc_dp/encoder.py','gsc_dp/policy_factory.py','gsc_dp/depth_token_learner.py'],insert_after='layer2',tokens=8,action_denoiser='unchanged official ConditionalUnet1D',fusion='additive token projection residual'),indent=2))
     if changed and points:
         import matplotlib;matplotlib.use('Agg')
         import matplotlib.pyplot as plt
         for t in protocols:
             fig,ax=plt.subplots(figsize=(6,3.8))
             for m in METHODS.values():
+                per_point=defaultdict(list)
                 for seed in t['seeds']:
                     v=sorted(grouped[(t['task'],m,seed)],key=lambda p:p['progress'])
                     if v:ax.plot([p['progress'] for p in v],[100*p['sr'] for p in v],label=f'{m}, seed {seed}')
+                    for p in v:per_point[p['progress']].append(p['sr']*100)
+                complete=sorted(k for k,v in per_point.items() if len(v)==3)
+                if complete:
+                    mean=np.array([np.mean(per_point[k]) for k in complete]);std=np.array([np.std(per_point[k],ddof=1) for k in complete])
+                    line=ax.plot(complete,mean,label=m+' mean (3 seeds)',linewidth=2.5)[0]
+                    ax.fill_between(complete,mean-std,mean+std,color=line.get_color(),alpha=.15)
             ax.set(xlabel='Dataset epochs' if t['benchmark']=='mimicgen' else 'Optimizer updates',ylabel='Success rate (%)',ylim=(0,100),title=t['task']+' (available real checkpoints)')
             if ax.lines:ax.legend(fontsize=7)
             fig.tight_layout();directory=out/'figures';directory.mkdir(exist_ok=True)
             for ext in ['png','pdf']:fig.savefig(directory/f"sr_{t['task']}.{ext}",dpi=200)
             (directory/f"sr_{t['task']}.json").write_text(json.dumps(dict(source=str(out/'source_data/checkpoint_sr.csv'),task=t['task'],missing_points='not imputed',three_seed_summary='pending until all three seeds have matching points')))
             plt.close(fig)
+            fig,ax=plt.subplots(figsize=(6,3.8));loss_rows=[]
+            for method,name in METHODS.items():
+                for seed in t['seeds']:
+                    log=ROOT/'runs'/t['benchmark']/t['task']/method/f'seed_{seed}'/'train_metrics.jsonl'
+                    if not log.exists():continue
+                    vals=[json.loads(x) for x in log.read_text().splitlines() if x.strip()]
+                    vals=[x for x in vals if 'train_loss' in x]
+                    if vals:ax.plot([x['optimizer_updates'] for x in vals],[x['train_loss'] for x in vals],label=f'{name}, seed {seed}',alpha=.7)
+                    loss_rows.extend(dict(method=name,seed=seed,optimizer_updates=x['optimizer_updates'],train_loss=x['train_loss'],log_path=str(log)) for x in vals)
+            ax.set(xlabel='Optimizer updates',ylabel='Diffusion training loss',title=t['task'])
+            if ax.lines:ax.legend(fontsize=7)
+            fig.tight_layout()
+            for ext in ['png','pdf']:fig.savefig(directory/f"loss_{t['task']}.{ext}",dpi=200)
+            write_csv(out/'source_data'/f"loss_{t['task']}.csv",loss_rows,['method','seed','optimizer_updates','train_loss','log_path'])
+            (directory/f"loss_{t['task']}.json").write_text(json.dumps(dict(source=str(out/'source_data'/f"loss_{t['task']}.csv"))))
+            plt.close(fig)
         marker.write_text(json.dumps(len(points)))
     md=out/'experiments_3_6.md'
     if not md.exists():md.write_text('''# 第三章 3.6 实验结果
 ## 3.6.1 实验平台和评价指标
-两个Benchmark、五任务、三方法、三种子；固定预算见table3_1.csv。Best为周期评测最大值，具有择优偏差；Last10按时间取最终10保存点；跨种子样本标准差ddof=1。
+两个Benchmark、五任务、三方法、三种子；固定预算见table3_1.csv。Best为周期评测最大值，具有择优偏差；Best-of-5限定五个预注册位置，并列选最早；跨种子样本标准差ddof=1。
 ## 3.6.2 五任务成功率比较
-TODO：45-run矩阵完整数据到齐后引用table3_2_best.csv和table3_3_last10.csv。
+TODO：45-run矩阵完整数据到齐后引用table3_2_best.csv。
 ## 3.6.3 GSA与TokenLearner递进式效果分析
 TODO：module_deltas.csv。M0→M1包含Depth和GSA；M1→M2保持相同Depth/GSA。
 ## 3.6.4 空间注意力与时序关注可视化

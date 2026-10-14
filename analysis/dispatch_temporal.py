@@ -14,8 +14,10 @@ def main():
     for method in methods:
         tag=('epoch' if args.benchmark=='mimicgen' else 'update')+f'_{args.step:06d}'
         run=ROOT/'runs'/args.benchmark/args.task/method/f'seed_{args.seed}'
-        cp=run/'checkpoints'/f'{tag}.pt'
-        ep=run/'eval'/tag/'episodes.jsonl'
+        best=json.loads((run/'best/best.json').read_text())
+        cp=run/'best/best.pt'
+        source_tag=('epoch' if args.benchmark=='mimicgen' else 'update')+f"_{best['checkpoint_step']:06d}"
+        ep=run/'eval'/source_tag/'episodes.jsonl'
         if not cp.exists() or not ep.exists():raise FileNotFoundError(f'paired source unavailable: {cp}, {ep}')
         runs[method]=dict(run=run,checkpoint=cp,episodes={r['reset_id']:r for r in [json.loads(x) for x in ep.read_text().splitlines()]})
     common=set.intersection(*(set(r['episodes']) for r in runs.values()))

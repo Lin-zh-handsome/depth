@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 def connect():
-    db = sqlite3.connect(ROOT/'jobs/ch3_queue.db', timeout=30)
+    db = sqlite3.connect(ROOT/'jobs/ch3_final_queue.db', timeout=30)
     db.row_factory = sqlite3.Row
     db.execute('PRAGMA journal_mode=WAL')
     db.executescript('''

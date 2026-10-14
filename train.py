@@ -23,7 +23,7 @@ from diffusion_policy.common.pytorch_util import dict_apply, optimizer_to
 from diffusion_policy.model.diffusion.ema_model import EMAModel
 from gsc_dp.policy_factory import create
 from gsc_dp.dataset import ManiSkillRGBDImageDataset
-from gsc_dp.checkpoints import save
+from gsc_dp.checkpoints import save, same_training_config, wait_for_evaluation
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--config',type=Path,required=True);a=ap.parse_args()
@@ -32,7 +32,7 @@ def main():
     run=ROOT/'runs'/cfg['benchmark']/cfg['task']/cfg['method']/f"seed_{cfg['seed']}"
     run.mkdir(parents=True,exist_ok=True)
     frozen=run/'config_resolved.json'
-    if frozen.exists() and json.loads(frozen.read_text())!=cfg: raise ValueError('resume config changed')
+    if frozen.exists() and not same_training_config(json.loads(frozen.read_text()),cfg): raise ValueError('scientific resume config changed')
     frozen.write_text(json.dumps(cfg,indent=2))
     seed=cfg['seed'];random.seed(seed);np.random.seed(seed);torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed);torch.set_num_threads(2)
@@ -50,7 +50,9 @@ def main():
         recovery=run/'checkpoints/recovery.pt'
         latest=recovery if recovery.exists() else max(candidates,key=lambda p:p.stat().st_mtime)
         payload=torch.load(latest,map_location='cpu',weights_only=False)
+        if not same_training_config(payload['config'],cfg):raise ValueError('checkpoint scientific config mismatch')
         model.load_state_dict(payload['model']);ema_model.load_state_dict(payload['ema_model'])
+        model.to('cuda:0');ema_model.to('cuda:0')
         optimizer.load_state_dict(payload['optimizer']);optimizer_to(optimizer,'cuda:0')
         scheduler.load_state_dict(payload['scheduler']);ema.optimization_step=payload['ema_optimization_step']
         updates=payload['optimizer_updates'];epoch=payload['data_epoch'];batch_offset=payload['next_batch']
@@ -73,9 +75,11 @@ def main():
     begin=time.time()
     (run/'dataset_window_budget.json').write_text(json.dumps(dict(dataset_window_count=len(dataset),
         batch_size=cfg['batch_size'],batches_per_epoch=math.ceil(len(dataset)/cfg['batch_size']),
-        optimizer_updates_per_epoch=math.ceil(len(dataset)/cfg['batch_size']),total_optimizer_updates=total_updates),indent=2))
+        optimizer_updates_per_epoch=math.ceil(len(dataset)/cfg['batch_size']),total_optimizer_updates=total_updates,drop_last=False,gradient_accumulation=1),indent=2))
     with (run/'train_metrics.jsonl').open('a',buffering=1) as log:
         while updates<total_updates:
+            if not wait_for_evaluation(cfg,stop):
+                save(run,payload(batch_offset));return 75
             generator=torch.Generator().manual_seed(seed+epoch*1000003)
             loader=torch.utils.data.DataLoader(dataset,batch_size=cfg['batch_size'],shuffle=True,
                 generator=generator,num_workers=0,pin_memory=False,drop_last=False)
@@ -98,7 +102,9 @@ def main():
                                 if needle in name and p.grad is not None]
                             if terms:record[family+'_gradient_l2']=float(torch.stack(terms).sum().sqrt())
                     log.write(json.dumps(record)+'\n');print(json.dumps(record),flush=True)
-                if not is_mimic and updates%cfg['interval']==0: save(run,payload(next_batch),scheduled=True)
+                if not is_mimic and updates in cfg['eval_positions']:
+                    save(run,payload(next_batch),scheduled=True)
+                    if not wait_for_evaluation(cfg,stop):save(run,payload(next_batch));return 75
                 if stop[0]:
                     save(run,payload(next_batch));print('recoverable stop',updates,flush=True);return 75
                 if updates>=total_updates: break
@@ -106,7 +112,7 @@ def main():
             log.write(json.dumps(dict(event='epoch_complete',completed_epochs=epoch,
                 optimizer_updates=updates,dataset_window_count=len(dataset),batch_size=cfg['batch_size'],
                 dataloader_batches=len(loader)))+'\n')
-            if is_mimic and epoch%cfg['interval']==0:
+            if is_mimic and epoch in cfg['eval_positions']:
                 completed=payload(0);completed['checkpoint_step']=epoch
                 save(run,completed,scheduled=True)
     (run/'training_complete.json').write_text(json.dumps(dict(optimizer_updates=updates,completed_epochs=epoch,
