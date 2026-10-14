@@ -41,8 +41,8 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 
 ## 实际运行状态（自动更新）
-2026-10-14T10:44:29.904687+00:00
-45训练、225正式评测。{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 215, "finished": 10}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+2026-10-14T10:49:18.521291+00:00
+45训练、225正式评测。{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 214, "finished": 10, "running": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
 
 ## 2026-10-14T13:00:53.031961+08:00 数据转换与运行进展
 StackCube pd_ee_delta_pos和PegInsertionSide pd_ee_delta_pose固定100条RGB-D清单均已出现，配置自动刷新45项。M0恢复训练的回压有明确等待保存点评测，不能以长时间无loss日志判定卡死；四项M1/M2实际loss有限且较启动时推进。当前正式评测仅部分回合，不纳入Best-of-5。

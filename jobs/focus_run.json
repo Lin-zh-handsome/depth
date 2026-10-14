@@ -1,0 +1,12 @@
+{
+  "status": "active",
+  "task": "threading_d2",
+  "method": "e6",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "single_training_worker": true,
+  "reason": "full-method results first; seed0 then seed1 then seed2; resume rest afterwards"
+}

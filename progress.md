@@ -344,3 +344,8 @@ M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测�
 
 ## 裁剪修复后实际训练进展 2026-10-14T18:45:38.046049+08:00
 四项M1/M2已从12730/12697/12803/12703更新完整恢复，无重训和预算改动。短窗口实际速率 [{"method": "e3", "seed": 0, "pid": 492122, "updates_measured": 100, "seconds": 23.97092366218567, "updates_per_hour": 15018.194754334936, "full_250epochs_hours": 11.45277463859982, "latest_loss": 0.052587706595659256}, {"method": "e6", "seed": 0, "pid": 489094, "updates_measured": 400, "seconds": 83.71960353851318, "updates_per_hour": 17200.27256624027, "full_250epochs_hours": 9.999841533766851, "latest_loss": 0.05722839757800102}, {"method": "e6", "seed": 1, "pid": 490507, "updates_measured": 300, "seconds": 65.39141297340393, "updates_per_hour": 16515.93001116613, "full_250epochs_hours": 10.414187992060626, "latest_loss": 0.05358270928263664}]。旧55小时及其整套4–6周估计基于已修复的慢速路径，应作废；新的耗时以更长实际训练区间持续校正。
+
+
+## 实际运行状态（自动更新）
+2026-10-14T10:49:18.521291+00:00
+45训练、225正式评测。{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 214, "finished": 10, "running": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。

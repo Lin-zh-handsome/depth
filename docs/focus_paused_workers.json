@@ -1,0 +1,53 @@
+{
+  "time": 1791975292.0063636,
+  "workers": [
+    {
+      "id": 11,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e6",
+      "seed": 1,
+      "pid": 490507
+    },
+    {
+      "id": 13,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0,
+      "pid": 492122
+    },
+    {
+      "id": 14,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 1,
+      "pid": 493550
+    },
+    {
+      "id": 17,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "pid": 3443211
+    },
+    {
+      "id": 18,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "pid": 147818
+    },
+    {
+      "id": 127,
+      "kind": "eval",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "pid": 507057
+    }
+  ]
+}

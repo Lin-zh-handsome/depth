@@ -49,6 +49,22 @@ def active_task(db):
         if train[0]!=9 or train[1]!=9 or evaluation[0]!=45 or evaluation[1]!=45:return task
     return None
 
+def focused_run(db):
+    path=ROOT/'jobs/focus_run.json'
+    if not path.exists():return None
+    cfg=json.loads(path.read_text())
+    if cfg.get('status')!='active':return None
+    for seed in cfg['seeds']:
+        complete=db.execute("SELECT status FROM train_jobs WHERE task=? AND method=? AND seed=?",(cfg['task'],cfg['method'],seed)).fetchone()
+        count=db.execute("SELECT count(*) FROM eval_jobs WHERE task=? AND method=? AND seed=? AND status='finished'",(cfg['task'],cfg['method'],seed)).fetchone()[0]
+        if not complete or complete['status']!='finished' or count!=5:
+            db.execute("UPDATE jobs SET status='queued',error=NULL WHERE task=? AND method=? AND seed=? AND status='held_for_full_method'",(cfg['task'],cfg['method'],seed));db.commit()
+            return cfg['task'],cfg['method'],seed
+    cfg['status']='completed';cfg['finished']=now();path.write_text(json.dumps(cfg,indent=2))
+    db.execute("UPDATE jobs SET status='queued',error=NULL WHERE status='held_for_full_method'");db.commit()
+    record_progress('Full method three seeds completed; resume remaining work of the current task.')
+    return None
+
 def main():
     if (ROOT/'jobs/PAUSED_BY_USER.json').exists():
         print('Dispatcher paused by user; explicit rescheduling is required.',flush=True)
@@ -103,6 +119,7 @@ def main():
         nmimic=sum(r['kind']=='train' and r['benchmark']=='mimicgen' for r in live)
         nanalysis=sum(r['kind']=='analysis' for r in live)
         register_temporal(db)
+        focus=focused_run(db)
         current_task=active_task(db)
         if current_task!=previous_task:
             state=dict(mode='one_task_at_a_time',task_order=TASK_ORDER,active_task=current_task,
@@ -116,8 +133,10 @@ def main():
             # Reserve one evaluation slot as soon as a snapshot is available;
             # only this selected physical GPU is ever exposed to any worker.
             ready=(ROOT/'logs/eval_env.ready').exists()
-            kind='eval' if neval<2 and ready and db.execute("SELECT 1 FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL AND task=? LIMIT 1",(current_task,)).fetchone() else 'analysis' if nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' AND prerequisite IS NULL LIMIT 1").fetchone() else 'train'
-            cap=6 if kind=='train' else 2 if kind=='eval' else 1
+            ready_evals=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL AND task=?",(current_task,)).fetchall()
+            if focus:ready_evals=[r for r in ready_evals if (r['task'],r['method'],r['seed'])==focus]
+            kind='eval' if neval<2 and ready and ready_evals else 'analysis' if not focus and nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' AND prerequisite IS NULL LIMIT 1").fetchone() else 'train'
+            cap=(1 if focus else 6) if kind=='train' else (1 if focus else 2) if kind=='eval' else 1
             if {'train':ntrain,'eval':neval,'analysis':nanalysis}[kind]<cap:
                 rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, CASE task WHEN 'threading_d2' THEN 0 WHEN 'PegInsertionSide-v1' THEN 1 WHEN 'stack_three_d1' THEN 2 WHEN 'coffee_d2' THEN 3 ELSE 4 END, seed, id",(kind,)).fetchall()
                 # Snapshot eval dependencies are already atomic-complete.
@@ -126,6 +145,8 @@ def main():
                     rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, id").fetchall()
                 if kind in ['train','eval']:
                     rows=[r for r in rows if r['task']==current_task]
+                if focus:
+                    rows=[r for r in rows if (r['task'],r['method'],r['seed'])==focus]
                 if kind=='train':
                     # Two concurrent runs per method permit all three methods to progress.
                     rows=[r for r in rows if sum(x['kind']=='train' and x['method']==r['method'] for x in live)<2]
