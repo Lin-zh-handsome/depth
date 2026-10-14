@@ -274,3 +274,30 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 ## 每小时巡检 2026-10-14T16:04:33.642804+08:00
 完整正式评测8/225，共400回合；新增：threading_d2/e0/seed0/50: 6/50=12%; threading_d2/e0/seed0/150: 6/50=12%; threading_d2/e0/seed0/200: 4/50=8%。队列[{"kind": "eval", "status": "finished", "count": 8}, {"kind": "eval", "status": "queued", "count": 216}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "queued", "count": 39}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+2026-10-14T08:45:10.414159+00:00 Job 126 eval threading_d2/e0/seed_1 finished, exit=0; logs/final_job_126.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T08:45:16.059088+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 216, "finished": 9}, "analysis": {}}；完整回合 450。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T08:50:38.652057+00:00 Job 16 train threading_d2/e0/seed_0 finished, exit=0; logs/final_job_16.log
+
+2026-10-14T08:50:39.425067+00:00 Job 125 eval threading_d2/e0/seed_0/point_250 launched PID=146144, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=97708; logs/final_job_125.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T08:50:41.424223+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 5, "finished": 1}, "eval": {"queued": 215, "finished": 9, "running": 1}, "analysis": {}}；完整回合 450。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T08:51:11.882672+00:00 Job 18 train threading_d2/e0/seed_2/point_-1 launched PID=147818, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=95271; logs/final_job_18.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T08:51:13.660808+00:00
+45训练、225正式评测。{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 215, "finished": 9, "running": 1}, "analysis": {}}；完整回合 450。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-14T17:02:57.075907+08:00
+完整正式评测9/225，共450回合；新增：threading_d2/e0/seed1/50: 2/50=4%。队列[{"kind": "eval", "status": "finished", "count": 9}, {"kind": "eval", "status": "queued", "count": 215}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 1}, {"kind": "train", "status": "queued", "count": 38}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。

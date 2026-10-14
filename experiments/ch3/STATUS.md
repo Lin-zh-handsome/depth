@@ -1,10 +1,10 @@
 # 第三章实际状态
 
-2026-10-14T04:10:19.930171+00:00
+2026-10-14T09:02:59.325227+00:00
 
-{"train": {"queued": 39, "running": 6}, "eval": {"queued": 223, "running": 2}, "analysis": {}}
+{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 215, "finished": 9, "running": 1}, "analysis": {}}
 
-完整回合 0；已保存规定检查点 8。剩余GPU小时 UNKNOWN。
+完整回合 450；已保存规定检查点 1。剩余GPU小时 UNKNOWN。
 
 恢复：
 ```bash
