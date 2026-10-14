@@ -447,3 +447,32 @@ Threading M2 seed0到达第50完整dataset epoch/34400更新，已原子保存�
 
 ## 首个M2完整正式评测 2026-10-14T21:09:33.618620+08:00
 Threading M2种子0第50轮完成固定50回合真实闭环评测，5/50=10%，reset列表完整且唯一。best/best.pt及元数据已真实保留，种子0继续约52轮训练。种子1第50轮评测47/50回合，其训练等待评测为预定回压；种子2约49轮。未完成五点和三种子，10%只能标为第50轮SR，不能称最终Best-of-5或方法报告值。GPU2近期平均约70.1%，限载正常。总正式评测11/225、完整550回合，三项M2持续推进；M1/M0有意等待，其他任务与GPU5不操作。
+
+2026-10-14T13:11:21.268604+00:00 Job 101 eval threading_d2/e6/seed_2/point_50 launched PID=945338, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=113396; logs/final_job_101.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T13:11:22.732343+00:00
+45训练、225正式评测。{"train": {"queued": 37, "running": 3, "held_for_full_method": 4, "finished": 1}, "eval": {"queued": 211, "finished": 11, "running": 2, "held_for_full_method": 1}, "analysis": {}}；完整回合 550。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T13:12:24.729251+00:00 Job 96 eval threading_d2/e6/seed_1 finished, exit=0; logs/final_job_96.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T13:12:28.955891+00:00
+45训练、225正式评测。{"train": {"queued": 37, "running": 3, "held_for_full_method": 4, "finished": 1}, "eval": {"queued": 211, "finished": 12, "running": 1, "held_for_full_method": 1}, "analysis": {}}；完整回合 600。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T14:06:15.890546+00:00 Job 101 eval threading_d2/e6/seed_2 finished, exit=0; logs/final_job_101.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T14:06:20.355130+00:00
+45训练、225正式评测。{"train": {"queued": 37, "running": 3, "held_for_full_method": 4, "finished": 1}, "eval": {"queued": 211, "finished": 13, "held_for_full_method": 1}, "analysis": {}}；完整回合 650。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-14T22:11:25.152002+08:00
+完整正式评测13/225，共650回合；新增：threading_d2/e6/seed1/50: 5/50=10%; threading_d2/e6/seed2/50: 6/50=12%。队列[{"kind": "eval", "status": "finished", "count": 13}, {"kind": "eval", "status": "held_for_full_method", "count": 1}, {"kind": "eval", "status": "queued", "count": 211}, {"kind": "train", "status": "finished", "count": 1}, {"kind": "train", "status": "held_for_full_method", "count": 4}, {"kind": "train", "status": "queued", "count": 37}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## M2三个种子首点评测齐全 2026-10-14T22:11:25.152002+08:00
+Threading M2第50轮三个种子均完成固定50回合：seed0=5/50(10%)、seed1=5/50(10%)、seed2=6/50(12%)；各best文件真实存在，保留该阶段原始回合及源数据。当前训练进度分别约75/70/52轮，三进程存活、有限loss、GPU2绑定正确。M2正式评测完成3/15，总完成13/225(650完整回合)。后续100/150/200/250轮尚未完成，不计算最终Best-of-5或三seed方法报告值。GPU2近期平均约71.0%，限载正常；M1/M0仍按用户要求等待，无异常。
