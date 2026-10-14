@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-14T18:02:01.328847+08:00",
-  "previous_poll": "2026-10-14T17:02:57.075907+08:00",
+  "checked_at_asia_shanghai": "2026-10-14T19:02:30.956908+08:00",
+  "previous_poll": "2026-10-14T18:02:01.328847+08:00",
   "protocol": {
     "training_runs": 45,
     "evaluation_points": 225,
@@ -20,8 +20,13 @@
     },
     {
       "kind": "eval",
+      "status": "held_for_full_method",
+      "count": 1
+    },
+    {
+      "kind": "eval",
       "status": "queued",
-      "count": 215
+      "count": 214
     },
     {
       "kind": "train",
@@ -30,13 +35,18 @@
     },
     {
       "kind": "train",
+      "status": "held_for_full_method",
+      "count": 4
+    },
+    {
+      "kind": "train",
       "status": "queued",
-      "count": 38
+      "count": 37
     },
     {
       "kind": "train",
       "status": "running",
-      "count": 6
+      "count": 3
     }
   ],
   "running": [
@@ -49,20 +59,20 @@
       "seed": 0,
       "checkpoint_step": -1,
       "status": "running",
-      "pid": 3433612,
+      "pid": 489094,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 10700,
-        "data_epoch": 15,
-        "next_batch": 380,
-        "train_loss": 0.08124743402004242,
-        "lr": 9.912974208472328e-05,
-        "wall_seconds": 21256.64793729782,
-        "gpu_peak_bytes": 8070868480
+        "optimizer_updates": 18100,
+        "data_epoch": 26,
+        "next_batch": 212,
+        "train_loss": 0.0657234787940979,
+        "lr": 9.742384647720119e-05,
+        "wall_seconds": 1150.9918837547302,
+        "gpu_peak_bytes": 8071089664
       },
-      "metric_age_seconds": 21,
-      "updates_since_last_poll": 2200,
+      "metric_age_seconds": 16,
+      "updates_since_last_poll": 7400,
       "waiting_for_eval": false
     },
     {
@@ -74,120 +84,45 @@
       "seed": 1,
       "checkpoint_step": -1,
       "status": "running",
-      "pid": 3435319,
+      "pid": 542763,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 10600,
-        "data_epoch": 15,
-        "next_batch": 280,
-        "train_loss": 0.04520349204540253,
-        "lr": 9.914667385269562e-05,
-        "wall_seconds": 21210.579751491547,
-        "gpu_peak_bytes": 8070868480
+        "optimizer_updates": 15400,
+        "data_epoch": 22,
+        "next_batch": 264,
+        "train_loss": 0.04735510051250458,
+        "lr": 9.814908618313189e-05,
+        "wall_seconds": 38.646101236343384,
+        "gpu_peak_bytes": 8069541376
       },
-      "metric_age_seconds": 35,
-      "updates_since_last_poll": 2100,
+      "metric_age_seconds": 2,
+      "updates_since_last_poll": 4800,
       "waiting_for_eval": false
     },
     {
-      "id": 13,
+      "id": 12,
       "kind": "train",
       "benchmark": "mimicgen",
       "task": "threading_d2",
-      "method": "e3",
-      "seed": 0,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 3436999,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "optimizer_updates": 10600,
-        "data_epoch": 15,
-        "next_batch": 280,
-        "train_loss": 0.09921535849571228,
-        "lr": 9.914667385269562e-05,
-        "wall_seconds": 21161.20340037346,
-        "gpu_peak_bytes": 8043638272
-      },
-      "metric_age_seconds": 51,
-      "updates_since_last_poll": 2100,
-      "waiting_for_eval": false
-    },
-    {
-      "id": 14,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e3",
-      "seed": 1,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 3439300,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "optimizer_updates": 10600,
-        "data_epoch": 15,
-        "next_batch": 280,
-        "train_loss": 0.046438898891210556,
-        "lr": 9.914667385269562e-05,
-        "wall_seconds": 21163.039098501205,
-        "gpu_peak_bytes": 8043638272
-      },
-      "metric_age_seconds": 16,
-      "updates_since_last_poll": 2200,
-      "waiting_for_eval": false
-    },
-    {
-      "id": 17,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e0",
-      "seed": 1,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 3443211,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "optimizer_updates": 54700,
-        "data_epoch": 79,
-        "next_batch": 348,
-        "train_loss": 0.05237691104412079,
-        "lr": 7.731511453858165e-05,
-        "wall_seconds": 21112.577688694,
-        "gpu_peak_bytes": 8043277824
-      },
-      "metric_age_seconds": 4,
-      "updates_since_last_poll": 15484,
-      "waiting_for_eval": false
-    },
-    {
-      "id": 18,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e0",
+      "method": "e6",
       "seed": 2,
       "checkpoint_step": -1,
       "status": "running",
-      "pid": 147818,
+      "pid": 544213,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 19400,
-        "data_epoch": 28,
-        "next_batch": 136,
-        "train_loss": 0.07631931453943253,
-        "lr": 9.703316983493414e-05,
-        "wall_seconds": 4231.463935375214,
-        "gpu_peak_bytes": 8043277824
+        "optimizer_updates": 1,
+        "data_epoch": 0,
+        "next_batch": 1,
+        "train_loss": 1.1448323726654053,
+        "lr": 2.0000000000000002e-07,
+        "wall_seconds": 1.4734318256378174,
+        "gpu_peak_bytes": 8074769920
       },
-      "metric_age_seconds": 0,
-      "updates_since_last_poll": 14584,
+      "metric_age_seconds": 11,
+      "updates_since_last_poll": null,
       "waiting_for_eval": false
     }
   ],
@@ -365,11 +300,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "18:02:01 up 25 days,  1:26, 12 users,  load average: 45.74, 34.52, 31.36",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       668Gi        44Gi        35Gi       1.3Ti       1.3Ti\n交换：      2.0Gi       2.0Gi       0.0Ki",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 88785 MiB, 99 %"
+    "cpu": "19:02:30 up 25 days,  2:27, 12 users,  load average: 27.86, 20.23, 21.91",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       128Gi       527Gi        35Gi       1.3Ti       1.8Ti\n交换：      2.0Gi       2.0Gi       0.0Ki",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 116100 MiB, 89 %"
   },
-  "disk_free_bytes": 1782531764224,
+  "disk_free_bytes": 1782245421056,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",

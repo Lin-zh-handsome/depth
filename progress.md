@@ -317,24 +317,40 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 ## 用户改为按任务串行推进 2026-10-14T18:32:46.777107+08:00
 当前Threading为唯一可启动训练/正式评测的任务。同任务内三模型三种子可并行，M2优先；必须9项训练和45次正式评测全部完成后，才切换PegInsertionSide、Stack Three、Coffee、StackCube。修正此前表述：一个任务共45次正式评测，不是15次。其余任务保持已入队，已有结果和权重保留；不改变训练预算、五个位置和每点回合数。仅重启调度器，六个现有Threading训练进程不停止。GPU5不操作。
 
+2026-10-14T10:32:46.995425+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-14T10:32:46.996855+00:00 Sequential task scheduling: active task threading_d2. Switch only after all 9 training runs and 45 evaluations finish.
+
 
 ## 裁剪同步瓶颈修复 2026-10-14T18:42:51.635821+08:00
 M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测触发1536次aten::item和本地标量读取，实际单次操作约1.047秒。批量gather裁剪无标量读取，约0.080秒；相同随机状态下RGB/Depth/valid输出及RGB梯度完全相同。仅修复执行路径，无参数或科学协议变化。这是运行瓶颈诊断，不是论文效率对比。四个M1/M2训练均SIGTERM原子保存恢复点后部署等价裁剪；M0、GPU5及其他任务未停止。55小时只是旧慢速外推，修复后重新按实际训练日志估算。证据logs/crop_diagnosis.json、docs/crop_optimization_restart.json。
+
+2026-10-14T10:42:51.941378+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-14T10:42:51.942289+00:00 Sequential task scheduling: active task threading_d2. Switch only after all 9 training runs and 45 evaluations finish.
+
+2026-10-14T10:42:52.090681+00:00 Job 10 train threading_d2/e6/seed_0/point_-1 launched PID=489094, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=125299; logs/final_job_10.log
 
 
 ## 实际运行状态（自动更新）
 2026-10-14T10:42:53.619843+00:00
 45训练、225正式评测。{"train": {"queued": 41, "running": 3, "finished": 1}, "eval": {"queued": 215, "finished": 10}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
 
+2026-10-14T10:43:23.955195+00:00 Job 11 train threading_d2/e6/seed_1/point_-1 launched PID=490507, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=119632; logs/final_job_11.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-14T10:43:25.814340+00:00
 45训练、225正式评测。{"train": {"queued": 40, "running": 4, "finished": 1}, "eval": {"queued": 215, "finished": 10}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
 
+2026-10-14T10:43:56.130811+00:00 Job 13 train threading_d2/e3/seed_0/point_-1 launched PID=492122, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=110622; logs/final_job_13.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-14T10:43:57.735000+00:00
 45训练、225正式评测。{"train": {"queued": 39, "running": 5, "finished": 1}, "eval": {"queued": 215, "finished": 10}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T10:44:28.410743+00:00 Job 14 train threading_d2/e3/seed_1/point_-1 launched PID=493550, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=101633; logs/final_job_14.log
 
 
 ## 实际运行状态（自动更新）
@@ -345,10 +361,16 @@ M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测�
 ## 裁剪修复后实际训练进展 2026-10-14T18:45:38.046049+08:00
 四项M1/M2已从12730/12697/12803/12703更新完整恢复，无重训和预算改动。短窗口实际速率 [{"method": "e3", "seed": 0, "pid": 492122, "updates_measured": 100, "seconds": 23.97092366218567, "updates_per_hour": 15018.194754334936, "full_250epochs_hours": 11.45277463859982, "latest_loss": 0.052587706595659256}, {"method": "e6", "seed": 0, "pid": 489094, "updates_measured": 400, "seconds": 83.71960353851318, "updates_per_hour": 17200.27256624027, "full_250epochs_hours": 9.999841533766851, "latest_loss": 0.05722839757800102}, {"method": "e6", "seed": 1, "pid": 490507, "updates_measured": 300, "seconds": 65.39141297340393, "updates_per_hour": 16515.93001116613, "full_250epochs_hours": 10.414187992060626, "latest_loss": 0.05358270928263664}]。旧55小时及其整套4–6周估计基于已修复的慢速路径，应作废；新的耗时以更长实际训练区间持续校正。
 
+2026-10-14T10:49:17.281357+00:00 Job 127 eval threading_d2/e0/seed_1/point_100 launched PID=507057, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=88729; logs/final_job_127.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-14T10:49:18.521291+00:00
 45训练、225正式评测。{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 214, "finished": 10, "running": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T10:55:47.152461+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-14T10:55:47.153648+00:00 Sequential task scheduling: active task threading_d2. Switch only after all 9 training runs and 45 evaluations finish.
 
 
 ## 实际运行状态（自动更新）
@@ -362,3 +384,25 @@ M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测�
 
 ## M2三个种子优先并行 2026-10-14T19:01:38.212412+08:00
 用户撤销独占串行训练，要求并行但先完成M2所有实验。当前任务Threading的M2种子0/1/2最多三训练并行，正式评测最多两进程；三个种子均250轮及五点评测共15点评测完成后，才恢复M1/M0。仍保持当前任务9训练45评测全部完成后再换任务，不跨任务。M2种子0现有进程保留，种子1从暂停恢复文件续训，种子2新启动完整预算。M1/M0继续held_for_full_method；GPU5不操作。
+
+2026-10-14T11:01:38.535129+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-14T11:01:38.537905+00:00 Sequential task scheduling: active task threading_d2. Switch only after all 9 training runs and 45 evaluations finish.
+
+2026-10-14T11:01:38.860744+00:00 Job 11 train threading_d2/e6/seed_1/point_-1 launched PID=542763, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=133999; logs/final_job_11.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T11:01:40.089547+00:00
+45训练、225正式评测。{"train": {"queued": 38, "running": 2, "held_for_full_method": 4, "finished": 1}, "eval": {"queued": 214, "finished": 10, "held_for_full_method": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T11:02:10.881003+00:00 Job 12 train threading_d2/e6/seed_2/point_-1 launched PID=544213, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=124989; logs/final_job_12.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T11:02:12.342810+00:00
+45训练、225正式评测。{"train": {"queued": 37, "running": 3, "held_for_full_method": 4, "finished": 1}, "eval": {"queued": 214, "finished": 10, "held_for_full_method": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-14T19:02:30.956908+08:00
+完整正式评测10/225，共500回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 10}, {"kind": "eval", "status": "held_for_full_method", "count": 1}, {"kind": "eval", "status": "queued", "count": 214}, {"kind": "train", "status": "finished", "count": 1}, {"kind": "train", "status": "held_for_full_method", "count": 4}, {"kind": "train", "status": "queued", "count": 37}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
