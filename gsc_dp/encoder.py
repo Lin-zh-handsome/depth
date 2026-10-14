@@ -148,9 +148,14 @@ class RGBDGeometryObsEncoder(ModuleAttrMixin):
             else:
                 ys = torch.full((b,), (h - ch) // 2, device=rgb.device)
                 xs = torch.full((b,), (w - cw) // 2, device=rgb.device)
-            rgb = torch.stack([rgb[i, :, ys[i]:ys[i]+ch, xs[i]:xs[i]+cw] for i in range(b)])
-            depth = torch.stack([depth[i, :, ys[i]:ys[i]+ch, xs[i]:xs[i]+cw] for i in range(b)])
-            valid = torch.stack([valid[i, :, ys[i]:ys[i]+ch, xs[i]:xs[i]+cw] for i in range(b)])
+            # Use identical crop offsets for all modalities without extracting CUDA scalars.
+            rows = ys[:, None, None] + torch.arange(ch, device=rgb.device)[None, :, None]
+            cols = xs[:, None, None] + torch.arange(cw, device=rgb.device)[None, None, :]
+            indices = (rows * w + cols).reshape(b, 1, ch * cw)
+            def crop(tensor):
+                selected = tensor.flatten(2).gather(2, indices.expand(-1, tensor.shape[1], -1))
+                return selected.reshape(b, tensor.shape[1], ch, cw)
+            rgb, depth, valid = crop(rgb), crop(depth), crop(valid)
         if self.imagenet_norm:
             rgb = (rgb - self.rgb_mean) / self.rgb_std
         return rgb, depth, valid

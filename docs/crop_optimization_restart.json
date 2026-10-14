@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-14T18:42:04.329214",
+  "controllers": [
+    460632
+  ],
+  "workers": [
+    {
+      "id": 13,
+      "pid": 3436999,
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0
+    },
+    {
+      "id": 14,
+      "pid": 3439300,
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 1
+    },
+    {
+      "id": 10,
+      "pid": 3433612,
+      "task": "threading_d2",
+      "method": "e6",
+      "seed": 0
+    },
+    {
+      "id": 11,
+      "pid": 3435319,
+      "task": "threading_d2",
+      "method": "e6",
+      "seed": 1
+    }
+  ],
+  "reason": "equivalent vectorized crop replaces CUDA scalar slices; M0 and GPU5 untouched"
+}
