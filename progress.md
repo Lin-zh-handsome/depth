@@ -312,3 +312,7 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 ## 每小时巡检 2026-10-14T18:02:01.328847+08:00
 完整正式评测10/225，共500回合；新增：threading_d2/e0/seed0/250: 5/50=10%。队列[{"kind": "eval", "status": "finished", "count": 10}, {"kind": "eval", "status": "queued", "count": 215}, {"kind": "train", "status": "finished", "count": 1}, {"kind": "train", "status": "queued", "count": 38}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 用户改为按任务串行推进 2026-10-14T18:32:46.777107+08:00
+当前Threading为唯一可启动训练/正式评测的任务。同任务内三模型三种子可并行，M2优先；必须9项训练和45次正式评测全部完成后，才切换PegInsertionSide、Stack Three、Coffee、StackCube。修正此前表述：一个任务共45次正式评测，不是15次。其余任务保持已入队，已有结果和权重保留；不改变训练预算、五个位置和每点回合数。仅重启调度器，六个现有Threading训练进程不停止。GPU5不操作。
