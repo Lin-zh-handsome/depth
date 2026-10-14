@@ -1,0 +1,5 @@
+{
+  "source": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/experiments/ch3/eval_manifest.csv",
+  "raw_episode_source": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/source_data/checkpoint_sr.csv",
+  "statistics": "Best-of-5, three independent seeds, sample std ddof=1, earliest tie"
+}

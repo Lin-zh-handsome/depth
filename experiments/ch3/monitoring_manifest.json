@@ -1,5 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-14T13:00:53.031961+08:00",
+  "checked_at_asia_shanghai": "2026-10-14T14:08:47.225581+08:00",
+  "previous_poll": "2026-10-14T13:00:53.031961+08:00",
   "protocol": {
     "training_runs": 45,
     "evaluation_points": 225,
@@ -14,8 +15,13 @@
   "counts": [
     {
       "kind": "eval",
+      "status": "finished",
+      "count": 2
+    },
+    {
+      "kind": "eval",
       "status": "queued",
-      "count": 223
+      "count": 221
     },
     {
       "kind": "eval",
@@ -35,32 +41,32 @@
   ],
   "running": [
     {
-      "id": 76,
+      "id": 78,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "stack_three_d1",
       "method": "e0",
       "seed": 0,
-      "checkpoint_step": 50,
-      "pid": 3430198,
+      "checkpoint_step": 150,
+      "status": "running",
+      "pid": 3631017,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 44,
-      "episode_log_age_seconds": 29
+      "episodes_completed": 47
     },
     {
-      "id": 77,
+      "id": 79,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "stack_three_d1",
       "method": "e0",
       "seed": 0,
-      "checkpoint_step": 100,
-      "pid": 3431847,
+      "checkpoint_step": 200,
+      "status": "running",
+      "pid": 3634251,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 42,
-      "episode_log_age_seconds": 74
+      "episodes_completed": 46
     },
     {
       "id": 10,
@@ -70,19 +76,21 @@
       "method": "e6",
       "seed": 0,
       "checkpoint_step": -1,
+      "status": "running",
       "pid": 3433612,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 1500,
-        "data_epoch": 2,
-        "next_batch": 124,
-        "train_loss": 0.07776042819023132,
-        "lr": 9.99916112092612e-05,
-        "wall_seconds": 3132.762335062027,
+        "optimizer_updates": 3100,
+        "data_epoch": 4,
+        "next_batch": 348,
+        "train_loss": 0.0753612220287323,
+        "lr": 9.994330090802165e-05,
+        "wall_seconds": 7210.734810352325,
         "gpu_peak_bytes": 8070868480
       },
-      "metric_age_seconds": 77,
+      "metric_age_seconds": 73,
+      "updates_since_last_poll": 1600,
       "waiting_for_eval": false
     },
     {
@@ -93,19 +101,21 @@
       "method": "e6",
       "seed": 1,
       "checkpoint_step": -1,
+      "status": "running",
       "pid": 3435319,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 1400,
-        "data_epoch": 2,
-        "next_batch": 24,
-        "train_loss": 0.0952182188630104,
-        "lr": 9.999320504339954e-05,
-        "wall_seconds": 2962.0442476272583,
+        "optimizer_updates": 3000,
+        "data_epoch": 4,
+        "next_batch": 248,
+        "train_loss": 0.09221886098384857,
+        "lr": 9.994757775460544e-05,
+        "wall_seconds": 7040.181678771973,
         "gpu_peak_bytes": 8070868480
       },
-      "metric_age_seconds": 215,
+      "metric_age_seconds": 211,
+      "updates_since_last_poll": 1600,
       "waiting_for_eval": false
     },
     {
@@ -116,19 +126,21 @@
       "method": "e3",
       "seed": 0,
       "checkpoint_step": -1,
+      "status": "running",
       "pid": 3436999,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 1400,
-        "data_epoch": 2,
-        "next_batch": 24,
-        "train_loss": 0.10918544232845306,
-        "lr": 9.999320504339954e-05,
-        "wall_seconds": 3005.7296075820923,
+        "optimizer_updates": 3000,
+        "data_epoch": 4,
+        "next_batch": 248,
+        "train_loss": 0.07114606350660324,
+        "lr": 9.994757775460544e-05,
+        "wall_seconds": 7076.671965122223,
         "gpu_peak_bytes": 8043638272
       },
-      "metric_age_seconds": 138,
+      "metric_age_seconds": 141,
+      "updates_since_last_poll": 1600,
       "waiting_for_eval": false
     },
     {
@@ -139,19 +151,21 @@
       "method": "e3",
       "seed": 1,
       "checkpoint_step": -1,
+      "status": "running",
       "pid": 3439300,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 1400,
-        "data_epoch": 2,
-        "next_batch": 24,
-        "train_loss": 0.09617892652750015,
-        "lr": 9.999320504339954e-05,
-        "wall_seconds": 3047.8132033348083,
+        "optimizer_updates": 3000,
+        "data_epoch": 4,
+        "next_batch": 248,
+        "train_loss": 0.09111370891332626,
+        "lr": 9.994757775460544e-05,
+        "wall_seconds": 7128.735819578171,
         "gpu_peak_bytes": 8043638272
       },
-      "metric_age_seconds": 63,
+      "metric_age_seconds": 56,
+      "updates_since_last_poll": 1600,
       "waiting_for_eval": false
     },
     {
@@ -162,6 +176,7 @@
       "method": "e0",
       "seed": 0,
       "checkpoint_step": -1,
+      "status": "running",
       "pid": 3441539,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
@@ -174,7 +189,8 @@
         "wall_seconds": 47068.155631542206,
         "gpu_peak_bytes": 8048545280
       },
-      "metric_age_seconds": 7581,
+      "metric_age_seconds": 11656,
+      "updates_since_last_poll": 0,
       "waiting_for_eval": true
     },
     {
@@ -185,20 +201,56 @@
       "method": "e0",
       "seed": 1,
       "checkpoint_step": -1,
+      "status": "running",
       "pid": 3443211,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 14000,
-        "data_epoch": 20,
-        "next_batch": 240,
-        "train_loss": 0.06530648469924927,
-        "lr": 9.847887605124789e-05,
-        "wall_seconds": 3030.009658098221,
+        "optimizer_updates": 29900,
+        "data_epoch": 43,
+        "next_batch": 316,
+        "train_loss": 0.05810358002781868,
+        "lr": 9.292243968009331e-05,
+        "wall_seconds": 7120.762954235077,
         "gpu_peak_bytes": 8043277824
       },
-      "metric_age_seconds": 18,
+      "metric_age_seconds": 2,
+      "updates_since_last_poll": 15900,
       "waiting_for_eval": false
+    }
+  ],
+  "complete_formal_evaluations": [
+    {
+      "id": 76,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "stack_three_d1",
+      "method": "e0",
+      "seed": 0,
+      "checkpoint_step": 50,
+      "status": "finished",
+      "pid": 3430198,
+      "episodes_completed": 50,
+      "success_count": 14,
+      "n_episodes": 50,
+      "success_rate": 0.28,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/eval/epoch_000050/eval_summary.json"
+    },
+    {
+      "id": 77,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "stack_three_d1",
+      "method": "e0",
+      "seed": 0,
+      "checkpoint_step": 100,
+      "status": "finished",
+      "pid": 3431847,
+      "episodes_completed": 50,
+      "success_count": 21,
+      "n_episodes": 50,
+      "success_rate": 0.42,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/eval/epoch_000100/eval_summary.json"
     }
   ],
   "issues": [],
@@ -209,7 +261,12 @@
     "stack_three_d1_200.json",
     "threading_d2_200.json"
   ],
-  "disk_free_bytes": 1381408104448,
+  "disk_free_bytes": 1579433861120,
   "pause_marker_present": false,
-  "note": "Partial episodes are progress only; no success rate until complete reset set."
+  "checkpoint_cleanup": {
+    "files_deleted": 38,
+    "bytes_reclaimed": 200254889836,
+    "best_and_latest_preserved": true
+  },
+  "note": "Current per-checkpoint SR and provisional best are not completed Best-of-5 or three-seed statistics."
 }

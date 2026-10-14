@@ -1,0 +1,6 @@
+benchmark,task,demos,budget,progress_unit,interval,episodes,horizon,control_mode
+mimicgen,stack_three_d1,200,250,epoch,50,50,400,metadata_pending
+mimicgen,threading_d2,200,250,epoch,50,50,400,metadata_pending
+mimicgen,coffee_d2,200,250,epoch,50,50,400,metadata_pending
+maniskill,StackCube-v1,100,100000,optimizer_update,20000,100,200,pd_ee_delta_pos
+maniskill,PegInsertionSide-v1,100,100000,optimizer_update,20000,100,300,pd_ee_delta_pose

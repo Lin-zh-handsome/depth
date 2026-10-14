@@ -183,3 +183,30 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 ## 每小时实际巡检 2026-10-14T13:00:53.031961+08:00
 新45训练/225正式评测协议继续执行；暂停标记不存在，最终启动指令已记录撤销此前暂停。6训练、2正式评测进程均存活且CUDA_VISIBLE_DEVICES绑定物理GPU2 UUID；未操作GPU5或独立seed42。Threading M2种子0/1与M1种子0/1均已推进约1400更新、2轮，最近loss有限；M0种子1已推进13700更新、约19轮；M0种子0等待4个合法旧保存点评测，属于有界快照回压，未误判死锁。Stack Three M0种子0的50/100轮评测当前约43/41回合，仍未达到完整50回合，不能计正式DONE或SR。两项ManiSkill末端增量控制数据转换已完成，五任务manifest就绪，配置已自动刷新为45项。GPU2空余约85GB，内存可用1.2TiB，磁盘空余约1.3TB；当前无异常修复需求。真实巡检明细 experiments/ch3/monitoring_manifest.json；完整正式评测仍0/225。
+
+
+## 实际运行状态（自动更新）
+2026-10-14T05:08:15.320121+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 223, "finished": 1, "running": 1}, "analysis": {}}；完整回合 50。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T05:08:47.977628+00:00 Job 76 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/final_job_76.log
+
+2026-10-14T05:08:48.248388+00:00 Job 78 eval stack_three_d1/e0/seed_0/point_150 launched PID=3631017, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89591; logs/final_job_78.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T05:08:49.515548+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 222, "finished": 1, "running": 2}, "analysis": {}}；完整回合 50。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T05:09:51.585779+00:00 Job 77 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/final_job_77.log
+
+2026-10-14T05:09:51.879000+00:00 Job 79 eval stack_three_d1/e0/seed_0/point_200 launched PID=3634251, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89591; logs/final_job_79.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T05:10:00.716021+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 221, "finished": 2, "running": 2}, "analysis": {}}；完整回合 100。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时实际巡检 2026-10-14T14:08:47.225581+08:00
+正式评测已完成2/225个保存点，共100完整回合。Stack Three M0 seed0第50轮14/50=28%，第100轮21/50=42%；两个reset集合完整。当前暂时best保存为100轮，best.pt和完整recovery.pt均存在。自动逐文件回收已执行38个失效/已评快照，释放200254889836字节（约200GB），每项记录于checkpoint_cleanup.jsonl；未执行新的手工删除。当前6训练和2评测实际进程存活且GPU2绑定正确；Threading四组M1/M2较上次增长约1500–1600更新，M0种子1增长约1.54万更新；M0种子0等待合法保存点评测属于预期回压。GPU2空余约85GB，RAM可用约1.2TiB，磁盘空余约1.5TB；无新的失败/非有限loss。thesis/chapter3真实结果已增量导出，不把当前2点暂时最佳当作最终五点/三种子统计。

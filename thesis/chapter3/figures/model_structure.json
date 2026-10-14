@@ -1,0 +1,11 @@
+{
+  "sources": [
+    "gsc_dp/encoder.py",
+    "gsc_dp/policy_factory.py",
+    "gsc_dp/depth_token_learner.py"
+  ],
+  "insert_after": "layer2",
+  "tokens": 8,
+  "action_denoiser": "unchanged official ConditionalUnet1D",
+  "fusion": "additive token projection residual"
+}
