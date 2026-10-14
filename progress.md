@@ -406,3 +406,7 @@ M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测�
 
 ## 每小时巡检 2026-10-14T19:02:30.956908+08:00
 完整正式评测10/225，共500回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 10}, {"kind": "eval", "status": "held_for_full_method", "count": 1}, {"kind": "eval", "status": "queued", "count": 214}, {"kind": "train", "status": "finished", "count": 1}, {"kind": "train", "status": "held_for_full_method", "count": 4}, {"kind": "train", "status": "queued", "count": 37}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## GPU2负载目标 2026-10-14T19:06:28.202659+08:00
+用户希望GPU利用率约70%。增加独立运行时负载控制器，按NVML滚动读数自适应占空比，仅短时暂停/继续本账号本工程绑定GPU2的训练评测进程；保持M2三种子并行优先，不改模型、批量、训练更新数、随机状态或评测回合。目标为65–75%附近的平均利用率，瞬时读数允许波动；GPU5和其他用户进程完全排除。配置jobs/gpu_load_target.json，状态jobs/gpu_load_state.json。目标限载会增加墙钟时间，后续耗时需重新按实际进度估计。

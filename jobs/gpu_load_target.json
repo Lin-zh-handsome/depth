@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "target_percent": 70,
+  "cycle_seconds": 6,
+  "expected_average_band": [
+    65,
+    75
+  ],
+  "scope": "only own campaign GPU2 train/eval/analysis processes"
+}
