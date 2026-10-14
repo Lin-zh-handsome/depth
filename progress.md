@@ -32,3 +32,63 @@ Phase D：首个StackCube E0 seed0 5000更新pt已原子保存，独立正式评
 
 ## GitHub 发布完成 2026-10-13T22:27:14.850593+08:00
 已成功推送至 https://github.com/Lin-zh-handsome/depth 的 main 分支。首次工程提交60a4272；包含代码、全部现有配置、论文材料、官方依赖子模块、真实训练/评测日志与队列快照。用户明确要求不上传权重；数据集本体与所有模型权重均排除。运行中的结果仅为采集时快照，不替代最终论文统计。
+
+2026-10-13T16:09:08.254937+00:00 Job 176 eval StackCube-v1/e1/seed_0 finished, exit=0; logs/job_176.log
+
+2026-10-13T16:09:08.708761+00:00 Job 196 eval threading_d2/e0/seed_0/point_5 launched PID=1259999, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57651; logs/job_196.log
+
+2026-10-13T17:31:14.233086+00:00 Job 177 eval PegInsertionSide-v1/e1/seed_0 finished, exit=0; logs/job_177.log
+
+2026-10-13T17:31:14.512301+00:00 Job 197 eval stack_three_d1/e0/seed_0/point_5 launched PID=1499815, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57679; logs/job_197.log
+
+2026-10-13T17:48:00.301067+00:00 Job 97 train StackCube-v1/e3/seed_0/point_-1 launched PID=1548863, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=64583; logs/job_97.log
+
+2026-10-13T18:01:11.268872+00:00 Job 196 eval threading_d2/e0/seed_0 finished, exit=0; logs/job_196.log
+
+2026-10-13T18:01:12.052934+00:00 Job 199 eval threading_d2/e0/seed_0/point_10 launched PID=1588152, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57543; logs/job_199.log
+
+2026-10-13T18:23:32.307585+00:00 Job 100 train StackCube-v1/e4/seed_0/point_-1 launched PID=1653220, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=64499; logs/job_100.log
+
+2026-10-13T19:11:45.725722+00:00 Job 197 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/job_197.log
+
+2026-10-13T19:11:45.906312+00:00 Job 201 eval stack_three_d1/e0/seed_0/point_10 launched PID=1795024, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57569; logs/job_201.log
+
+2026-10-13T19:36:35.520989+00:00 Job 199 eval threading_d2/e0/seed_0 finished, exit=0; logs/job_199.log
+
+2026-10-13T19:36:36.137475+00:00 Job 202 eval threading_d2/e0/seed_0/point_15 launched PID=1867350, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57535; logs/job_202.log
+
+2026-10-13T20:45:00.828163+00:00 Job 201 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/job_201.log
+
+2026-10-13T20:45:00.991759+00:00 Job 203 eval stack_three_d1/e0/seed_0/point_15 launched PID=2067303, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57569; logs/job_203.log
+
+2026-10-13T21:09:52.626729+00:00 Job 202 eval threading_d2/e0/seed_0 finished, exit=0; logs/job_202.log
+
+2026-10-13T21:09:52.904247+00:00 Job 206 eval threading_d2/e0/seed_0/point_20 launched PID=2139915, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57535; logs/job_206.log
+
+2026-10-13T22:18:21.826499+00:00 Job 203 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/job_203.log
+
+2026-10-13T22:18:22.557268+00:00 Job 207 eval stack_three_d1/e0/seed_0/point_20 launched PID=2341488, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57569; logs/job_207.log
+
+2026-10-13T22:43:14.364179+00:00 Job 206 eval threading_d2/e0/seed_0 finished, exit=0; logs/job_206.log
+
+2026-10-13T22:43:15.132329+00:00 Job 208 eval threading_d2/e0/seed_0/point_25 launched PID=2414160, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57535; logs/job_208.log
+
+2026-10-13T23:52:17.781951+00:00 Job 207 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/job_207.log
+
+2026-10-13T23:52:18.561511+00:00 Job 211 eval stack_three_d1/e0/seed_0/point_25 launched PID=2616230, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57569; logs/job_211.log
+
+2026-10-14T00:16:11.283948+00:00 Job 208 eval threading_d2/e0/seed_0 finished, exit=0; logs/job_208.log
+
+2026-10-14T00:16:11.844497+00:00 Job 212 eval threading_d2/e0/seed_0/point_30 launched PID=2687015, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57535; logs/job_212.log
+
+2026-10-14T01:25:48.977422+00:00 Job 211 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/job_211.log
+
+2026-10-14T01:25:49.137560+00:00 Job 213 eval stack_three_d1/e0/seed_0/point_30 launched PID=2897777, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57569; logs/job_213.log
+
+2026-10-14T01:49:07.320643+00:00 Job 212 eval threading_d2/e0/seed_0 finished, exit=0; logs/job_212.log
+
+2026-10-14T01:49:07.504491+00:00 Job 214 eval threading_d2/e0/seed_0/point_35 launched PID=2971275, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=57535; logs/job_214.log
+
+
+## 巡检与调度修复 2026-10-14T10:13:37.760554+08:00
+实际训练完成2/162，运行8，等待152；完整保存点评测15，运行2，已生成等待122，已完成950回合。全部运行进程存活。StackCube/Peg E0 seed0均完成100000更新；Stack Three/Threading E0约192/216轮；RGB-D E1/GSC-DP E6约20.6k–21.1k更新；StackCube E3/E4约7.1k–7.5k。五任务数据清单全部就绪。修复评测跨benchmark直接比较epoch和update数值导致ManiSkill积压的问题，改按入队ID先到先评；同时修复接管MimicGen评测进程完成时误查update目录的问题。仅重启调度控制器，训练与评测工作进程保留。GPU2剩余约54GB，系统可用内存1.3TiB，/home剩余1.4TB；长期权重保存将持续占用磁盘，未删除数据或权重。时序视频尚未生成；主流其他模型和完整数据效率等尚未完成。

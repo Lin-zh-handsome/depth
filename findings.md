@@ -7,3 +7,7 @@
 
 ## GitHub 工程发布
 仓库main已推送。GitHub身份认证通过本机既有Git凭据完成，未将认证信息写入工程。三个官方依赖采用子模块；实际日志、逐回合轨迹、队列及检查点元数据保留在artifacts/snapshot_20261013。数据本体和模型权重按用户要求排除。
+
+
+## 2026-10-14 实际评测调度问题
+评测保存点编号单位不同，原ORDER BY checkpoint_step使MimicGen epoch 5–250先于ManiSkill update 5000–100000，产生跨benchmark饥饿；改为入队ID先到先评。接管评测进程完成标记改按benchmark选择epoch/update目录。全部五任务数据已就绪；当前完整评测950回合仍为早期结果，非最终BEST/LAST10统计。

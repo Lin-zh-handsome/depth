@@ -61,10 +61,9 @@ Status: pending
 
 
 ## Latest actual execution
-Phase A协议/资源/官方源码/图表契约落盘；Phase B两ManiSkill固定100条子集完成；Phase C原版E0及官方GSA迁移代码已部署；Phase D两ManiSkill E0 seed0真实训练启动，首批>1000 updates。队列162项，48项核心/扩展ManiSkill配置已具备条件。MimicGen Threading/Coffee原始文件下载完成，Stack Three国内源中断待断点续传。
+2026-10-14 10:11服务器实查：五任务固定子集、RGB-D转换及manifest均已具备；Phase D训练完成2/162（两ManiSkill E0 seed0，100k更新），8运行，152等待。完整评测15保存点/950回合，2运行，122已生成等待。已修复跨benchmark评测顺序饥饿和接管MimicGen评测完成标记路径。Phase E其他主流模型及Phase F完整数据效率等尚未完成。
 
-新增任务G-T部署状态：代码、两benchmark适配和契约已落盘，早期/最终保存点自动独立分析已入调度逻辑；尚未产生新协议E6时序MP4/PNG。该项不可标为真实结果完成。
-
+新增任务G-T代码与契约已部署；真实E6早期保存点评测与同reset成对分析等待队列，尚无时序MP4/PNG结果。
 
 ## GitHub 发布追加任务
 Status: complete

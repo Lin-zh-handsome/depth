@@ -71,7 +71,8 @@ def main():
         for r in db.execute("SELECT * FROM jobs WHERE status='running'").fetchall():
             if r['id'] in children or pid_alive(r['pid']):continue
             run=ROOT/'runs'/r['benchmark']/r['task']/r['method']/f"seed_{r['seed']}"
-            marker=run/'training_complete.json' if r['kind']=='train' else run/'eval'/f"update_{r['checkpoint_step']:06d}"/'eval_summary.json'
+            tag='epoch' if r['benchmark']=='mimicgen' else 'update'
+            marker=run/'training_complete.json' if r['kind']=='train' else run/'eval'/f"{tag}_{r['checkpoint_step']:06d}"/'eval_summary.json'
             status='finished' if marker.exists() else 'queued' if r['attempts']<r['max_attempts'] else 'failed'
             db.execute('UPDATE jobs SET status=?,finished=?,error=? WHERE id=?',
                 (status,now(),None if status=='finished' else 'adopted worker exited; inspect its job log',r['id']))
@@ -104,7 +105,8 @@ def main():
                 rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY seed, CASE method WHEN 'e0' THEN 0 WHEN 'e1' THEN 1 WHEN 'e6' THEN 2 ELSE 3 END, id",(kind,)).fetchall()
                 # Snapshot eval dependencies are already atomic-complete.
                 if kind=='eval':
-                    rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' ORDER BY checkpoint_step,id").fetchall()
+                    # FIFO across benchmarks: epoch and optimizer-update indices have different units.
+                    rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' ORDER BY id").fetchall()
                 if kind=='train':
                     # Keep two resource slots for the independently prepared
                     # MimicGen benchmark rather than filling them with further
