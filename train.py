@@ -105,6 +105,8 @@ def main():
                 if not is_mimic and updates in cfg['eval_positions']:
                     save(run,payload(next_batch),scheduled=True)
                     if not wait_for_evaluation(cfg,stop):save(run,payload(next_batch));return 75
+                elif not is_mimic and updates%5000==0:
+                    save(run,payload(next_batch))
                 if stop[0]:
                     save(run,payload(next_batch));print('recoverable stop',updates,flush=True);return 75
                 if updates>=total_updates: break
@@ -115,6 +117,8 @@ def main():
             if is_mimic and epoch in cfg['eval_positions']:
                 completed=payload(0);completed['checkpoint_step']=epoch
                 save(run,completed,scheduled=True)
+            elif is_mimic and epoch%5==0:
+                save(run,payload(0))
     (run/'training_complete.json').write_text(json.dumps(dict(optimizer_updates=updates,completed_epochs=epoch,
         expected_savepoints=cfg['savepoints'],code_revision=revision)))
     return 0

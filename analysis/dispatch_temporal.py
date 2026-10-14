@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import shutil
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
@@ -45,6 +46,12 @@ def main():
             subprocess.run(command,check=True,cwd=ROOT)
         subprocess.run([sys.executable,str(ROOT/'analysis/temporal_attention.py'),'compare','--inputs',
             *map(str,outputs),'--output',str(dest/f"reset_{selection['reset_id']}"/'comparison')],check=True,cwd=ROOT)
+    thesis=ROOT/'thesis/chapter3'
+    for source in dest.rglob('*'):
+        if not source.is_file() or source.suffix not in ['.mp4','.png','.json']:continue
+        kind='videos' if source.suffix=='.mp4' else 'figures' if source.suffix=='.png' else 'source_data'
+        target=thesis/kind/'execution'/args.task/f'seed_{args.seed}'/source.relative_to(dest)
+        target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target)
     print('paired temporal exports',dest,flush=True)
 
 if __name__=='__main__':main()

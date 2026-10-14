@@ -84,6 +84,22 @@ def finalize(run):
         if cp.is_symlink():cp.unlink();physical.unlink()
         else:cp.unlink()
         with audit_path.open('a') as f:f.write(json.dumps(dict(audit,action='deleted'))+'\n')
+    # Historical non-protocol weights are eligible only after best and full recovery exist.
+    recovery=run/'checkpoints/recovery.pt'
+    if best.exists() and recovery.exists():
+        for cp in (run/'checkpoints').glob('*.pt'):
+            if cp.name=='recovery.pt':continue
+            try:point=int(cp.stem.split('_')[-1])
+            except ValueError:continue
+            if point in cfg['eval_positions']:continue
+            physical=cp.resolve()
+            if opened(cp) or physical.stat().st_uid!=os.getuid() or not physical.is_relative_to(ROOT):continue
+            if db.execute("SELECT 1 FROM jobs WHERE checkpoint_path=? AND status IN ('queued','running')",(str(cp),)).fetchone():continue
+            audit=dict(timestamp=time.time(),path=str(cp),bytes=physical.stat().st_size,best=str(best),latest=str(recovery),reason='superseded historical position outside five-point protocol; no live references')
+            with (ROOT/'experiments/ch3/checkpoint_cleanup.jsonl').open('a') as f:f.write(json.dumps(dict(audit,action='candidate'))+'\n')
+            if cp.is_symlink():cp.unlink();physical.unlink()
+            else:cp.unlink()
+            with (ROOT/'experiments/ch3/checkpoint_cleanup.jsonl').open('a') as f:f.write(json.dumps(dict(audit,action='deleted'))+'\n')
     latest=run/'checkpoints/recovery.pt'
     if (run/'training_complete.json').exists() and len(results)==5 and best.exists() and latest.exists() and not opened(latest):
         if not db.execute("SELECT 1 FROM train_jobs WHERE benchmark=? AND task=? AND method=? AND seed=? AND status!='finished'",(cfg['benchmark'],cfg['task'],cfg['method'],cfg['seed'])).fetchone():

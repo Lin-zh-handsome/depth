@@ -50,6 +50,15 @@ def main():
     status=dict(timestamp=now,counts=counts,scheduled_checkpoint_files=checkpoint_count,complete_rollout_episodes=episodes,
         running=live,gpu='physical GPU2 only',remaining_gpu_hours='UNKNOWN: no stable per-task throughput estimate',
         resume_command='cd '+str(ROOT)+' && PYTHONNOUSERSITE=1 nohup /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python jobs/scheduler.py > logs/final_scheduler.log 2>&1 &')
+    previous=json.loads((root/'STATUS.json').read_text()) if (root/'STATUS.json').exists() else {}
+    if previous.get('counts')!=counts:
+        for plan in [ROOT,ROOT.parent/'.planning/protocol_v1']:
+            summary='\n\n## 实际运行状态（自动更新）\n'+now+'\n45训练、225正式评测。'+json.dumps(counts)+'；完整回合 '+str(episodes)+'。全部工作只用物理GPU2。队列入队不等于实验完成。\n'
+            for name in ['task_plan.md','findings.md']:
+                path=plan/name
+                original=path.read_text(encoding='utf-8').split('\n\n## 实际运行状态（自动更新）')[0]
+                path.write_text(original+summary,encoding='utf-8')
+            with (plan/'progress.md').open('a',encoding='utf-8') as f:f.write(summary)
     (root/'STATUS.json').write_text(json.dumps(status,indent=2))
     (root/'STATUS.md').write_text('# 第三章实际状态\n\n'+now+'\n\n'+json.dumps(counts)+'\n\n完整回合 '+str(episodes)+'；已保存规定检查点 '+str(checkpoint_count)+'。剩余GPU小时 UNKNOWN。\n\n恢复：\n```bash\n'+status['resume_command']+'\n```\n\n磁盘不足时资源门槛会暂停新作业；每个run保留best，临时权重评测完成后按引用清单回收。\n')
     protocol_rows=[]
@@ -89,22 +98,10 @@ def main():
                 token_given_gsa_pp=100*(s['M2'][metric+'_mean']-s['M1'][metric+'_mean']) if ready else '',
                 full_pp=100*(s['M2'][metric+'_mean']-s['M0'][metric+'_mean']) if ready else '',status='DONE' if ready else 'TODO'))
     write_csv(out/'tables/module_deltas.csv',delta)
+    for name in ['table3_2_best','module_deltas']:
+        (out/'tables'/f'{name}.json').write_text(json.dumps(dict(source=str(root/'eval_manifest.csv'),raw_episode_source=str(out/'source_data/checkpoint_sr.csv'),statistics='Best-of-5, three independent seeds, sample std ddof=1, earliest tie'),indent=2))
     marker=out/'source_data/exported_eval_count.json'
     changed=not marker.exists() or json.loads(marker.read_text())!=len(points)
-    structure=out/'figures/model_structure.pdf'
-    if not structure.exists():
-        import matplotlib;matplotlib.use('Agg')
-        import matplotlib.pyplot as plt
-        fig,ax=plt.subplots(figsize=(11,4.2));ax.axis('off')
-        for y,name,middle in [(0.82,'M0','RGB ResNet18: layer2'),(0.50,'M1','layer2 + gamma * GSA(RGB features, Depth)'),(0.18,'M2','same GSA + 8 TokenLearner weights')]:
-            texts=[name+'\nRGB + robot state',middle,'ResNet18 layer3/4\n512 features per camera','global_cond + state\noriginal ConditionalUnet1D / FiLM']
-            for x,txt in zip([.08,.35,.60,.86],texts):ax.text(x,y,txt,ha='center',va='center',fontsize=8,bbox=dict(boxstyle='round,pad=0.6',fc='#eaf2f8',ec='#36566c'),transform=ax.transAxes)
-            for x1,x2 in [(.16,.24),(.45,.52),(.69,.76)]:ax.annotate('',xy=(x2,y),xytext=(x1,y),xycoords='axes fraction',arrowprops=dict(arrowstyle='->'))
-        ax.text(.50,.02,'M2: same spatial weights -> visual tokens + (u,v,d,rho) -> projection -> residual to global visual features',ha='center',fontsize=8,transform=ax.transAxes)
-        structure.parent.mkdir(exist_ok=True);fig.tight_layout()
-        for ext in ['pdf','png']:fig.savefig(structure.with_suffix('.'+ext),dpi=200)
-        plt.close(fig)
-        structure.with_suffix('.json').write_text(json.dumps(dict(sources=['gsc_dp/encoder.py','gsc_dp/policy_factory.py','gsc_dp/depth_token_learner.py'],insert_after='layer2',tokens=8,action_denoiser='unchanged official ConditionalUnet1D',fusion='additive token projection residual'),indent=2))
     if changed and points:
         import matplotlib;matplotlib.use('Agg')
         import matplotlib.pyplot as plt
