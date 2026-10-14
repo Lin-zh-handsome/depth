@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-14T20:04:34.667278+08:00",
-  "previous_poll": "2026-10-14T19:02:30.956908+08:00",
+  "checked_at_asia_shanghai": "2026-10-14T21:09:33.618620+08:00",
+  "previous_poll": "2026-10-14T20:04:34.667278+08:00",
   "protocol": {
     "training_runs": 45,
     "evaluation_points": 225,
@@ -16,7 +16,7 @@
     {
       "kind": "eval",
       "status": "finished",
-      "count": 10
+      "count": 11
     },
     {
       "kind": "eval",
@@ -26,7 +26,7 @@
     {
       "kind": "eval",
       "status": "queued",
-      "count": 213
+      "count": 212
     },
     {
       "kind": "eval",
@@ -56,18 +56,18 @@
   ],
   "running": [
     {
-      "id": 91,
+      "id": 96,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "threading_d2",
       "method": "e6",
-      "seed": 0,
+      "seed": 1,
       "checkpoint_step": 50,
       "status": "running",
-      "pid": 708025,
+      "pid": 743236,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 7
+      "episodes_completed": 47
     },
     {
       "id": 10,
@@ -82,15 +82,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "event": "epoch_complete",
-        "completed_epochs": 50,
-        "optimizer_updates": 34400,
-        "dataset_window_count": 43992,
-        "batch_size": 64,
-        "dataloader_batches": 688
+        "optimizer_updates": 36200,
+        "data_epoch": 52,
+        "next_batch": 424,
+        "train_loss": 0.07967225462198257,
+        "lr": 8.968392394074164e-05,
+        "wall_seconds": 8788.59448838234,
+        "gpu_peak_bytes": 8071089664
       },
-      "metric_age_seconds": 503,
-      "updates_since_last_poll": 16300,
+      "metric_age_seconds": 2,
+      "updates_since_last_poll": 1800,
       "waiting_for_eval": false
     },
     {
@@ -106,17 +107,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 33600,
-        "data_epoch": 48,
-        "next_batch": 576,
-        "train_loss": 0.07082678377628326,
-        "lr": 9.108705946079164e-05,
-        "wall_seconds": 3752.806521654129,
-        "gpu_peak_bytes": 8071089664
+        "event": "epoch_complete",
+        "completed_epochs": 50,
+        "optimizer_updates": 34400,
+        "dataset_window_count": 43992,
+        "batch_size": 64,
+        "dataloader_batches": 688
       },
-      "metric_age_seconds": 11,
-      "updates_since_last_poll": 18200,
-      "waiting_for_eval": false
+      "metric_age_seconds": 3721,
+      "updates_since_last_poll": 800,
+      "waiting_for_eval": true
     },
     {
       "id": 12,
@@ -131,16 +131,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 18900,
-        "data_epoch": 27,
-        "next_batch": 324,
-        "train_loss": 0.04990416020154953,
-        "lr": 9.718659886797461e-05,
-        "wall_seconds": 3729.1085426807404,
+        "optimizer_updates": 34100,
+        "data_epoch": 49,
+        "next_batch": 388,
+        "train_loss": 0.042732879519462585,
+        "lr": 9.082436730845993e-05,
+        "wall_seconds": 7622.961679935455,
         "gpu_peak_bytes": 8078388736
       },
-      "metric_age_seconds": 8,
-      "updates_since_last_poll": 18899,
+      "metric_age_seconds": 13,
+      "updates_since_last_poll": 15200,
       "waiting_for_eval": false
     }
   ],
@@ -212,6 +212,23 @@
       "success_rate": 0.44,
       "exact_reset_list": true,
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/eval/epoch_000200/eval_summary.json"
+    },
+    {
+      "id": 91,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e6",
+      "seed": 0,
+      "checkpoint_step": 50,
+      "status": "finished",
+      "pid": 708025,
+      "episodes_completed": 50,
+      "success_count": 5,
+      "n_episodes": 50,
+      "success_rate": 0.1,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/eval/epoch_000050/eval_summary.json"
     },
     {
       "id": 121,
@@ -318,11 +335,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "20:04:34 up 25 days,  3:29, 11 users,  load average: 14.77, 19.19, 21.75",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       124Gi       481Gi        34Gi       1.4Ti       1.8Ti\n交换：      2.0Gi       2.0Gi       0.0Ki",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 113396 MiB, 74 %"
+    "cpu": "21:09:33 up 25 days,  4:34, 11 users,  load average: 26.52, 26.53, 23.97",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       125Gi       459Gi        36Gi       1.4Ti       1.8Ti\n交换：      2.0Gi       2.0Gi       0.0Ki",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 113396 MiB, 69 %"
   },
-  "disk_free_bytes": 1731403251712,
+  "disk_free_bytes": 1729029840896,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
@@ -355,21 +372,21 @@
     "selection": "highest of five prescribed points; earliest on ties"
   },
   "checkpoint_cleanup": {
-    "files_deleted": 88,
-    "bytes_reclaimed": 455843379940
+    "files_deleted": 89,
+    "bytes_reclaimed": 457165830412
   },
   "note": "Per-point SR and provisional best are not complete five-point or three-seed statistics.",
   "gpu_load_control": {
-    "timestamp": "2026-10-14T20:05:21.581627+08:00",
+    "timestamp": "2026-10-14T21:10:26.158139+08:00",
     "target_percent": 70,
-    "cycle_mean_percent": 74.8,
-    "recent_mean_percent": 68.9,
-    "active_fraction": 0.752,
+    "cycle_mean_percent": 68.8,
+    "recent_mean_percent": 70.1,
+    "active_fraction": 0.769,
     "controlled_pids": [
       489094,
       542763,
       544213,
-      708025
+      743236
     ],
     "physical_gpu": 2
   }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-14T12:05:09.342393+00:00",
+  "timestamp": "2026-10-14T13:10:19.153669+00:00",
   "counts": {
     "train": {
       "queued": 37,
@@ -8,15 +8,15 @@
       "finished": 1
     },
     "eval": {
-      "queued": 213,
-      "finished": 10,
+      "queued": 212,
+      "finished": 11,
       "running": 1,
       "held_for_full_method": 1
     },
     "analysis": {}
   },
   "scheduled_checkpoint_files": 2,
-  "complete_rollout_episodes": 500,
+  "complete_rollout_episodes": 550,
   "running": [
     {
       "id": 10,
@@ -79,21 +79,21 @@
       "error": null
     },
     {
-      "id": 91,
+      "id": 96,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "threading_d2",
       "method": "e6",
-      "seed": 0,
+      "seed": 1,
       "checkpoint_step": 50,
       "status": "running",
       "prerequisite": null,
-      "config_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/config_resolved.json",
-      "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/checkpoints/epoch_000050.pt",
-      "pid": 708025,
+      "config_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_1/config_resolved.json",
+      "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_1/checkpoints/epoch_000050.pt",
+      "pid": 743236,
       "attempts": 1,
       "max_attempts": 2,
-      "started": "2026-10-14T11:56:36.010485+00:00",
+      "started": "2026-10-14T12:07:47.526385+00:00",
       "finished": null,
       "exit_code": null,
       "error": null
