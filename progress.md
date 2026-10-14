@@ -142,10 +142,28 @@ Phase D：首个StackCube E0 seed0 5000更新pt已原子保存，独立正式评
 ## 最终225评测协议接管
 45训练、225评测、15750回合；取消Last10和旧1710队列。MimicGen50/100/150/200/250，ManiSkill20k/40k/60k/80k/100k；并列最佳选最早位置。正式训练继续只用GPU2，GPU5不操作。旧35/40epoch评测停止保留部分日志，全部旧结果仅精确五位置可合并。修复M0恢复后normalizer留CPU问题；checkpoint保留best+latest及有界临时快照。用户禁止冗余哈希，因此字段留空并记录元数据溯源。
 
+2026-10-14T04:06:03.404400+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-14T04:06:04.085945+00:00 Job 76 eval stack_three_d1/e0/seed_0/point_50 launched PID=3430198, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=142249; logs/final_job_76.log
+
+2026-10-14T04:06:35.424720+00:00 Job 77 eval stack_three_d1/e0/seed_0/point_100 launched PID=3431847, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=139777; logs/final_job_77.log
+
+2026-10-14T04:07:07.086585+00:00 Job 10 train threading_d2/e6/seed_0/point_-1 launched PID=3433612, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=137306; logs/final_job_10.log
+
+2026-10-14T04:07:39.477225+00:00 Job 11 train threading_d2/e6/seed_1/point_-1 launched PID=3435319, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=131638; logs/final_job_11.log
+
+2026-10-14T04:08:11.064225+00:00 Job 13 train threading_d2/e3/seed_0/point_-1 launched PID=3436999, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=122629; logs/final_job_13.log
+
+2026-10-14T04:08:42.443201+00:00 Job 14 train threading_d2/e3/seed_1/point_-1 launched PID=3439300, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=113639; logs/final_job_14.log
+
+2026-10-14T04:09:14.814227+00:00 Job 16 train threading_d2/e0/seed_0/point_-1 launched PID=3441539, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=104666; logs/final_job_16.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-14T04:09:16.323754+00:00
 45训练、225正式评测。{"train": {"queued": 40, "running": 5}, "eval": {"queued": 223, "running": 2}, "analysis": {}}；完整回合 0。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T04:09:46.513577+00:00 Job 17 train threading_d2/e0/seed_1/point_-1 launched PID=3443211, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=95696; logs/final_job_17.log
 
 
 ## 实际运行状态（自动更新）
@@ -159,3 +177,9 @@ Phase D：首个StackCube E0 seed0 5000更新pt已原子保存，独立正式评
 M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记录有限loss。M1两种子从255/241更新恢复。M0种子0从158383更新恢复，当前因4个新协议旧保存点等待评测而回压，未重新训练。MimicGen已有两项M0恢复权重复用；目前新协议完整评测DONE=0，不引用旧非五位置成功率。PegInsertionSide100条pd_ee_delta_pose RGB-D转换完成；StackCube转换仍在运行，manifest完成后自动放行。每小时巡检gsc-dp已ACTIVE并使用ch3_final_queue.db。
 新权重预计约100GB、建议预留150GB，旧权重和数据另计。best/latest/临时快照回收代码已部署；真实回收尚待第一个完整正式评测，不能称已验证完成。最新完整恢复文件随必要恢复点原子替换；长期只保留best。正式evaluate不采集注意力，三方法五点完成后独立best轨迹分析导出至thesis/chapter3。
 恢复命令：cd /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1 && PYTHONNOUSERSITE=1 nohup /home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python jobs/scheduler.py > logs/final_scheduler.log 2>&1 &
+
+2026-10-14T04:23:07.858571+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+
+## 每小时实际巡检 2026-10-14T13:00:53.031961+08:00
+新45训练/225正式评测协议继续执行；暂停标记不存在，最终启动指令已记录撤销此前暂停。6训练、2正式评测进程均存活且CUDA_VISIBLE_DEVICES绑定物理GPU2 UUID；未操作GPU5或独立seed42。Threading M2种子0/1与M1种子0/1均已推进约1400更新、2轮，最近loss有限；M0种子1已推进13700更新、约19轮；M0种子0等待4个合法旧保存点评测，属于有界快照回压，未误判死锁。Stack Three M0种子0的50/100轮评测当前约43/41回合，仍未达到完整50回合，不能计正式DONE或SR。两项ManiSkill末端增量控制数据转换已完成，五任务manifest就绪，配置已自动刷新为45项。GPU2空余约85GB，内存可用1.2TiB，磁盘空余约1.3TB；当前无异常修复需求。真实巡检明细 experiments/ch3/monitoring_manifest.json；完整正式评测仍0/225。
