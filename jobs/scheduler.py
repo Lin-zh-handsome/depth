@@ -44,6 +44,9 @@ def register_temporal(db):
     db.commit()
 
 def main():
+    if (ROOT/'jobs/PAUSED_BY_USER.json').exists():
+        print('Dispatcher paused by user; explicit rescheduling is required.',flush=True)
+        return
     lock=(ROOT/'jobs/scheduler.lock').open('w')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES=GPU,GSC_GPU='2',

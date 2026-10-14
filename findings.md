@@ -11,3 +11,7 @@
 
 ## 2026-10-14 实际评测调度问题
 评测保存点编号单位不同，原ORDER BY checkpoint_step使MimicGen epoch 5–250先于ManiSkill update 5000–100000，产生跨benchmark饥饿；改为入队ID先到先评。接管评测进程完成标记改按benchmark选择epoch/update目录。全部五任务数据已就绪；当前完整评测950回合仍为早期结果，非最终BEST/LAST10统计。
+
+
+## 用户暂停全部训练
+本轮8项训练通过SIGTERM处理保存recovery.pt后退出；额外本账号旧训练1项已停止。当前训练进程0。jobs/PAUSED_BY_USER.json阻止控制器意外重启；每小时巡检暂停。新方案明确后再决定复用哪些保存点、调整队列及解除暂停标记。数据和已有模型权重保留。

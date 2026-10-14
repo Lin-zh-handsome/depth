@@ -92,3 +92,11 @@ Phase D：首个StackCube E0 seed0 5000更新pt已原子保存，独立正式评
 
 ## 巡检与调度修复 2026-10-14T10:13:37.760554+08:00
 实际训练完成2/162，运行8，等待152；完整保存点评测15，运行2，已生成等待122，已完成950回合。全部运行进程存活。StackCube/Peg E0 seed0均完成100000更新；Stack Three/Threading E0约192/216轮；RGB-D E1/GSC-DP E6约20.6k–21.1k更新；StackCube E3/E4约7.1k–7.5k。五任务数据清单全部就绪。修复评测跨benchmark直接比较epoch和update数值导致ManiSkill积压的问题，改按入队ID先到先评；同时修复接管MimicGen评测进程完成时误查update目录的问题。仅重启调度控制器，训练与评测工作进程保留。GPU2剩余约54GB，系统可用内存1.3TiB，/home剩余1.4TB；长期权重保存将持续占用磁盘，未删除数据或权重。时序视频尚未生成；主流其他模型和完整数据效率等尚未完成。
+
+2026-10-14T02:13:38.142223+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+
+## 用户停止训练 2026-10-14T10:54:53.623540+08:00
+用户准备重新安排训练。每小时自动巡检已暂停。停止本工程调度器，设置持久用户暂停标记；全部未完成训练队列置paused。向本账号9个训练进程发送SIGTERM，其中本轮8个及历史训练1个；本轮训练将尝试保存recovery.pt后退出。已有权重和结果保留。正在核实退出与恢复检查点。现有评测允许完成，未启动新评测。
+
+停止完成核实 2026-10-14T10:56:26.252120+08:00：本账号9个训练进程均已退出，当前训练进程为0；本轮8个训练均已生成停止后的恢复检查点。160个未完成训练队列已paused，2个训练完成结果保留。旧训练保留既有文件，未确认停止瞬间新恢复点。自动巡检已PAUSED，调度器已停止并增加持久用户暂停入口；已有评测进程状态为[{"id": 213, "pid": 2897777, "alive": false}, {"id": 214, "pid": 2971275, "alive": true}]。等待用户重新安排，不自动恢复训练。

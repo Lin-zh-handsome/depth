@@ -1,0 +1,111 @@
+{
+  "requested_at": "2026-10-14T10:54:53.623540+08:00",
+  "reason": "User requested stopping all own training to rearrange experiments",
+  "controllers": [
+    {
+      "pid": 3048975,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "jobs/scheduler.py"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    }
+  ],
+  "training_processes": [
+    {
+      "pid": 846882,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/stack_three_d1/e0/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 848487,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e0/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 1548863,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/maniskill/StackCube-v1/e3/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 1653220,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/maniskill/StackCube-v1/e4/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 3121155,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "train.py",
+        "--config-name=train_gsc_e0",
+        "task=stackcube_rgbd",
+        "training.seed=42",
+        "hydra.run.dir=/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy/experiments/chapter3_gsc/stackcube_rgbd/e0/seed_42",
+        "logging.name=stackcube_rgbd_e0_seed_42",
+        "+training.recovery_checkpoint_every=1"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/diffusion_policy"
+    },
+    {
+      "pid": 4160002,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/maniskill/StackCube-v1/e1/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 4161579,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/maniskill/PegInsertionSide-v1/e1/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 4163170,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/maniskill/StackCube-v1/e6/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    },
+    {
+      "pid": 4164805,
+      "argv": [
+        "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py",
+        "--config",
+        "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/maniskill/PegInsertionSide-v1/e6/seed_0.json"
+      ],
+      "cwd": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1"
+    }
+  ],
+  "evaluation_policy": "Existing evaluation workers may finish; no new workers dispatched"
+}
