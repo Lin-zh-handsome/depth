@@ -7,6 +7,8 @@
     1,
     2
   ],
-  "single_training_worker": true,
-  "reason": "full-method results first; seed0 then seed1 then seed2; resume rest afterwards"
+  "single_training_worker": false,
+  "reason": "parallel all three M2 seeds of the current task before other models",
+  "max_training_workers": 3,
+  "max_evaluation_workers": 2
 }

@@ -54,16 +54,23 @@ def focused_run(db):
     if not path.exists():return None
     cfg=json.loads(path.read_text())
     if cfg.get('status')!='active':return None
+    pending=[]
     for seed in cfg['seeds']:
         complete=db.execute("SELECT status FROM train_jobs WHERE task=? AND method=? AND seed=?",(cfg['task'],cfg['method'],seed)).fetchone()
         count=db.execute("SELECT count(*) FROM eval_jobs WHERE task=? AND method=? AND seed=? AND status='finished'",(cfg['task'],cfg['method'],seed)).fetchone()[0]
-        if not complete or complete['status']!='finished' or count!=5:
-            db.execute("UPDATE jobs SET status='queued',error=NULL WHERE task=? AND method=? AND seed=? AND status='held_for_full_method'",(cfg['task'],cfg['method'],seed));db.commit()
-            return cfg['task'],cfg['method'],seed
+        if not complete or complete['status']!='finished' or count!=5:pending.append(seed)
+    if pending:
+        for seed in pending:
+            db.execute("UPDATE jobs SET status='queued',error=NULL WHERE task=? AND method=? AND seed=? AND status='held_for_full_method'",(cfg['task'],cfg['method'],seed))
+        db.commit()
+        return dict(task=cfg['task'],method=cfg['method'],seeds=pending,max_train=cfg.get('max_training_workers',3))
     cfg['status']='completed';cfg['finished']=now();path.write_text(json.dumps(cfg,indent=2))
     db.execute("UPDATE jobs SET status='queued',error=NULL WHERE status='held_for_full_method'");db.commit()
-    record_progress('Full method three seeds completed; resume remaining work of the current task.')
+    record_progress('Full method three seeds and 15 scheduled evaluations completed; resume remaining work of the current task.')
     return None
+
+def in_focus(row,focus):
+    return row['task']==focus['task'] and row['method']==focus['method'] and row['seed'] in focus['seeds']
 
 def main():
     if (ROOT/'jobs/PAUSED_BY_USER.json').exists():
@@ -134,9 +141,9 @@ def main():
             # only this selected physical GPU is ever exposed to any worker.
             ready=(ROOT/'logs/eval_env.ready').exists()
             ready_evals=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL AND task=?",(current_task,)).fetchall()
-            if focus:ready_evals=[r for r in ready_evals if (r['task'],r['method'],r['seed'])==focus]
+            if focus:ready_evals=[r for r in ready_evals if in_focus(r,focus)]
             kind='eval' if neval<2 and ready and ready_evals else 'analysis' if not focus and nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' AND prerequisite IS NULL LIMIT 1").fetchone() else 'train'
-            cap=(1 if focus else 6) if kind=='train' else (1 if focus else 2) if kind=='eval' else 1
+            cap=(focus['max_train'] if focus else 6) if kind=='train' else 2 if kind=='eval' else 1
             if {'train':ntrain,'eval':neval,'analysis':nanalysis}[kind]<cap:
                 rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, CASE task WHEN 'threading_d2' THEN 0 WHEN 'PegInsertionSide-v1' THEN 1 WHEN 'stack_three_d1' THEN 2 WHEN 'coffee_d2' THEN 3 ELSE 4 END, seed, id",(kind,)).fetchall()
                 # Snapshot eval dependencies are already atomic-complete.
@@ -146,10 +153,10 @@ def main():
                 if kind in ['train','eval']:
                     rows=[r for r in rows if r['task']==current_task]
                 if focus:
-                    rows=[r for r in rows if (r['task'],r['method'],r['seed'])==focus]
+                    rows=[r for r in rows if in_focus(r,focus)]
                 if kind=='train':
                     # Two concurrent runs per method permit all three methods to progress.
-                    rows=[r for r in rows if sum(x['kind']=='train' and x['method']==r['method'] for x in live)<2]
+                    rows=[r for r in rows if sum(x['kind']=='train' and x['method']==r['method'] for x in live)<(focus['max_train'] if focus else 2)]
                 if rows:
                     r=rows[0]
                     if kind=='train': cmd=[TRAIN_PY,str(ROOT/'train.py'),'--config',r['config_path']]
