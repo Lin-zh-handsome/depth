@@ -1,70 +1,52 @@
-# GSC-DP 第三章：最终协议研究工程
+# 第三章 GSC-DP：文件化实验总计划
 
-## Goal
-在 linzhenghong@10.0.8.2 的现有工程中，完成五任务、三种子、全部真实结果与第三章证据产出。
+> 2026-10-14 初始化。此计划是执行合同，不表示服务器上的任何任务已启动。由 Codex 使用其实际已安装的 `planning-with-files` 技能读取和持续维护。
 
-## Current Phase
-用户要求暂停全部训练，等待重新安排；每小时巡检与自动调度均已暂停。
+## 固定范围与验收
 
-## Next Step
-核实训练退出及恢复检查点，等待用户的新训练安排；明确恢复授权后才调整队列并移除用户暂停标记。
+- 仅第三章，唯一正式网络：M0 原始 RGB CNN-DP，M1 原始 CNN-DP+GSA，M2 在 M1 基础上+Geometry-associated TokenLearner。
+- 仅五项任务：MimicGen Core `stack_three_d1`、`threading_d2`、`coffee_d2`；ManiSkill3 `StackCube-v1`、`PegInsertionSide-v1`。
+- 3 个独立种子 `[0, 1, 2]`，共 45 个唯一训练 run；按已确定协议共 1,710 个 checkpoint eval、103,500 个仿真 episodes（全部完成且没有可复用结果时）。
+- 数据预处理、算法定义、官方基线不变、模型 checkpoint 独立评测、3-seed 成功率统计、真实注意力和 Token 权重可视化，详见 `EXPERIMENT_SPEC.md`。
+- 完成的定义：所有可用 run 的逐 seed BestSR / Last10SR、每次 checkpoint rollout 原始 episode、真实表图和可追溯脚本；不以队列创建代替完成。
+- 不做：计算效率（FLOPs/参数量/推理时延/显存）对比；附加注意力、编码器、RGB-D baseline、无 GSA Token、数据效率、深度扰动或第四章等训练组；不重训 ACT/DP3/EquiDiff。
 
-## Scope and precedence
-- 用户2026-10-13最新指令：训练、评测、渲染只使用物理GPU2，可单卡并发。
-- 用户禁止无意义冒烟、哈希和重复核验：采用原子checkpoint写入、元数据和源代码commit溯源，不堆权重哈希。
-- 最终协议优先于旧计划；只复用旧数据和代码仓库；按用户最新要求不考虑旧规划和历史实验。
-- 当前工程 /home/linzhenghong/project/gsc_dp_chapter3；新实验 campaign_v1；旧运行中源码保持独立。
+## 全部任务一次性入队（以下为工作项而非需依次完成的阶段）
 
-## Phases
-### Phase A: 恢复、资源、来源、协议、证据契约
-Status: complete
-完成标准：建立全新规划与资源记录；记录GPU/CPU/内存/磁盘；干净官方DP来源；协议与23项图表契约落盘。
-产物：docs/protocol_sources.md, configs/protocol.json, thesis/figure_table_contract.yaml。
-### Phase B: 五任务RGB-D与环境
-Status: in_progress
-完成标准：官方数据、同帧观测动作、单位、固定子集manifest、训练/在线一致性。
-并行依赖：各任务独立，MimicGen尚需下载和兼容1.4仿真环境；ManiSkill已具备原始1000条RGB-D。
-### Phase C: 基线与几何编码器
-Status: in_progress
-完成标准：原始动作U-Net/FiLM/噪声目标不变；GSA官方算子适配和Token几何真实梯度，必要的单次加载核对。
-### Phase D: 正式训练与保存点评测
-Status: in_progress
-完成标准：0/1/2种子，MimicGen250epoch/每5/50episodes，ManiSkill100k更新/每5k/100episodes；独立不可变保存点、持久双队列、恢复。
-### Phase E: 主流算法
-Status: pending
-依赖：相应官方模型适配和数据。未实现方法保持明确前置条件，不运行替代模型。
-### Phase F: 完整消融、编码器、数据效率
-Status: pending
-依赖：核心实现；记录嵌套100/200/1000子集与交互。
-### Phase G: 机制、干预、全部表图
-Status: in_progress
-新增独立任务G-T：机器人闭环执行过程中的时序注意力可视化（Fig 3-15）。
-- [x] 复用现有GSA/Token capture接口，不重复静态开发。
-- [x] 指定磁盘checkpoint真实独立rollout，按重新规划采集RGB/Depth/Query轴向注意力/K Token/状态/动作/episode。
-- [x] MP4、4–6关键时刻PNG和JSON/NPZ元数据导出；E0/E1显著性与E6注意力明确区分。
-- [x] 同reset E0/E1/E6真实成功失败成对导出及自动队列触发代码。
-- [x] 环境直接事件或明确离线标注命名阶段，无标注只记时间点。
-- [ ] 新协议E6真实保存点产生后运行分析，核对导出视频、图与实际轨迹对应。
-- [x] MimicGen官方环境时序适配代码（实际数据配置/已训练checkpoint到位后核对）。
-完成标准：指定保存点真实成功/失败轨迹、对应相同reset三方法对比、源文件和导出脚本可重建。
-产物：analysis/temporal_paired, thesis/figure_table_contract.yaml::Fig 3-15。
-正式训练预算、评测保存点和episode数完全保持最终协议。
-依赖：真实权重/逐episode日志/离线GT；独占GPU时延需隔离时间窗口。
-### Phase H: 完成度审查与论文证据交付
-Status: pending
-完成标准：所有图表结果可追溯、失败和未验证项明确、代码commit及复现说明。
+- [ ] **A / 现存资产接管**：读取旧规划文件、服务器仓库/data/checkpoints/eval/logs，建立每项运行的配置、数据 hash 与 checkpoint SHA；在 `experiments/ch3/run_manifest.csv` 和 `eval_manifest.csv` 中标出 DONE/RUNNING/MISSING/INVALID，复用合法结果；不得重启合法的在训进程。
+- [ ] **B / 模型与数据就绪**：忠实保留 M0 CNN-DP；对齐 GSA 与 TokenLearner 的实现、RGB-D、多相机时序、Depth 单位、动作与观测；做最少必要的真实数值/梯度/独立 checkpoint 加载检查，随后直接正式运行。
+- [ ] **C / 训练调度**：一次性入队全部 45 个任务，调度优先 `M2 > M1 > M0`、任务顺序 `threading_d2 > PegInsertionSide-v1 > stack_three_d1 > coffee_d2 > StackCube-v1`；资源足够并行，不设置先后完成门槛；可恢复任务日志。
+- [ ] **D / 异步评测**：每个有效 checkpoint 写盘后即可排队独立闭环 rollout，不等待整模型训练完；固定同任务评测 reset manifest；原子写盘与去重。
+- [ ] **E / 成绩统计**：计算每 seed 各 checkpoint SR、BestSR、按时间最后十个 checkpoint 的平均 Last10SR、3-seed mean±sample std、M1-M0 与 M2-M1 递进增益。
+- [ ] **F / 可视化**：M1/M2 的真实 GSA attention、TokenLearner 8 个空间权重、逐时刻执行图/MP4、同初态对照成功/失败关键帧；只用已训练模型，不追加训练组。
+- [ ] **G / 论文交付**：`thesis/chapter3/` 下自动导出实验协议、五任务成功率表、曲线、模块递进表、真实注意力/Token 可视化、视频、中文说明；文献外部数字明确单列 Published。
+- [ ] **H / 持久化与恢复**：维护本文件、`findings.md`、`progress.md`、manifest、异常及准确恢复命令；说明服务器进程 PID、GPU 与日志；队列状态不能凭空更新。
 
-## Errors Encountered
-- 旧规划记录停留在“未启动”，实测已有10个历史训练；以实际进程、日志恢复。
-- 历史tail查询logs.json.txt不存在：实际文件为metrics.jsonl。
-- DFormer猜测路径models/DFormerv2.py 404：改为从官方checkout发现路径。
+## 优先级说明
 
+所有 A–H 工作都必须执行，优先级仅影响有限资源下抢先获取本方法 M2 及 M1/M0 受控成功率的顺序，不表示延后其他任务立项；模型代码准备与下载可并行推进，训练/评测/绘图可以同时运行。
 
-## Latest actual execution
-2026-10-14 10:11服务器实查：五任务固定子集、RGB-D转换及manifest均已具备；Phase D训练完成2/162（两ManiSkill E0 seed0，100k更新），8运行，152等待。完整评测15保存点/950回合，2运行，122已生成等待。已修复跨benchmark评测顺序饥饿和接管MimicGen评测完成标记路径。Phase E其他主流模型及Phase F完整数据效率等尚未完成。
+## 训练/评测协议
 
-新增任务G-T代码与契约已部署；真实E6早期保存点评测与同reset成对分析等待队列，尚无时序MP4/PNG结果。
+| Benchmark | Task | Demos | Budget | Save/eval every | Episodes | Max horizon |
+|---|---|---:|---|---|---:|---:|
+| MimicGen Core | stack_three_d1 | 200 | 250 epochs | 5 epochs | 50 | 400 |
+| MimicGen Core | threading_d2 | 200 | 250 epochs | 5 epochs | 50 | 400 |
+| MimicGen Core | coffee_d2 | 200 | 250 epochs | 5 epochs | 50 | 400 |
+| ManiSkill 3 | StackCube-v1 | 100 | 100,000 updates | 5,000 updates | 100 | 200 |
+| ManiSkill 3 | PegInsertionSide-v1 | 100 | 100,000 updates | 5,000 updates | 100 | 300 |
 
-## GitHub 发布追加任务
-Status: complete
-仓库 https://github.com/Lin-zh-handsome/depth，main分支。当前工程、规划及真实结果快照已发布；数据集和模型权重不上传。训练和评测继续在原服务器单卡队列运行。
+**禁止**因 250 epochs 历时较久而自行减少训练量、评测频率、种子或单 checkpoint episodes。可优化数据缓存、实际运行并行、使用已有结果。
+
+## 固定论文表图
+
+- 表：任务协议；M0/M1/M2 的五任务 BestSR；五任务 Last10SR；可选文献参考表（标明来源与协议差异）。
+- 图：三模型关键结构图；五任务 checkpoint SR 曲线；真实 GSA Query 级空间权重；M2 八个 TokenLearner 分配图 `(u,v,d,rho)`；机器人执行阶段的图/视频和同 reset 成功/失败案例。
+- 没有真实数据不填数字。禁止效率对比表。
+
+## 项目状态
+
+2026-10-14 当前状态：**本地仅创建了执行文件和初始 manifest；服务器状态尚未接管，所有 run/eval 都标记 `PENDING_UNVERIFIED`。** Codex 首次工作必须先扫描并纠正这批状态，而不是假定全部尚未训练。
+
+## 实际接管状态
+A in_progress：已核实服务器、数据与旧暂停状态。B in_progress：MimicGen数据可复用；ManiSkill需官方动作转换。C/D in_progress：部署45-run/1710-eval专用队列；正式启动待记录真实PID。E/F/G pending真实结果。H in_progress。

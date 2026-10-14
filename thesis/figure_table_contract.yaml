@@ -1,842 +1,178 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "scope": "chapter3_45_run_only",
   "records": [
     {
       "id": "Table 3-1",
       "name": "tasks_protocol",
-      "question": "数据和评测可复现",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "resolved config + dataset manifest",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
+      "script": "jobs/export_ch3.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
       ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_tasks_protocol.py",
-      "output": "thesis/tables/tasks_protocol",
+      "output": "thesis/chapter3/tasks_protocol",
       "formats": [
         "csv",
-        "markdown",
-        "latex"
+        "json",
+        "png",
+        "pdf"
       ],
-      "source_manifest": "thesis/source_manifests/tasks_protocol.json",
-      "draft_number": "Table 3-3",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
     },
     {
       "id": "Table 3-2",
-      "name": "main_comparison",
-      "question": "RQ1:七方法闭环比较",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "BEST/LAST10 per seed; mean ± sample std",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
+      "name": "best_sr",
+      "script": "jobs/export_ch3.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
       ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_main_comparison.py",
-      "output": "thesis/tables/main_comparison",
+      "output": "thesis/chapter3/best_sr",
       "formats": [
         "csv",
-        "markdown",
-        "latex"
+        "json",
+        "png",
+        "pdf"
       ],
-      "source_manifest": "thesis/source_manifests/main_comparison.json",
-      "draft_number": "Table 3-4",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
     },
     {
       "id": "Table 3-3",
-      "name": "ablations",
-      "question": "RQ2/RQ3:单模块与交互",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "SR_E6-SR_E3-SR_E4+SR_E0",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
+      "name": "last10_sr",
+      "script": "jobs/export_ch3.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
       ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_ablations.py",
-      "output": "thesis/tables/ablations",
+      "output": "thesis/chapter3/last10_sr",
       "formats": [
         "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/ablations.json",
-      "draft_number": "Table 3-5",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Table 3-4",
-      "name": "encoders",
-      "question": "RQ2:容量与几何先验",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "SR, trainable params, isolated planning ms",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_encoders.py",
-      "output": "thesis/tables/encoders",
-      "formats": [
-        "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/encoders.json",
-      "draft_number": "Table 3-6",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Table 3-5",
-      "name": "data_efficiency",
-      "question": "示范量与样本效率",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "100/200/1000 nested demos; BEST/LAST10",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_data_efficiency.py",
-      "output": "thesis/tables/data_efficiency",
-      "formats": [
-        "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/data_efficiency.json",
-      "draft_number": "section 3.6.8",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Table 3-6",
-      "name": "attention",
-      "question": "RQ2:真实轴向注意力",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "same/cross instance mass; feature cosine gap",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_attention.py",
-      "output": "thesis/tables/attention",
-      "formats": [
-        "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/attention.json",
-      "draft_number": "section 3.6.9",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Table 3-7",
-      "name": "tokens",
-      "question": "RQ3:几何Token关联",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "target overlap; pixel center error; surface depth error m",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_tokens.py",
-      "output": "thesis/tables/tokens",
-      "formats": [
-        "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/tokens.json",
-      "draft_number": "Table 3-7",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Table 3-8",
-      "name": "motion",
-      "question": "RQ4:空间误差",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "task-defined position m and rotation rad; paired success",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_motion.py",
-      "output": "thesis/tables/motion",
-      "formats": [
-        "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/motion.json",
-      "draft_number": "Table 3-8",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Table 3-9",
-      "name": "efficiency",
-      "question": "RQ4:部署代价",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "batch1 synchronized isolated ms; GPU bytes; params",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_efficiency.py",
-      "output": "thesis/tables/efficiency",
-      "formats": [
-        "csv",
-        "markdown",
-        "latex"
-      ],
-      "source_manifest": "thesis/source_manifests/efficiency.json",
-      "draft_number": "Table 3-9",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-1",
-      "name": "architecture",
-      "question": "整体架构",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "actual module/shape graph",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_architecture.py",
-      "output": "thesis/figs/architecture",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/architecture.json",
-      "draft_number": "Fig 3-1",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-2",
-      "name": "gsa_diagram",
-      "question": "GSA计算",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "official operator + documented adaptation",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_gsa_diagram.py",
-      "output": "thesis/figs/gsa_diagram",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/gsa_diagram.json",
-      "draft_number": "Fig 3-2/3",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-3",
-      "name": "token_diagram",
-      "question": "Token聚合",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "weighted uv/d/rho equations",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_token_diagram.py",
-      "output": "thesis/figs/token_diagram",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/token_diagram.json",
-      "draft_number": "Fig 3-4",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-4",
-      "name": "main_sr",
-      "question": "RQ1",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "per-seed BEST/LAST10",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_main_sr.py",
-      "output": "thesis/figs/main_sr",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/main_sr.json",
-      "draft_number": "Fig 3-8/9",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-5",
-      "name": "ablation_sr",
-      "question": "RQ2/RQ3",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "per-seed SR and interaction",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_ablation_sr.py",
-      "output": "thesis/figs/ablation_sr",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/ablation_sr.json",
-      "draft_number": "section 3.6.6",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-6",
-      "name": "learning",
-      "question": "真实训练稳定性",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "scheduled checkpoint SR vs epoch/update",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_learning.py",
-      "output": "thesis/figs/learning",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/learning.json",
-      "draft_number": "Fig 3-9",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-7",
-      "name": "encoder_data",
-      "question": "容量和示范量",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "SR/params and nested demo SR",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_encoder_data.py",
-      "output": "thesis/figs/encoder_data",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/encoder_data.json",
-      "draft_number": "section 3.6.7/8",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-8",
-      "name": "attention_visual",
-      "question": "真实几何先验与轴向注意力",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "actual query/prior/axis weights",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_attention_visual.py",
-      "output": "thesis/figs/attention_visual",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/attention_visual.json",
-      "draft_number": "Fig 3-10",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-9",
-      "name": "feature_visual",
-      "question": "GSA前后特征",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "normalized features + instance cosine statistics",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_feature_visual.py",
-      "output": "thesis/figs/feature_visual",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/feature_visual.json",
-      "draft_number": "Fig 3-11",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-10",
-      "name": "token_visual",
-      "question": "空间权重和几何",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "actual masks, uv/d/rho in meters",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_token_visual.py",
-      "output": "thesis/figs/token_visual",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/token_visual.json",
-      "draft_number": "Fig 3-12",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-11",
-      "name": "motion_visual",
-      "question": "动作误差",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "paired rollout GT only offline",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_motion_visual.py",
-      "output": "thesis/figs/motion_visual",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/motion_visual.json",
-      "draft_number": "Fig 3-13",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-12",
-      "name": "paired_cases",
-      "question": "同reset成功失败",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "preregistered selection: first reset disagreement by ID",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_paired_cases.py",
-      "output": "thesis/figs/paired_cases",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/paired_cases.json",
-      "draft_number": "Fig 3-13",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-13",
-      "name": "depth_intervention",
-      "question": "深度依赖",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "same checkpoint paired intervention, separate from main scores",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_depth_intervention.py",
-      "output": "thesis/figs/depth_intervention",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/depth_intervention.json",
-      "draft_number": "section 3.6.12",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-14",
-      "name": "cost_tradeoff",
-      "question": "速度/成功率代价",
-      "sampling": "three independent train seeds; shared reset IDs; fixed scheduled checkpoints",
-      "metric": "isolated latency vs measured SR",
-      "units": "SR fraction, position m, angle rad, time ms, memory bytes as applicable",
-      "required_fields": [
-        "benchmark",
-        "task",
-        "method",
-        "seed",
-        "checkpoint_step",
-        "checkpoint_path",
-        "code_revision",
-        "dataset_manifest",
-        "camera",
-        "reset_id",
-        "success_at_end",
-        "success_once"
-      ],
-      "gt_source": "simulator instance/state for offline analysis only; never policy input",
-      "script": "analysis/export_cost_tradeoff.py",
-      "output": "thesis/figs/cost_tradeoff",
-      "formats": [
-        "png",
-        "svg",
-        "pdf"
-      ],
-      "source_manifest": "thesis/source_manifests/cost_tradeoff.json",
-      "draft_number": "section 3.6.12",
-      "reproducibility_status": "pending",
-      "unavailable_rule": "NA(reason) when required result or GT is absent"
-    },
-    {
-      "id": "Fig 3-15",
-      "name": "temporal_spatial_attention_evolution",
-      "question": "机器人闭环执行过程中的空间关注如何随时间变化，以及成功失败轨迹之间有何差异",
-      "sampling": "independent specified-checkpoint rollout; record each actual replanning event; paired E0/E1/E6 same reset",
-      "metric": "actual GSA axial attention query weights; K token softmax weights and uv/d/rho; baseline denoiser input-gradient saliency separately labeled",
-      "units": "environment steps, seconds from actual control frequency, depth m, normalized image coordinates",
-      "required_fields": [
-        "episode_id",
-        "reset_id",
-        "seed",
-        "checkpoint_path",
-        "checkpoint_step",
-        "code_revision",
-        "plan_id",
-        "env_step",
-        "time_seconds",
-        "RGB",
-        "Depth",
-        "GSA_attention_width",
-        "GSA_attention_height",
-        "query_original_xy",
-        "query_grid_yx",
-        "token_spatial_weights",
-        "token_uv_d_rho",
-        "robot_state",
-        "planned_actions",
-        "executed_actions",
-        "success_at_end",
-        "success_once",
-        "stage.source_kind",
-        "stage.source"
-      ],
-      "gt_source": "environment event or explicit offline annotation only; unannotated frames use neutral timepoints",
-      "script": "analysis/temporal_attention.py; analysis/dispatch_temporal.py",
-      "output": "analysis/temporal_paired/{task}/seed_{seed}/update_{step}/reset_{reset}/{method}",
-      "formats": [
-        "mp4",
-        "png",
         "json",
-        "jsonl",
-        "npz"
+        "png",
+        "pdf"
       ],
-      "source_manifest": "temporal_manifest.json + selection_manifest.json + comparison.json",
-      "reproducibility_status": "implementation_ready; actual rollout artifacts pending specified trained checkpoint",
-      "unavailable_rule": "no explicit attention in E0/E1: saliency only; missing success/failure outcome or stages explicitly unavailable",
-      "stage_selection": "first actual occurrence of annotated stages; fill 4–6 neutral timepoints without inventing stage labels",
-      "automatic_trigger": "final scheduled E0/E1/E6 evaluations for same task/seed/step completed; independent analysis queue",
-      "scope": "analysis only; no change to training budget, scheduled evaluation, episode counts, or formal success rates",
-      "figure_layout": "4–6 actual moments with RGB, GSA query attention and all K TokenLearner maps",
-      "storage_policy": "capture only in dedicated analysis; formal evaluate.py never stores attention tensors"
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
+    },
+    {
+      "id": "Figure 3-1",
+      "name": "model_structure",
+      "script": "jobs/export_ch3.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
+      ],
+      "output": "thesis/chapter3/model_structure",
+      "formats": [
+        "png",
+        "pdf",
+        "json"
+      ],
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
+    },
+    {
+      "id": "Figure 3-2",
+      "name": "success_curves",
+      "script": "jobs/export_ch3.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
+      ],
+      "output": "thesis/chapter3/success_curves",
+      "formats": [
+        "png",
+        "pdf",
+        "json"
+      ],
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
+    },
+    {
+      "id": "Figure 3-3",
+      "name": "gsa_query",
+      "script": "analysis/temporal_attention.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
+      ],
+      "output": "thesis/chapter3/gsa_query",
+      "formats": [
+        "png",
+        "pdf",
+        "json"
+      ],
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
+    },
+    {
+      "id": "Figure 3-4",
+      "name": "token_weights",
+      "script": "analysis/temporal_attention.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
+      ],
+      "output": "thesis/chapter3/token_weights",
+      "formats": [
+        "png",
+        "pdf",
+        "json"
+      ],
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
+    },
+    {
+      "id": "Figure 3-5",
+      "name": "temporal_attention",
+      "script": "analysis/dispatch_temporal.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
+      ],
+      "output": "thesis/chapter3/temporal_attention",
+      "formats": [
+        "png",
+        "pdf",
+        "json",
+        "mp4"
+      ],
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results",
+      "title": "机器人执行过程中的空间关注演化分析",
+      "key_frames": "4-6 from environment events or explicit offline annotation",
+      "capture": "independent real checkpoint rollout at policy replanning only",
+      "attention": "actual derived axial GSA Query weights, separate from M0 gradient saliency",
+      "tokens": 8
+    },
+    {
+      "id": "Figure 3-6",
+      "name": "paired_execution",
+      "script": "analysis/dispatch_temporal.py",
+      "methods": [
+        "e0",
+        "e3",
+        "e6"
+      ],
+      "output": "thesis/chapter3/paired_execution",
+      "formats": [
+        "png",
+        "pdf",
+        "json",
+        "mp4"
+      ],
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
     }
-  ],
-  "numbering": "canonical final protocol; draft crosswalk recorded separately",
-  "token_gt_association": "highest weighted overlap with target instance; overlap>=0.5; failures counted",
-  "mechanism": "attention -> retained target information -> token geometry -> spatial error -> success; each arrow measured separately"
+  ]
 }

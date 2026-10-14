@@ -356,8 +356,8 @@
         100099
       ],
       "success_metric": "success_at_end",
-      "control_mode": "pd_joint_pos",
-      "control_source": "official downloaded motionplanning metadata; preserved without reinterpretation",
+      "control_mode": "pd_ee_delta_pos",
+      "control_source": "official motionplanning converted by installed official replay_trajectory control conversion",
       "cameras": [
         "base_camera",
         "hand_camera"
@@ -485,8 +485,8 @@
         100099
       ],
       "success_metric": "success_at_end",
-      "control_mode": "pd_joint_pos",
-      "control_source": "official downloaded motionplanning metadata; preserved without reinterpretation",
+      "control_mode": "pd_ee_delta_pose",
+      "control_source": "official motionplanning converted by installed official replay_trajectory control conversion",
       "cameras": [
         "base_camera",
         "hand_camera"

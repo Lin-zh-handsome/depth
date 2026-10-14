@@ -36,10 +36,10 @@ def snapshot(db):
 
 def register_temporal(db):
     for r in db.execute("SELECT * FROM eval_jobs WHERE status='finished' AND method='e6' AND ((benchmark='maniskill' AND checkpoint_step IN (5000,100000)) OR (benchmark='mimicgen' AND checkpoint_step IN (5,250)))").fetchall():
-        count=db.execute("SELECT count(*) FROM eval_jobs WHERE benchmark=? AND task=? AND seed=? AND checkpoint_step=? AND method IN ('e0','e1','e6') AND status='finished'",
+        count=db.execute("SELECT count(*) FROM eval_jobs WHERE benchmark=? AND task=? AND seed=? AND checkpoint_step=? AND method IN ('e0','e3','e6') AND status='finished'",
             (r['benchmark'],r['task'],r['seed'],r['checkpoint_step'])).fetchone()[0]
         if count==3:
-            db.execute("INSERT OR IGNORE INTO jobs(kind,benchmark,task,method,seed,checkpoint_step,prerequisite) VALUES('analysis',?,?,'paired_e0_e1_e6',?,?,NULL)",
+            db.execute("INSERT OR IGNORE INTO jobs(kind,benchmark,task,method,seed,checkpoint_step,prerequisite) VALUES('analysis',?,?,'paired_e0_e3_e6',?,?,NULL)",
                 (r['benchmark'],r['task'],r['seed'],r['checkpoint_step']))
     db.commit()
 
@@ -87,10 +87,10 @@ def main():
             retry=code!=0 and r['attempts']<r['max_attempts']
             status='finished' if code==0 else 'queued' if retry else 'failed'
             db.execute('UPDATE jobs SET status=?,finished=?,exit_code=?,error=? WHERE id=?',
-                (status,now(),code,None if code==0 else f'worker exit {code}; see logs/job_{id}.log',id))
+                (status,now(),code,None if code==0 else f'worker exit {code}; see logs/ch3_job_{id}.log',id))
             db.commit();del children[id]
             print('worker completed',id,status,code,flush=True)
-            record_progress(f"Job {id} {r['kind']} {r['task']}/{r['method']}/seed_{r['seed']} {status}, exit={code}; logs/job_{id}.log")
+            record_progress(f"Job {id} {r['kind']} {r['task']}/{r['method']}/seed_{r['seed']} {status}, exit={code}; logs/ch3_job_{id}.log")
         live=db.execute("SELECT * FROM jobs WHERE status='running'").fetchall()
         ntrain=sum(r['kind']=='train' for r in live);neval=sum(r['kind']=='eval' for r in live)
         nmimic=sum(r['kind']=='train' and r['benchmark']=='mimicgen' for r in live)
@@ -102,20 +102,17 @@ def main():
             # Reserve one evaluation slot as soon as a snapshot is available;
             # only this selected physical GPU is ever exposed to any worker.
             ready=(ROOT/'logs/eval_env.ready').exists()
-            kind='eval' if neval<2 and ready and db.execute("SELECT 1 FROM eval_jobs WHERE status='queued' LIMIT 1").fetchone() else 'analysis' if nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' LIMIT 1").fetchone() else 'train'
-            cap=8 if kind=='train' else 2 if kind=='eval' else 1
+            kind='eval' if neval<2 and ready and db.execute("SELECT 1 FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL LIMIT 1").fetchone() else 'analysis' if nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' AND prerequisite IS NULL LIMIT 1").fetchone() else 'train'
+            cap=6 if kind=='train' else 2 if kind=='eval' else 1
             if {'train':ntrain,'eval':neval,'analysis':nanalysis}[kind]<cap:
-                rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY seed, CASE method WHEN 'e0' THEN 0 WHEN 'e1' THEN 1 WHEN 'e6' THEN 2 ELSE 3 END, id",(kind,)).fetchall()
+                rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, CASE task WHEN 'threading_d2' THEN 0 WHEN 'PegInsertionSide-v1' THEN 1 WHEN 'stack_three_d1' THEN 2 WHEN 'coffee_d2' THEN 3 ELSE 4 END, seed, id",(kind,)).fetchall()
                 # Snapshot eval dependencies are already atomic-complete.
                 if kind=='eval':
                     # FIFO across benchmarks: epoch and optimizer-update indices have different units.
-                    rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' ORDER BY id").fetchall()
+                    rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, id").fetchall()
                 if kind=='train':
-                    # Keep two resource slots for the independently prepared
-                    # MimicGen benchmark rather than filling them with further
-                    # ManiSkill seeds while its RGB-D conversion finishes.
-                    rows=[r for r in rows if (r['benchmark']=='mimicgen' and nmimic<2) or
-                        (r['benchmark']=='maniskill' and ntrain-nmimic<6)]
+                    # Two concurrent runs per method permit all three methods to progress.
+                    rows=[r for r in rows if sum(x['kind']=='train' and x['method']==r['method'] for x in live)<2]
                 if rows:
                     r=rows[0]
                     if kind=='train': cmd=[TRAIN_PY,str(ROOT/'train.py'),'--config',r['config_path']]
@@ -124,13 +121,17 @@ def main():
                     else:cmd=[MIMIC_PY if r['benchmark']=='mimicgen' else EVAL_PY,
                         str(ROOT/'analysis/dispatch_temporal.py'),'--benchmark',r['benchmark'],
                         '--task',r['task'],'--seed',str(r['seed']),'--step',str(r['checkpoint_step'])]
-                    log=(ROOT/'logs'/f"job_{r['id']}.log").open('a')
+                    log=(ROOT/'logs'/f"ch3_job_{r['id']}.log").open('a')
                     process=subprocess.Popen(cmd,cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);log.close()
                     children[r['id']]=process
                     db.execute("UPDATE jobs SET status='running',pid=?,started=?,attempts=attempts+1,error=NULL WHERE id=?",(process.pid,now(),r['id']));db.commit()
                     print('launched',r['id'],kind,r['task'],r['method'],r['seed'],'pid',process.pid,'freeMiB',free,flush=True)
-                    record_progress(f"Job {r['id']} {kind} {r['task']}/{r['method']}/seed_{r['seed']}/point_{r['checkpoint_step']} launched PID={process.pid}, GPU={GPU}, freeMiB={free}; logs/job_{r['id']}.log")
+                    record_progress(f"Job {r['id']} {kind} {r['task']}/{r['method']}/seed_{r['seed']}/point_{r['checkpoint_step']} launched PID={process.pid}, GPU={GPU}, freeMiB={free}; logs/ch3_job_{r['id']}.log")
         snapshot(db)
+        try:
+            subprocess.run([TRAIN_PY,str(ROOT/'jobs/export_ch3.py')],cwd=ROOT,env=env,check=True,stdout=subprocess.DEVNULL)
+        except Exception as exc:
+            print('incremental export failed',repr(exc),flush=True)
         time.sleep(30)
 
 if __name__=='__main__':main()

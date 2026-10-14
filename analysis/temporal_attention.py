@@ -208,7 +208,7 @@ def collect(args):
                             arrays[camera+'_token_'+field]=numpy(art['token_'+field][-1])
                         data['token_count']=int(arrays[camera+'_token_weights'].shape[0])
                     summaries[camera]=data
-                if cfg['method'] in ['e0','e1']:
+                if cfg['method'] == 'e0':
                     saliency=denoiser_saliency(policy,obs)
                     for key,value in saliency.items():
                         camera=key[:-6];arrays[camera+'_saliency']=value

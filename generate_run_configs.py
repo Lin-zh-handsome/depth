@@ -10,6 +10,8 @@ for task in protocol['tasks']:
     manifest=ROOT/'data/manifests'/f"{task['task']}_{task['demos']}.json"
     if not manifest.exists(): continue
     m=json.loads(manifest.read_text());r=zarr.open(m['processed_path'],'r')
+    expected={'StackCube-v1':'pd_ee_delta_pos','PegInsertionSide-v1':'pd_ee_delta_pose'}.get(task['task'])
+    if expected and m.get('control_mode')!=expected: continue
     shape={'obs':{},'action':{'shape':[r['data/action'].shape[-1]]}}
     for key in r['data'].array_keys():
         if key=='action':continue
@@ -17,7 +19,7 @@ for task in protocol['tasks']:
         image=key.endswith(('_image','_depth'))
         shape['obs'][key]=dict(shape=([a.shape[-1],*a.shape[1:3]] if image else list(a.shape[1:])),
             type='rgb' if key.endswith('_image') else 'depth' if key.endswith('_depth') else 'low_dim')
-    for row in db.execute("SELECT * FROM train_jobs WHERE task=? AND method LIKE 'e%'",(task['task'],)).fetchall():
+    for row in db.execute("SELECT * FROM train_jobs WHERE task=? AND method IN ('e0','e3','e6')",(task['task'],)).fetchall():
         cfg=dict(task,method=row['method'],seed=row['seed'],shape_meta=shape,
             crop_shape=[76,76] if task['benchmark']=='mimicgen' else [112,112],
             zarr_path=m['processed_path'],dataset_manifest=str(manifest),batch_size=64,

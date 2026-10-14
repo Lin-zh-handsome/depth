@@ -47,7 +47,8 @@ def main():
     updates=epoch=batch_offset=0
     candidates=list((run/'checkpoints').glob('*.pt'))
     if candidates:
-        latest=max(candidates,key=lambda p:p.stat().st_mtime)
+        recovery=run/'checkpoints/recovery.pt'
+        latest=recovery if recovery.exists() else max(candidates,key=lambda p:p.stat().st_mtime)
         payload=torch.load(latest,map_location='cpu',weights_only=False)
         model.load_state_dict(payload['model']);ema_model.load_state_dict(payload['ema_model'])
         optimizer.load_state_dict(payload['optimizer']);optimizer_to(optimizer,'cuda:0')
@@ -70,6 +71,9 @@ def main():
             torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all(),
             code_revision=revision,gpu_uuid=uuid)
     begin=time.time()
+    (run/'dataset_window_budget.json').write_text(json.dumps(dict(dataset_window_count=len(dataset),
+        batch_size=cfg['batch_size'],batches_per_epoch=math.ceil(len(dataset)/cfg['batch_size']),
+        optimizer_updates_per_epoch=math.ceil(len(dataset)/cfg['batch_size']),total_optimizer_updates=total_updates),indent=2))
     with (run/'train_metrics.jsonl').open('a',buffering=1) as log:
         while updates<total_updates:
             generator=torch.Generator().manual_seed(seed+epoch*1000003)
@@ -99,6 +103,9 @@ def main():
                     save(run,payload(next_batch));print('recoverable stop',updates,flush=True);return 75
                 if updates>=total_updates: break
             epoch+=1;batch_offset=0
+            log.write(json.dumps(dict(event='epoch_complete',completed_epochs=epoch,
+                optimizer_updates=updates,dataset_window_count=len(dataset),batch_size=cfg['batch_size'],
+                dataloader_batches=len(loader)))+'\n')
             if is_mimic and epoch%cfg['interval']==0:
                 completed=payload(0);completed['checkpoint_step']=epoch
                 save(run,completed,scheduled=True)

@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 def connect():
-    db = sqlite3.connect(ROOT/'jobs/queue.db', timeout=30)
+    db = sqlite3.connect(ROOT/'jobs/ch3_queue.db', timeout=30)
     db.row_factory = sqlite3.Row
     db.execute('PRAGMA journal_mode=WAL')
     db.executescript('''
@@ -29,9 +29,7 @@ def initialize():
     protocol=json.loads((ROOT/'configs/protocol.json').read_text())
     db=connect()
     for task in protocol['tasks']:
-        methods=['e0','e1','e3','e4','e6','dp_transformer','act','bc_rnn','dp3']
-        if task['task'] in ['threading_d2','StackCube-v1','PegInsertionSide-v1']:
-            methods += ['e2','e5','e7']
+        methods=['e6','e3','e0']
         for method in methods:
             for seed in task['seeds']:
                 name=f"{task['benchmark']}/{task['task']}/{method}/seed_{seed}"
@@ -40,7 +38,7 @@ def initialize():
                     ('train',task['benchmark'],task['task'],method,seed,
                      'dataset manifest + implementation + matching runner',str(cfg)))
     db.commit()
-    print('registered',db.execute('SELECT count(*) FROM train_jobs').fetchone()[0],'unique main/core/extended training jobs')
+    print('registered',db.execute('SELECT count(*) FROM train_jobs').fetchone()[0],'chapter 3 training jobs')
     db.close()
 
 if __name__=='__main__': initialize()
