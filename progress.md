@@ -236,3 +236,41 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 ## 每小时巡检 2026-10-14T15:07:34.168016+08:00
 完整正式评测5/225，共250回合；新增：stack_three_d1/e0/seed0/150: 26/50=52%; stack_three_d1/e0/seed0/200: 22/50=44%; threading_d2/e0/seed0/100: 2/50=4%。队列[{"kind": "eval", "status": "finished", "count": 5}, {"kind": "eval", "status": "queued", "count": 219}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "queued", "count": 39}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。本轮修复规划状态导出截断后续备注的问题，已恢复4项历史巡检备注，工作进程无需重启。
+
+2026-10-14T07:07:38.620726+00:00 Job 122 eval threading_d2/e0/seed_0 finished, exit=0; logs/final_job_122.log
+
+2026-10-14T07:07:39.413976+00:00 Job 123 eval threading_d2/e0/seed_0/point_150 launched PID=4007389, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89701; logs/final_job_123.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T07:07:49.033348+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 218, "finished": 6, "running": 1}, "analysis": {}}；完整回合 300。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T07:08:20.669997+00:00 Job 121 eval threading_d2/e0/seed_0 finished, exit=0; logs/final_job_121.log
+
+2026-10-14T07:08:21.441504+00:00 Job 124 eval threading_d2/e0/seed_0/point_200 launched PID=4009559, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89625; logs/final_job_124.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T07:08:22.873893+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 217, "finished": 6, "running": 2}, "analysis": {}}；完整回合 300。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T08:00:13.563577+00:00 Job 123 eval threading_d2/e0/seed_0 finished, exit=0; logs/final_job_123.log
+
+2026-10-14T08:00:13.835375+00:00 Job 126 eval threading_d2/e0/seed_1/point_50 launched PID=4177936, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89626; logs/final_job_126.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T08:00:15.555056+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 216, "finished": 7, "running": 2}, "analysis": {}}；完整回合 350。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T08:00:48.322479+00:00 Job 124 eval threading_d2/e0/seed_0 finished, exit=0; logs/final_job_124.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T08:00:50.735721+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 216, "finished": 8, "running": 1}, "analysis": {}}；完整回合 400。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-14T16:04:33.642804+08:00
+完整正式评测8/225，共400回合；新增：threading_d2/e0/seed0/50: 6/50=12%; threading_d2/e0/seed0/150: 6/50=12%; threading_d2/e0/seed0/200: 4/50=8%。队列[{"kind": "eval", "status": "finished", "count": 8}, {"kind": "eval", "status": "queued", "count": 216}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "queued", "count": 39}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
