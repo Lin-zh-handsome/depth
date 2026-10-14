@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-14T17:02:57.075907+08:00",
-  "previous_poll": "2026-10-14T16:04:33.642804+08:00",
+  "checked_at_asia_shanghai": "2026-10-14T18:02:01.328847+08:00",
+  "previous_poll": "2026-10-14T17:02:57.075907+08:00",
   "protocol": {
     "training_runs": 45,
     "evaluation_points": 225,
@@ -16,17 +16,12 @@
     {
       "kind": "eval",
       "status": "finished",
-      "count": 9
+      "count": 10
     },
     {
       "kind": "eval",
       "status": "queued",
       "count": 215
-    },
-    {
-      "kind": "eval",
-      "status": "running",
-      "count": 1
     },
     {
       "kind": "train",
@@ -46,20 +41,6 @@
   ],
   "running": [
     {
-      "id": 125,
-      "kind": "eval",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e0",
-      "seed": 0,
-      "checkpoint_step": 250,
-      "status": "running",
-      "pid": 146144,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 11
-    },
-    {
       "id": 10,
       "kind": "train",
       "benchmark": "mimicgen",
@@ -72,16 +53,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 8500,
-        "data_epoch": 12,
-        "next_batch": 244,
-        "train_loss": 0.07725565135478973,
-        "lr": 9.94640625553248e-05,
-        "wall_seconds": 17525.570690393448,
+        "optimizer_updates": 10700,
+        "data_epoch": 15,
+        "next_batch": 380,
+        "train_loss": 0.08124743402004242,
+        "lr": 9.912974208472328e-05,
+        "wall_seconds": 21256.64793729782,
         "gpu_peak_bytes": 8070868480
       },
-      "metric_age_seconds": 208,
-      "updates_since_last_poll": 2100,
+      "metric_age_seconds": 21,
+      "updates_since_last_poll": 2200,
       "waiting_for_eval": false
     },
     {
@@ -97,16 +78,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 8500,
-        "data_epoch": 12,
-        "next_batch": 244,
-        "train_loss": 0.0488106943666935,
-        "lr": 9.94640625553248e-05,
-        "wall_seconds": 17651.672471761703,
+        "optimizer_updates": 10600,
+        "data_epoch": 15,
+        "next_batch": 280,
+        "train_loss": 0.04520349204540253,
+        "lr": 9.914667385269562e-05,
+        "wall_seconds": 21210.579751491547,
         "gpu_peak_bytes": 8070868480
       },
-      "metric_age_seconds": 49,
-      "updates_since_last_poll": 2200,
+      "metric_age_seconds": 35,
+      "updates_since_last_poll": 2100,
       "waiting_for_eval": false
     },
     {
@@ -122,16 +103,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 8500,
-        "data_epoch": 12,
-        "next_batch": 244,
-        "train_loss": 0.07755408436059952,
-        "lr": 9.94640625553248e-05,
-        "wall_seconds": 17598.454924583435,
+        "optimizer_updates": 10600,
+        "data_epoch": 15,
+        "next_batch": 280,
+        "train_loss": 0.09921535849571228,
+        "lr": 9.914667385269562e-05,
+        "wall_seconds": 21161.20340037346,
         "gpu_peak_bytes": 8043638272
       },
-      "metric_age_seconds": 69,
-      "updates_since_last_poll": 2200,
+      "metric_age_seconds": 51,
+      "updates_since_last_poll": 2100,
       "waiting_for_eval": false
     },
     {
@@ -147,16 +128,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 8400,
-        "data_epoch": 12,
-        "next_batch": 144,
-        "train_loss": 0.062292635440826416,
-        "lr": 9.947735400571498e-05,
-        "wall_seconds": 17436.510339021683,
+        "optimizer_updates": 10600,
+        "data_epoch": 15,
+        "next_batch": 280,
+        "train_loss": 0.046438898891210556,
+        "lr": 9.914667385269562e-05,
+        "wall_seconds": 21163.039098501205,
         "gpu_peak_bytes": 8043638272
       },
-      "metric_age_seconds": 199,
-      "updates_since_last_poll": 2100,
+      "metric_age_seconds": 16,
+      "updates_since_last_poll": 2200,
       "waiting_for_eval": false
     },
     {
@@ -172,15 +153,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "event": "epoch_complete",
-        "completed_epochs": 57,
-        "optimizer_updates": 39216,
-        "dataset_window_count": 43992,
-        "batch_size": 64,
-        "dataloader_batches": 688
+        "optimizer_updates": 54700,
+        "data_epoch": 79,
+        "next_batch": 348,
+        "train_loss": 0.05237691104412079,
+        "lr": 7.731511453858165e-05,
+        "wall_seconds": 21112.577688694,
+        "gpu_peak_bytes": 8043277824
       },
-      "metric_age_seconds": 6,
-      "updates_since_last_poll": 4816,
+      "metric_age_seconds": 4,
+      "updates_since_last_poll": 15484,
       "waiting_for_eval": false
     },
     {
@@ -196,15 +178,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "event": "epoch_complete",
-        "completed_epochs": 7,
-        "optimizer_updates": 4816,
-        "dataset_window_count": 43992,
-        "batch_size": 64,
-        "dataloader_batches": 688
+        "optimizer_updates": 19400,
+        "data_epoch": 28,
+        "next_batch": 136,
+        "train_loss": 0.07631931453943253,
+        "lr": 9.703316983493414e-05,
+        "wall_seconds": 4231.463935375214,
+        "gpu_peak_bytes": 8043277824
       },
-      "metric_age_seconds": 8,
-      "updates_since_last_poll": null,
+      "metric_age_seconds": 0,
+      "updates_since_last_poll": 14584,
       "waiting_for_eval": false
     }
   ],
@@ -346,6 +329,23 @@
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/eval/epoch_000200/eval_summary.json"
     },
     {
+      "id": 125,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 0,
+      "checkpoint_step": 250,
+      "status": "finished",
+      "pid": 146144,
+      "episodes_completed": 50,
+      "success_count": 5,
+      "n_episodes": 50,
+      "success_rate": 0.1,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/eval/epoch_000250/eval_summary.json"
+    },
+    {
       "id": 126,
       "kind": "eval",
       "benchmark": "mimicgen",
@@ -365,11 +365,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "17:02:57 up 25 days, 27 min, 12 users,  load average: 24.91, 26.21, 26.58",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       637Gi        68Gi        35Gi       1.3Ti       1.3Ti\n交换：      2.0Gi       2.0Gi       0.0Ki",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 86347 MiB, 100 %"
+    "cpu": "18:02:01 up 25 days,  1:26, 12 users,  load average: 45.74, 34.52, 31.36",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       668Gi        44Gi        35Gi       1.3Ti       1.3Ti\n交换：      2.0Gi       2.0Gi       0.0Ki",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 88785 MiB, 99 %"
   },
-  "disk_free_bytes": 1776928452608,
+  "disk_free_bytes": 1782531764224,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
@@ -402,8 +402,8 @@
     "selection": "highest of five prescribed points; earliest on ties"
   },
   "checkpoint_cleanup": {
-    "files_deleted": 87,
-    "bytes_reclaimed": 454525907416
+    "files_deleted": 88,
+    "bytes_reclaimed": 455843379940
   },
   "note": "Per-point SR and provisional best are not complete five-point or three-seed statistics."
 }

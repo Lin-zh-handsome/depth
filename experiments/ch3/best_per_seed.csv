@@ -1,1 +1,2 @@
 task,method,seed,best_sr,best_checkpoint_progress,best_checkpoint_path,status
+threading_d2,M0,0,0.12,50,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/best/best.pt,DONE
