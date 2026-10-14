@@ -1,8 +1,8 @@
 # 第三章实际状态
 
-2026-10-14T04:06:02.257805+00:00
+2026-10-14T04:10:19.930171+00:00
 
-{"train": {"queued": 45}, "eval": {"queued": 225}, "analysis": {}}
+{"train": {"queued": 39, "running": 6}, "eval": {"queued": 223, "running": 2}, "analysis": {}}
 
 完整回合 0；已保存规定检查点 8。剩余GPU小时 UNKNOWN。
 
