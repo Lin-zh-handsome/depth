@@ -349,3 +349,12 @@ M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测�
 ## 实际运行状态（自动更新）
 2026-10-14T10:49:18.521291+00:00
 45训练、225正式评测。{"train": {"queued": 38, "running": 6, "finished": 1}, "eval": {"queued": 214, "finished": 10, "running": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 实际运行状态（自动更新）
+2026-10-14T10:55:48.798390+00:00
+45训练、225正式评测。{"train": {"queued": 38, "running": 1, "held_for_full_method": 5, "finished": 1}, "eval": {"queued": 214, "finished": 10, "held_for_full_method": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 优先完整方法已生效 2026-10-14T18:56:16.539637+08:00
+当前只运行Threading M2 seed0 PID489094及其五点评测；五个其他训练均在SIGTERM后写出完整最新恢复文件并退出，M0 seed1评测保留部分回合。M0等待评测时的停止分支保存恢复点但不打印recoverable stop，已按退出状态和停止后原子恢复文件时间确认，不重复停止或重训。focus_scheduler PID524143。M2依次完成种子0/1/2，各250轮及5次50回合，随后恢复当前任务其他模型。held_for_full_method为用户指定等待，不是失败。GPU5不操作。
