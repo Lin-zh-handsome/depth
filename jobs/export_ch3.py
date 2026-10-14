@@ -56,8 +56,15 @@ def main():
             summary='\n\n## 实际运行状态（自动更新）\n'+now+'\n45训练、225正式评测。'+json.dumps(counts)+'；完整回合 '+str(episodes)+'。全部工作只用物理GPU2。队列入队不等于实验完成。\n'
             for name in ['task_plan.md','findings.md']:
                 path=plan/name
-                original=path.read_text(encoding='utf-8').split('\n\n## 实际运行状态（自动更新）')[0]
-                path.write_text(original+summary,encoding='utf-8')
+                original=path.read_text(encoding='utf-8')
+                marker='\n\n## 实际运行状态（自动更新）'
+                start=original.find(marker)
+                if start<0:
+                    updated=original+summary
+                else:
+                    end=original.find('\n## ',start+len(marker))
+                    updated=original[:start]+summary+(original[end:] if end>=0 else '')
+                path.write_text(updated,encoding='utf-8')
             with (plan/'progress.md').open('a',encoding='utf-8') as f:f.write(summary)
     (root/'STATUS.json').write_text(json.dumps(status,indent=2))
     (root/'STATUS.md').write_text('# 第三章实际状态\n\n'+now+'\n\n'+json.dumps(counts)+'\n\n完整回合 '+str(episodes)+'；已保存规定检查点 '+str(checkpoint_count)+'。剩余GPU小时 UNKNOWN。\n\n恢复：\n```bash\n'+status['resume_command']+'\n```\n\n磁盘不足时资源门槛会暂停新作业；每个run保留best，临时权重评测完成后按引用清单回收。\n')

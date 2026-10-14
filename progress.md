@@ -210,3 +210,29 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 ## 每小时实际巡检 2026-10-14T14:08:47.225581+08:00
 正式评测已完成2/225个保存点，共100完整回合。Stack Three M0 seed0第50轮14/50=28%，第100轮21/50=42%；两个reset集合完整。当前暂时best保存为100轮，best.pt和完整recovery.pt均存在。自动逐文件回收已执行38个失效/已评快照，释放200254889836字节（约200GB），每项记录于checkpoint_cleanup.jsonl；未执行新的手工删除。当前6训练和2评测实际进程存活且GPU2绑定正确；Threading四组M1/M2较上次增长约1500–1600更新，M0种子1增长约1.54万更新；M0种子0等待合法保存点评测属于预期回压。GPU2空余约85GB，RAM可用约1.2TiB，磁盘空余约1.5TB；无新的失败/非有限loss。thesis/chapter3真实结果已增量导出，不把当前2点暂时最佳当作最终五点/三种子统计。
+
+2026-10-14T06:11:58.775280+00:00 Job 78 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/final_job_78.log
+
+2026-10-14T06:11:59.401561+00:00 Job 121 eval threading_d2/e0/seed_0/point_50 launched PID=3830414, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89591; logs/final_job_121.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T06:12:09.853718+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 220, "finished": 3, "running": 2}, "analysis": {}}；完整回合 150。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-14T06:12:42.552562+00:00 Job 79 eval stack_three_d1/e0/seed_0 finished, exit=0; logs/final_job_79.log
+
+2026-10-14T06:12:43.114803+00:00 Job 122 eval threading_d2/e0/seed_0/point_100 launched PID=3832760, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=89625; logs/final_job_122.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T06:12:45.006309+00:00
+45训练、225正式评测。{"train": {"queued": 39, "running": 6}, "eval": {"queued": 219, "finished": 4, "running": 2}, "analysis": {}}；完整回合 200。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 巡检备注保留修复 2026-10-14T15:06:01.203105+08:00
+发现jobs/export_ch3.py更新task_plan/findings时直接截断自动状态标题后的全部内容，造成后续巡检备注消失。已改为仅替换自动状态章节、保留下一个Markdown标题后的内容；从已提交的1dde8dc/b112f58恢复缺失巡检备注4项。导出程序由调度器逐轮新进程加载，无需重启训练、评测或调度器。
+
+
+## 每小时巡检 2026-10-14T15:07:34.168016+08:00
+完整正式评测5/225，共250回合；新增：stack_three_d1/e0/seed0/150: 26/50=52%; stack_three_d1/e0/seed0/200: 22/50=44%; threading_d2/e0/seed0/100: 2/50=4%。队列[{"kind": "eval", "status": "finished", "count": 5}, {"kind": "eval", "status": "queued", "count": 219}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "queued", "count": 39}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。本轮修复规划状态导出截断后续备注的问题，已恢复4项历史巡检备注，工作进程无需重启。
