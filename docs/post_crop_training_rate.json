@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-10-14T18:45:38.046049+08:00",
+  "measurements": [
+    {
+      "method": "e3",
+      "seed": 0,
+      "pid": 492122,
+      "updates_measured": 100,
+      "seconds": 23.97092366218567,
+      "updates_per_hour": 15018.194754334936,
+      "full_250epochs_hours": 11.45277463859982,
+      "latest_loss": 0.052587706595659256
+    },
+    {
+      "method": "e6",
+      "seed": 0,
+      "pid": 489094,
+      "updates_measured": 400,
+      "seconds": 83.71960353851318,
+      "updates_per_hour": 17200.27256624027,
+      "full_250epochs_hours": 9.999841533766851,
+      "latest_loss": 0.05722839757800102
+    },
+    {
+      "method": "e6",
+      "seed": 1,
+      "pid": 490507,
+      "updates_measured": 300,
+      "seconds": 65.39141297340393,
+      "updates_per_hour": 16515.93001116613,
+      "full_250epochs_hours": 10.414187992060626,
+      "latest_loss": 0.05358270928263664
+    }
+  ],
+  "caveat": "short actual training window; estimate must be refreshed over a longer interval"
+}
