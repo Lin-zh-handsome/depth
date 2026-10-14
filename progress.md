@@ -410,3 +410,18 @@ M1/M2逐张裁剪使用CUDA标量作为Python slice边界，单相机128观测�
 
 ## GPU2负载目标 2026-10-14T19:06:28.202659+08:00
 用户希望GPU利用率约70%。增加独立运行时负载控制器，按NVML滚动读数自适应占空比，仅短时暂停/继续本账号本工程绑定GPU2的训练评测进程；保持M2三种子并行优先，不改模型、批量、训练更新数、随机状态或评测回合。目标为65–75%附近的平均利用率，瞬时读数允许波动；GPU5和其他用户进程完全排除。配置jobs/gpu_load_target.json，状态jobs/gpu_load_state.json。目标限载会增加墙钟时间，后续耗时需重新按实际进度估计。
+
+2026-10-14T11:56:36.011531+00:00 Job 91 eval threading_d2/e6/seed_0/point_50 launched PID=708025, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=115824; logs/final_job_91.log
+
+
+## 实际运行状态（自动更新）
+2026-10-14T11:56:37.980836+00:00
+45训练、225正式评测。{"train": {"queued": 37, "running": 3, "held_for_full_method": 4, "finished": 1}, "eval": {"queued": 213, "finished": 10, "running": 1, "held_for_full_method": 1}, "analysis": {}}；完整回合 500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-14T20:04:34.667278+08:00
+完整正式评测10/225，共500回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 10}, {"kind": "eval", "status": "held_for_full_method", "count": 1}, {"kind": "eval", "status": "queued", "count": 213}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 1}, {"kind": "train", "status": "held_for_full_method", "count": 4}, {"kind": "train", "status": "queued", "count": 37}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 首个M2正式评测已启动 2026-10-14T20:04:34.667278+08:00
+Threading M2 seed0到达第50完整dataset epoch/34400更新，已原子保存磁盘推理快照并独立评测（PID708025，本次巡检7/50回合）；训练等待该点完整评测是预定回压，不是卡死。seed1约49轮，seed2约27轮，有限loss且更新数增长。M2尚无完整正式评测成绩，不汇报部分SR。GPU2近期平均利用率约68.9%，瞬时读数可达100%；负载控制器持续工作。M1/M0有意等待，GPU5不操作。
