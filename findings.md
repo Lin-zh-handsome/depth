@@ -162,3 +162,7 @@ M3 reuses the exact M2 Geometry-associated TokenLearner and geometry processing,
 
 ## GitHub发布范围更新 2026-10-15T18:47:59+08:00
 用户明确要求评测轨迹不用上传，只传成功率结果。已将本次新增快照中的2765个原始trajectory JSON从发布索引移除，文件仍保留在服务器。保留代码、配置、成功率汇总、每个正式保存点评测结果、逐回合成功标记及论文图表。尚未推送的发布提交将据此修订，不上传该轨迹提交历史。发布脚本相对父路径错误已更正为绝对工程路径。
+
+
+## GitHub审查版本已推送 2026-10-15T18:48:41+08:00
+已成功推送 https://github.com/Lin-zh-handsome/depth 的 main 分支，代码与结果提交a9583ad（Git push回执bb8e55b..a9583ad）。本次新增发布内容不包含原始评测trajectory JSON、checkpoint、模型权重和数据集。四模型代码、配置、成功率结果及审查说明见docs/CODE_REVIEW_GUIDE.md与thesis/chapter3/tables/。此前尝试打包轨迹的未发布提交已修订，不在本次推送的可达历史中；原始轨迹仍保留服务器。训练/评测未停止。
