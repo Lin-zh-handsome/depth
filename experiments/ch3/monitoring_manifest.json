@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-15T14:43:28.453143+08:00",
-  "previous_poll": "2026-10-14T22:11:25.152002+08:00",
+  "checked_at_asia_shanghai": "2026-10-15T15:44:00.510504+08:00",
+  "previous_poll": "2026-10-15T14:43:28.453143+08:00",
   "protocol": {
     "training_runs": 45,
     "evaluation_points": 225,
@@ -16,17 +16,17 @@
     {
       "kind": "eval",
       "status": "finished",
-      "count": 29
+      "count": 30
     },
     {
       "kind": "eval",
       "status": "queued",
-      "count": 195
+      "count": 193
     },
     {
       "kind": "eval",
       "status": "running",
-      "count": 1
+      "count": 2
     },
     {
       "kind": "train",
@@ -46,18 +46,32 @@
   ],
   "running": [
     {
-      "id": 128,
+      "id": 107,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0,
+      "checkpoint_step": 100,
+      "status": "running",
+      "pid": 4123986,
+      "alive": true,
+      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+      "episodes_completed": 8
+    },
+    {
+      "id": 132,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "threading_d2",
       "method": "e0",
-      "seed": 1,
-      "checkpoint_step": 150,
+      "seed": 2,
+      "checkpoint_step": 100,
       "status": "running",
-      "pid": 3903708,
+      "pid": 4014788,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 20
+      "episodes_completed": 31
     },
     {
       "id": 13,
@@ -72,17 +86,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 59500,
-        "data_epoch": 86,
-        "next_batch": 332,
-        "train_loss": 0.041760869324207306,
-        "lr": 7.353196412568982e-05,
-        "wall_seconds": 16368.781153917313,
-        "gpu_peak_bytes": 8044621312
+        "event": "epoch_complete",
+        "completed_epochs": 100,
+        "optimizer_updates": 68800,
+        "dataset_window_count": 43992,
+        "batch_size": 64,
+        "dataloader_batches": 688
       },
-      "metric_age_seconds": 18,
-      "updates_since_last_poll": null,
-      "waiting_for_eval": false
+      "metric_age_seconds": 908,
+      "updates_since_last_poll": 9300,
+      "waiting_for_eval": true
     },
     {
       "id": 14,
@@ -97,16 +110,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 57200,
-        "data_epoch": 83,
-        "next_batch": 96,
-        "train_loss": 0.0352633073925972,
-        "lr": 7.536924516104411e-05,
-        "wall_seconds": 16349.662209749222,
+        "optimizer_updates": 66900,
+        "data_epoch": 97,
+        "next_batch": 164,
+        "train_loss": 0.04111826419830322,
+        "lr": 6.735417954573014e-05,
+        "wall_seconds": 19987.47210073471,
         "gpu_peak_bytes": 8044621312
       },
-      "metric_age_seconds": 8,
-      "updates_since_last_poll": null,
+      "metric_age_seconds": 3,
+      "updates_since_last_poll": 9700,
       "waiting_for_eval": false
     },
     {
@@ -122,16 +135,17 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "event": "epoch_complete",
-        "completed_epochs": 150,
-        "optimizer_updates": 103200,
-        "dataset_window_count": 43992,
-        "batch_size": 64,
-        "dataloader_batches": 688
+        "optimizer_updates": 105400,
+        "data_epoch": 153,
+        "next_batch": 136,
+        "train_loss": 0.023135552182793617,
+        "lr": 3.28177320491069e-05,
+        "wall_seconds": 19933.595913410187,
+        "gpu_peak_bytes": 8043277824
       },
-      "metric_age_seconds": 1685,
-      "updates_since_last_poll": null,
-      "waiting_for_eval": true
+      "metric_age_seconds": 18,
+      "updates_since_last_poll": 2200,
+      "waiting_for_eval": false
     },
     {
       "id": 18,
@@ -146,17 +160,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 67300,
-        "data_epoch": 97,
-        "next_batch": 564,
-        "train_loss": 0.05619214475154877,
-        "lr": 6.701012572834455e-05,
-        "wall_seconds": 16269.579010248184,
-        "gpu_peak_bytes": 8043277824
+        "event": "epoch_complete",
+        "completed_epochs": 100,
+        "optimizer_updates": 68800,
+        "dataset_window_count": 43992,
+        "batch_size": 64,
+        "dataloader_batches": 688
       },
-      "metric_age_seconds": 17,
-      "updates_since_last_poll": null,
-      "waiting_for_eval": false
+      "metric_age_seconds": 3125,
+      "updates_since_last_poll": 1500,
+      "waiting_for_eval": true
     }
   ],
   "complete_formal_evaluations": [
@@ -637,6 +650,23 @@
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/eval/epoch_000100/eval_summary.json"
     },
     {
+      "id": 128,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "checkpoint_step": 150,
+      "status": "finished",
+      "pid": 3903708,
+      "episodes_completed": 50,
+      "success_count": 5,
+      "n_episodes": 50,
+      "success_rate": 0.1,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/eval/epoch_000150/eval_summary.json"
+    },
+    {
       "id": 131,
       "kind": "eval",
       "benchmark": "mimicgen",
@@ -656,11 +686,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "14:43:28 up 25 days, 22:08, 17 users,  load average: 24.96, 29.13, 32.04",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       128Gi        25Gi       428Mi       1.8Ti       1.8Ti\n交换：      2.0Gi       2.0Gi        12Mi",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 104589 MiB, 99 %"
+    "cpu": "15:44:00 up 25 days, 23:08, 17 users,  load average: 30.13, 34.46, 36.64",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       114Gi        36Gi       388Mi       1.8Ti       1.8Ti\n交换：      2.0Gi       2.0Gi        12Mi",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 102151 MiB, 100 %"
   },
-  "disk_free_bytes": 1631712141312,
+  "disk_free_bytes": 1627965820928,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
@@ -693,22 +723,23 @@
     "selection": "highest of five prescribed points; earliest on ties"
   },
   "checkpoint_cleanup": {
-    "files_deleted": 107,
-    "bytes_reclaimed": 480951166052
+    "files_deleted": 108,
+    "bytes_reclaimed": 482268638576
   },
   "note": "Per-point SR and provisional best are not complete five-point or three-seed statistics.",
   "gpu_load_control": {
-    "timestamp": "2026-10-15T14:44:04.764515+08:00",
+    "timestamp": "2026-10-15T15:44:30.141617+08:00",
     "target_percent": 70,
-    "cycle_mean_percent": 76.2,
-    "recent_mean_percent": 70.3,
-    "active_fraction": 0.739,
+    "cycle_mean_percent": 68.5,
+    "recent_mean_percent": 68.9,
+    "active_fraction": 0.748,
     "controlled_pids": [
       3059587,
       3061295,
       3062877,
       3065502,
-      3903708
+      4014788,
+      4123986
     ],
     "physical_gpu": 2
   }

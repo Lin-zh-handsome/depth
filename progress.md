@@ -744,3 +744,27 @@ Threading M2第50轮三个种子均完成固定50回合：seed0=5/50(10%)、seed
 
 ## M2全部完成及后续恢复巡检 2026-10-15T14:43:28.453143+08:00
 Threading M2三个种子250轮和15次正式评测全部完成，五点评测最佳依次14%/16%/22%，均值17.3333%、样本标准差4.1633个百分点；best推理权重保留，结果由真实逐回合数据汇总。焦点配置已自动completed，Threading M0/M1已正常恢复，符合用户最新指令，不是误解除等待。当前M1种子0/1约86/83轮，M0种子1到150轮并评测20/50回合，种子2约98轮；四项训练和一项正式评测存活，未发现失败。整体4/45训练、29/225正式评测完成，1450完整回合。M1种子2尚排队，仍不跨任务。GPU2近期平均约70.3%，限载正常，GPU5不操作。完整结果已在本对话用户查询时报告，不将部分评测计作完成。
+
+2026-10-15T06:52:33.471665+00:00 Job 132 eval threading_d2/e0/seed_2/point_100 launched PID=4014788, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=104589; logs/final_job_132.log
+
+
+## 实际运行状态（自动更新）
+2026-10-15T06:52:35.428475+00:00
+45训练、225正式评测。{"train": {"queued": 37, "finished": 4, "running": 4}, "eval": {"queued": 194, "finished": 29, "running": 2}, "analysis": {}}；完整回合 1450。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-15T07:29:57.526651+00:00 Job 128 eval threading_d2/e0/seed_1 finished, exit=0; logs/final_job_128.log
+
+2026-10-15T07:29:57.706206+00:00 Job 107 eval threading_d2/e3/seed_0/point_100 launched PID=4123986, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=104589; logs/final_job_107.log
+
+
+## 实际运行状态（自动更新）
+2026-10-15T07:30:02.688187+00:00
+45训练、225正式评测。{"train": {"queued": 37, "finished": 4, "running": 4}, "eval": {"queued": 193, "finished": 30, "running": 2}, "analysis": {}}；完整回合 1500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-15T15:44:00.510504+08:00
+完整正式评测30/225，共1500回合；新增：threading_d2/e0/seed1/150: 5/50=10%。队列[{"kind": "eval", "status": "finished", "count": 30}, {"kind": "eval", "status": "queued", "count": 193}, {"kind": "eval", "status": "running", "count": 2}, {"kind": "train", "status": "finished", "count": 4}, {"kind": "train", "status": "queued", "count": 37}, {"kind": "train", "status": "running", "count": 4}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 每小时推进确认 2026-10-15T15:44:00.510504+08:00
+新增Threading M0 seed1第150轮完整正式评测5/50=10%，精确reset列表通过。整体正式评测30/225、1500完整回合，训练完成4/45；四项M0/M1训练和两项正式评测仍在运行。M1 seed0到100轮等待评测(8/50回合)、seed1约97轮；M0 seed1约153轮、seed2到100轮等待评测(31/50回合)。等待是预定回压，不是卡死，无失败或非有限loss。M2三种子已完整完成，最终17.3333%±4.1633%保持不变；不对未完M0/M1计算最终均值。GPU2近期平均约68.9%，限载正常；只推进Threading，不影响GPU5。
