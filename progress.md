@@ -808,6 +808,8 @@ Threading M2三个种子250轮和15次正式评测全部完成，五点评测最
 ## 当前训练与负载巡检 2026-10-15T17:47:30.163411+08:00
 新增Threading M1 seed1第100轮完整正式评测4/50=8%，固定reset列表完整。正式评测累计33/225、1650完整回合，训练完成4/45。M1种子0/1约119/109轮，M0种子1/2约184/130轮；四项训练实际增长且loss有限，目前没有就绪的运行中评测，等待下一指定保存点是正常状态。无异常、无跨任务；GPU2近期平均约73.4%，限载控制正常，GPU5不操作。所有未完成模型的阶段成功率保留真实结果，不提前计算三种子最终统计。
 
+2026-10-15T10:33:05.857285+00:00 Job 129 eval threading_d2/e0/seed_1/point_200 launched PID=453202, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=107026; logs/final_job_129.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-15T10:33:07.413681+00:00
@@ -822,12 +824,24 @@ Threading M2三个种子250轮和15次正式评测全部完成，五点评测最
 ## 四模型正式协议生效 2026-10-15T18:37:57.370028+08:00
 用户新增M3=CNN-DP+Geometry-associated TokenLearner，不启用GSA，直接复用M2相同DepthTokenLearner类、8个token、同权重(u,v,d,rho)与投影残差融合。新包附件未发现，明确按本轮用户指令执行。原45训练225正式评测的ID、数据库与实际状态保留，只追加M3的15训练75评测；总计60训练300评测21000回合。沿用既定训练预算、每run五次正式评测、Best-of-5与低存储规则。不重新训练旧合规模型。每任务变为12训练60正式评测，全部完成才换任务；仍先Threading，只用GPU2，平均利用率目标70%，GPU5不操作。M2已完成，原M0/M1工作进程保持运行，新增M3按空闲队列立即正式调度。四模型主表、模块消融及M1-M0/M3-M0/M2-M1/M2-M3/M2-M0增量、成功率曲线与真实可视化已更新。无GSA的M3只展示真实TokenLearner权重，不伪称GSA注意力。证据docs/m3_migration_report.json、docs/m3_structure_consistency.json。
 
+2026-10-15T10:37:57.718869+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+2026-10-15T10:37:57.719817+00:00 Sequential task scheduling: active task threading_d2. Switch only after all 12 training runs and 60 evaluations finish.
+
+2026-10-15T10:37:58.288229+00:00 Job 274 train threading_d2/m3/seed_0/point_-1 launched PID=467460, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=104589; logs/final_job_274.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-15T10:37:59.849648+00:00
 60训练、300正式评测。{"train": {"queued": 51, "finished": 4, "running": 5}, "eval": {"queued": 266, "finished": 33, "running": 1}, "analysis": {}}；完整回合 1650。全部工作只用物理GPU2。队列入队不等于实验完成。
 
+2026-10-15T10:38:30.685941+00:00 Job 275 train threading_d2/m3/seed_1/point_-1 launched PID=469064, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=95849; logs/final_job_275.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-15T10:38:32.705044+00:00
 60训练、300正式评测。{"train": {"queued": 50, "finished": 4, "running": 6}, "eval": {"queued": 266, "finished": 33, "running": 1}, "analysis": {}}；完整回合 1650。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## Four-model formal execution 2026-10-15T18:42:27+08:00
+M3 reuses the exact M2 Geometry-associated TokenLearner and geometry processing, with GSA removed. Preserved original 45 training / 225 evaluation event identities; appended only 15 training / 75 evaluation events. Threading M3 launch state: [{'id': 274, 'seed': 0, 'status': 'running', 'pid': 467460}, {'id': 275, 'seed': 1, 'status': 'running', 'pid': 469064}, {'id': 276, 'seed': 2, 'status': 'queued', 'pid': None}]. Both launched M3 seeds recorded finite loss and nonzero TokenLearner gradients at update100. Existing M0/M1 workers preserved. Queue: [{'kind': 'eval', 'status': 'finished', 'n': 33}, {'kind': 'eval', 'status': 'queued', 'n': 266}, {'kind': 'eval', 'status': 'running', 'n': 1}, {'kind': 'train', 'status': 'finished', 'n': 4}, {'kind': 'train', 'status': 'queued', 'n': 50}, {'kind': 'train', 'status': 'running', 'n': 6}]. CSV BOM read failure during migration was fixed using utf-8-sig before successful append; original states were not overwritten. New four-model ZIP was not found; latest direct user instructions govern this revision. GPU2 only, all prior budgets/evaluation/reset/storage rules retained.
