@@ -34,8 +34,8 @@ M2 Threading种子0/1已从294/273更新恢复，均已实际到300更新并记�
 
 
 ## 实际运行状态（自动更新）
-2026-10-15T10:38:32.705044+00:00
-60训练、300正式评测。{"train": {"queued": 50, "finished": 4, "running": 6}, "eval": {"queued": 266, "finished": 33, "running": 1}, "analysis": {}}；完整回合 1650。全部工作只用物理GPU2。队列入队不等于实验完成。
+2026-10-15T10:50:17.955767+00:00
+60训练、300正式评测。{"train": {"queued": 50, "finished": 4, "running": 6}, "eval": {"queued": 265, "finished": 33, "running": 2}, "analysis": {}}；完整回合 1650。全部工作只用物理GPU2。队列入队不等于实验完成。
 
 ## 当前巡检结论 2026-10-14T13:00:53.031961+08:00
 五任务数据清单已就绪；实际6训练和2评测推进。正式完整评测0/225，待50/100轮首批评测完成后检验实际best权重更新及逐文件回收。训练总预算、控制模式、reset集合及五评测位置均保持最终协议；详见monitoring_manifest.json。
@@ -163,3 +163,7 @@ M3 reuses the exact M2 Geometry-associated TokenLearner and geometry processing,
 
 ## GitHub审查版本已推送 2026-10-15T18:48:41+08:00
 已成功推送 https://github.com/Lin-zh-handsome/depth 的 main 分支，代码与结果提交a9583ad（Git push回执bb8e55b..a9583ad）。本次新增发布内容不包含原始评测trajectory JSON、checkpoint、模型权重和数据集。四模型代码、配置、成功率结果及审查说明见docs/CODE_REVIEW_GUIDE.md与thesis/chapter3/tables/。此前尝试打包轨迹的未发布提交已修订，不在本次推送的可达历史中；原始轨迹仍保留服务器。训练/评测未停止。
+
+
+## 巡检进度 2026-10-15T18:50:06.852641+08:00
+完整正式评测33/300；新增无。全部训练评测保持原预算、控制模式与GPU2绑定。

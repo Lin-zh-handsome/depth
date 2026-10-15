@@ -857,3 +857,12 @@ M3 reuses the exact M2 Geometry-associated TokenLearner and geometry processing,
 
 ## GitHub审查版本已推送 2026-10-15T18:48:41+08:00
 已成功推送 https://github.com/Lin-zh-handsome/depth 的 main 分支，代码与结果提交a9583ad（Git push回执bb8e55b..a9583ad）。本次新增发布内容不包含原始评测trajectory JSON、checkpoint、模型权重和数据集。四模型代码、配置、成功率结果及审查说明见docs/CODE_REVIEW_GUIDE.md与thesis/chapter3/tables/。此前尝试打包轨迹的未发布提交已修订，不在本次推送的可达历史中；原始轨迹仍保留服务器。训练/评测未停止。
+
+
+## 每小时巡检 2026-10-15T18:50:06.852641+08:00
+完整正式评测33/300，共1650回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 33}, {"kind": "eval", "status": "queued", "count": 266}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 4}, {"kind": "train", "status": "queued", "count": 50}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 实际运行状态（自动更新）
+2026-10-15T10:50:17.955767+00:00
+60训练、300正式评测。{"train": {"queued": 50, "finished": 4, "running": 6}, "eval": {"queued": 265, "finished": 33, "running": 2}, "analysis": {}}；完整回合 1650。全部工作只用物理GPU2。队列入队不等于实验完成。
