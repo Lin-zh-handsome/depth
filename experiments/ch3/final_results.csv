@@ -4,7 +4,7 @@ stack_three_d1,M1,0,,,TODO
 stack_three_d1,M2,0,,,TODO
 threading_d2,M0,1,,,TODO
 threading_d2,M1,0,,,TODO
-threading_d2,M2,0,,,TODO
+threading_d2,M2,3,0.17333333333333334,0.04163331998932265,DONE
 coffee_d2,M0,0,,,TODO
 coffee_d2,M1,0,,,TODO
 coffee_d2,M2,0,,,TODO
