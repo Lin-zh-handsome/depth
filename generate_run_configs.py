@@ -19,7 +19,8 @@ for task in protocol['tasks']:
         image=key.endswith(('_image','_depth'))
         shape['obs'][key]=dict(shape=([a.shape[-1],*a.shape[1:3]] if image else list(a.shape[1:])),
             type='rgb' if key.endswith('_image') else 'depth' if key.endswith('_depth') else 'low_dim')
-    for row in db.execute("SELECT * FROM train_jobs WHERE task=? AND method IN ('e0','e3','e6')",(task['task'],)).fetchall():
+    for row in db.execute("SELECT * FROM train_jobs WHERE task=? AND method IN ('e0','e3','e6','m3')",(task['task'],)).fetchall():
+        if row['method']!='m3' and Path(row['config_path']).exists():continue
         cfg=dict(task,method=row['method'],seed=row['seed'],shape_meta=shape,
             crop_shape=[76,76] if task['benchmark']=='mimicgen' else [112,112],
             zarr_path=m['processed_path'],dataset_manifest=str(manifest),batch_size=64,

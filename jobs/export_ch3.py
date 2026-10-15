@@ -6,7 +6,7 @@ from datetime import datetime,timezone
 import numpy as np
 from registry import ROOT,connect
 
-METHODS={'e0':'M0','e3':'M1','e6':'M2'}
+METHODS={'e0':'M0','e3':'M1','e6':'M2','m3':'M3'}
 def write_csv(path,rows,fields=None):
     path.parent.mkdir(parents=True,exist_ok=True);tmp=path.with_suffix('.tmp')
     with tmp.open('w',newline='',encoding='utf-8') as f:
@@ -53,7 +53,7 @@ def main():
     previous=json.loads((root/'STATUS.json').read_text()) if (root/'STATUS.json').exists() else {}
     if previous.get('counts')!=counts:
         for plan in [ROOT,ROOT.parent/'.planning/protocol_v1']:
-            summary='\n\n## 实际运行状态（自动更新）\n'+now+'\n45训练、225正式评测。'+json.dumps(counts)+'；完整回合 '+str(episodes)+'。全部工作只用物理GPU2。队列入队不等于实验完成。\n'
+            summary='\n\n## 实际运行状态（自动更新）\n'+now+'\n60训练、300正式评测。'+json.dumps(counts)+'；完整回合 '+str(episodes)+'。全部工作只用物理GPU2。队列入队不等于实验完成。\n'
             for name in ['task_plan.md','findings.md']:
                 path=plan/name
                 original=path.read_text(encoding='utf-8')
@@ -97,18 +97,28 @@ def main():
             seed_stats.append(dict(task=key[0],method=key[1],seed=key[2],best_sr=winner['sr'],best_checkpoint_progress=winner['progress'],best_checkpoint_path=str(ROOT/'runs'/('mimicgen' if key[0] in ['stack_three_d1','threading_d2','coffee_d2'] else 'maniskill')/key[0]/{v:k for k,v in METHODS.items()}[key[1]]/f'seed_{key[2]}'/'best/best.pt'),status='DONE'))
     write_csv(root/'best_per_seed.csv',seed_stats,['task','method','seed','best_sr','best_checkpoint_progress','best_checkpoint_path','status'])
     write_csv(root/'eval_results.csv',points,['task','method','seed','progress','sr','episodes','successes','checkpoint_path','eval_manifest','episodes_path'])
+    ablation=[]
+    definitions={'M0':(False,False,False),'M1':(True,True,False),'M2':(True,True,True),'M3':(True,False,True)}
     for t in protocols:
-        s={r['method']:r for r in stats if r['task']==t['task']}
-        for metric in ['best']:
-            ready=all(r['status']=='DONE' for r in s.values())
-            delta.append(dict(task=t['task'],metric=metric,gsa_pp=100*(s['M1'][metric+'_mean']-s['M0'][metric+'_mean']) if ready else '',
-                token_given_gsa_pp=100*(s['M2'][metric+'_mean']-s['M1'][metric+'_mean']) if ready else '',
-                full_pp=100*(s['M2'][metric+'_mean']-s['M0'][metric+'_mean']) if ready else '',status='DONE' if ready else 'TODO'))
+        table={r['method']:r for r in stats if r['task']==t['task']}
+        for method,row in table.items():
+            depth,gsa,token=definitions[method]
+            ablation.append(dict(row,uses_depth=depth,uses_gsa=gsa,uses_geometry_tokenlearner=token,num_tokens=8 if token else 0))
+        pairs=[('M1-M0','M1','M0','Depth plus GSA increment'),('M3-M0','M3','M0','Depth plus geometry TokenLearner increment'),
+               ('M2-M1','M2','M1','TokenLearner increment conditional on common Depth and GSA'),
+               ('M2-M3','M2','M3','GSA increment conditional on common Depth and geometry TokenLearner'),
+               ('M2-M0','M2','M0','Full method increment')]
+        for label,left,right,meaning in pairs:
+            ready=table[left]['status']=='DONE' and table[right]['status']=='DONE'
+            delta.append(dict(task=t['task'],comparison=label,gain_pp=100*(table[left]['best_mean']-table[right]['best_mean']) if ready else '',
+                interpretation=meaning,status='DONE' if ready else 'TODO'))
+    write_csv(out/'tables/module_ablation.csv',ablation)
     write_csv(out/'tables/module_deltas.csv',delta)
-    for name in ['table3_2_best','module_deltas']:
+    for name in ['table3_2_best','module_deltas','module_ablation']:
         (out/'tables'/f'{name}.json').write_text(json.dumps(dict(source=str(root/'eval_manifest.csv'),raw_episode_source=str(out/'source_data/checkpoint_sr.csv'),statistics='Best-of-5, three independent seeds, sample std ddof=1, earliest tie'),indent=2))
     marker=out/'source_data/exported_eval_count.json'
-    changed=not marker.exists() or json.loads(marker.read_text())!=len(points)
+    signature=dict(complete_evals=len(points),methods=list(METHODS.values()))
+    changed=not marker.exists() or json.loads(marker.read_text())!=signature
     if changed and points:
         import matplotlib;matplotlib.use('Agg')
         import matplotlib.pyplot as plt
@@ -147,18 +157,18 @@ def main():
             write_csv(out/'source_data'/f"loss_{t['task']}.csv",loss_rows,['method','seed','optimizer_updates','train_loss','log_path'])
             (directory/f"loss_{t['task']}.json").write_text(json.dumps(dict(source=str(out/'source_data'/f"loss_{t['task']}.csv"))))
             plt.close(fig)
-        marker.write_text(json.dumps(len(points)))
+        marker.write_text(json.dumps(signature))
     md=out/'experiments_3_6.md'
     if not md.exists():md.write_text('''# 第三章 3.6 实验结果
 ## 3.6.1 实验平台和评价指标
-两个Benchmark、五任务、三方法、三种子；固定预算见table3_1.csv。Best为周期评测最大值，具有择优偏差；Best-of-5限定五个预注册位置，并列选最早；跨种子样本标准差ddof=1。
+两个Benchmark、五任务、四方法、三种子；固定预算见table3_1.csv。Best为周期评测最大值，具有择优偏差；Best-of-5限定五个预注册位置，并列选最早；跨种子样本标准差ddof=1。
 ## 3.6.2 五任务成功率比较
-TODO：45-run矩阵完整数据到齐后引用table3_2_best.csv。
+TODO：60-run矩阵完整数据到齐后引用table3_2_best.csv。
 ## 3.6.3 GSA与TokenLearner递进式效果分析
 TODO：module_deltas.csv。M0→M1包含Depth和GSA；M1→M2保持相同Depth/GSA。
 ## 3.6.4 空间注意力与时序关注可视化
 TODO：独立checkpoint真实闭环轨迹、轴向GSA Query传播权重、8个Token空间权重；阶段名称来自环境事件或明确标注。
 ## 3.6.5 典型操作过程与失败案例
-TODO：相同reset的M0/M1/M2成功和失败轨迹；正式成功率评测不采集完整注意力张量。
+TODO：相同reset的M0/M1/M2/M3成功和失败轨迹；正式成功率评测不采集完整注意力张量。
 ''')
 if __name__=='__main__':main()

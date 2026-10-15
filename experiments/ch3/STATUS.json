@@ -1,18 +1,19 @@
 {
-  "timestamp": "2026-10-15T09:47:36.934058+00:00",
+  "timestamp": "2026-10-15T10:37:54.363891+00:00",
   "counts": {
     "train": {
-      "queued": 37,
+      "queued": 52,
       "finished": 4,
       "running": 4
     },
     "eval": {
-      "queued": 192,
-      "finished": 33
+      "queued": 266,
+      "finished": 33,
+      "running": 1
     },
     "analysis": {}
   },
-  "scheduled_checkpoint_files": 0,
+  "scheduled_checkpoint_files": 1,
   "complete_rollout_episodes": 1650,
   "running": [
     {
@@ -91,6 +92,26 @@
       "attempts": 2,
       "max_attempts": 3,
       "started": "2026-10-15T02:11:43.231338+00:00",
+      "finished": null,
+      "exit_code": null,
+      "error": null
+    },
+    {
+      "id": 129,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "checkpoint_step": 200,
+      "status": "running",
+      "prerequisite": null,
+      "config_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/config_resolved.json",
+      "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/checkpoints/epoch_000200.pt",
+      "pid": 453202,
+      "attempts": 1,
+      "max_attempts": 2,
+      "started": "2026-10-15T10:33:05.856153+00:00",
       "finished": null,
       "exit_code": null,
       "error": null

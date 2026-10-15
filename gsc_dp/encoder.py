@@ -25,6 +25,7 @@ _METHODS = {
     "e4": (False, None, True, True),
     "e5": (False, "gsa", True, False),
     "e6": (False, "gsa", True, True),
+    "m3": (False, None, True, True),
     "e7": (True, "plain", False, False),
 }
 
@@ -113,6 +114,8 @@ class RGBDGeometryObsEncoder(ModuleAttrMixin):
                  heads=4):
         super().__init__()
         method = method.lower()
+        if method == "m3" and attention_mode is not None:
+            raise ValueError("M3 reuses M2 geometry TokenLearner with GSA disabled")
         if method not in _METHODS:
             raise ValueError(f"unknown method {method}")
         self.shape_meta = shape_meta

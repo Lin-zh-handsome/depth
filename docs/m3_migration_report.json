@@ -1,0 +1,49 @@
+{
+  "added_manifest_training_rows": 15,
+  "added_manifest_evaluation_rows": 75,
+  "old_events_preserved": 270,
+  "counts": [
+    [
+      "eval",
+      "e0",
+      75
+    ],
+    [
+      "eval",
+      "e3",
+      75
+    ],
+    [
+      "eval",
+      "e6",
+      75
+    ],
+    [
+      "eval",
+      "m3",
+      75
+    ],
+    [
+      "train",
+      "e0",
+      15
+    ],
+    [
+      "train",
+      "e3",
+      15
+    ],
+    [
+      "train",
+      "e6",
+      15
+    ],
+    [
+      "train",
+      "m3",
+      15
+    ]
+  ],
+  "old_state_policy": "migration issues INSERT OR IGNORE only; live workers may advance states normally",
+  "missing_new_attachment": "four-model instructions supplied in user message; no new ZIP found"
+}

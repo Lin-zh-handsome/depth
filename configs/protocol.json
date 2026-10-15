@@ -1,5 +1,5 @@
 {
-  "protocol": "20261014_final_45_train_225_eval",
+  "protocol": "20261015_four_models_60_runs_300_evals",
   "tasks": [
     {
       "benchmark": "mimicgen",
@@ -541,5 +541,17 @@
   "primary_statistics": {
     "best": "Best-of-5: max over the five preregistered positions; earliest position on ties",
     "cross_seed": "mean and sample std, ddof=1"
+  },
+  "methods": {
+    "M0": "e0",
+    "M1": "e3",
+    "M2": "e6",
+    "M3": "m3"
+  },
+  "model_definitions": {
+    "M0": "CNN-DP RGB",
+    "M1": "CNN-DP + GSA",
+    "M2": "CNN-DP + GSA + Geometry-associated TokenLearner",
+    "M3": "CNN-DP + Geometry-associated TokenLearner; same class/settings as M2, GSA disabled"
   }
 }

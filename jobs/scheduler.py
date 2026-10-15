@@ -35,7 +35,7 @@ def snapshot(db):
     os.replace(tmp,target)
 
 def register_temporal(db):
-    groups=db.execute("SELECT benchmark,task,seed,count(*) n FROM eval_jobs WHERE status='finished' GROUP BY benchmark,task,seed HAVING n=15").fetchall()
+    groups=db.execute("SELECT benchmark,task,seed,count(*) n FROM eval_jobs WHERE status='finished' GROUP BY benchmark,task,seed HAVING n=20").fetchall()
     for r in groups:
         db.execute("INSERT OR IGNORE INTO jobs(kind,benchmark,task,method,seed,checkpoint_step,prerequisite) VALUES('analysis',?,?,'paired_best',?,?,NULL)",
             (r['benchmark'],r['task'],r['seed'],250 if r['benchmark']=='mimicgen' else 100000))
@@ -46,7 +46,7 @@ def active_task(db):
     for task in TASK_ORDER:
         train=db.execute("SELECT count(*),sum(status='finished') FROM train_jobs WHERE task=?",(task,)).fetchone()
         evaluation=db.execute("SELECT count(*),sum(status='finished') FROM eval_jobs WHERE task=?",(task,)).fetchone()
-        if train[0]!=9 or train[1]!=9 or evaluation[0]!=45 or evaluation[1]!=45:return task
+        if train[0]!=12 or train[1]!=12 or evaluation[0]!=60 or evaluation[1]!=60:return task
     return None
 
 def focused_run(db):
@@ -130,9 +130,9 @@ def main():
         current_task=active_task(db)
         if current_task!=previous_task:
             state=dict(mode='one_task_at_a_time',task_order=TASK_ORDER,active_task=current_task,
-                switch_condition='9 complete training runs and 45 complete scheduled evaluations',timestamp=now())
+                switch_condition='12 complete training runs and 60 complete scheduled evaluations',timestamp=now())
             (ROOT/'jobs/task_dispatch_state.json').write_text(json.dumps(state,indent=2))
-            record_progress('Sequential task scheduling: active task '+str(current_task)+'. Switch only after all 9 training runs and 45 evaluations finish.')
+            record_progress('Sequential task scheduling: active task '+str(current_task)+'. Switch only after all 12 training runs and 60 evaluations finish.')
             previous_task=current_task
         load=os.getloadavg()[0]
         free=gpu_free()
@@ -145,11 +145,11 @@ def main():
             kind='eval' if neval<2 and ready and ready_evals else 'analysis' if not focus and nanalysis<1 and ready and db.execute("SELECT 1 FROM analysis_jobs WHERE status='queued' AND prerequisite IS NULL LIMIT 1").fetchone() else 'train'
             cap=(focus['max_train'] if focus else 6) if kind=='train' else 2 if kind=='eval' else 1
             if {'train':ntrain,'eval':neval,'analysis':nanalysis}[kind]<cap:
-                rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, CASE task WHEN 'threading_d2' THEN 0 WHEN 'PegInsertionSide-v1' THEN 1 WHEN 'stack_three_d1' THEN 2 WHEN 'coffee_d2' THEN 3 ELSE 4 END, seed, id",(kind,)).fetchall()
+                rows=db.execute("SELECT * FROM jobs WHERE kind=? AND status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 WHEN 'm3' THEN 2 ELSE 3 END, CASE task WHEN 'threading_d2' THEN 0 WHEN 'PegInsertionSide-v1' THEN 1 WHEN 'stack_three_d1' THEN 2 WHEN 'coffee_d2' THEN 3 ELSE 4 END, seed, id",(kind,)).fetchall()
                 # Snapshot eval dependencies are already atomic-complete.
                 if kind=='eval':
                     # FIFO across benchmarks: epoch and optimizer-update indices have different units.
-                    rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 ELSE 2 END, id").fetchall()
+                    rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 WHEN 'm3' THEN 2 ELSE 3 END, id").fetchall()
                 if kind in ['train','eval']:
                     rows=[r for r in rows if r['task']==current_task]
                 if focus:

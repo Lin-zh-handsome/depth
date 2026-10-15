@@ -11,7 +11,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--task',required=True);p.add_argument('--seed',type=int,required=True)
     p.add_argument('--benchmark',choices=['maniskill','mimicgen'],default='maniskill')
     p.add_argument('--step',type=int,required=True);p.add_argument('--stages-dir',type=Path)
-    args=p.parse_args();methods=['e0','e3','e6'];runs={}
+    args=p.parse_args();methods=['e0','e3','e6','m3'];runs={}
     for method in methods:
         tag=('epoch' if args.benchmark=='mimicgen' else 'update')+f'_{args.step:06d}'
         run=ROOT/'runs'/args.benchmark/args.task/method/f'seed_{args.seed}'

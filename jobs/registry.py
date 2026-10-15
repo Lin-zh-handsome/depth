@@ -29,7 +29,7 @@ def initialize():
     protocol=json.loads((ROOT/'configs/protocol.json').read_text())
     db=connect()
     for task in protocol['tasks']:
-        methods=['e6','e3','e0']
+        methods=['e6','e3','e0','m3']
         for method in methods:
             for seed in task['seeds']:
                 name=f"{task['benchmark']}/{task['task']}/{method}/seed_{seed}"

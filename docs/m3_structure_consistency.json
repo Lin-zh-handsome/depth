@@ -1,0 +1,9 @@
+{
+  "method": "M3",
+  "same_token_class": true,
+  "same_token_parameter_shapes": true,
+  "same_geometric_fields": true,
+  "num_tokens": 8,
+  "only_encoder_module_difference": "GSA omitted",
+  "same_task_training_config_except_method": true
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "scope": "chapter3_45_run_only",
+  "scope": "chapter3_four_models_60_runs_300_evals",
   "records": [
     {
       "id": "Table 3-1",
@@ -9,7 +9,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/tasks_protocol",
       "formats": [
@@ -28,7 +29,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/best_sr",
       "formats": [
@@ -47,7 +49,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/model_structure",
       "formats": [
@@ -65,7 +68,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/success_curves",
       "formats": [
@@ -83,7 +87,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/gsa_query",
       "formats": [
@@ -101,7 +106,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/token_weights",
       "formats": [
@@ -119,7 +125,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/temporal_attention",
       "formats": [
@@ -143,7 +150,8 @@
       "methods": [
         "e0",
         "e3",
-        "e6"
+        "e6",
+        "m3"
       ],
       "output": "thesis/chapter3/paired_execution",
       "formats": [
@@ -153,6 +161,32 @@
         "mp4"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "status": "pending_real_results"
+    },
+    {
+      "id": "Table module ablation",
+      "name": "module_ablation",
+      "script": "jobs/export_ch3.py",
+      "output": "thesis/chapter3/tables/module_ablation.csv",
+      "source_manifest": "experiments/ch3/eval_manifest.csv",
+      "methods": [
+        "e0",
+        "e3",
+        "e6",
+        "m3"
+      ],
+      "factors": [
+        "Depth",
+        "GSA",
+        "Geometry-associated TokenLearner"
+      ],
+      "required_comparisons": [
+        "M1-M0",
+        "M3-M0",
+        "M2-M1",
+        "M2-M3",
+        "M2-M0"
+      ],
       "status": "pending_real_results"
     }
   ],
