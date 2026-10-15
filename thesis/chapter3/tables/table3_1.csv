@@ -1,6 +1,6 @@
-benchmark,task,demos,budget,progress_unit,interval,episodes,horizon,control_mode
-mimicgen,stack_three_d1,200,250,epoch,50,50,400,metadata_pending
-mimicgen,threading_d2,200,250,epoch,50,50,400,metadata_pending
-mimicgen,coffee_d2,200,250,epoch,50,50,400,metadata_pending
-maniskill,StackCube-v1,100,100000,optimizer_update,20000,100,200,pd_ee_delta_pos
-maniskill,PegInsertionSide-v1,100,100000,optimizer_update,20000,100,300,pd_ee_delta_pose
+benchmark,task,demos,budget,progress_unit,interval,episodes,horizon,control_mode,success_definition,batch_size,true_window_count,optimizer_updates_per_complete_epoch,total_optimizer_updates
+mimicgen,stack_three_d1,200,250,epoch,50,50,400,metadata_pending,success_once,64,49547,775,193750
+mimicgen,threading_d2,200,250,epoch,50,50,400,metadata_pending,success_once,64,43992,688,172000
+mimicgen,coffee_d2,200,250,epoch,50,50,400,metadata_pending,success_once,64,43210,676,169000
+maniskill,StackCube-v1,100,100000,optimizer_update,20000,100,200,pd_ee_delta_pos,success_at_end,64,10017,157,100000
+maniskill,PegInsertionSide-v1,100,100000,optimizer_update,20000,100,300,pd_ee_delta_pose,success_at_end,64,14750,231,100000

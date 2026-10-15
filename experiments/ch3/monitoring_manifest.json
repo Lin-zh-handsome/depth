@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-15T18:50:06.852641+08:00",
-  "previous_poll": "2026-10-15T17:47:30.163411+08:00",
+  "checked_at_asia_shanghai": "2026-10-15T19:10:17.433551+08:00",
+  "previous_poll": "2026-10-15T18:50:06.852641+08:00",
   "protocol": "four_models_60_train_300_eval",
   "counts": [
     {
@@ -11,12 +11,12 @@
     {
       "kind": "eval",
       "status": "queued",
-      "count": 266
+      "count": 265
     },
     {
       "kind": "eval",
       "status": "running",
-      "count": 1
+      "count": 2
     },
     {
       "kind": "train",
@@ -47,7 +47,21 @@
       "pid": 453202,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 8
+      "episodes_completed": 14
+    },
+    {
+      "id": 133,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "checkpoint_step": 150,
+      "status": "running",
+      "pid": 506586,
+      "alive": true,
+      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+      "episodes_completed": 6
     },
     {
       "id": 13,
@@ -62,15 +76,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "event": "epoch_complete",
-        "completed_epochs": 140,
-        "optimizer_updates": 96320,
-        "dataset_window_count": 43992,
-        "batch_size": 64,
-        "dataloader_batches": 688
+        "optimizer_updates": 99400,
+        "data_epoch": 144,
+        "next_batch": 328,
+        "train_loss": 0.018808510154485703,
+        "lr": 3.8071844663889466e-05,
+        "wall_seconds": 32366.546520471573,
+        "gpu_peak_bytes": 8044621312
       },
-      "metric_age_seconds": 14,
-      "updates_since_last_poll": 14320,
+      "metric_age_seconds": 29,
+      "updates_since_last_poll": 3080,
       "waiting_for_eval": false
     },
     {
@@ -86,16 +101,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 89100,
-        "data_epoch": 129,
-        "next_batch": 348,
-        "train_loss": 0.037869472056627274,
-        "lr": 4.7390824393264156e-05,
-        "wall_seconds": 31138.964710474014,
+        "optimizer_updates": 92200,
+        "data_epoch": 134,
+        "next_batch": 8,
+        "train_loss": 0.027022620663046837,
+        "lr": 4.4561082186133464e-05,
+        "wall_seconds": 32340.619849920273,
         "gpu_peak_bytes": 8044621312
       },
-      "metric_age_seconds": 17,
-      "updates_since_last_poll": 13600,
+      "metric_age_seconds": 26,
+      "updates_since_last_poll": 3100,
       "waiting_for_eval": false
     },
     {
@@ -118,8 +133,8 @@
         "batch_size": 64,
         "dataloader_batches": 688
       },
-      "metric_age_seconds": 1057,
-      "updates_since_last_poll": 10600,
+      "metric_age_seconds": 2268,
+      "updates_since_last_poll": 0,
       "waiting_for_eval": true
     },
     {
@@ -142,9 +157,9 @@
         "batch_size": 64,
         "dataloader_batches": 688
       },
-      "metric_age_seconds": 23,
-      "updates_since_last_poll": 13200,
-      "waiting_for_eval": false
+      "metric_age_seconds": 1234,
+      "updates_since_last_poll": 0,
+      "waiting_for_eval": true
     },
     {
       "id": 274,
@@ -159,16 +174,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 2100,
-        "data_epoch": 3,
-        "next_batch": 36,
-        "train_loss": 0.10505851358175278,
-        "lr": 9.997852563251326e-05,
-        "wall_seconds": 701.0262703895569,
+        "optimizer_updates": 5600,
+        "data_epoch": 8,
+        "next_batch": 96,
+        "train_loss": 0.08586467802524567,
+        "lr": 9.978196010723244e-05,
+        "wall_seconds": 1908.8002886772156,
         "gpu_peak_bytes": 8072449536
       },
-      "metric_age_seconds": 14,
-      "updates_since_last_poll": null,
+      "metric_age_seconds": 17,
+      "updates_since_last_poll": 3500,
       "waiting_for_eval": false
     },
     {
@@ -184,16 +199,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 2000,
-        "data_epoch": 2,
-        "next_batch": 624,
-        "train_loss": 0.09160865098237991,
-        "lr": 9.998112588058631e-05,
-        "wall_seconds": 665.2511651515961,
+        "optimizer_updates": 5300,
+        "data_epoch": 7,
+        "next_batch": 484,
+        "train_loss": 0.06273537874221802,
+        "lr": 9.980684135240494e-05,
+        "wall_seconds": 1868.044086933136,
         "gpu_peak_bytes": 8072449536
       },
-      "metric_age_seconds": 15,
-      "updates_since_last_poll": null,
+      "metric_age_seconds": 23,
+      "updates_since_last_poll": 3300,
       "waiting_for_eval": false
     }
   ],
@@ -762,11 +777,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "18:50:06 up 26 days,  2:14, 17 users,  load average: 23.28, 27.15, 29.27",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti        81Gi        52Gi       256Mi       1.8Ti       1.9Ti\n交换：      2.0Gi       1.9Gi       108Mi",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 86852 MiB, 100 %"
+    "cpu": "19:10:17 up 26 days,  2:35, 12 users,  load average: 37.13, 54.37, 49.60",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       163Gi        96Gi       600Mi       1.7Ti       1.8Ti\n交换：      2.0Gi       1.9Gi       109Mi",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 52846 MiB, 100 %"
   },
-  "disk_free_bytes": 1615791484928,
+  "disk_free_bytes": 1604737982464,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
@@ -791,12 +806,14 @@
     "success_count": 26,
     "n_episodes": 50,
     "success_rate": 0.52,
-    "success_definition": "official task success over rollout (original DP max reward convention)",
+    "success_definition": "success_once",
     "success_once_count": 26,
     "episodes_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/eval/epoch_000150/episodes.jsonl",
     "latency_status": "unavailable: this concurrent rollout is not an isolated timing measurement",
     "best_checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/best/best.pt",
-    "selection": "highest of five prescribed points; earliest on ties"
+    "selection": "highest of five prescribed points; earliest on ties",
+    "success_definition_original": "official task success over rollout (original DP max reward convention)",
+    "success_semantics": "At least one executed environment step reports official task success within the fixed rollout horizon."
   },
   "checkpoint_cleanup": {
     "files_deleted": 111,

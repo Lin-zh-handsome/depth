@@ -1,0 +1,283 @@
+{
+  "baseline": "55951414",
+  "fix_commit": "23e5472",
+  "audit_time_beijing": "2026-10-15T19:12:35+08:00",
+  "invalidated_runs": [],
+  "training_reruns": 0,
+  "evaluation_reruns": 0,
+  "budgets": [
+    {
+      "benchmark": "mimicgen",
+      "task": "stack_three_d1",
+      "episodes": 200,
+      "steps": 50947,
+      "batch_size": 64,
+      "sequence_length": 16,
+      "pad_before": 1,
+      "pad_after": 7,
+      "validation_episodes": 0,
+      "true_window_count": 49547,
+      "sampler_index_shape": [
+        49547,
+        4
+      ],
+      "optimizer_updates_per_complete_epoch": 775,
+      "last_batch_size": 11,
+      "drop_last": false,
+      "gradient_accumulation": 1,
+      "training_budget": 250,
+      "training_budget_unit": "epoch",
+      "total_optimizer_updates": 193750,
+      "eval_positions": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ],
+      "processed_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/stack_three_d1/subset200.zarr",
+      "existing_run_budget_metadata": []
+    },
+    {
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "episodes": 200,
+      "steps": 45392,
+      "batch_size": 64,
+      "sequence_length": 16,
+      "pad_before": 1,
+      "pad_after": 7,
+      "validation_episodes": 0,
+      "true_window_count": 43992,
+      "sampler_index_shape": [
+        43992,
+        4
+      ],
+      "optimizer_updates_per_complete_epoch": 688,
+      "last_batch_size": 24,
+      "drop_last": false,
+      "gradient_accumulation": 1,
+      "training_budget": 250,
+      "training_budget_unit": "epoch",
+      "total_optimizer_updates": 172000,
+      "eval_positions": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ],
+      "processed_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/threading_d2/subset200.zarr",
+      "existing_run_budget_metadata": [
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_1/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_2/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_0/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_1/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/dataset_window_budget.json",
+          "matches": true
+        },
+        {
+          "path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/dataset_window_budget.json",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "benchmark": "mimicgen",
+      "task": "coffee_d2",
+      "episodes": 200,
+      "steps": 44610,
+      "batch_size": 64,
+      "sequence_length": 16,
+      "pad_before": 1,
+      "pad_after": 7,
+      "validation_episodes": 0,
+      "true_window_count": 43210,
+      "sampler_index_shape": [
+        43210,
+        4
+      ],
+      "optimizer_updates_per_complete_epoch": 676,
+      "last_batch_size": 10,
+      "drop_last": false,
+      "gradient_accumulation": 1,
+      "training_budget": 250,
+      "training_budget_unit": "epoch",
+      "total_optimizer_updates": 169000,
+      "eval_positions": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ],
+      "processed_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/coffee_d2/subset200.zarr",
+      "existing_run_budget_metadata": []
+    },
+    {
+      "benchmark": "maniskill",
+      "task": "StackCube-v1",
+      "episodes": 100,
+      "steps": 10717,
+      "batch_size": 64,
+      "sequence_length": 16,
+      "pad_before": 1,
+      "pad_after": 7,
+      "validation_episodes": 0,
+      "true_window_count": 10017,
+      "sampler_index_shape": [
+        10017,
+        4
+      ],
+      "optimizer_updates_per_complete_epoch": 157,
+      "last_batch_size": 33,
+      "drop_last": false,
+      "gradient_accumulation": 1,
+      "training_budget": 100000,
+      "training_budget_unit": "optimizer_update",
+      "total_optimizer_updates": 100000,
+      "eval_positions": [
+        20000,
+        40000,
+        60000,
+        80000,
+        100000
+      ],
+      "processed_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/StackCube-v1/subset100_pd_ee_delta_pos.zarr",
+      "existing_run_budget_metadata": []
+    },
+    {
+      "benchmark": "maniskill",
+      "task": "PegInsertionSide-v1",
+      "episodes": 100,
+      "steps": 15450,
+      "batch_size": 64,
+      "sequence_length": 16,
+      "pad_before": 1,
+      "pad_after": 7,
+      "validation_episodes": 0,
+      "true_window_count": 14750,
+      "sampler_index_shape": [
+        14750,
+        4
+      ],
+      "optimizer_updates_per_complete_epoch": 231,
+      "last_batch_size": 30,
+      "drop_last": false,
+      "gradient_accumulation": 1,
+      "training_budget": 100000,
+      "training_budget_unit": "optimizer_update",
+      "total_optimizer_updates": 100000,
+      "eval_positions": [
+        20000,
+        40000,
+        60000,
+        80000,
+        100000
+      ],
+      "processed_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/PegInsertionSide-v1/subset100_pd_ee_delta_pose.zarr",
+      "existing_run_budget_metadata": []
+    }
+  ],
+  "real_state_parity_samples": 18,
+  "camera_comparisons": 36,
+  "peg_replay_failure_ids": [
+    1,
+    2,
+    14,
+    17,
+    19,
+    20,
+    22,
+    60,
+    63,
+    96
+  ],
+  "m2_mean": 0.17333333333333334,
+  "m2_sample_std": 0.04163331998932265,
+  "controlled_exceptions": {
+    "official_source": "source/diffusion_policy/diffusion_policy/model/vision/crop_randomizer.py:268-278",
+    "custom_source": "gsc_dp/encoder.py:_prepare",
+    "mimicgen_official_offsets": [
+      0,
+      7
+    ],
+    "mimicgen_custom_offsets": [
+      0,
+      8
+    ],
+    "maniskill_official_offsets": [
+      0,
+      15
+    ],
+    "maniskill_custom_offsets": [
+      0,
+      16
+    ],
+    "evaluation_center_crop_equal": true,
+    "m2_m3_crop_implementation_equal": true,
+    "existing_runs_modified": false
+  },
+  "progress": [
+    {
+      "kind": "eval",
+      "status": "finished",
+      "count": 33
+    },
+    {
+      "kind": "eval",
+      "status": "queued",
+      "count": 265
+    },
+    {
+      "kind": "eval",
+      "status": "running",
+      "count": 2
+    },
+    {
+      "kind": "train",
+      "status": "finished",
+      "count": 4
+    },
+    {
+      "kind": "train",
+      "status": "queued",
+      "count": 50
+    },
+    {
+      "kind": "train",
+      "status": "running",
+      "count": 6
+    }
+  ],
+  "report": "docs/audit_55951414/REPORT.md"
+}

@@ -862,7 +862,23 @@ M3 reuses the exact M2 Geometry-associated TokenLearner and geometry processing,
 ## 每小时巡检 2026-10-15T18:50:06.852641+08:00
 完整正式评测33/300，共1650回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 33}, {"kind": "eval", "status": "queued", "count": 266}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 4}, {"kind": "train", "status": "queued", "count": 50}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
 
+2026-10-15T10:50:16.047666+00:00 Job 133 eval threading_d2/e0/seed_2/point_150 launched PID=506586, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=86852; logs/final_job_133.log
+
 
 ## 实际运行状态（自动更新）
 2026-10-15T10:50:17.955767+00:00
 60训练、300正式评测。{"train": {"queued": 50, "finished": 4, "running": 6}, "eval": {"queued": 265, "finished": 33, "running": 2}, "analysis": {}}；完整回合 1650。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## Targeted audit against 55951414 - in progress
+Eight requested checks: real-state MimicGen offline/online parity; Peg source/replay success labels; actual window/update budgets; benchmark success definitions; model controlled comparisons; Threading M2 15-point EMA/result lineage; four-model current queue isolation; preserve valid live workers. No extra training or protocol change. Evidence and amendments go to docs/audit_55951414/.
+
+2026-10-15T11:08:24.309246+00:00 Dataset manifests available: PegInsertionSide-v1_100.json, StackCube-v1_100.json, coffee_d2_200.json, stack_three_d1_200.json, threading_d2_200.json. Runnable configs refreshed without reducing any budget.
+
+
+## 每小时巡检 2026-10-15T19:10:17.433551+08:00
+完整正式评测33/300，共1650回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 33}, {"kind": "eval", "status": "queued", "count": 265}, {"kind": "eval", "status": "running", "count": 2}, {"kind": "train", "status": "finished", "count": 4}, {"kind": "train", "status": "queued", "count": 50}, {"kind": "train", "status": "running", "count": 6}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 55951414针对性修正完成 2026-10-15T19:12:35+08:00
+真实状态核对18状态/36双相机对比，RGB/米制Depth/本体一致、六次相同动作转移差0；Peg原始100成功、控制转换后90成功10失败且全部进入训练；五任务窗口及固定预算已写元数据。M2的15点750回合、三个best EMA及归一化证据核对通过，17.33%±4.16个百分点明确为success_once。修复提交23e5472：口径标签、未来评测代码提交/EMA来源、失败原因、四模型正式配置拒绝旧组/旧位置/旧控制模式、论文/数据说明。已披露M0相机初始化及裁剪端点差异，不宣称完全一致，不改已有训练。临时历史张量及旧评测代码提交缺少直接证据，明确保留限制，不伪造补齐。INVALID为空、重训/重评0；全部现有合规训练评测保持原PID继续执行。详见docs/audit_55951414/REPORT.md。

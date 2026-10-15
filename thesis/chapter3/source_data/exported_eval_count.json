@@ -1,1 +1,1 @@
-{"complete_evals": 33, "methods": ["M0", "M1", "M2", "M3"]}
+{"complete_evals": 33, "methods": ["M0", "M1", "M2", "M3"], "success_definitions": {"mimicgen": "success_once", "maniskill": "success_at_end"}}

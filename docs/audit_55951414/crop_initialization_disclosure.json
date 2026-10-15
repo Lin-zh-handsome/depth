@@ -1,0 +1,27 @@
+{
+  "crop": {
+    "official_source": "source/diffusion_policy/diffusion_policy/model/vision/crop_randomizer.py:268-278",
+    "custom_source": "gsc_dp/encoder.py:_prepare",
+    "mimicgen_official_offsets": [
+      0,
+      7
+    ],
+    "mimicgen_custom_offsets": [
+      0,
+      8
+    ],
+    "maniskill_official_offsets": [
+      0,
+      15
+    ],
+    "maniskill_custom_offsets": [
+      0,
+      16
+    ],
+    "evaluation_center_crop_equal": true,
+    "m2_m3_crop_implementation_equal": true,
+    "existing_runs_modified": false
+  },
+  "camera_initialization": "Official M0 clones the initial RGB backbone across cameras; custom module encoders initialize each camera separately. The random initial tensors are not matched across methods. No existing initialization is changed or result invalidated.",
+  "interpretation": "An existing implementation difference, not an invalid budget or corrupted experiment. Report it; do not silently alter augmentation distributions of existing runs or add unrequested retraining."
+}

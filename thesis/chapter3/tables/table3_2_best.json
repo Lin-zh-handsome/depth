@@ -1,5 +1,13 @@
 {
   "source": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/experiments/ch3/eval_manifest.csv",
   "raw_episode_source": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/source_data/checkpoint_sr.csv",
-  "statistics": "Best-of-5, three independent seeds, sample std ddof=1, earliest tie"
+  "statistics": "Best-of-5, three independent seeds, sample std ddof=1, earliest tie",
+  "success_definitions": {
+    "mimicgen": "success_once",
+    "maniskill": "success_at_end"
+  },
+  "success_semantics": {
+    "mimicgen": "At least one executed environment step reports official task success within the fixed rollout horizon.",
+    "maniskill": "The final executed environment step reports official task success at the fixed rollout horizon."
+  }
 }
