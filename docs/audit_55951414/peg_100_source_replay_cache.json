@@ -1,0 +1,4333 @@
+{
+  "task": "PegInsertionSide-v1",
+  "source_path": "/home/linzhenghong/project/gsc_dp_chapter3/data/maniskill/raw/PegInsertionSide-v1/motionplanning/trajectory.h5",
+  "replay_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/raw/maniskill_ch3/PegInsertionSide-v1/trajectory.rgbd.pd_ee_delta_pose.physx_cpu.h5",
+  "processed_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/PegInsertionSide-v1/subset100_pd_ee_delta_pose.zarr",
+  "n_trajectories": 100,
+  "source_success_counts": {
+    "True": 100,
+    "False": 0,
+    "None": 0
+  },
+  "replay_success_counts": {
+    "True": 90,
+    "False": 10,
+    "None": 0
+  },
+  "failed_replay_source_ids": [
+    1,
+    2,
+    14,
+    17,
+    19,
+    20,
+    22,
+    60,
+    63,
+    96
+  ],
+  "all_replay_actions_in_training": true,
+  "all_replay_proprio_in_training": true,
+  "trajectory_records": [
+    {
+      "source_episode_id": 0,
+      "replay_episode_id": 0,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 2,
+      "replay_seed": 2,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 2
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 2
+      },
+      "source_action_shape": [
+        178,
+        8
+      ],
+      "replay_action_shape": [
+        178,
+        7
+      ],
+      "train_cache_window": [
+        0,
+        178
+      ],
+      "cached_steps": 178,
+      "source_steps": 178,
+      "replay_steps": 178,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 1,
+      "replay_episode_id": 1,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 4,
+      "replay_seed": 4,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 4
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 4
+      },
+      "source_action_shape": [
+        156,
+        8
+      ],
+      "replay_action_shape": [
+        195,
+        7
+      ],
+      "train_cache_window": [
+        178,
+        373
+      ],
+      "cached_steps": 195,
+      "source_steps": 156,
+      "replay_steps": 195,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 2,
+      "replay_episode_id": 2,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 5,
+      "replay_seed": 5,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 5
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 5
+      },
+      "source_action_shape": [
+        201,
+        8
+      ],
+      "replay_action_shape": [
+        216,
+        7
+      ],
+      "train_cache_window": [
+        373,
+        589
+      ],
+      "cached_steps": 216,
+      "source_steps": 201,
+      "replay_steps": 216,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 3,
+      "replay_episode_id": 3,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 6,
+      "replay_seed": 6,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 6
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 6
+      },
+      "source_action_shape": [
+        117,
+        8
+      ],
+      "replay_action_shape": [
+        123,
+        7
+      ],
+      "train_cache_window": [
+        589,
+        712
+      ],
+      "cached_steps": 123,
+      "source_steps": 117,
+      "replay_steps": 123,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 4,
+      "replay_episode_id": 4,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 9,
+      "replay_seed": 9,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 9
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 9
+      },
+      "source_action_shape": [
+        189,
+        8
+      ],
+      "replay_action_shape": [
+        189,
+        7
+      ],
+      "train_cache_window": [
+        712,
+        901
+      ],
+      "cached_steps": 189,
+      "source_steps": 189,
+      "replay_steps": 189,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 5,
+      "replay_episode_id": 5,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 10,
+      "replay_seed": 10,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 10
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 10
+      },
+      "source_action_shape": [
+        118,
+        8
+      ],
+      "replay_action_shape": [
+        124,
+        7
+      ],
+      "train_cache_window": [
+        901,
+        1025
+      ],
+      "cached_steps": 124,
+      "source_steps": 118,
+      "replay_steps": 124,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 6,
+      "replay_episode_id": 6,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 11,
+      "replay_seed": 11,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 11
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 11
+      },
+      "source_action_shape": [
+        151,
+        8
+      ],
+      "replay_action_shape": [
+        151,
+        7
+      ],
+      "train_cache_window": [
+        1025,
+        1176
+      ],
+      "cached_steps": 151,
+      "source_steps": 151,
+      "replay_steps": 151,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 7,
+      "replay_episode_id": 7,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 12,
+      "replay_seed": 12,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 12
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 12
+      },
+      "source_action_shape": [
+        128,
+        8
+      ],
+      "replay_action_shape": [
+        128,
+        7
+      ],
+      "train_cache_window": [
+        1176,
+        1304
+      ],
+      "cached_steps": 128,
+      "source_steps": 128,
+      "replay_steps": 128,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 8,
+      "replay_episode_id": 8,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 13,
+      "replay_seed": 13,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 13
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 13
+      },
+      "source_action_shape": [
+        134,
+        8
+      ],
+      "replay_action_shape": [
+        155,
+        7
+      ],
+      "train_cache_window": [
+        1304,
+        1459
+      ],
+      "cached_steps": 155,
+      "source_steps": 134,
+      "replay_steps": 155,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 9,
+      "replay_episode_id": 9,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 14,
+      "replay_seed": 14,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 14
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 14
+      },
+      "source_action_shape": [
+        190,
+        8
+      ],
+      "replay_action_shape": [
+        190,
+        7
+      ],
+      "train_cache_window": [
+        1459,
+        1649
+      ],
+      "cached_steps": 190,
+      "source_steps": 190,
+      "replay_steps": 190,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 10,
+      "replay_episode_id": 10,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 15,
+      "replay_seed": 15,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 15
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 15
+      },
+      "source_action_shape": [
+        193,
+        8
+      ],
+      "replay_action_shape": [
+        193,
+        7
+      ],
+      "train_cache_window": [
+        1649,
+        1842
+      ],
+      "cached_steps": 193,
+      "source_steps": 193,
+      "replay_steps": 193,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 11,
+      "replay_episode_id": 11,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 17,
+      "replay_seed": 17,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 17
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 17
+      },
+      "source_action_shape": [
+        132,
+        8
+      ],
+      "replay_action_shape": [
+        150,
+        7
+      ],
+      "train_cache_window": [
+        1842,
+        1992
+      ],
+      "cached_steps": 150,
+      "source_steps": 132,
+      "replay_steps": 150,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 12,
+      "replay_episode_id": 12,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 18,
+      "replay_seed": 18,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 18
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 18
+      },
+      "source_action_shape": [
+        192,
+        8
+      ],
+      "replay_action_shape": [
+        192,
+        7
+      ],
+      "train_cache_window": [
+        1992,
+        2184
+      ],
+      "cached_steps": 192,
+      "source_steps": 192,
+      "replay_steps": 192,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 13,
+      "replay_episode_id": 13,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 19,
+      "replay_seed": 19,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 19
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 19
+      },
+      "source_action_shape": [
+        152,
+        8
+      ],
+      "replay_action_shape": [
+        161,
+        7
+      ],
+      "train_cache_window": [
+        2184,
+        2345
+      ],
+      "cached_steps": 161,
+      "source_steps": 152,
+      "replay_steps": 161,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 14,
+      "replay_episode_id": 14,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 21,
+      "replay_seed": 21,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 21
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 21
+      },
+      "source_action_shape": [
+        128,
+        8
+      ],
+      "replay_action_shape": [
+        128,
+        7
+      ],
+      "train_cache_window": [
+        2345,
+        2473
+      ],
+      "cached_steps": 128,
+      "source_steps": 128,
+      "replay_steps": 128,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 15,
+      "replay_episode_id": 15,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 23,
+      "replay_seed": 23,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 23
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 23
+      },
+      "source_action_shape": [
+        200,
+        8
+      ],
+      "replay_action_shape": [
+        200,
+        7
+      ],
+      "train_cache_window": [
+        2473,
+        2673
+      ],
+      "cached_steps": 200,
+      "source_steps": 200,
+      "replay_steps": 200,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 16,
+      "replay_episode_id": 16,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 24,
+      "replay_seed": 24,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 24
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 24
+      },
+      "source_action_shape": [
+        203,
+        8
+      ],
+      "replay_action_shape": [
+        203,
+        7
+      ],
+      "train_cache_window": [
+        2673,
+        2876
+      ],
+      "cached_steps": 203,
+      "source_steps": 203,
+      "replay_steps": 203,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 17,
+      "replay_episode_id": 17,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 25,
+      "replay_seed": 25,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 25
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 25
+      },
+      "source_action_shape": [
+        137,
+        8
+      ],
+      "replay_action_shape": [
+        137,
+        7
+      ],
+      "train_cache_window": [
+        2876,
+        3013
+      ],
+      "cached_steps": 137,
+      "source_steps": 137,
+      "replay_steps": 137,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 18,
+      "replay_episode_id": 18,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 26,
+      "replay_seed": 26,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 26
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 26
+      },
+      "source_action_shape": [
+        148,
+        8
+      ],
+      "replay_action_shape": [
+        148,
+        7
+      ],
+      "train_cache_window": [
+        3013,
+        3161
+      ],
+      "cached_steps": 148,
+      "source_steps": 148,
+      "replay_steps": 148,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 19,
+      "replay_episode_id": 19,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 27,
+      "replay_seed": 27,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 27
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 27
+      },
+      "source_action_shape": [
+        153,
+        8
+      ],
+      "replay_action_shape": [
+        165,
+        7
+      ],
+      "train_cache_window": [
+        3161,
+        3326
+      ],
+      "cached_steps": 165,
+      "source_steps": 153,
+      "replay_steps": 165,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 20,
+      "replay_episode_id": 20,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 28,
+      "replay_seed": 28,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 28
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 28
+      },
+      "source_action_shape": [
+        185,
+        8
+      ],
+      "replay_action_shape": [
+        185,
+        7
+      ],
+      "train_cache_window": [
+        3326,
+        3511
+      ],
+      "cached_steps": 185,
+      "source_steps": 185,
+      "replay_steps": 185,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 21,
+      "replay_episode_id": 21,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 29,
+      "replay_seed": 29,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 29
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 29
+      },
+      "source_action_shape": [
+        148,
+        8
+      ],
+      "replay_action_shape": [
+        148,
+        7
+      ],
+      "train_cache_window": [
+        3511,
+        3659
+      ],
+      "cached_steps": 148,
+      "source_steps": 148,
+      "replay_steps": 148,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 22,
+      "replay_episode_id": 22,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 30,
+      "replay_seed": 30,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 30
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 30
+      },
+      "source_action_shape": [
+        149,
+        8
+      ],
+      "replay_action_shape": [
+        149,
+        7
+      ],
+      "train_cache_window": [
+        3659,
+        3808
+      ],
+      "cached_steps": 149,
+      "source_steps": 149,
+      "replay_steps": 149,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 23,
+      "replay_episode_id": 23,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 32,
+      "replay_seed": 32,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 32
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 32
+      },
+      "source_action_shape": [
+        134,
+        8
+      ],
+      "replay_action_shape": [
+        140,
+        7
+      ],
+      "train_cache_window": [
+        3808,
+        3948
+      ],
+      "cached_steps": 140,
+      "source_steps": 134,
+      "replay_steps": 140,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 24,
+      "replay_episode_id": 24,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 33,
+      "replay_seed": 33,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 33
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 33
+      },
+      "source_action_shape": [
+        106,
+        8
+      ],
+      "replay_action_shape": [
+        112,
+        7
+      ],
+      "train_cache_window": [
+        3948,
+        4060
+      ],
+      "cached_steps": 112,
+      "source_steps": 106,
+      "replay_steps": 112,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 25,
+      "replay_episode_id": 25,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 34,
+      "replay_seed": 34,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 34
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 34
+      },
+      "source_action_shape": [
+        184,
+        8
+      ],
+      "replay_action_shape": [
+        184,
+        7
+      ],
+      "train_cache_window": [
+        4060,
+        4244
+      ],
+      "cached_steps": 184,
+      "source_steps": 184,
+      "replay_steps": 184,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 26,
+      "replay_episode_id": 26,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 35,
+      "replay_seed": 35,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 35
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 35
+      },
+      "source_action_shape": [
+        122,
+        8
+      ],
+      "replay_action_shape": [
+        122,
+        7
+      ],
+      "train_cache_window": [
+        4244,
+        4366
+      ],
+      "cached_steps": 122,
+      "source_steps": 122,
+      "replay_steps": 122,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 27,
+      "replay_episode_id": 27,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 36,
+      "replay_seed": 36,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 36
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 36
+      },
+      "source_action_shape": [
+        182,
+        8
+      ],
+      "replay_action_shape": [
+        182,
+        7
+      ],
+      "train_cache_window": [
+        4366,
+        4548
+      ],
+      "cached_steps": 182,
+      "source_steps": 182,
+      "replay_steps": 182,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 28,
+      "replay_episode_id": 28,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 39,
+      "replay_seed": 39,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 39
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 39
+      },
+      "source_action_shape": [
+        138,
+        8
+      ],
+      "replay_action_shape": [
+        159,
+        7
+      ],
+      "train_cache_window": [
+        4548,
+        4707
+      ],
+      "cached_steps": 159,
+      "source_steps": 138,
+      "replay_steps": 159,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 29,
+      "replay_episode_id": 29,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 40,
+      "replay_seed": 40,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 40
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 40
+      },
+      "source_action_shape": [
+        172,
+        8
+      ],
+      "replay_action_shape": [
+        172,
+        7
+      ],
+      "train_cache_window": [
+        4707,
+        4879
+      ],
+      "cached_steps": 172,
+      "source_steps": 172,
+      "replay_steps": 172,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 30,
+      "replay_episode_id": 30,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 41,
+      "replay_seed": 41,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 41
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 41
+      },
+      "source_action_shape": [
+        111,
+        8
+      ],
+      "replay_action_shape": [
+        117,
+        7
+      ],
+      "train_cache_window": [
+        4879,
+        4996
+      ],
+      "cached_steps": 117,
+      "source_steps": 111,
+      "replay_steps": 117,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 31,
+      "replay_episode_id": 31,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 42,
+      "replay_seed": 42,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 42
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 42
+      },
+      "source_action_shape": [
+        127,
+        8
+      ],
+      "replay_action_shape": [
+        127,
+        7
+      ],
+      "train_cache_window": [
+        4996,
+        5123
+      ],
+      "cached_steps": 127,
+      "source_steps": 127,
+      "replay_steps": 127,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 32,
+      "replay_episode_id": 32,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 43,
+      "replay_seed": 43,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 43
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 43
+      },
+      "source_action_shape": [
+        124,
+        8
+      ],
+      "replay_action_shape": [
+        142,
+        7
+      ],
+      "train_cache_window": [
+        5123,
+        5265
+      ],
+      "cached_steps": 142,
+      "source_steps": 124,
+      "replay_steps": 142,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 33,
+      "replay_episode_id": 33,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 44,
+      "replay_seed": 44,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 44
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 44
+      },
+      "source_action_shape": [
+        119,
+        8
+      ],
+      "replay_action_shape": [
+        119,
+        7
+      ],
+      "train_cache_window": [
+        5265,
+        5384
+      ],
+      "cached_steps": 119,
+      "source_steps": 119,
+      "replay_steps": 119,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 34,
+      "replay_episode_id": 34,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 45,
+      "replay_seed": 45,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 45
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 45
+      },
+      "source_action_shape": [
+        145,
+        8
+      ],
+      "replay_action_shape": [
+        157,
+        7
+      ],
+      "train_cache_window": [
+        5384,
+        5541
+      ],
+      "cached_steps": 157,
+      "source_steps": 145,
+      "replay_steps": 157,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 35,
+      "replay_episode_id": 35,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 49,
+      "replay_seed": 49,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 49
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 49
+      },
+      "source_action_shape": [
+        118,
+        8
+      ],
+      "replay_action_shape": [
+        142,
+        7
+      ],
+      "train_cache_window": [
+        5541,
+        5683
+      ],
+      "cached_steps": 142,
+      "source_steps": 118,
+      "replay_steps": 142,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 36,
+      "replay_episode_id": 36,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 50,
+      "replay_seed": 50,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 50
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 50
+      },
+      "source_action_shape": [
+        129,
+        8
+      ],
+      "replay_action_shape": [
+        129,
+        7
+      ],
+      "train_cache_window": [
+        5683,
+        5812
+      ],
+      "cached_steps": 129,
+      "source_steps": 129,
+      "replay_steps": 129,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 37,
+      "replay_episode_id": 37,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 51,
+      "replay_seed": 51,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 51
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 51
+      },
+      "source_action_shape": [
+        186,
+        8
+      ],
+      "replay_action_shape": [
+        186,
+        7
+      ],
+      "train_cache_window": [
+        5812,
+        5998
+      ],
+      "cached_steps": 186,
+      "source_steps": 186,
+      "replay_steps": 186,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 38,
+      "replay_episode_id": 38,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 52,
+      "replay_seed": 52,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 52
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 52
+      },
+      "source_action_shape": [
+        155,
+        8
+      ],
+      "replay_action_shape": [
+        155,
+        7
+      ],
+      "train_cache_window": [
+        5998,
+        6153
+      ],
+      "cached_steps": 155,
+      "source_steps": 155,
+      "replay_steps": 155,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 39,
+      "replay_episode_id": 39,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 53,
+      "replay_seed": 53,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 53
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 53
+      },
+      "source_action_shape": [
+        122,
+        8
+      ],
+      "replay_action_shape": [
+        122,
+        7
+      ],
+      "train_cache_window": [
+        6153,
+        6275
+      ],
+      "cached_steps": 122,
+      "source_steps": 122,
+      "replay_steps": 122,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 40,
+      "replay_episode_id": 40,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 54,
+      "replay_seed": 54,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 54
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 54
+      },
+      "source_action_shape": [
+        105,
+        8
+      ],
+      "replay_action_shape": [
+        105,
+        7
+      ],
+      "train_cache_window": [
+        6275,
+        6380
+      ],
+      "cached_steps": 105,
+      "source_steps": 105,
+      "replay_steps": 105,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 41,
+      "replay_episode_id": 41,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 55,
+      "replay_seed": 55,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 55
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 55
+      },
+      "source_action_shape": [
+        161,
+        8
+      ],
+      "replay_action_shape": [
+        164,
+        7
+      ],
+      "train_cache_window": [
+        6380,
+        6544
+      ],
+      "cached_steps": 164,
+      "source_steps": 161,
+      "replay_steps": 164,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 42,
+      "replay_episode_id": 42,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 56,
+      "replay_seed": 56,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 56
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 56
+      },
+      "source_action_shape": [
+        141,
+        8
+      ],
+      "replay_action_shape": [
+        141,
+        7
+      ],
+      "train_cache_window": [
+        6544,
+        6685
+      ],
+      "cached_steps": 141,
+      "source_steps": 141,
+      "replay_steps": 141,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 43,
+      "replay_episode_id": 43,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 57,
+      "replay_seed": 57,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 57
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 57
+      },
+      "source_action_shape": [
+        113,
+        8
+      ],
+      "replay_action_shape": [
+        116,
+        7
+      ],
+      "train_cache_window": [
+        6685,
+        6801
+      ],
+      "cached_steps": 116,
+      "source_steps": 113,
+      "replay_steps": 116,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 44,
+      "replay_episode_id": 44,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 58,
+      "replay_seed": 58,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 58
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 58
+      },
+      "source_action_shape": [
+        189,
+        8
+      ],
+      "replay_action_shape": [
+        189,
+        7
+      ],
+      "train_cache_window": [
+        6801,
+        6990
+      ],
+      "cached_steps": 189,
+      "source_steps": 189,
+      "replay_steps": 189,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 45,
+      "replay_episode_id": 45,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 59,
+      "replay_seed": 59,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 59
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 59
+      },
+      "source_action_shape": [
+        137,
+        8
+      ],
+      "replay_action_shape": [
+        140,
+        7
+      ],
+      "train_cache_window": [
+        6990,
+        7130
+      ],
+      "cached_steps": 140,
+      "source_steps": 137,
+      "replay_steps": 140,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 46,
+      "replay_episode_id": 46,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 61,
+      "replay_seed": 61,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 61
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 61
+      },
+      "source_action_shape": [
+        150,
+        8
+      ],
+      "replay_action_shape": [
+        150,
+        7
+      ],
+      "train_cache_window": [
+        7130,
+        7280
+      ],
+      "cached_steps": 150,
+      "source_steps": 150,
+      "replay_steps": 150,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 47,
+      "replay_episode_id": 47,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 62,
+      "replay_seed": 62,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 62
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 62
+      },
+      "source_action_shape": [
+        108,
+        8
+      ],
+      "replay_action_shape": [
+        108,
+        7
+      ],
+      "train_cache_window": [
+        7280,
+        7388
+      ],
+      "cached_steps": 108,
+      "source_steps": 108,
+      "replay_steps": 108,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 48,
+      "replay_episode_id": 48,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 63,
+      "replay_seed": 63,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 63
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 63
+      },
+      "source_action_shape": [
+        130,
+        8
+      ],
+      "replay_action_shape": [
+        130,
+        7
+      ],
+      "train_cache_window": [
+        7388,
+        7518
+      ],
+      "cached_steps": 130,
+      "source_steps": 130,
+      "replay_steps": 130,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 49,
+      "replay_episode_id": 49,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 64,
+      "replay_seed": 64,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 64
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 64
+      },
+      "source_action_shape": [
+        123,
+        8
+      ],
+      "replay_action_shape": [
+        123,
+        7
+      ],
+      "train_cache_window": [
+        7518,
+        7641
+      ],
+      "cached_steps": 123,
+      "source_steps": 123,
+      "replay_steps": 123,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 50,
+      "replay_episode_id": 50,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 65,
+      "replay_seed": 65,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 65
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 65
+      },
+      "source_action_shape": [
+        156,
+        8
+      ],
+      "replay_action_shape": [
+        156,
+        7
+      ],
+      "train_cache_window": [
+        7641,
+        7797
+      ],
+      "cached_steps": 156,
+      "source_steps": 156,
+      "replay_steps": 156,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 51,
+      "replay_episode_id": 51,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 66,
+      "replay_seed": 66,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 66
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 66
+      },
+      "source_action_shape": [
+        202,
+        8
+      ],
+      "replay_action_shape": [
+        202,
+        7
+      ],
+      "train_cache_window": [
+        7797,
+        7999
+      ],
+      "cached_steps": 202,
+      "source_steps": 202,
+      "replay_steps": 202,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 52,
+      "replay_episode_id": 52,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 69,
+      "replay_seed": 69,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 69
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 69
+      },
+      "source_action_shape": [
+        130,
+        8
+      ],
+      "replay_action_shape": [
+        130,
+        7
+      ],
+      "train_cache_window": [
+        7999,
+        8129
+      ],
+      "cached_steps": 130,
+      "source_steps": 130,
+      "replay_steps": 130,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 53,
+      "replay_episode_id": 53,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 71,
+      "replay_seed": 71,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 71
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 71
+      },
+      "source_action_shape": [
+        198,
+        8
+      ],
+      "replay_action_shape": [
+        198,
+        7
+      ],
+      "train_cache_window": [
+        8129,
+        8327
+      ],
+      "cached_steps": 198,
+      "source_steps": 198,
+      "replay_steps": 198,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 54,
+      "replay_episode_id": 54,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 72,
+      "replay_seed": 72,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 72
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 72
+      },
+      "source_action_shape": [
+        195,
+        8
+      ],
+      "replay_action_shape": [
+        195,
+        7
+      ],
+      "train_cache_window": [
+        8327,
+        8522
+      ],
+      "cached_steps": 195,
+      "source_steps": 195,
+      "replay_steps": 195,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 55,
+      "replay_episode_id": 55,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 73,
+      "replay_seed": 73,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 73
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 73
+      },
+      "source_action_shape": [
+        121,
+        8
+      ],
+      "replay_action_shape": [
+        139,
+        7
+      ],
+      "train_cache_window": [
+        8522,
+        8661
+      ],
+      "cached_steps": 139,
+      "source_steps": 121,
+      "replay_steps": 139,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 56,
+      "replay_episode_id": 56,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 74,
+      "replay_seed": 74,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 74
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 74
+      },
+      "source_action_shape": [
+        116,
+        8
+      ],
+      "replay_action_shape": [
+        116,
+        7
+      ],
+      "train_cache_window": [
+        8661,
+        8777
+      ],
+      "cached_steps": 116,
+      "source_steps": 116,
+      "replay_steps": 116,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 57,
+      "replay_episode_id": 57,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 75,
+      "replay_seed": 75,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 75
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 75
+      },
+      "source_action_shape": [
+        141,
+        8
+      ],
+      "replay_action_shape": [
+        141,
+        7
+      ],
+      "train_cache_window": [
+        8777,
+        8918
+      ],
+      "cached_steps": 141,
+      "source_steps": 141,
+      "replay_steps": 141,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 58,
+      "replay_episode_id": 58,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 76,
+      "replay_seed": 76,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 76
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 76
+      },
+      "source_action_shape": [
+        166,
+        8
+      ],
+      "replay_action_shape": [
+        166,
+        7
+      ],
+      "train_cache_window": [
+        8918,
+        9084
+      ],
+      "cached_steps": 166,
+      "source_steps": 166,
+      "replay_steps": 166,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 59,
+      "replay_episode_id": 59,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 77,
+      "replay_seed": 77,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 77
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 77
+      },
+      "source_action_shape": [
+        196,
+        8
+      ],
+      "replay_action_shape": [
+        196,
+        7
+      ],
+      "train_cache_window": [
+        9084,
+        9280
+      ],
+      "cached_steps": 196,
+      "source_steps": 196,
+      "replay_steps": 196,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 60,
+      "replay_episode_id": 60,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 78,
+      "replay_seed": 78,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 78
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 78
+      },
+      "source_action_shape": [
+        147,
+        8
+      ],
+      "replay_action_shape": [
+        147,
+        7
+      ],
+      "train_cache_window": [
+        9280,
+        9427
+      ],
+      "cached_steps": 147,
+      "source_steps": 147,
+      "replay_steps": 147,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 61,
+      "replay_episode_id": 61,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 79,
+      "replay_seed": 79,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 79
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 79
+      },
+      "source_action_shape": [
+        131,
+        8
+      ],
+      "replay_action_shape": [
+        146,
+        7
+      ],
+      "train_cache_window": [
+        9427,
+        9573
+      ],
+      "cached_steps": 146,
+      "source_steps": 131,
+      "replay_steps": 146,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 62,
+      "replay_episode_id": 62,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 81,
+      "replay_seed": 81,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 81
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 81
+      },
+      "source_action_shape": [
+        197,
+        8
+      ],
+      "replay_action_shape": [
+        197,
+        7
+      ],
+      "train_cache_window": [
+        9573,
+        9770
+      ],
+      "cached_steps": 197,
+      "source_steps": 197,
+      "replay_steps": 197,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 63,
+      "replay_episode_id": 63,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 82,
+      "replay_seed": 82,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 82
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 82
+      },
+      "source_action_shape": [
+        153,
+        8
+      ],
+      "replay_action_shape": [
+        153,
+        7
+      ],
+      "train_cache_window": [
+        9770,
+        9923
+      ],
+      "cached_steps": 153,
+      "source_steps": 153,
+      "replay_steps": 153,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 64,
+      "replay_episode_id": 64,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 83,
+      "replay_seed": 83,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 83
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 83
+      },
+      "source_action_shape": [
+        195,
+        8
+      ],
+      "replay_action_shape": [
+        195,
+        7
+      ],
+      "train_cache_window": [
+        9923,
+        10118
+      ],
+      "cached_steps": 195,
+      "source_steps": 195,
+      "replay_steps": 195,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 65,
+      "replay_episode_id": 65,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 84,
+      "replay_seed": 84,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 84
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 84
+      },
+      "source_action_shape": [
+        126,
+        8
+      ],
+      "replay_action_shape": [
+        138,
+        7
+      ],
+      "train_cache_window": [
+        10118,
+        10256
+      ],
+      "cached_steps": 138,
+      "source_steps": 126,
+      "replay_steps": 138,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 66,
+      "replay_episode_id": 66,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 85,
+      "replay_seed": 85,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 85
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 85
+      },
+      "source_action_shape": [
+        129,
+        8
+      ],
+      "replay_action_shape": [
+        129,
+        7
+      ],
+      "train_cache_window": [
+        10256,
+        10385
+      ],
+      "cached_steps": 129,
+      "source_steps": 129,
+      "replay_steps": 129,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 67,
+      "replay_episode_id": 67,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 86,
+      "replay_seed": 86,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 86
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 86
+      },
+      "source_action_shape": [
+        147,
+        8
+      ],
+      "replay_action_shape": [
+        168,
+        7
+      ],
+      "train_cache_window": [
+        10385,
+        10553
+      ],
+      "cached_steps": 168,
+      "source_steps": 147,
+      "replay_steps": 168,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 68,
+      "replay_episode_id": 68,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 87,
+      "replay_seed": 87,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 87
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 87
+      },
+      "source_action_shape": [
+        119,
+        8
+      ],
+      "replay_action_shape": [
+        119,
+        7
+      ],
+      "train_cache_window": [
+        10553,
+        10672
+      ],
+      "cached_steps": 119,
+      "source_steps": 119,
+      "replay_steps": 119,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 69,
+      "replay_episode_id": 69,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 88,
+      "replay_seed": 88,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 88
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 88
+      },
+      "source_action_shape": [
+        129,
+        8
+      ],
+      "replay_action_shape": [
+        132,
+        7
+      ],
+      "train_cache_window": [
+        10672,
+        10804
+      ],
+      "cached_steps": 132,
+      "source_steps": 129,
+      "replay_steps": 132,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 70,
+      "replay_episode_id": 70,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 89,
+      "replay_seed": 89,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 89
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 89
+      },
+      "source_action_shape": [
+        140,
+        8
+      ],
+      "replay_action_shape": [
+        161,
+        7
+      ],
+      "train_cache_window": [
+        10804,
+        10965
+      ],
+      "cached_steps": 161,
+      "source_steps": 140,
+      "replay_steps": 161,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 71,
+      "replay_episode_id": 71,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 90,
+      "replay_seed": 90,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 90
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 90
+      },
+      "source_action_shape": [
+        116,
+        8
+      ],
+      "replay_action_shape": [
+        116,
+        7
+      ],
+      "train_cache_window": [
+        10965,
+        11081
+      ],
+      "cached_steps": 116,
+      "source_steps": 116,
+      "replay_steps": 116,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 72,
+      "replay_episode_id": 72,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 94,
+      "replay_seed": 94,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 94
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 94
+      },
+      "source_action_shape": [
+        188,
+        8
+      ],
+      "replay_action_shape": [
+        188,
+        7
+      ],
+      "train_cache_window": [
+        11081,
+        11269
+      ],
+      "cached_steps": 188,
+      "source_steps": 188,
+      "replay_steps": 188,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 73,
+      "replay_episode_id": 73,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 95,
+      "replay_seed": 95,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 95
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 95
+      },
+      "source_action_shape": [
+        192,
+        8
+      ],
+      "replay_action_shape": [
+        192,
+        7
+      ],
+      "train_cache_window": [
+        11269,
+        11461
+      ],
+      "cached_steps": 192,
+      "source_steps": 192,
+      "replay_steps": 192,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 74,
+      "replay_episode_id": 74,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 96,
+      "replay_seed": 96,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 96
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 96
+      },
+      "source_action_shape": [
+        126,
+        8
+      ],
+      "replay_action_shape": [
+        126,
+        7
+      ],
+      "train_cache_window": [
+        11461,
+        11587
+      ],
+      "cached_steps": 126,
+      "source_steps": 126,
+      "replay_steps": 126,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 75,
+      "replay_episode_id": 75,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 99,
+      "replay_seed": 99,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 99
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 99
+      },
+      "source_action_shape": [
+        122,
+        8
+      ],
+      "replay_action_shape": [
+        122,
+        7
+      ],
+      "train_cache_window": [
+        11587,
+        11709
+      ],
+      "cached_steps": 122,
+      "source_steps": 122,
+      "replay_steps": 122,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 76,
+      "replay_episode_id": 76,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 100,
+      "replay_seed": 100,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 100
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 100
+      },
+      "source_action_shape": [
+        149,
+        8
+      ],
+      "replay_action_shape": [
+        149,
+        7
+      ],
+      "train_cache_window": [
+        11709,
+        11858
+      ],
+      "cached_steps": 149,
+      "source_steps": 149,
+      "replay_steps": 149,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 77,
+      "replay_episode_id": 77,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 102,
+      "replay_seed": 102,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 102
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 102
+      },
+      "source_action_shape": [
+        134,
+        8
+      ],
+      "replay_action_shape": [
+        134,
+        7
+      ],
+      "train_cache_window": [
+        11858,
+        11992
+      ],
+      "cached_steps": 134,
+      "source_steps": 134,
+      "replay_steps": 134,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 78,
+      "replay_episode_id": 78,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 103,
+      "replay_seed": 103,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 103
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 103
+      },
+      "source_action_shape": [
+        200,
+        8
+      ],
+      "replay_action_shape": [
+        200,
+        7
+      ],
+      "train_cache_window": [
+        11992,
+        12192
+      ],
+      "cached_steps": 200,
+      "source_steps": 200,
+      "replay_steps": 200,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 79,
+      "replay_episode_id": 79,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 104,
+      "replay_seed": 104,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 104
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 104
+      },
+      "source_action_shape": [
+        146,
+        8
+      ],
+      "replay_action_shape": [
+        146,
+        7
+      ],
+      "train_cache_window": [
+        12192,
+        12338
+      ],
+      "cached_steps": 146,
+      "source_steps": 146,
+      "replay_steps": 146,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 80,
+      "replay_episode_id": 80,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 105,
+      "replay_seed": 105,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 105
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 105
+      },
+      "source_action_shape": [
+        219,
+        8
+      ],
+      "replay_action_shape": [
+        219,
+        7
+      ],
+      "train_cache_window": [
+        12338,
+        12557
+      ],
+      "cached_steps": 219,
+      "source_steps": 219,
+      "replay_steps": 219,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 81,
+      "replay_episode_id": 81,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 107,
+      "replay_seed": 107,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 107
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 107
+      },
+      "source_action_shape": [
+        116,
+        8
+      ],
+      "replay_action_shape": [
+        128,
+        7
+      ],
+      "train_cache_window": [
+        12557,
+        12685
+      ],
+      "cached_steps": 128,
+      "source_steps": 116,
+      "replay_steps": 128,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 82,
+      "replay_episode_id": 82,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 108,
+      "replay_seed": 108,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 108
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 108
+      },
+      "source_action_shape": [
+        146,
+        8
+      ],
+      "replay_action_shape": [
+        146,
+        7
+      ],
+      "train_cache_window": [
+        12685,
+        12831
+      ],
+      "cached_steps": 146,
+      "source_steps": 146,
+      "replay_steps": 146,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 83,
+      "replay_episode_id": 83,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 110,
+      "replay_seed": 110,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 110
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 110
+      },
+      "source_action_shape": [
+        141,
+        8
+      ],
+      "replay_action_shape": [
+        147,
+        7
+      ],
+      "train_cache_window": [
+        12831,
+        12978
+      ],
+      "cached_steps": 147,
+      "source_steps": 141,
+      "replay_steps": 147,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 84,
+      "replay_episode_id": 84,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 112,
+      "replay_seed": 112,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 112
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 112
+      },
+      "source_action_shape": [
+        131,
+        8
+      ],
+      "replay_action_shape": [
+        149,
+        7
+      ],
+      "train_cache_window": [
+        12978,
+        13127
+      ],
+      "cached_steps": 149,
+      "source_steps": 131,
+      "replay_steps": 149,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 85,
+      "replay_episode_id": 85,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 113,
+      "replay_seed": 113,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 113
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 113
+      },
+      "source_action_shape": [
+        138,
+        8
+      ],
+      "replay_action_shape": [
+        159,
+        7
+      ],
+      "train_cache_window": [
+        13127,
+        13286
+      ],
+      "cached_steps": 159,
+      "source_steps": 138,
+      "replay_steps": 159,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 86,
+      "replay_episode_id": 86,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 114,
+      "replay_seed": 114,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 114
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 114
+      },
+      "source_action_shape": [
+        130,
+        8
+      ],
+      "replay_action_shape": [
+        148,
+        7
+      ],
+      "train_cache_window": [
+        13286,
+        13434
+      ],
+      "cached_steps": 148,
+      "source_steps": 130,
+      "replay_steps": 148,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 87,
+      "replay_episode_id": 87,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 116,
+      "replay_seed": 116,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 116
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 116
+      },
+      "source_action_shape": [
+        153,
+        8
+      ],
+      "replay_action_shape": [
+        153,
+        7
+      ],
+      "train_cache_window": [
+        13434,
+        13587
+      ],
+      "cached_steps": 153,
+      "source_steps": 153,
+      "replay_steps": 153,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 88,
+      "replay_episode_id": 88,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 117,
+      "replay_seed": 117,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 117
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 117
+      },
+      "source_action_shape": [
+        119,
+        8
+      ],
+      "replay_action_shape": [
+        134,
+        7
+      ],
+      "train_cache_window": [
+        13587,
+        13721
+      ],
+      "cached_steps": 134,
+      "source_steps": 119,
+      "replay_steps": 134,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 89,
+      "replay_episode_id": 89,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 120,
+      "replay_seed": 120,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 120
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 120
+      },
+      "source_action_shape": [
+        143,
+        8
+      ],
+      "replay_action_shape": [
+        143,
+        7
+      ],
+      "train_cache_window": [
+        13721,
+        13864
+      ],
+      "cached_steps": 143,
+      "source_steps": 143,
+      "replay_steps": 143,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 90,
+      "replay_episode_id": 90,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 122,
+      "replay_seed": 122,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 122
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 122
+      },
+      "source_action_shape": [
+        160,
+        8
+      ],
+      "replay_action_shape": [
+        160,
+        7
+      ],
+      "train_cache_window": [
+        13864,
+        14024
+      ],
+      "cached_steps": 160,
+      "source_steps": 160,
+      "replay_steps": 160,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 91,
+      "replay_episode_id": 91,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 123,
+      "replay_seed": 123,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 123
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 123
+      },
+      "source_action_shape": [
+        140,
+        8
+      ],
+      "replay_action_shape": [
+        158,
+        7
+      ],
+      "train_cache_window": [
+        14024,
+        14182
+      ],
+      "cached_steps": 158,
+      "source_steps": 140,
+      "replay_steps": 158,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 92,
+      "replay_episode_id": 92,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 124,
+      "replay_seed": 124,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 124
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 124
+      },
+      "source_action_shape": [
+        132,
+        8
+      ],
+      "replay_action_shape": [
+        132,
+        7
+      ],
+      "train_cache_window": [
+        14182,
+        14314
+      ],
+      "cached_steps": 132,
+      "source_steps": 132,
+      "replay_steps": 132,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 93,
+      "replay_episode_id": 93,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 125,
+      "replay_seed": 125,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 125
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 125
+      },
+      "source_action_shape": [
+        171,
+        8
+      ],
+      "replay_action_shape": [
+        171,
+        7
+      ],
+      "train_cache_window": [
+        14314,
+        14485
+      ],
+      "cached_steps": 171,
+      "source_steps": 171,
+      "replay_steps": 171,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 94,
+      "replay_episode_id": 94,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 126,
+      "replay_seed": 126,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 126
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 126
+      },
+      "source_action_shape": [
+        137,
+        8
+      ],
+      "replay_action_shape": [
+        137,
+        7
+      ],
+      "train_cache_window": [
+        14485,
+        14622
+      ],
+      "cached_steps": 137,
+      "source_steps": 137,
+      "replay_steps": 137,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 95,
+      "replay_episode_id": 95,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 127,
+      "replay_seed": 127,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 127
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 127
+      },
+      "source_action_shape": [
+        179,
+        8
+      ],
+      "replay_action_shape": [
+        179,
+        7
+      ],
+      "train_cache_window": [
+        14622,
+        14801
+      ],
+      "cached_steps": 179,
+      "source_steps": 179,
+      "replay_steps": 179,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 96,
+      "replay_episode_id": 96,
+      "source_success": true,
+      "replay_success": false,
+      "source_seed": 128,
+      "replay_seed": 128,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 128
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 128
+      },
+      "source_action_shape": [
+        170,
+        8
+      ],
+      "replay_action_shape": [
+        170,
+        7
+      ],
+      "train_cache_window": [
+        14801,
+        14971
+      ],
+      "cached_steps": 170,
+      "source_steps": 170,
+      "replay_steps": 170,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 97,
+      "replay_episode_id": 97,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 129,
+      "replay_seed": 129,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 129
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 129
+      },
+      "source_action_shape": [
+        185,
+        8
+      ],
+      "replay_action_shape": [
+        185,
+        7
+      ],
+      "train_cache_window": [
+        14971,
+        15156
+      ],
+      "cached_steps": 185,
+      "source_steps": 185,
+      "replay_steps": 185,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 98,
+      "replay_episode_id": 98,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 130,
+      "replay_seed": 130,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 130
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 130
+      },
+      "source_action_shape": [
+        126,
+        8
+      ],
+      "replay_action_shape": [
+        150,
+        7
+      ],
+      "train_cache_window": [
+        15156,
+        15306
+      ],
+      "cached_steps": 150,
+      "source_steps": 126,
+      "replay_steps": 150,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    },
+    {
+      "source_episode_id": 99,
+      "replay_episode_id": 99,
+      "source_success": true,
+      "replay_success": true,
+      "source_seed": 132,
+      "replay_seed": 132,
+      "source_reset_kwargs": {
+        "options": {},
+        "seed": 132
+      },
+      "replay_reset_kwargs": {
+        "options": {},
+        "seed": 132
+      },
+      "source_action_shape": [
+        141,
+        8
+      ],
+      "replay_action_shape": [
+        144,
+        7
+      ],
+      "train_cache_window": [
+        15306,
+        15450
+      ],
+      "cached_steps": 144,
+      "source_steps": 141,
+      "replay_steps": 144,
+      "action_exact": true,
+      "proprio_exact": true,
+      "visual": {
+        "base_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 24.36800193786621
+        },
+        "hand_camera": {
+          "rgb_exact": true,
+          "depth_max_abs_m": 0.0
+        }
+      }
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 """Formal iteration-based CNN-DP training on fixed ManiSkill demonstration data.
 
 The action model and loss come directly from the untouched official checkout.
-All 100000 optimizer updates and 20 scheduled immutable snapshots are retained.
+ManiSkill uses 100000 optimizer updates; MimicGen uses 250 complete data epochs.
+Each run has exactly five scheduled EMA evaluations and bounded temporary weights.
 """
 import argparse
 import copy

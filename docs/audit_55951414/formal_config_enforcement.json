@@ -1,0 +1,18 @@
+{
+  "actual_configs_validated": 60,
+  "rejected_out_of_scope_cases": [
+    {
+      "case": "legacy_method",
+      "reason": "Model outside the four-model formal protocol"
+    },
+    {
+      "case": "1710_schedule",
+      "reason": "Only five prescribed checkpoint positions are permitted"
+    },
+    {
+      "case": "legacy_joint_control",
+      "reason": "Historical joint-position replay is not the formal EE control dataset"
+    }
+  ],
+  "training_started_by_check": false
+}

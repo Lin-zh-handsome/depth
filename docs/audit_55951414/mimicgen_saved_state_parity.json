@@ -1,0 +1,1345 @@
+{
+  "status": "complete",
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "source": "actual raw HDF5 states/actions/model XML; official converted HDF5; active Zarr; actual online adapter",
+  "samples": [
+    {
+      "task": "threading_d2",
+      "demo": "demo_0",
+      "timestep": 0,
+      "global_cache_index": 0,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 65.06150817871094,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.5105131268501282,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 65.22704315185547,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186495393514633,
+            0.382693886756897
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 9.021687216725915e-10,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "same_action_transition_max_abs": 0.0
+    },
+    {
+      "task": "threading_d2",
+      "demo": "demo_0",
+      "timestep": 121,
+      "global_cache_index": 121,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 67.56849670410156,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.5153909921646118,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 85.7428207397461,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186512157320976,
+            1.1290533542633057
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 1.9251700122957516e-08,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "threading_d2",
+      "demo": "demo_0",
+      "timestep": 241,
+      "global_cache_index": 241,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 79.09429168701172,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.4273785650730133,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 95.01209259033203,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186486452817917,
+            0.35238662362098694
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 3.864650599538777e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "threading_d2",
+      "demo": "demo_199",
+      "timestep": 0,
+      "global_cache_index": 45150,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 64.14777374267578,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.5296279191970825,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 69.72845458984375,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186501353979111,
+            0.3565804362297058
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 2.32548114098563e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "same_action_transition_max_abs": 0.0
+    },
+    {
+      "task": "threading_d2",
+      "demo": "demo_199",
+      "timestep": 121,
+      "global_cache_index": 45271,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 68.06273651123047,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.5338931083679199,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 95.09864044189453,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.041864972561597824,
+            1.5028467178344727
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 1.0437325281831278e-08,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "threading_d2",
+      "demo": "demo_199",
+      "timestep": 241,
+      "global_cache_index": 45391,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 77.0864486694336,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.4020353853702545,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 94.64730072021484,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186490550637245,
+            1.3934475183486938
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 7.221609615859492e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "stack_three_d1",
+      "demo": "demo_0",
+      "timestep": 0,
+      "global_cache_index": 0,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 80.82691192626953,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.7439520359039307,
+            3.053541898727417
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 69.25406646728516,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186506196856499,
+            0.37282055616378784
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 2.144643310164618e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "same_action_transition_max_abs": 0.0
+    },
+    {
+      "task": "stack_three_d1",
+      "demo": "demo_0",
+      "timestep": 127,
+      "global_cache_index": 127,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 84.23970031738281,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.7439520359039307,
+            3.053541898727417
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 81.87405395507812,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.041864946484565735,
+            0.23747877776622772
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 1.8209936197832732e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "stack_three_d1",
+      "demo": "demo_0",
+      "timestep": 254,
+      "global_cache_index": 254,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 83.97174835205078,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.7439520359039307,
+            3.053541898727417
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 99.49659729003906,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.041864972561597824,
+            0.24402782320976257
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 1.7785993164376457e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "stack_three_d1",
+      "demo": "demo_199",
+      "timestep": 0,
+      "global_cache_index": 50667,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 80.5225830078125,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.7439520359039307,
+            3.053541898727417
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 74.70360565185547,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186486452817917,
+            0.37681081891059875
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 2.995920067583313e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "same_action_transition_max_abs": 0.0
+    },
+    {
+      "task": "stack_three_d1",
+      "demo": "demo_199",
+      "timestep": 140,
+      "global_cache_index": 50807,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 85.44208526611328,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.7439520359039307,
+            3.053541898727417
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 93.7208023071289,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186498373746872,
+            0.20394566655158997
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 1.1543703437588704e-08,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "stack_three_d1",
+      "demo": "demo_199",
+      "timestep": 279,
+      "global_cache_index": 50946,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 82.35515594482422,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.7439520359039307,
+            3.053541898727417
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 93.80517578125,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186500236392021,
+            0.22204461693763733
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 3.2715924136450525e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "coffee_d2",
+      "demo": "demo_0",
+      "timestep": 0,
+      "global_cache_index": 0,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 103.3968276977539,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.5330361723899841,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 85.79960632324219,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.041864894330501556,
+            0.3533547818660736
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 7.727630479958947e-10,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "same_action_transition_max_abs": 0.0
+    },
+    {
+      "task": "coffee_d2",
+      "demo": "demo_0",
+      "timestep": 124,
+      "global_cache_index": 124,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 106.7383804321289,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.38282227516174316,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 93.35818481445312,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.041864845901727676,
+            0.4043486416339874
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 1.2099110879848496e-08,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "coffee_d2",
+      "demo": "demo_0",
+      "timestep": 248,
+      "global_cache_index": 248,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 103.69538879394531,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.33558911085128784,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 98.16543579101562,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186500236392021,
+            1.3768277168273926
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 2.8035777033252884e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "coffee_d2",
+      "demo": "demo_199",
+      "timestep": 0,
+      "global_cache_index": 44383,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 86.07653045654297,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.5332054495811462,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 83.8771743774414,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186491668224335,
+            0.3695511221885681
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 5.493931698463683e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "same_action_transition_max_abs": 0.0
+    },
+    {
+      "task": "coffee_d2",
+      "demo": "demo_199",
+      "timestep": 113,
+      "global_cache_index": 44496,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 103.86357116699219,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.38810664415359497,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 76.91033935546875,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.04186508432030678,
+            1.221224069595337
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 2.5510200507561365e-08,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "coffee_d2",
+      "demo": "demo_199",
+      "timestep": 226,
+      "global_cache_index": 44609,
+      "cameras": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ],
+      "encoder_camera_order": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "fields": {
+        "agentview": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 90.09070587158203,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.34604036808013916,
+            2.7128427028656006
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        },
+        "robot0_eye_in_hand": {
+          "rgb_same_orientation_mae": 0.0,
+          "rgb_vertical_reverse_mae": 104.38189697265625,
+          "rgb_max_abs": 0.0,
+          "depth_max_abs_m": 0.0,
+          "depth_mae_m": 0.0,
+          "depth_range_m": [
+            0.041864845901727676,
+            1.3308448791503906
+          ],
+          "cache_rgb_exact": true,
+          "cache_depth_exact": true,
+          "official_vs_online_rgb_max": 0.0,
+          "official_vs_online_depth_max": 0.0
+        }
+      },
+      "proprio_max_abs": 0.0,
+      "cache_proprio_exact": true,
+      "cache_action_max_abs": 3.0178922139079134e-09,
+      "hdf5_action_max_abs": 0.0,
+      "sim_state_max_abs": 0.0,
+      "action_dim": 7,
+      "controller_class": "OperationalSpaceController",
+      "controller_relative": true,
+      "action_limits": [
+        [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    }
+  ]
+}

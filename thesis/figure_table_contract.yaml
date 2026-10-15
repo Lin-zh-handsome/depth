@@ -20,7 +20,8 @@
         "pdf"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": true
     },
     {
       "id": "Table 3-2",
@@ -40,7 +41,8 @@
         "pdf"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": true
     },
     {
       "id": "Figure 3-1",
@@ -59,7 +61,8 @@
         "json"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": false
     },
     {
       "id": "Figure 3-2",
@@ -78,7 +81,8 @@
         "json"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": true
     },
     {
       "id": "Figure 3-3",
@@ -97,7 +101,8 @@
         "json"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": false
     },
     {
       "id": "Figure 3-4",
@@ -116,7 +121,8 @@
         "json"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": false
     },
     {
       "id": "Figure 3-5",
@@ -141,7 +147,8 @@
       "key_frames": "4-6 from environment events or explicit offline annotation",
       "capture": "independent real checkpoint rollout at policy replanning only",
       "attention": "actual derived axial GSA Query weights, separate from M0 gradient saliency",
-      "tokens": 8
+      "tokens": 8,
+      "success_definition_required": false
     },
     {
       "id": "Figure 3-6",
@@ -161,7 +168,8 @@
         "mp4"
       ],
       "source_manifest": "experiments/ch3/eval_manifest.csv",
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": false
     },
     {
       "id": "Table module ablation",
@@ -187,8 +195,15 @@
         "M2-M3",
         "M2-M0"
       ],
-      "status": "pending_real_results"
+      "status": "pending_real_results",
+      "success_definition_required": true
     }
   ],
-  "statistics": "Best-of-5, mean and sample std over three seeds; ties earliest"
+  "statistics": "Best-of-5, mean and sample std over three seeds; ties earliest",
+  "success_definitions": {
+    "mimicgen": "success_once",
+    "maniskill": "success_at_end"
+  },
+  "task_budget_metadata": "experiments/ch3/dataset_budget_metadata.json",
+  "audit_evidence": "docs/audit_55951414/REPORT.md"
 }

@@ -323,5 +323,23 @@
     true,
     true
   ],
-  "subset_rule": "fixed first 100 official motionplanning demos; official controller conversion; failures retained and labeled"
+  "subset_rule": "fixed first 100 official motionplanning demos; official controller conversion; failures retained and labeled",
+  "source_success_count": 100,
+  "source_failure_count": 0,
+  "replay_success_count": 90,
+  "replay_failure_count": 10,
+  "training_retains_failed_controller_replays": true,
+  "failed_controller_replay_source_ids": [
+    1,
+    2,
+    14,
+    17,
+    19,
+    20,
+    22,
+    60,
+    63,
+    96
+  ],
+  "training_trajectory_evidence": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/docs/audit_55951414/peg_100_source_replay_cache.json"
 }

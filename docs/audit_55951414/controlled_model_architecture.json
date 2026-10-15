@@ -1,0 +1,4380 @@
+{
+  "architectures": [
+    {
+      "method": "e0",
+      "policy_class": "diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy",
+      "diffusion_class": "diffusion_policy.model.diffusion.conditional_unet1d.ConditionalUnet1D",
+      "diffusion_parameter_shapes": {
+        "mid_modules.0.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "mid_modules.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "diffusion_step_encoder.1.weight": [
+          512,
+          128
+        ],
+        "diffusion_step_encoder.1.bias": [
+          512
+        ],
+        "diffusion_step_encoder.3.weight": [
+          128,
+          512
+        ],
+        "diffusion_step_encoder.3.bias": [
+          128
+        ],
+        "up_modules.0.0.blocks.0.block.0.weight": [
+          1024,
+          4096,
+          5
+        ],
+        "up_modules.0.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.0.residual_conv.weight": [
+          1024,
+          4096,
+          1
+        ],
+        "up_modules.0.0.residual_conv.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.2.conv.weight": [
+          1024,
+          1024,
+          4
+        ],
+        "up_modules.0.2.conv.bias": [
+          1024
+        ],
+        "up_modules.1.0.blocks.0.block.0.weight": [
+          512,
+          2048,
+          5
+        ],
+        "up_modules.1.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.0.residual_conv.weight": [
+          512,
+          2048,
+          1
+        ],
+        "up_modules.1.0.residual_conv.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.2.conv.weight": [
+          512,
+          512,
+          4
+        ],
+        "up_modules.1.2.conv.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.0.weight": [
+          512,
+          7,
+          5
+        ],
+        "down_modules.0.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.0.residual_conv.weight": [
+          512,
+          7,
+          1
+        ],
+        "down_modules.0.0.residual_conv.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.2.conv.weight": [
+          512,
+          512,
+          3
+        ],
+        "down_modules.0.2.conv.bias": [
+          512
+        ],
+        "down_modules.1.0.blocks.0.block.0.weight": [
+          1024,
+          512,
+          5
+        ],
+        "down_modules.1.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.0.residual_conv.weight": [
+          1024,
+          512,
+          1
+        ],
+        "down_modules.1.0.residual_conv.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.2.conv.weight": [
+          1024,
+          1024,
+          3
+        ],
+        "down_modules.1.2.conv.bias": [
+          1024
+        ],
+        "down_modules.2.0.blocks.0.block.0.weight": [
+          2048,
+          1024,
+          5
+        ],
+        "down_modules.2.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "down_modules.2.0.residual_conv.weight": [
+          2048,
+          1024,
+          1
+        ],
+        "down_modules.2.0.residual_conv.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "final_conv.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "final_conv.0.block.0.bias": [
+          512
+        ],
+        "final_conv.0.block.1.weight": [
+          512
+        ],
+        "final_conv.0.block.1.bias": [
+          512
+        ],
+        "final_conv.1.weight": [
+          7,
+          512,
+          1
+        ],
+        "final_conv.1.bias": [
+          7
+        ]
+      },
+      "feature_shape": [
+        1033
+      ],
+      "backbones": [
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        },
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        }
+      ],
+      "rgb_keys": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "lowdim_keys": [
+        "agent_pos"
+      ],
+      "depth_consumed": false,
+      "imagenet_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "imagenet_std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "backbone_initialization": "random; no pretrained weights",
+      "camera_initialization": "official deep copies of one initialized ResNet18",
+      "normalizer": "shared dataset LinearNormalizer limits for action/proprio; shared image range transform; identity metric depth",
+      "scheduler_class": "DDPMScheduler",
+      "scheduler_config": {
+        "num_train_timesteps": 100,
+        "beta_start": 0.0001,
+        "beta_end": 0.02,
+        "beta_schedule": "squaredcos_cap_v2",
+        "trained_betas": null,
+        "variance_type": "fixed_small",
+        "clip_sample": true,
+        "prediction_type": "epsilon"
+      }
+    },
+    {
+      "method": "e3",
+      "policy_class": "diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy",
+      "diffusion_class": "diffusion_policy.model.diffusion.conditional_unet1d.ConditionalUnet1D",
+      "diffusion_parameter_shapes": {
+        "mid_modules.0.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "mid_modules.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "diffusion_step_encoder.1.weight": [
+          512,
+          128
+        ],
+        "diffusion_step_encoder.1.bias": [
+          512
+        ],
+        "diffusion_step_encoder.3.weight": [
+          128,
+          512
+        ],
+        "diffusion_step_encoder.3.bias": [
+          128
+        ],
+        "up_modules.0.0.blocks.0.block.0.weight": [
+          1024,
+          4096,
+          5
+        ],
+        "up_modules.0.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.0.residual_conv.weight": [
+          1024,
+          4096,
+          1
+        ],
+        "up_modules.0.0.residual_conv.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.2.conv.weight": [
+          1024,
+          1024,
+          4
+        ],
+        "up_modules.0.2.conv.bias": [
+          1024
+        ],
+        "up_modules.1.0.blocks.0.block.0.weight": [
+          512,
+          2048,
+          5
+        ],
+        "up_modules.1.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.0.residual_conv.weight": [
+          512,
+          2048,
+          1
+        ],
+        "up_modules.1.0.residual_conv.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.2.conv.weight": [
+          512,
+          512,
+          4
+        ],
+        "up_modules.1.2.conv.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.0.weight": [
+          512,
+          7,
+          5
+        ],
+        "down_modules.0.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.0.residual_conv.weight": [
+          512,
+          7,
+          1
+        ],
+        "down_modules.0.0.residual_conv.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.2.conv.weight": [
+          512,
+          512,
+          3
+        ],
+        "down_modules.0.2.conv.bias": [
+          512
+        ],
+        "down_modules.1.0.blocks.0.block.0.weight": [
+          1024,
+          512,
+          5
+        ],
+        "down_modules.1.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.0.residual_conv.weight": [
+          1024,
+          512,
+          1
+        ],
+        "down_modules.1.0.residual_conv.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.2.conv.weight": [
+          1024,
+          1024,
+          3
+        ],
+        "down_modules.1.2.conv.bias": [
+          1024
+        ],
+        "down_modules.2.0.blocks.0.block.0.weight": [
+          2048,
+          1024,
+          5
+        ],
+        "down_modules.2.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "down_modules.2.0.residual_conv.weight": [
+          2048,
+          1024,
+          1
+        ],
+        "down_modules.2.0.residual_conv.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "final_conv.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "final_conv.0.block.0.bias": [
+          512
+        ],
+        "final_conv.0.block.1.weight": [
+          512
+        ],
+        "final_conv.0.block.1.bias": [
+          512
+        ],
+        "final_conv.1.weight": [
+          7,
+          512,
+          1
+        ],
+        "final_conv.1.bias": [
+          7
+        ]
+      },
+      "feature_shape": [
+        1033
+      ],
+      "backbones": [
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        },
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        }
+      ],
+      "rgb_keys": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "lowdim_keys": [
+        "agent_pos"
+      ],
+      "depth_consumed": true,
+      "imagenet_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "imagenet_std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "backbone_initialization": "random; no pretrained weights",
+      "camera_initialization": "independently initialized per-camera ResNet18",
+      "normalizer": "shared dataset LinearNormalizer limits for action/proprio; shared image range transform; identity metric depth",
+      "scheduler_class": "DDPMScheduler",
+      "scheduler_config": {
+        "num_train_timesteps": 100,
+        "beta_start": 0.0001,
+        "beta_end": 0.02,
+        "beta_schedule": "squaredcos_cap_v2",
+        "trained_betas": null,
+        "variance_type": "fixed_small",
+        "clip_sample": true,
+        "prediction_type": "epsilon"
+      }
+    },
+    {
+      "method": "e6",
+      "policy_class": "diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy",
+      "diffusion_class": "diffusion_policy.model.diffusion.conditional_unet1d.ConditionalUnet1D",
+      "diffusion_parameter_shapes": {
+        "mid_modules.0.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "mid_modules.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "diffusion_step_encoder.1.weight": [
+          512,
+          128
+        ],
+        "diffusion_step_encoder.1.bias": [
+          512
+        ],
+        "diffusion_step_encoder.3.weight": [
+          128,
+          512
+        ],
+        "diffusion_step_encoder.3.bias": [
+          128
+        ],
+        "up_modules.0.0.blocks.0.block.0.weight": [
+          1024,
+          4096,
+          5
+        ],
+        "up_modules.0.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.0.residual_conv.weight": [
+          1024,
+          4096,
+          1
+        ],
+        "up_modules.0.0.residual_conv.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.2.conv.weight": [
+          1024,
+          1024,
+          4
+        ],
+        "up_modules.0.2.conv.bias": [
+          1024
+        ],
+        "up_modules.1.0.blocks.0.block.0.weight": [
+          512,
+          2048,
+          5
+        ],
+        "up_modules.1.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.0.residual_conv.weight": [
+          512,
+          2048,
+          1
+        ],
+        "up_modules.1.0.residual_conv.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.2.conv.weight": [
+          512,
+          512,
+          4
+        ],
+        "up_modules.1.2.conv.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.0.weight": [
+          512,
+          7,
+          5
+        ],
+        "down_modules.0.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.0.residual_conv.weight": [
+          512,
+          7,
+          1
+        ],
+        "down_modules.0.0.residual_conv.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.2.conv.weight": [
+          512,
+          512,
+          3
+        ],
+        "down_modules.0.2.conv.bias": [
+          512
+        ],
+        "down_modules.1.0.blocks.0.block.0.weight": [
+          1024,
+          512,
+          5
+        ],
+        "down_modules.1.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.0.residual_conv.weight": [
+          1024,
+          512,
+          1
+        ],
+        "down_modules.1.0.residual_conv.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.2.conv.weight": [
+          1024,
+          1024,
+          3
+        ],
+        "down_modules.1.2.conv.bias": [
+          1024
+        ],
+        "down_modules.2.0.blocks.0.block.0.weight": [
+          2048,
+          1024,
+          5
+        ],
+        "down_modules.2.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "down_modules.2.0.residual_conv.weight": [
+          2048,
+          1024,
+          1
+        ],
+        "down_modules.2.0.residual_conv.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "final_conv.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "final_conv.0.block.0.bias": [
+          512
+        ],
+        "final_conv.0.block.1.weight": [
+          512
+        ],
+        "final_conv.0.block.1.bias": [
+          512
+        ],
+        "final_conv.1.weight": [
+          7,
+          512,
+          1
+        ],
+        "final_conv.1.bias": [
+          7
+        ]
+      },
+      "feature_shape": [
+        1033
+      ],
+      "backbones": [
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        },
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        }
+      ],
+      "rgb_keys": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "lowdim_keys": [
+        "agent_pos"
+      ],
+      "depth_consumed": true,
+      "imagenet_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "imagenet_std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "backbone_initialization": "random; no pretrained weights",
+      "camera_initialization": "independently initialized per-camera ResNet18",
+      "normalizer": "shared dataset LinearNormalizer limits for action/proprio; shared image range transform; identity metric depth",
+      "scheduler_class": "DDPMScheduler",
+      "scheduler_config": {
+        "num_train_timesteps": 100,
+        "beta_start": 0.0001,
+        "beta_end": 0.02,
+        "beta_schedule": "squaredcos_cap_v2",
+        "trained_betas": null,
+        "variance_type": "fixed_small",
+        "clip_sample": true,
+        "prediction_type": "epsilon"
+      }
+    },
+    {
+      "method": "m3",
+      "policy_class": "diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy",
+      "diffusion_class": "diffusion_policy.model.diffusion.conditional_unet1d.ConditionalUnet1D",
+      "diffusion_parameter_shapes": {
+        "mid_modules.0.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "mid_modules.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "mid_modules.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "mid_modules.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "mid_modules.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "mid_modules.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "diffusion_step_encoder.1.weight": [
+          512,
+          128
+        ],
+        "diffusion_step_encoder.1.bias": [
+          512
+        ],
+        "diffusion_step_encoder.3.weight": [
+          128,
+          512
+        ],
+        "diffusion_step_encoder.3.bias": [
+          128
+        ],
+        "up_modules.0.0.blocks.0.block.0.weight": [
+          1024,
+          4096,
+          5
+        ],
+        "up_modules.0.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.0.residual_conv.weight": [
+          1024,
+          4096,
+          1
+        ],
+        "up_modules.0.0.residual_conv.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "up_modules.0.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "up_modules.0.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "up_modules.0.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "up_modules.0.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "up_modules.0.2.conv.weight": [
+          1024,
+          1024,
+          4
+        ],
+        "up_modules.0.2.conv.bias": [
+          1024
+        ],
+        "up_modules.1.0.blocks.0.block.0.weight": [
+          512,
+          2048,
+          5
+        ],
+        "up_modules.1.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.0.residual_conv.weight": [
+          512,
+          2048,
+          1
+        ],
+        "up_modules.1.0.residual_conv.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "up_modules.1.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "up_modules.1.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "up_modules.1.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "up_modules.1.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "up_modules.1.2.conv.weight": [
+          512,
+          512,
+          4
+        ],
+        "up_modules.1.2.conv.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.0.weight": [
+          512,
+          7,
+          5
+        ],
+        "down_modules.0.0.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.0.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.0.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.0.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.0.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.0.residual_conv.weight": [
+          512,
+          7,
+          1
+        ],
+        "down_modules.0.0.residual_conv.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.0.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.0.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "down_modules.0.1.blocks.1.block.0.bias": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.weight": [
+          512
+        ],
+        "down_modules.0.1.blocks.1.block.1.bias": [
+          512
+        ],
+        "down_modules.0.1.cond_encoder.1.weight": [
+          1024,
+          2194
+        ],
+        "down_modules.0.1.cond_encoder.1.bias": [
+          1024
+        ],
+        "down_modules.0.2.conv.weight": [
+          512,
+          512,
+          3
+        ],
+        "down_modules.0.2.conv.bias": [
+          512
+        ],
+        "down_modules.1.0.blocks.0.block.0.weight": [
+          1024,
+          512,
+          5
+        ],
+        "down_modules.1.0.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.0.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.0.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.0.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.0.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.0.residual_conv.weight": [
+          1024,
+          512,
+          1
+        ],
+        "down_modules.1.0.residual_conv.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.0.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.0.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.0.weight": [
+          1024,
+          1024,
+          5
+        ],
+        "down_modules.1.1.blocks.1.block.0.bias": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.weight": [
+          1024
+        ],
+        "down_modules.1.1.blocks.1.block.1.bias": [
+          1024
+        ],
+        "down_modules.1.1.cond_encoder.1.weight": [
+          2048,
+          2194
+        ],
+        "down_modules.1.1.cond_encoder.1.bias": [
+          2048
+        ],
+        "down_modules.1.2.conv.weight": [
+          1024,
+          1024,
+          3
+        ],
+        "down_modules.1.2.conv.bias": [
+          1024
+        ],
+        "down_modules.2.0.blocks.0.block.0.weight": [
+          2048,
+          1024,
+          5
+        ],
+        "down_modules.2.0.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.0.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.0.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.0.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.0.cond_encoder.1.bias": [
+          4096
+        ],
+        "down_modules.2.0.residual_conv.weight": [
+          2048,
+          1024,
+          1
+        ],
+        "down_modules.2.0.residual_conv.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.0.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.0.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.0.weight": [
+          2048,
+          2048,
+          5
+        ],
+        "down_modules.2.1.blocks.1.block.0.bias": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.weight": [
+          2048
+        ],
+        "down_modules.2.1.blocks.1.block.1.bias": [
+          2048
+        ],
+        "down_modules.2.1.cond_encoder.1.weight": [
+          4096,
+          2194
+        ],
+        "down_modules.2.1.cond_encoder.1.bias": [
+          4096
+        ],
+        "final_conv.0.block.0.weight": [
+          512,
+          512,
+          5
+        ],
+        "final_conv.0.block.0.bias": [
+          512
+        ],
+        "final_conv.0.block.1.weight": [
+          512
+        ],
+        "final_conv.0.block.1.bias": [
+          512
+        ],
+        "final_conv.1.weight": [
+          7,
+          512,
+          1
+        ],
+        "final_conv.1.bias": [
+          7
+        ]
+      },
+      "feature_shape": [
+        1033
+      ],
+      "backbones": [
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        },
+        {
+          "class_name": "ResNet",
+          "conv1_shape": [
+            64,
+            3,
+            7,
+            7
+          ],
+          "groupnorm_count": 20,
+          "batchnorm_count": 0,
+          "backbone_parameter_shapes": {
+            "conv1.weight": [
+              64,
+              3,
+              7,
+              7
+            ],
+            "bn1.weight": [
+              64
+            ],
+            "bn1.bias": [
+              64
+            ],
+            "layer1.0.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn1.weight": [
+              64
+            ],
+            "layer1.0.bn1.bias": [
+              64
+            ],
+            "layer1.0.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.0.bn2.weight": [
+              64
+            ],
+            "layer1.0.bn2.bias": [
+              64
+            ],
+            "layer1.1.conv1.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn1.weight": [
+              64
+            ],
+            "layer1.1.bn1.bias": [
+              64
+            ],
+            "layer1.1.conv2.weight": [
+              64,
+              64,
+              3,
+              3
+            ],
+            "layer1.1.bn2.weight": [
+              64
+            ],
+            "layer1.1.bn2.bias": [
+              64
+            ],
+            "layer2.0.conv1.weight": [
+              128,
+              64,
+              3,
+              3
+            ],
+            "layer2.0.bn1.weight": [
+              128
+            ],
+            "layer2.0.bn1.bias": [
+              128
+            ],
+            "layer2.0.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.0.bn2.weight": [
+              128
+            ],
+            "layer2.0.bn2.bias": [
+              128
+            ],
+            "layer2.0.downsample.0.weight": [
+              128,
+              64,
+              1,
+              1
+            ],
+            "layer2.0.downsample.1.weight": [
+              128
+            ],
+            "layer2.0.downsample.1.bias": [
+              128
+            ],
+            "layer2.1.conv1.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn1.weight": [
+              128
+            ],
+            "layer2.1.bn1.bias": [
+              128
+            ],
+            "layer2.1.conv2.weight": [
+              128,
+              128,
+              3,
+              3
+            ],
+            "layer2.1.bn2.weight": [
+              128
+            ],
+            "layer2.1.bn2.bias": [
+              128
+            ],
+            "layer3.0.conv1.weight": [
+              256,
+              128,
+              3,
+              3
+            ],
+            "layer3.0.bn1.weight": [
+              256
+            ],
+            "layer3.0.bn1.bias": [
+              256
+            ],
+            "layer3.0.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.0.bn2.weight": [
+              256
+            ],
+            "layer3.0.bn2.bias": [
+              256
+            ],
+            "layer3.0.downsample.0.weight": [
+              256,
+              128,
+              1,
+              1
+            ],
+            "layer3.0.downsample.1.weight": [
+              256
+            ],
+            "layer3.0.downsample.1.bias": [
+              256
+            ],
+            "layer3.1.conv1.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn1.weight": [
+              256
+            ],
+            "layer3.1.bn1.bias": [
+              256
+            ],
+            "layer3.1.conv2.weight": [
+              256,
+              256,
+              3,
+              3
+            ],
+            "layer3.1.bn2.weight": [
+              256
+            ],
+            "layer3.1.bn2.bias": [
+              256
+            ],
+            "layer4.0.conv1.weight": [
+              512,
+              256,
+              3,
+              3
+            ],
+            "layer4.0.bn1.weight": [
+              512
+            ],
+            "layer4.0.bn1.bias": [
+              512
+            ],
+            "layer4.0.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.0.bn2.weight": [
+              512
+            ],
+            "layer4.0.bn2.bias": [
+              512
+            ],
+            "layer4.0.downsample.0.weight": [
+              512,
+              256,
+              1,
+              1
+            ],
+            "layer4.0.downsample.1.weight": [
+              512
+            ],
+            "layer4.0.downsample.1.bias": [
+              512
+            ],
+            "layer4.1.conv1.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn1.weight": [
+              512
+            ],
+            "layer4.1.bn1.bias": [
+              512
+            ],
+            "layer4.1.conv2.weight": [
+              512,
+              512,
+              3,
+              3
+            ],
+            "layer4.1.bn2.weight": [
+              512
+            ],
+            "layer4.1.bn2.bias": [
+              512
+            ]
+          }
+        }
+      ],
+      "rgb_keys": [
+        "agentview_image",
+        "robot0_eye_in_hand_image"
+      ],
+      "lowdim_keys": [
+        "agent_pos"
+      ],
+      "depth_consumed": true,
+      "imagenet_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "imagenet_std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "backbone_initialization": "random; no pretrained weights",
+      "camera_initialization": "independently initialized per-camera ResNet18",
+      "normalizer": "shared dataset LinearNormalizer limits for action/proprio; shared image range transform; identity metric depth",
+      "scheduler_class": "DDPMScheduler",
+      "scheduler_config": {
+        "num_train_timesteps": 100,
+        "beta_start": 0.0001,
+        "beta_end": 0.02,
+        "beta_schedule": "squaredcos_cap_v2",
+        "trained_betas": null,
+        "variance_type": "fixed_small",
+        "clip_sample": true,
+        "prediction_type": "epsilon"
+      }
+    }
+  ],
+  "all_diffusion_shapes_equal": true,
+  "all_backbone_shapes_equal": true,
+  "tokenlearner": [
+    {
+      "camera": "agentview_image",
+      "same_class": true,
+      "fields_m2": [
+        true,
+        true,
+        true
+      ],
+      "fields_m3": [
+        true,
+        true,
+        true
+      ],
+      "num_tokens": 8,
+      "projection_shape": [
+        512,
+        1056
+      ],
+      "fusion": "add",
+      "m2_gsa_present": true,
+      "m3_gsa_absent": true
+    },
+    {
+      "camera": "robot0_eye_in_hand_image",
+      "same_class": true,
+      "fields_m2": [
+        true,
+        true,
+        true
+      ],
+      "fields_m3": [
+        true,
+        true,
+        true
+      ],
+      "num_tokens": 8,
+      "projection_shape": [
+        512,
+        1056
+      ],
+      "fusion": "add",
+      "m2_gsa_present": true,
+      "m3_gsa_absent": true
+    }
+  ],
+  "real_input_shared_path_check": {
+    "source_real_input": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/threading_d2/subset200.zarr data index0",
+    "shared_weight_source": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/best/best.pt",
+    "trained_token_projection_nonzero": true,
+    "m2_gsa_disabled_only_in_audit_object": true,
+    "common_weights_copied_only_in_audit_object": true,
+    "feature_max_abs": 0.0,
+    "token_weights_max_abs": {
+      "agentview_image": 0.0,
+      "robot0_eye_in_hand_image": 0.0
+    }
+  },
+  "controlled_exceptions": [
+    "M0 consumes RGB and proprio only; M1/M2/M3 additionally consume aligned metric depth as geometric side input.",
+    "Official M0 clones the initial RGB backbone across cameras; custom module encoders initialize each camera separately. The random initial tensors are not matched across methods. No existing initialization is changed or result invalidated."
+  ]
+}

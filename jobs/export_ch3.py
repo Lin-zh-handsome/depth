@@ -1,10 +1,13 @@
 """Incremental matrix status and thesis statistics from complete real rollout logs."""
-import csv,json,os,subprocess
+import csv,json,os,subprocess,sys,fcntl
 from pathlib import Path
 from collections import Counter,defaultdict
 from datetime import datetime,timezone
 import numpy as np
 from registry import ROOT,connect
+sys.path.insert(0,str(ROOT))
+from gsc_dp.protocol import SUCCESS_DEFINITIONS,SUCCESS_DESCRIPTIONS,annotate_success_metadata,validate_complete_episode_records
+from gsc_dp.checkpoints import atomic_json
 
 METHODS={'e0':'M0','e3':'M1','e6':'M2','m3':'M3'}
 def write_csv(path,rows,fields=None):
@@ -14,6 +17,8 @@ def write_csv(path,rows,fields=None):
     os.replace(tmp,path)
 
 def main():
+    export_lock=(ROOT/'jobs/export_ch3.lock').open('a')
+    fcntl.flock(export_lock,fcntl.LOCK_EX)
     db=connect();jobs=[dict(x) for x in db.execute('SELECT * FROM jobs')]
     lookup={(r['kind'],r['benchmark'],r['task'],r['method'],r['seed'],r['checkpoint_step']):r for r in jobs}
     def job(row,kind):
@@ -41,10 +46,22 @@ def main():
                 row['result_path']=str(summary) if summary.exists() else '';row['eval_snapshot_path']=r['checkpoint_path'] or '';row['snapshot_artifact_state']='PRESENT' if r['checkpoint_path'] and Path(r['checkpoint_path']).exists() else 'RECLAIMED' if state=='finished' else 'NOT_CREATED'
                 if r['checkpoint_path'] and Path(r['checkpoint_path']).exists():checkpoint_count+=1
                 if state=='finished':
-                    s=json.loads(summary.read_text());episodes+=s['n_episodes']
+                    s=json.loads(summary.read_text())
+                    cfg=json.loads((run/'config_resolved.json').read_text())
+                    records=[json.loads(line) for line in Path(s['episodes_path']).read_text().splitlines() if line.strip()]
+                    validate_complete_episode_records(records,cfg,r['checkpoint_step'])
+                    definition=SUCCESS_DEFINITIONS[r['benchmark']]
+                    if sum(x[definition] for x in records)!=s['success_count'] or s['success_rate']!=s['success_count']/cfg['episodes']:raise ValueError('Summary count disagrees with actual benchmark episode records')
+                    updated=annotate_success_metadata(s,r['benchmark'])
+                    updated['success_at_end_count']=sum(x['success_at_end'] for x in records)
+                    updated.setdefault('weight_source','ema_model')
+                    if 'evaluation_code_revision' not in updated:
+                        updated.update(evaluation_code_revision=None,evaluation_revision_status='not_recorded_by_legacy_runner; training code revision remains in code_revision')
+                    if updated!=s:atomic_json(summary,updated)
+                    s=updated;episodes+=s['n_episodes']
                     points.append(dict(task=r['task'],method=METHODS[r['method']],seed=r['seed'],progress=r['checkpoint_step'],
                         sr=s['success_rate'],episodes=s['n_episodes'],successes=s['success_count'],checkpoint_path=r['checkpoint_path'],
-                        eval_manifest=str(root/'eval_manifest.csv'),episodes_path=s['episodes_path']))
+                        eval_manifest=str(root/'eval_manifest.csv'),episodes_path=s['episodes_path'],success_definition=definition))
         write_csv(root/filename,rows)
     now=datetime.now(timezone.utc).isoformat();live=[r for r in jobs if r['status']=='running']
     status=dict(timestamp=now,counts=counts,scheduled_checkpoint_files=checkpoint_count,complete_rollout_episodes=episodes,
@@ -69,13 +86,19 @@ def main():
     (root/'STATUS.json').write_text(json.dumps(status,indent=2))
     (root/'STATUS.md').write_text('# 第三章实际状态\n\n'+now+'\n\n'+json.dumps(counts)+'\n\n完整回合 '+str(episodes)+'；已保存规定检查点 '+str(checkpoint_count)+'。剩余GPU小时 UNKNOWN。\n\n恢复：\n```bash\n'+status['resume_command']+'\n```\n\n磁盘不足时资源门槛会暂停新作业；每个run保留best，临时权重评测完成后按引用清单回收。\n')
     protocol_rows=[]
+    budget_file=root/'dataset_budget_metadata.json'
+    budgets={r['task']:r for r in json.loads(budget_file.read_text())} if budget_file.exists() else {}
     for t in protocols:
-        protocol_rows.append({k:t[k] for k in ['benchmark','task','demos','budget','progress_unit','interval','episodes','horizon','control_mode']})
+        item={k:t[k] for k in ['benchmark','task','demos','budget','progress_unit','interval','episodes','horizon','control_mode']}
+        item['success_definition']=SUCCESS_DEFINITIONS[t['benchmark']]
+        for key in ['batch_size','true_window_count','optimizer_updates_per_complete_epoch','total_optimizer_updates']:
+            item[key]=budgets.get(t['task'],{}).get(key,'')
+        protocol_rows.append(item)
         reset_dir=root/'eval_resets';reset_dir.mkdir(exist_ok=True)
         (reset_dir/f"{t['task']}.json").write_text(json.dumps(dict(task=t['task'],reset_ids=t['reset_ids'],episodes=t['episodes'],horizon=t['horizon'])))
     write_csv(out/'tables/table3_1.csv',protocol_rows)
-    (out/'tables/table3_1.json').write_text(json.dumps(dict(protocol=str(ROOT/'configs/protocol.json'),dataset_manifests=str(ROOT/'data/manifests')),indent=2))
-    write_csv(out/'source_data/checkpoint_sr.csv',points,['task','method','seed','progress','sr','episodes','successes','checkpoint_path','eval_manifest','episodes_path'])
+    (out/'tables/table3_1.json').write_text(json.dumps(dict(protocol=str(ROOT/'configs/protocol.json'),dataset_manifests=str(ROOT/'data/manifests'),dataset_budget_metadata=str(budget_file),success_definitions=SUCCESS_DEFINITIONS,success_semantics=SUCCESS_DESCRIPTIONS),indent=2))
+    write_csv(out/'source_data/checkpoint_sr.csv',points,['task','method','seed','progress','sr','episodes','successes','checkpoint_path','eval_manifest','episodes_path','success_definition'])
     grouped=defaultdict(list)
     for p in points:grouped[(p['task'],p['method'],p['seed'])].append(p)
     stats=[];delta=[]
@@ -86,7 +109,7 @@ def main():
                 values=sorted(grouped[(t['task'],m,seed)],key=lambda p:p['progress'])
                 if len(values)==t['savepoints']:
                     sr=[p['sr'] for p in values];best.append(max(sr))
-            stats.append(dict(task=t['task'],method=m,complete_seeds=len(best),best_mean=float(np.mean(best)) if len(best)==3 else '',
+            stats.append(dict(task=t['task'],method=m,success_definition=SUCCESS_DEFINITIONS[t['benchmark']],complete_seeds=len(best),best_mean=float(np.mean(best)) if len(best)==3 else '',
                 best_std=float(np.std(best,ddof=1)) if len(best)==3 else '',status='DONE' if len(best)==3 else 'TODO'))
     write_csv(out/'tables/table3_2_best.csv',stats)
     write_csv(root/'final_results.csv',stats)
@@ -94,9 +117,9 @@ def main():
     for key,values in grouped.items():
         if len(values)==5:
             winner=min(values,key=lambda p:(-p['sr'],p['progress']))
-            seed_stats.append(dict(task=key[0],method=key[1],seed=key[2],best_sr=winner['sr'],best_checkpoint_progress=winner['progress'],best_checkpoint_path=str(ROOT/'runs'/('mimicgen' if key[0] in ['stack_three_d1','threading_d2','coffee_d2'] else 'maniskill')/key[0]/{v:k for k,v in METHODS.items()}[key[1]]/f'seed_{key[2]}'/'best/best.pt'),status='DONE'))
-    write_csv(root/'best_per_seed.csv',seed_stats,['task','method','seed','best_sr','best_checkpoint_progress','best_checkpoint_path','status'])
-    write_csv(root/'eval_results.csv',points,['task','method','seed','progress','sr','episodes','successes','checkpoint_path','eval_manifest','episodes_path'])
+            seed_stats.append(dict(task=key[0],method=key[1],seed=key[2],success_definition=winner['success_definition'],best_sr=winner['sr'],best_checkpoint_progress=winner['progress'],best_checkpoint_path=str(ROOT/'runs'/('mimicgen' if key[0] in ['stack_three_d1','threading_d2','coffee_d2'] else 'maniskill')/key[0]/{v:k for k,v in METHODS.items()}[key[1]]/f'seed_{key[2]}'/'best/best.pt'),status='DONE'))
+    write_csv(root/'best_per_seed.csv',seed_stats,['task','method','seed','success_definition','best_sr','best_checkpoint_progress','best_checkpoint_path','status'])
+    write_csv(root/'eval_results.csv',points,['task','method','seed','progress','sr','episodes','successes','checkpoint_path','eval_manifest','episodes_path','success_definition'])
     ablation=[]
     definitions={'M0':(False,False,False),'M1':(True,True,False),'M2':(True,True,True),'M3':(True,False,True)}
     for t in protocols:
@@ -110,14 +133,14 @@ def main():
                ('M2-M0','M2','M0','Full method increment')]
         for label,left,right,meaning in pairs:
             ready=table[left]['status']=='DONE' and table[right]['status']=='DONE'
-            delta.append(dict(task=t['task'],comparison=label,gain_pp=100*(table[left]['best_mean']-table[right]['best_mean']) if ready else '',
+            delta.append(dict(task=t['task'],comparison=label,success_definition=SUCCESS_DEFINITIONS[t['benchmark']],gain_pp=100*(table[left]['best_mean']-table[right]['best_mean']) if ready else '',
                 interpretation=meaning,status='DONE' if ready else 'TODO'))
     write_csv(out/'tables/module_ablation.csv',ablation)
     write_csv(out/'tables/module_deltas.csv',delta)
     for name in ['table3_2_best','module_deltas','module_ablation']:
-        (out/'tables'/f'{name}.json').write_text(json.dumps(dict(source=str(root/'eval_manifest.csv'),raw_episode_source=str(out/'source_data/checkpoint_sr.csv'),statistics='Best-of-5, three independent seeds, sample std ddof=1, earliest tie'),indent=2))
+        (out/'tables'/f'{name}.json').write_text(json.dumps(dict(source=str(root/'eval_manifest.csv'),raw_episode_source=str(out/'source_data/checkpoint_sr.csv'),statistics='Best-of-5, three independent seeds, sample std ddof=1, earliest tie',success_definitions=SUCCESS_DEFINITIONS,success_semantics=SUCCESS_DESCRIPTIONS),indent=2))
     marker=out/'source_data/exported_eval_count.json'
-    signature=dict(complete_evals=len(points),methods=list(METHODS.values()))
+    signature=dict(complete_evals=len(points),methods=list(METHODS.values()),success_definitions=SUCCESS_DEFINITIONS)
     changed=not marker.exists() or json.loads(marker.read_text())!=signature
     if changed and points:
         import matplotlib;matplotlib.use('Agg')

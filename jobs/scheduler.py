@@ -11,6 +11,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from registry import ROOT, connect
+sys.path.insert(0,str(ROOT))
+from gsc_dp.protocol import FORMAL_METHODS,validate_formal_config
 
 GPU='GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9'
 TRAIN_PY='/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python'
@@ -151,7 +153,7 @@ def main():
                     # FIFO across benchmarks: epoch and optimizer-update indices have different units.
                     rows=db.execute("SELECT * FROM eval_jobs WHERE status='queued' AND prerequisite IS NULL ORDER BY CASE method WHEN 'e6' THEN 0 WHEN 'e3' THEN 1 WHEN 'm3' THEN 2 ELSE 3 END, id").fetchall()
                 if kind in ['train','eval']:
-                    rows=[r for r in rows if r['task']==current_task]
+                    rows=[r for r in rows if r['task']==current_task and r['method'] in FORMAL_METHODS]
                 if focus:
                     rows=[r for r in rows if in_focus(r,focus)]
                 if kind=='train':
@@ -159,6 +161,8 @@ def main():
                     rows=[r for r in rows if sum(x['kind']=='train' and x['method']==r['method'] for x in live)<(focus['max_train'] if focus else 2)]
                 if rows:
                     r=rows[0]
+                    if kind in ['train','eval']:
+                        validate_formal_config(json.loads(Path(r['config_path']).read_text()))
                     if kind=='train': cmd=[TRAIN_PY,str(ROOT/'train.py'),'--config',r['config_path']]
                     elif kind=='eval':cmd=[MIMIC_PY if r['benchmark']=='mimicgen' else EVAL_PY,
                         str(ROOT/'evaluate.py'),'--checkpoint',r['checkpoint_path']]

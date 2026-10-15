@@ -20,6 +20,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 import torch
 from gsc_dp.policy_factory import create
+from gsc_dp.checkpoints import same_training_config
 
 def numpy(t):
     return t.detach().float().cpu().numpy() if isinstance(t,torch.Tensor) else np.asarray(t)
@@ -140,6 +141,10 @@ def collect(args):
     if os.environ.get('CUDA_VISIBLE_DEVICES')!='GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9':
         raise RuntimeError('analysis must bind the same selected physical GPU2')
     payload=torch.load(args.checkpoint,map_location='cpu',weights_only=False);cfg=payload['config']
+    locked_path=ROOT/'runs'/cfg['benchmark']/cfg['task']/cfg['method']/f"seed_{cfg['seed']}"/'config_resolved.json'
+    locked=json.loads(locked_path.read_text())
+    if not same_training_config(cfg,locked):raise ValueError('Analysis checkpoint scientific configuration mismatch')
+    cfg=locked
     policy=create(cfg);policy.load_state_dict(payload['ema_model']);policy.to('cuda:0').eval().requires_grad_(False)
     output=args.output or ROOT/'analysis/temporal'/cfg['task']/cfg['method']/f"seed_{cfg['seed']}"/args.checkpoint.stem/f'reset_{args.reset_id}'
     output=output.resolve()

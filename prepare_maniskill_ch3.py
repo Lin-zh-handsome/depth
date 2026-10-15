@@ -67,6 +67,11 @@ def prepare(task,control,horizon):
         raw_replay_metadata=str(replay.with_suffix('.json')),cameras=['base_camera','hand_camera'],resolution=[128,128],
         depth_source_unit='millimeter',depth_model_unit='meter',
         replay_success_flags=[x.get('success') for x in rm['episodes']],
+        source_success_flags=[x.get('success') for x in chosen],
+        source_success_count=sum(x.get('success') is True for x in chosen),
+        replay_success_count=sum(x.get('success') is True for x in rm['episodes']),
+        replay_failure_count=sum(x.get('success') is False for x in rm['episodes']),
+        training_retains_failed_controller_replays=True,
         subset_rule='fixed first 100 official motionplanning demos; official controller conversion; failures retained and labeled'),indent=2))
     print('READY',task,control,flush=True)
 

@@ -5,8 +5,10 @@ from diffusion_policy.policy.diffusion_unet_image_policy import DiffusionUnetIma
 from diffusion_policy.model.vision.multi_image_obs_encoder import MultiImageObsEncoder
 from diffusion_policy.model.vision.model_getter import get_resnet
 from gsc_dp.encoder import RGBDGeometryObsEncoder
+from gsc_dp.protocol import validate_formal_config
 
 def create(config):
+    validate_formal_config(config)
     shape = config['shape_meta']
     if config['method']=='e0':
         rgb_shape=copy.deepcopy(shape)

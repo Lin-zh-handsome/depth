@@ -3,6 +3,7 @@ import json,os,time
 from pathlib import Path
 import torch
 from jobs.registry import ROOT,connect
+from gsc_dp.protocol import annotate_success_metadata
 SCHEDULE_FIELDS={'interval','savepoints','eval_positions'}
 def same_training_config(a,b):
     return {k:v for k,v in a.items() if k not in SCHEDULE_FIELDS}=={k:v for k,v in b.items() if k not in SCHEDULE_FIELDS}
@@ -68,6 +69,9 @@ def finalize(run):
         payload=torch.load(source,map_location='cpu',weights_only=False)
         compact={k:payload[k] for k in ['config','ema_model','optimizer_updates','code_revision','gpu_uuid']};compact['checkpoint_step']=chosen['checkpoint_step']
         atomic_save(best,compact);atomic_json(bm,dict(chosen,best_checkpoint_path=str(best),selection='highest of five prescribed points; earliest on ties'));del payload,compact
+    if bm.exists():
+        metadata=json.loads(bm.read_text());updated=annotate_success_metadata(metadata,cfg['benchmark'])
+        if updated!=metadata:atomic_json(bm,updated)
     db=connect()
     for r in results:
         row=db.execute("SELECT * FROM eval_jobs WHERE benchmark=? AND task=? AND method=? AND seed=? AND checkpoint_step=?",(cfg['benchmark'],cfg['task'],cfg['method'],cfg['seed'],r['checkpoint_step'])).fetchone()

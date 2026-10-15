@@ -1,0 +1,119 @@
+{
+  "checked_at": "2026-10-15T19:01:06.547290+08:00",
+  "source": "jobs/ch3_final_queue.db",
+  "train_count": 60,
+  "eval_count": 300,
+  "methods": [
+    "e0",
+    "e3",
+    "e6",
+    "m3"
+  ],
+  "errors": [],
+  "counts": [
+    {
+      "kind": "eval",
+      "status": "finished",
+      "n": 33
+    },
+    {
+      "kind": "eval",
+      "status": "queued",
+      "n": 265
+    },
+    {
+      "kind": "eval",
+      "status": "running",
+      "n": 2
+    },
+    {
+      "kind": "train",
+      "status": "finished",
+      "n": 4
+    },
+    {
+      "kind": "train",
+      "status": "queued",
+      "n": 50
+    },
+    {
+      "kind": "train",
+      "status": "running",
+      "n": 6
+    }
+  ],
+  "running": [
+    {
+      "id": 13,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0,
+      "checkpoint_step": -1,
+      "pid": 3059587
+    },
+    {
+      "id": 14,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 1,
+      "checkpoint_step": -1,
+      "pid": 3061295
+    },
+    {
+      "id": 17,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "checkpoint_step": -1,
+      "pid": 3062877
+    },
+    {
+      "id": 18,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "checkpoint_step": -1,
+      "pid": 3065502
+    },
+    {
+      "id": 129,
+      "kind": "eval",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "checkpoint_step": 200,
+      "pid": 453202
+    },
+    {
+      "id": 133,
+      "kind": "eval",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "checkpoint_step": 150,
+      "pid": 506586
+    },
+    {
+      "id": 274,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 0,
+      "checkpoint_step": -1,
+      "pid": 467460
+    },
+    {
+      "id": 275,
+      "kind": "train",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 1,
+      "checkpoint_step": -1,
+      "pid": 469064
+    }
+  ]
+}

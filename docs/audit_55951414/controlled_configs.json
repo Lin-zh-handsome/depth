@@ -1,0 +1,42 @@
+[
+  {
+    "task": "stack_three_d1",
+    "configs": 12,
+    "all_configs_equal_except_method_and_seed": true,
+    "same_zarr_path": true,
+    "same_shape_meta": true,
+    "same_crop_shape": true
+  },
+  {
+    "task": "threading_d2",
+    "configs": 12,
+    "all_configs_equal_except_method_and_seed": true,
+    "same_zarr_path": true,
+    "same_shape_meta": true,
+    "same_crop_shape": true
+  },
+  {
+    "task": "coffee_d2",
+    "configs": 12,
+    "all_configs_equal_except_method_and_seed": true,
+    "same_zarr_path": true,
+    "same_shape_meta": true,
+    "same_crop_shape": true
+  },
+  {
+    "task": "StackCube-v1",
+    "configs": 12,
+    "all_configs_equal_except_method_and_seed": true,
+    "same_zarr_path": true,
+    "same_shape_meta": true,
+    "same_crop_shape": true
+  },
+  {
+    "task": "PegInsertionSide-v1",
+    "configs": 12,
+    "all_configs_equal_except_method_and_seed": true,
+    "same_zarr_path": true,
+    "same_shape_meta": true,
+    "same_crop_shape": true
+  }
+]
