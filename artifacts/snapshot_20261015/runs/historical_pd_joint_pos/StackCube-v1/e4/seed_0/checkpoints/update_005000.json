@@ -1,0 +1,14 @@
+{
+  "benchmark": "maniskill",
+  "task": "StackCube-v1",
+  "method": "e4",
+  "seed": 0,
+  "checkpoint_step": 5000,
+  "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/StackCube-v1/e4/seed_0/checkpoints/update_005000.pt",
+  "code_revision": "bb8e55bb59805e45049682d291dd766ecccab333",
+  "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/StackCube-v1_100.json",
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "optimizer_and_ema_saved": true,
+  "write_status": "atomic_complete",
+  "integrity": "atomic completed file + recorded metadata; no redundant hashing"
+}

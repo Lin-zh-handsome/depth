@@ -1,0 +1,14 @@
+{
+  "benchmark": "mimicgen",
+  "task": "threading_d2",
+  "method": "e0",
+  "seed": 0,
+  "checkpoint_step": 205,
+  "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/checkpoints/epoch_000205.pt",
+  "code_revision": "27f39776d0c94dece60dd8448acbbfe5350ad350",
+  "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/threading_d2_200.json",
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "optimizer_and_ema_saved": true,
+  "write_status": "atomic_complete",
+  "integrity": "atomic completed file + recorded metadata; no redundant hashing"
+}

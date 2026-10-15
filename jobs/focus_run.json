@@ -1,5 +1,5 @@
 {
-  "status": "active",
+  "status": "completed",
   "task": "threading_d2",
   "method": "e6",
   "seeds": [
@@ -10,5 +10,6 @@
   "single_training_worker": false,
   "reason": "parallel all three M2 seeds of the current task before other models",
   "max_training_workers": 3,
-  "max_evaluation_workers": 2
+  "max_evaluation_workers": 2,
+  "finished": "2026-10-15T02:09:29.412515+00:00"
 }

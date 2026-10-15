@@ -4,8 +4,8 @@
   "demos": 200,
   "budget": 250,
   "progress_unit": "epoch",
-  "interval": 5,
-  "savepoints": 50,
+  "interval": 50,
+  "savepoints": 5,
   "episodes": 50,
   "horizon": 400,
   "seeds": [
@@ -75,6 +75,13 @@
   "image_resolution": [
     84,
     84
+  ],
+  "eval_positions": [
+    50,
+    100,
+    150,
+    200,
+    250
   ],
   "method": "e6",
   "seed": 2,

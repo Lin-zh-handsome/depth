@@ -1,0 +1,66 @@
+resumed /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/checkpoints/recovery.pt optimizer_updates 158383
+/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/numpy/core/numeric.py:330: RuntimeWarning: invalid value encountered in cast
+  multiarray.copyto(a, fill_value, casting='unsafe')
+Traceback (most recent call last):
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py", line 116, in <module>
+    if __name__=='__main__': sys.exit(main())
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py", line 86, in main
+    loss=model.compute_loss(batch)
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/source/diffusion_policy/diffusion_policy/policy/diffusion_unet_image_policy.py", line 209, in compute_loss
+    nobs_features = self.obs_encoder(this_nobs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/source/diffusion_policy/diffusion_policy/model/vision/multi_image_obs_encoder.py", line 164, in forward
+    feature = self.key_model_map[key](img)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torchvision/models/resnet.py", line 268, in _forward_impl
+    x = self.conv1(x)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 458, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 454, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor
+resumed /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/checkpoints/recovery.pt optimizer_updates 158383
+/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/numpy/core/numeric.py:330: RuntimeWarning: invalid value encountered in cast
+  multiarray.copyto(a, fill_value, casting='unsafe')
+Traceback (most recent call last):
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py", line 116, in <module>
+    if __name__=='__main__': sys.exit(main())
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py", line 86, in main
+    loss=model.compute_loss(batch)
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/source/diffusion_policy/diffusion_policy/policy/diffusion_unet_image_policy.py", line 209, in compute_loss
+    nobs_features = self.obs_encoder(this_nobs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/source/diffusion_policy/diffusion_policy/model/vision/multi_image_obs_encoder.py", line 164, in forward
+    feature = self.key_model_map[key](img)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torchvision/models/resnet.py", line 268, in _forward_impl
+    x = self.conv1(x)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 458, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 454, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor

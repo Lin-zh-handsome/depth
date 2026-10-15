@@ -1,0 +1,14 @@
+{
+  "benchmark": "mimicgen",
+  "task": "stack_three_d1",
+  "method": "e0",
+  "seed": 0,
+  "checkpoint_step": 30,
+  "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/checkpoints/epoch_000030.pt",
+  "code_revision": "27f39776d0c94dece60dd8448acbbfe5350ad350",
+  "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/stack_three_d1_200.json",
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "optimizer_and_ema_saved": true,
+  "write_status": "atomic_complete",
+  "integrity": "atomic completed file + recorded metadata; no redundant hashing"
+}

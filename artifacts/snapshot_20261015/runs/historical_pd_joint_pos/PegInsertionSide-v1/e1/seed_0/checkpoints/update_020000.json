@@ -1,0 +1,14 @@
+{
+  "benchmark": "maniskill",
+  "task": "PegInsertionSide-v1",
+  "method": "e1",
+  "seed": 0,
+  "checkpoint_step": 20000,
+  "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/maniskill/PegInsertionSide-v1/e1/seed_0/checkpoints/update_020000.pt",
+  "code_revision": "c9884c7bc5a73953482c3c58a83aa6c0c359383f",
+  "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/PegInsertionSide-v1_100.json",
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "optimizer_and_ema_saved": true,
+  "write_status": "atomic_complete",
+  "integrity": "atomic completed file + recorded metadata; no redundant hashing"
+}

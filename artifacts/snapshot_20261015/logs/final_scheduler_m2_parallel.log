@@ -1,0 +1,57 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 542716
+ready formal configs 45
+launched 11 train threading_d2 e6 1 pid 542763 freeMiB 133999
+launched 12 train threading_d2 e6 2 pid 544213 freeMiB 124989
+launched 91 eval threading_d2 e6 0 pid 708025 freeMiB 115824
+launched 96 eval threading_d2 e6 1 pid 743236 freeMiB 113396
+worker completed 91 finished 0
+launched 101 eval threading_d2 e6 2 pid 945338 freeMiB 113396
+worker completed 96 finished 0
+worker completed 101 finished 0
+launched 92 eval threading_d2 e6 0 pid 1265148 freeMiB 115824
+launched 97 eval threading_d2 e6 1 pid 1300429 freeMiB 113396
+worker completed 92 finished 0
+launched 102 eval threading_d2 e6 2 pid 1446349 freeMiB 113396
+worker completed 97 finished 0
+worker completed 102 finished 0
+launched 93 eval threading_d2 e6 0 pid 1791490 freeMiB 115824
+launched 98 eval threading_d2 e6 1 pid 1827389 freeMiB 113396
+worker completed 93 finished 0
+launched 103 eval threading_d2 e6 2 pid 1957807 freeMiB 113396
+worker completed 98 finished 0
+worker completed 103 finished 0
+launched 94 eval threading_d2 e6 0 pid 2309289 freeMiB 115824
+launched 99 eval threading_d2 e6 1 pid 2352427 freeMiB 113396
+worker completed 94 finished 0
+launched 104 eval threading_d2 e6 2 pid 2464606 freeMiB 113396
+worker completed 99 finished 0
+worker completed 104 finished 0
+launched 95 eval threading_d2 e6 0 pid 2789098 freeMiB 115824
+worker completed 11 finished 0
+launched 100 eval threading_d2 e6 1 pid 2824210 freeMiB 131692
+worker completed 95 finished 0
+worker completed 12 finished 0
+launched 105 eval threading_d2 e6 2 pid 2978166 freeMiB 140959
+worker completed 100 finished 0
+worker completed 105 finished 0
+launched 127 eval threading_d2 e0 1 pid 3057878 freeMiB 143152
+launched 13 train threading_d2 e3 0 pid 3059587 freeMiB 140966
+launched 14 train threading_d2 e3 1 pid 3061295 freeMiB 135063
+launched 17 train threading_d2 e0 1 pid 3062877 freeMiB 129416
+launched 18 train threading_d2 e0 2 pid 3065502 freeMiB 117066
+launched 131 eval threading_d2 e0 2 pid 3080105 freeMiB 107867
+worker completed 127 finished 0
+worker completed 131 finished 0
+launched 106 eval threading_d2 e3 0 pid 3375510 freeMiB 107026
+launched 111 eval threading_d2 e3 1 pid 3380197 freeMiB 104589
+worker completed 106 finished 0
+worker completed 111 finished 0
+launched 128 eval threading_d2 e0 1 pid 3903708 freeMiB 107026
+launched 132 eval threading_d2 e0 2 pid 4014788 freeMiB 104589
+worker completed 128 finished 0
+launched 107 eval threading_d2 e3 0 pid 4123986 freeMiB 104589
+worker completed 132 finished 0
+launched 112 eval threading_d2 e3 1 pid 47374 freeMiB 104589
+worker completed 107 finished 0
+worker completed 112 finished 0
+launched 129 eval threading_d2 e0 1 pid 453202 freeMiB 107026

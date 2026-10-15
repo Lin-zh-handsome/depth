@@ -151,3 +151,11 @@ Threading M2三个种子250轮和15次正式评测全部完成，五点评测最
 
 ## Four-model formal execution 2026-10-15T18:42:27+08:00
 M3 reuses the exact M2 Geometry-associated TokenLearner and geometry processing, with GSA removed. Preserved original 45 training / 225 evaluation event identities; appended only 15 training / 75 evaluation events. Threading M3 launch state: [{'id': 274, 'seed': 0, 'status': 'running', 'pid': 467460}, {'id': 275, 'seed': 1, 'status': 'running', 'pid': 469064}, {'id': 276, 'seed': 2, 'status': 'queued', 'pid': None}]. Both launched M3 seeds recorded finite loss and nonzero TokenLearner gradients at update100. Existing M0/M1 workers preserved. Queue: [{'kind': 'eval', 'status': 'finished', 'n': 33}, {'kind': 'eval', 'status': 'queued', 'n': 266}, {'kind': 'eval', 'status': 'running', 'n': 1}, {'kind': 'train', 'status': 'finished', 'n': 4}, {'kind': 'train', 'status': 'queued', 'n': 50}, {'kind': 'train', 'status': 'running', 'n': 6}]. CSV BOM read failure during migration was fixed using utf-8-sig before successful append; original states were not overwritten. New four-model ZIP was not found; latest direct user instructions govern this revision. GPU2 only, all prior budgets/evaluation/reset/storage rules retained.
+
+
+## GitHub代码审查发布 2026-10-15T18:44:47+08:00
+用户明确授权推送除checkpoint与数据集外的工程内容。同步四模型60训练/300评测代码、配置、当前真实日志/结果快照与代码审查入口。快照来自ch3_final_queue.db一致性备份，原始轨迹保留；所有模型权重和数据集本体留在服务器。训练评测持续运行。发布准备完成，推送结果以Git命令回执为准。
+
+
+## GitHub发布范围更新 2026-10-15T18:47:59+08:00
+用户明确要求评测轨迹不用上传，只传成功率结果。已将本次新增快照中的2765个原始trajectory JSON从发布索引移除，文件仍保留在服务器。保留代码、配置、成功率汇总、每个正式保存点评测结果、逐回合成功标记及论文图表。尚未推送的发布提交将据此修订，不上传该轨迹提交历史。发布脚本相对父路径错误已更正为绝对工程路径。

@@ -1,0 +1,397 @@
+[
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/best/best.pt",
+    "bytes": 1322445480,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_1/best/best.pt",
+    "bytes": 1322445480,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_2/best/best.pt",
+    "bytes": 1322445480,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/checkpoints/recovery.pt",
+    "bytes": 5272145830,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/best/best.pt",
+    "bytes": 1318037192,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/checkpoints/recovery.pt",
+    "bytes": 5272145894,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/best/best.pt",
+    "bytes": 1318037192,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/best/best.pt",
+    "bytes": 1317468236,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/checkpoints/epoch_000200.pt",
+    "bytes": 1317472524,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/checkpoints/recovery.pt",
+    "bytes": 5269868594,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/best/best.pt",
+    "bytes": 1317468236,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/checkpoints/recovery.pt",
+    "bytes": 5269868530,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/best/best.pt",
+    "bytes": 1317468236,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/checkpoints/recovery.pt",
+    "bytes": 5269865522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/best/best.pt",
+    "bytes": 1317468236,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e1/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e1/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e1/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e1/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e1/seed_0/checkpoints/recovery.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e6/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e6/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e6/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e6/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e6/seed_0/checkpoints/recovery.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_065000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_050000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_035000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_080000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_030000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_095000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_045000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_055000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_070000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_100000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_075000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_025000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_040000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_085000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_060000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/PegInsertionSide-v1/e0/seed_0/checkpoints/update_090000.pt",
+    "bytes": 5284601442,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e1/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e1/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e1/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e1/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e1/seed_0/checkpoints/recovery.pt",
+    "bytes": 5284699934,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e6/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e6/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e6/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e6/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e6/seed_0/checkpoints/recovery.pt",
+    "bytes": 5304511522,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e4/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5302234138,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e4/seed_0/checkpoints/recovery.pt",
+    "bytes": 5302234138,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e3/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5286878230,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e3/seed_0/checkpoints/recovery.pt",
+    "bytes": 5286878230,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_065000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_050000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_005000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_035000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_080000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_030000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_095000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_045000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_055000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_070000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_015000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_010000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_100000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_075000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_025000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_040000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_085000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_020000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_060000.pt",
+    "bytes": 5284601378,
+    "included": false
+  },
+  {
+    "server_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/historical_pd_joint_pos/StackCube-v1/e0/seed_0/checkpoints/update_090000.pt",
+    "bytes": 5284601378,
+    "included": false
+  }
+]

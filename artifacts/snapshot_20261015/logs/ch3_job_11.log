@@ -1,0 +1,6 @@
+/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/numpy/core/numeric.py:330: RuntimeWarning: invalid value encountered in cast
+  multiarray.copyto(a, fill_value, casting='unsafe')
+{"optimizer_updates": 1, "data_epoch": 0, "next_batch": 1, "train_loss": 1.0897159576416016, "lr": 2.0000000000000002e-07, "wall_seconds": 2.786222219467163, "gpu_peak_bytes": 8073098752}
+{"optimizer_updates": 100, "data_epoch": 0, "next_batch": 100, "train_loss": 0.25814682245254517, "lr": 2e-05, "wall_seconds": 242.72456169128418, "gpu_peak_bytes": 8080586240, "gsa_gradient_l2": 0.00636422261595726, "token_gradient_l2": 0.0003675124025903642}
+{"optimizer_updates": 200, "data_epoch": 0, "next_batch": 200, "train_loss": 0.1572696566581726, "lr": 4e-05, "wall_seconds": 585.5520181655884, "gpu_peak_bytes": 8080586240}
+recoverable stop 273

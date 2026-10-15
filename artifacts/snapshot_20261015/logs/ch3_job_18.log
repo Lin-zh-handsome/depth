@@ -1,0 +1,26 @@
+/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/numpy/core/numeric.py:330: RuntimeWarning: invalid value encountered in cast
+  multiarray.copyto(a, fill_value, casting='unsafe')
+{"optimizer_updates": 1, "data_epoch": 0, "next_batch": 1, "train_loss": 1.1720975637435913, "lr": 2.0000000000000002e-07, "wall_seconds": 2.207836866378784, "gpu_peak_bytes": 8038215168}
+{"optimizer_updates": 100, "data_epoch": 0, "next_batch": 100, "train_loss": 0.2539374828338623, "lr": 2e-05, "wall_seconds": 33.046142578125, "gpu_peak_bytes": 8048356864}
+{"optimizer_updates": 200, "data_epoch": 0, "next_batch": 200, "train_loss": 0.1733376532793045, "lr": 4e-05, "wall_seconds": 61.64775371551514, "gpu_peak_bytes": 8048356864}
+{"optimizer_updates": 300, "data_epoch": 0, "next_batch": 300, "train_loss": 0.14971217513084412, "lr": 6e-05, "wall_seconds": 88.51699781417847, "gpu_peak_bytes": 8048356864}
+{"optimizer_updates": 400, "data_epoch": 0, "next_batch": 400, "train_loss": 0.11404570192098618, "lr": 8e-05, "wall_seconds": 114.46188974380493, "gpu_peak_bytes": 8048356864}
+{"optimizer_updates": 500, "data_epoch": 0, "next_batch": 500, "train_loss": 0.09222853928804398, "lr": 0.0001, "wall_seconds": 142.65731811523438, "gpu_peak_bytes": 8048356864}
+{"optimizer_updates": 600, "data_epoch": 0, "next_batch": 600, "train_loss": 0.11806238442659378, "lr": 9.999991610977024e-05, "wall_seconds": 174.128347158432, "gpu_peak_bytes": 8048356864}
+{"optimizer_updates": 700, "data_epoch": 1, "next_batch": 12, "train_loss": 0.09431081265211105, "lr": 9.999966443936246e-05, "wall_seconds": 203.29615807533264, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 800, "data_epoch": 1, "next_batch": 112, "train_loss": 0.09390421956777573, "lr": 9.999924498962116e-05, "wall_seconds": 230.35159492492676, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 900, "data_epoch": 1, "next_batch": 212, "train_loss": 0.06504878401756287, "lr": 9.999865776195387e-05, "wall_seconds": 257.87340903282166, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1000, "data_epoch": 1, "next_batch": 312, "train_loss": 0.0892527624964714, "lr": 9.999790275833107e-05, "wall_seconds": 286.65741777420044, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1100, "data_epoch": 1, "next_batch": 412, "train_loss": 0.06721402704715729, "lr": 9.999697998128627e-05, "wall_seconds": 318.70556640625, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1200, "data_epoch": 1, "next_batch": 512, "train_loss": 0.06701316684484482, "lr": 9.999588943391597e-05, "wall_seconds": 349.87122440338135, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1300, "data_epoch": 1, "next_batch": 612, "train_loss": 0.11403675377368927, "lr": 9.999463111987959e-05, "wall_seconds": 379.3382911682129, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1400, "data_epoch": 2, "next_batch": 24, "train_loss": 0.0790240615606308, "lr": 9.999320504339954e-05, "wall_seconds": 406.32576060295105, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1500, "data_epoch": 2, "next_batch": 124, "train_loss": 0.08684553951025009, "lr": 9.99916112092612e-05, "wall_seconds": 434.33363604545593, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1600, "data_epoch": 2, "next_batch": 224, "train_loss": 0.05933428928256035, "lr": 9.998984962281283e-05, "wall_seconds": 460.4203245639801, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1700, "data_epoch": 2, "next_batch": 324, "train_loss": 0.11362072825431824, "lr": 9.998792028996563e-05, "wall_seconds": 485.6236243247986, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1800, "data_epoch": 2, "next_batch": 424, "train_loss": 0.07351160049438477, "lr": 9.99858232171937e-05, "wall_seconds": 513.590048789978, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 1900, "data_epoch": 2, "next_batch": 524, "train_loss": 0.07624807208776474, "lr": 9.9983558411534e-05, "wall_seconds": 540.1290249824524, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 2000, "data_epoch": 2, "next_batch": 624, "train_loss": 0.06291958689689636, "lr": 9.998112588058631e-05, "wall_seconds": 567.3338537216187, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 2100, "data_epoch": 3, "next_batch": 36, "train_loss": 0.0617048516869545, "lr": 9.997852563251326e-05, "wall_seconds": 594.0522310733795, "gpu_peak_bytes": 8048545280}
+{"optimizer_updates": 2200, "data_epoch": 3, "next_batch": 136, "train_loss": 0.06492405384778976, "lr": 9.997575767604028e-05, "wall_seconds": 622.7210416793823, "gpu_peak_bytes": 8048545280}
+recoverable stop 2203

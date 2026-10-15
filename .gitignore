@@ -12,3 +12,17 @@ __pycache__/
 *.pt
 *.ckpt
 *.pth
+
+/checkpoint_store/
+*.safetensors
+*.onnx
+.env
+.env.*
+*.pem
+*.key
+
+# Raw rollout trajectories stay on the server by user request.
+/artifacts/snapshot_20261015/**/*_trajectory.json
+
+# Raw rollout trajectories stay on the server by user request.
+/artifacts/snapshot_20261015/**/*_trajectory.json

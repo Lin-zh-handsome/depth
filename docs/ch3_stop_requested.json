@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-14T03:50:24.925544+00:00",
+  "controllers_stopped": [
+    3329316,
+    3381000
+  ],
+  "training_signaled": [
+    {
+      "pid": 3332790,
+      "command": "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py --config /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e6/seed_0.json "
+    },
+    {
+      "pid": 3334281,
+      "command": "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py --config /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e6/seed_1.json "
+    },
+    {
+      "pid": 3336087,
+      "command": "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py --config /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e3/seed_0.json "
+    },
+    {
+      "pid": 3337903,
+      "command": "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py --config /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e3/seed_1.json "
+    },
+    {
+      "pid": 3341194,
+      "command": "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py --config /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e0/seed_1.json "
+    },
+    {
+      "pid": 3346517,
+      "command": "/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/train.py --config /home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/configs/runs/mimicgen/threading_d2/e0/seed_2.json "
+    }
+  ],
+  "gpu5_protected": []
+}

@@ -1,0 +1,13 @@
+{"optimizer_updates": 1, "data_epoch": 0, "next_batch": 1, "train_loss": 1.1299303770065308, "lr": 2.0000000000000002e-07, "wall_seconds": 2.4390108585357666, "gpu_peak_bytes": 8064685568}
+{"optimizer_updates": 100, "data_epoch": 0, "next_batch": 100, "train_loss": 0.3127164840698242, "lr": 2e-05, "wall_seconds": 35.92712640762329, "gpu_peak_bytes": 8072443392, "token_gradient_l2": 0.00017660300363786519}
+{"optimizer_updates": 200, "data_epoch": 0, "next_batch": 200, "train_loss": 0.1849864423274994, "lr": 4e-05, "wall_seconds": 68.15722727775574, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 300, "data_epoch": 0, "next_batch": 300, "train_loss": 0.16155287623405457, "lr": 6e-05, "wall_seconds": 102.0674397945404, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 400, "data_epoch": 0, "next_batch": 400, "train_loss": 0.09829040616750717, "lr": 8e-05, "wall_seconds": 134.24114274978638, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 500, "data_epoch": 0, "next_batch": 500, "train_loss": 0.10343987494707108, "lr": 0.0001, "wall_seconds": 166.504732131958, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 600, "data_epoch": 0, "next_batch": 600, "train_loss": 0.06351034343242645, "lr": 9.999991610977024e-05, "wall_seconds": 200.94288444519043, "gpu_peak_bytes": 8072449536}
+{"event": "epoch_complete", "completed_epochs": 1, "optimizer_updates": 688, "dataset_window_count": 43992, "batch_size": 64, "dataloader_batches": 688}
+{"optimizer_updates": 700, "data_epoch": 1, "next_batch": 12, "train_loss": 0.09220349043607712, "lr": 9.999966443936246e-05, "wall_seconds": 235.35655426979065, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 800, "data_epoch": 1, "next_batch": 112, "train_loss": 0.19287629425525665, "lr": 9.999924498962116e-05, "wall_seconds": 267.91839265823364, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 900, "data_epoch": 1, "next_batch": 212, "train_loss": 0.0940144881606102, "lr": 9.999865776195387e-05, "wall_seconds": 302.11258697509766, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 1000, "data_epoch": 1, "next_batch": 312, "train_loss": 0.11276640743017197, "lr": 9.999790275833107e-05, "wall_seconds": 334.22455954551697, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 1100, "data_epoch": 1, "next_batch": 412, "train_loss": 0.10202565044164658, "lr": 9.999697998128627e-05, "wall_seconds": 366.5130305290222, "gpu_peak_bytes": 8072449536}

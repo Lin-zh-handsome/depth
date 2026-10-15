@@ -1,0 +1,213 @@
+{
+  "benchmark": "mimicgen",
+  "task": "threading_d2",
+  "demos": 200,
+  "budget": 250,
+  "progress_unit": "epoch",
+  "interval": 50,
+  "savepoints": 5,
+  "episodes": 50,
+  "horizon": 400,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "reset_ids": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100021,
+    100022,
+    100023,
+    100024,
+    100025,
+    100026,
+    100027,
+    100028,
+    100029,
+    100030,
+    100031,
+    100032,
+    100033,
+    100034,
+    100035,
+    100036,
+    100037,
+    100038,
+    100039,
+    100040,
+    100041,
+    100042,
+    100043,
+    100044,
+    100045,
+    100046,
+    100047,
+    100048,
+    100049
+  ],
+  "success_metric": "official_task_success",
+  "control_mode": "unaltered relative OSC_POSE from official metadata",
+  "control_source": "official downloaded motionplanning metadata; preserved without reinterpretation",
+  "cameras": [
+    "agentview",
+    "robot0_eye_in_hand"
+  ],
+  "image_resolution": [
+    84,
+    84
+  ],
+  "eval_positions": [
+    50,
+    100,
+    150,
+    200,
+    250
+  ],
+  "method": "m3",
+  "seed": 0,
+  "shape_meta": {
+    "obs": {
+      "agent_pos": {
+        "shape": [
+          9
+        ],
+        "type": "low_dim"
+      },
+      "agentview_depth": {
+        "shape": [
+          1,
+          84,
+          84
+        ],
+        "type": "depth"
+      },
+      "agentview_image": {
+        "shape": [
+          3,
+          84,
+          84
+        ],
+        "type": "rgb"
+      },
+      "robot0_eye_in_hand_depth": {
+        "shape": [
+          1,
+          84,
+          84
+        ],
+        "type": "depth"
+      },
+      "robot0_eye_in_hand_image": {
+        "shape": [
+          3,
+          84,
+          84
+        ],
+        "type": "rgb"
+      }
+    },
+    "action": {
+      "shape": [
+        7
+      ]
+    }
+  },
+  "crop_shape": [
+    76,
+    76
+  ],
+  "zarr_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/threading_d2/subset200.zarr",
+  "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/threading_d2_200.json",
+  "batch_size": 64,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "ddpm_steps": 100,
+  "observation_horizon": 2,
+  "prediction_horizon": 16,
+  "action_horizon": 8,
+  "weight_initialization": "random; no pretrained weights",
+  "budget_source": "IJRR 2026 250 epochs",
+  "env_meta": {
+    "env_name": "Threading_D2",
+    "env_version": "1.4.1",
+    "type": 1,
+    "env_kwargs": {
+      "has_renderer": false,
+      "has_offscreen_renderer": true,
+      "ignore_done": true,
+      "use_object_obs": true,
+      "use_camera_obs": true,
+      "control_freq": 20,
+      "controller_configs": {
+        "type": "OSC_POSE",
+        "input_max": 1,
+        "input_min": -1,
+        "output_max": [
+          0.05,
+          0.05,
+          0.05,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "output_min": [
+          -0.05,
+          -0.05,
+          -0.05,
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "kp": 150,
+        "damping": 1,
+        "impedance_mode": "fixed",
+        "kp_limits": [
+          0,
+          300
+        ],
+        "damping_limits": [
+          0,
+          10
+        ],
+        "position_limits": null,
+        "orientation_limits": null,
+        "uncouple_pos_ori": true,
+        "control_delta": true,
+        "interpolation": null,
+        "ramp_ratio": 0.2
+      },
+      "robots": [
+        "Panda"
+      ],
+      "camera_depths": false,
+      "camera_heights": 84,
+      "camera_widths": 84,
+      "render_gpu_device_id": 0,
+      "reward_shaping": false,
+      "camera_names": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 3329316
+ready formal configs 27
+launched 52 eval stack_three_d1 e0 0 pid 3329385 freeMiB 143152
+launched 53 eval stack_three_d1 e0 0 pid 3331302 freeMiB 139777
+launched 10 train threading_d2 e6 0 pid 3332790 freeMiB 137306
+launched 11 train threading_d2 e6 1 pid 3334281 freeMiB 128406
+launched 13 train threading_d2 e3 0 pid 3336087 freeMiB 119507
+launched 14 train threading_d2 e3 1 pid 3337903 freeMiB 110645
+launched 16 train threading_d2 e0 0 pid 3339537 freeMiB 101781
+launched 17 train threading_d2 e0 1 pid 3341194 freeMiB 96136
+worker completed 16 queued 1
+launched 16 train threading_d2 e0 0 pid 3343109 freeMiB 93082
+worker completed 16 failed 1
+launched 18 train threading_d2 e0 2 pid 3346517 freeMiB 93082

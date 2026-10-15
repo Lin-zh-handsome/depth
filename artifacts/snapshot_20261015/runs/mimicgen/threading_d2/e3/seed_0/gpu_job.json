@@ -1,0 +1,9 @@
+{
+  "pid": 3059587,
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "physical_gpu": 2,
+  "visible_device": "cuda:0",
+  "cpu_threads": 2,
+  "dataloader_workers": 0,
+  "code_revision": "1bd0c78c11a808f94ae297d9c643bfabff83faa2"
+}

@@ -1,0 +1,31 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 3430126
+ready formal configs 36
+launched 76 eval stack_three_d1 e0 0 pid 3430198 freeMiB 142249
+launched 77 eval stack_three_d1 e0 0 pid 3431847 freeMiB 139777
+launched 10 train threading_d2 e6 0 pid 3433612 freeMiB 137306
+launched 11 train threading_d2 e6 1 pid 3435319 freeMiB 131638
+launched 13 train threading_d2 e3 0 pid 3436999 freeMiB 122629
+launched 14 train threading_d2 e3 1 pid 3439300 freeMiB 113639
+launched 16 train threading_d2 e0 0 pid 3441539 freeMiB 104666
+launched 17 train threading_d2 e0 1 pid 3443211 freeMiB 95696
+ready formal configs 45
+worker completed 76 finished 0
+launched 78 eval stack_three_d1 e0 0 pid 3631017 freeMiB 89591
+worker completed 77 finished 0
+launched 79 eval stack_three_d1 e0 0 pid 3634251 freeMiB 89591
+worker completed 78 finished 0
+launched 121 eval threading_d2 e0 0 pid 3830414 freeMiB 89591
+worker completed 79 finished 0
+launched 122 eval threading_d2 e0 0 pid 3832760 freeMiB 89625
+worker completed 122 finished 0
+launched 123 eval threading_d2 e0 0 pid 4007389 freeMiB 89701
+worker completed 121 finished 0
+launched 124 eval threading_d2 e0 0 pid 4009559 freeMiB 89625
+worker completed 123 finished 0
+launched 126 eval threading_d2 e0 1 pid 4177936 freeMiB 89626
+worker completed 124 finished 0
+worker completed 126 finished 0
+worker completed 16 finished 0
+launched 125 eval threading_d2 e0 0 pid 146144 freeMiB 97708
+launched 18 train threading_d2 e0 2 pid 147818 freeMiB 95271
+worker completed 125 finished 0

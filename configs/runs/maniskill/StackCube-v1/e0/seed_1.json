@@ -4,8 +4,8 @@
   "demos": 100,
   "budget": 100000,
   "progress_unit": "optimizer_update",
-  "interval": 5000,
-  "savepoints": 20,
+  "interval": 20000,
+  "savepoints": 5,
   "episodes": 100,
   "horizon": 200,
   "seeds": [
@@ -116,8 +116,8 @@
     100099
   ],
   "success_metric": "success_at_end",
-  "control_mode": "pd_joint_pos",
-  "control_source": "official downloaded motionplanning metadata; preserved without reinterpretation",
+  "control_mode": "pd_ee_delta_pos",
+  "control_source": "official motionplanning converted by installed official replay_trajectory control conversion",
   "cameras": [
     "base_camera",
     "hand_camera"
@@ -125,6 +125,13 @@
   "image_resolution": [
     128,
     128
+  ],
+  "eval_positions": [
+    20000,
+    40000,
+    60000,
+    80000,
+    100000
   ],
   "method": "e0",
   "seed": 1,
@@ -171,7 +178,7 @@
     },
     "action": {
       "shape": [
-        8
+        4
       ]
     }
   },
@@ -179,7 +186,7 @@
     112,
     112
   ],
-  "zarr_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/StackCube-v1/subset100.zarr",
+  "zarr_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/processed/StackCube-v1/subset100_pd_ee_delta_pos.zarr",
   "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/StackCube-v1_100.json",
   "batch_size": 64,
   "optimizer": "AdamW",

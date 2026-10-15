@@ -1,0 +1,34 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 843469
+ready formal configs 102
+launched 176 eval StackCube-v1 e1 0 pid 843518 freeMiB 77746
+launched 177 eval PegInsertionSide-v1 e1 0 pid 845167 freeMiB 75280
+launched 1 train stack_three_d1 e0 0 pid 846882 freeMiB 72814
+launched 28 train threading_d2 e0 0 pid 848487 freeMiB 64115
+worker completed 176 finished 0
+launched 196 eval threading_d2 e0 0 pid 1259999 freeMiB 57651
+worker completed 177 finished 0
+launched 197 eval stack_three_d1 e0 0 pid 1499815 freeMiB 57679
+launched 97 train StackCube-v1 e3 0 pid 1548863 freeMiB 64583
+worker completed 196 finished 0
+launched 199 eval threading_d2 e0 0 pid 1588152 freeMiB 57543
+launched 100 train StackCube-v1 e4 0 pid 1653220 freeMiB 64499
+worker completed 197 finished 0
+launched 201 eval stack_three_d1 e0 0 pid 1795024 freeMiB 57569
+worker completed 199 finished 0
+launched 202 eval threading_d2 e0 0 pid 1867350 freeMiB 57535
+worker completed 201 finished 0
+launched 203 eval stack_three_d1 e0 0 pid 2067303 freeMiB 57569
+worker completed 202 finished 0
+launched 206 eval threading_d2 e0 0 pid 2139915 freeMiB 57535
+worker completed 203 finished 0
+launched 207 eval stack_three_d1 e0 0 pid 2341488 freeMiB 57569
+worker completed 206 finished 0
+launched 208 eval threading_d2 e0 0 pid 2414160 freeMiB 57535
+worker completed 207 finished 0
+launched 211 eval stack_three_d1 e0 0 pid 2616230 freeMiB 57569
+worker completed 208 finished 0
+launched 212 eval threading_d2 e0 0 pid 2687015 freeMiB 57535
+worker completed 211 finished 0
+launched 213 eval stack_three_d1 e0 0 pid 2897777 freeMiB 57569
+worker completed 212 finished 0
+launched 214 eval threading_d2 e0 0 pid 2971275 freeMiB 57535

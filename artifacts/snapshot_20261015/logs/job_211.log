@@ -1,0 +1,56 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+WARNING: robosuite task zoo environments not imported, possibly because robosuite_task_zoo is not installed...
+Got error: No module named 'robosuite_task_zoo'
+{"reset_id": 100000, "success_at_end": false, "episodes_completed": 1}
+{"reset_id": 100001, "success_at_end": false, "episodes_completed": 2}
+{"reset_id": 100002, "success_at_end": false, "episodes_completed": 3}
+{"reset_id": 100003, "success_at_end": false, "episodes_completed": 4}
+{"reset_id": 100004, "success_at_end": false, "episodes_completed": 5}
+{"reset_id": 100005, "success_at_end": false, "episodes_completed": 6}
+{"reset_id": 100006, "success_at_end": false, "episodes_completed": 7}
+{"reset_id": 100007, "success_at_end": false, "episodes_completed": 8}
+{"reset_id": 100008, "success_at_end": false, "episodes_completed": 9}
+{"reset_id": 100009, "success_at_end": false, "episodes_completed": 10}
+{"reset_id": 100010, "success_at_end": false, "episodes_completed": 11}
+{"reset_id": 100011, "success_at_end": false, "episodes_completed": 12}
+{"reset_id": 100012, "success_at_end": false, "episodes_completed": 13}
+{"reset_id": 100013, "success_at_end": false, "episodes_completed": 14}
+{"reset_id": 100014, "success_at_end": false, "episodes_completed": 15}
+{"reset_id": 100015, "success_at_end": false, "episodes_completed": 16}
+{"reset_id": 100016, "success_at_end": false, "episodes_completed": 17}
+{"reset_id": 100017, "success_at_end": false, "episodes_completed": 18}
+{"reset_id": 100018, "success_at_end": false, "episodes_completed": 19}
+{"reset_id": 100019, "success_at_end": false, "episodes_completed": 20}
+{"reset_id": 100020, "success_at_end": false, "episodes_completed": 21}
+{"reset_id": 100021, "success_at_end": false, "episodes_completed": 22}
+{"reset_id": 100022, "success_at_end": false, "episodes_completed": 23}
+{"reset_id": 100023, "success_at_end": false, "episodes_completed": 24}
+{"reset_id": 100024, "success_at_end": false, "episodes_completed": 25}
+{"reset_id": 100025, "success_at_end": false, "episodes_completed": 26}
+{"reset_id": 100026, "success_at_end": false, "episodes_completed": 27}
+{"reset_id": 100027, "success_at_end": false, "episodes_completed": 28}
+{"reset_id": 100028, "success_at_end": false, "episodes_completed": 29}
+{"reset_id": 100029, "success_at_end": false, "episodes_completed": 30}
+{"reset_id": 100030, "success_at_end": false, "episodes_completed": 31}
+{"reset_id": 100031, "success_at_end": false, "episodes_completed": 32}
+{"reset_id": 100032, "success_at_end": false, "episodes_completed": 33}
+{"reset_id": 100033, "success_at_end": false, "episodes_completed": 34}
+{"reset_id": 100034, "success_at_end": false, "episodes_completed": 35}
+{"reset_id": 100035, "success_at_end": false, "episodes_completed": 36}
+{"reset_id": 100036, "success_at_end": false, "episodes_completed": 37}
+{"reset_id": 100037, "success_at_end": false, "episodes_completed": 38}
+{"reset_id": 100038, "success_at_end": false, "episodes_completed": 39}
+{"reset_id": 100039, "success_at_end": false, "episodes_completed": 40}
+{"reset_id": 100040, "success_at_end": false, "episodes_completed": 41}
+{"reset_id": 100041, "success_at_end": false, "episodes_completed": 42}
+{"reset_id": 100042, "success_at_end": false, "episodes_completed": 43}
+{"reset_id": 100043, "success_at_end": false, "episodes_completed": 44}
+{"reset_id": 100044, "success_at_end": false, "episodes_completed": 45}
+{"reset_id": 100045, "success_at_end": false, "episodes_completed": 46}
+{"reset_id": 100046, "success_at_end": false, "episodes_completed": 47}
+{"reset_id": 100047, "success_at_end": false, "episodes_completed": 48}
+{"reset_id": 100048, "success_at_end": false, "episodes_completed": 49}
+{"reset_id": 100049, "success_at_end": false, "episodes_completed": 50}
+{"benchmark": "mimicgen", "task": "stack_three_d1", "method": "e0", "seed": 0, "checkpoint_step": 25, "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/checkpoints/epoch_000025.pt", "code_revision": "27f39776d0c94dece60dd8448acbbfe5350ad350", "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/stack_three_d1_200.json", "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9", "optimizer_and_ema_saved": true, "write_status": "atomic_complete", "integrity": "atomic completed file + recorded metadata; no redundant hashing", "success_count": 7, "n_episodes": 50, "success_rate": 0.14, "success_definition": "official task success over rollout (original DP max reward convention)", "success_once_count": 7, "episodes_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/stack_three_d1/e0/seed_0/eval/epoch_000025/episodes.jsonl", "latency_status": "unavailable: this concurrent rollout is not an isolated timing measurement"}

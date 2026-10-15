@@ -1,0 +1,14 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 73200
+ready formal configs 48
+Traceback (most recent call last):
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/generate_run_configs.py", line 25, in <module>
+    action_horizon=8,control_mode=m['control_mode'],weight_initialization='random; no pretrained weights',
+KeyError: 'control_mode'
+Traceback (most recent call last):
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/jobs/scheduler.py", line 127, in <module>
+    if __name__=='__main__':main()
+  File "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/jobs/scheduler.py", line 64, in main
+    subprocess.run([TRAIN_PY,str(ROOT/'generate_run_configs.py')],cwd=ROOT,env=env,check=True)
+  File "/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/linzhenghong/miniconda3/envs/gsc-robodiff/bin/python', '/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/generate_run_configs.py']' returned non-zero exit status 1.

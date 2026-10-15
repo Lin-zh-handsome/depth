@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-15T18:45:57.361928+08:00",
+  "target_percent": 70,
+  "cycle_mean_percent": 68.1,
+  "recent_mean_percent": 68.6,
+  "active_fraction": 0.745,
+  "controlled_pids": [
+    453202,
+    467460,
+    469064,
+    3059587,
+    3061295,
+    3062877,
+    3065502
+  ],
+  "physical_gpu": 2
+}

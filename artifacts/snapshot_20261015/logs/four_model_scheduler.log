@@ -1,0 +1,4 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 467412
+ready formal configs 60
+launched 274 train threading_d2 m3 0 pid 467460 freeMiB 104589
+launched 275 train threading_d2 m3 1 pid 469064 freeMiB 95849

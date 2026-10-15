@@ -1,0 +1,13 @@
+/home/linzhenghong/miniconda3/envs/gsc-robodiff/lib/python3.10/site-packages/numpy/core/numeric.py:330: RuntimeWarning: invalid value encountered in cast
+  multiarray.copyto(a, fill_value, casting='unsafe')
+{"optimizer_updates": 1, "data_epoch": 0, "next_batch": 1, "train_loss": 1.147770643234253, "lr": 2.0000000000000002e-07, "wall_seconds": 2.599567174911499, "gpu_peak_bytes": 8064685568}
+{"optimizer_updates": 100, "data_epoch": 0, "next_batch": 100, "train_loss": 0.27011361718177795, "lr": 2e-05, "wall_seconds": 36.407044649124146, "gpu_peak_bytes": 8072443392, "token_gradient_l2": 0.00011965331941610202}
+{"optimizer_updates": 200, "data_epoch": 0, "next_batch": 200, "train_loss": 0.15985825657844543, "lr": 4e-05, "wall_seconds": 68.53158044815063, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 300, "data_epoch": 0, "next_batch": 300, "train_loss": 0.17442063987255096, "lr": 6e-05, "wall_seconds": 101.00156760215759, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 400, "data_epoch": 0, "next_batch": 400, "train_loss": 0.13790087401866913, "lr": 8e-05, "wall_seconds": 134.79182028770447, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 500, "data_epoch": 0, "next_batch": 500, "train_loss": 0.09480182826519012, "lr": 0.0001, "wall_seconds": 167.70417523384094, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 600, "data_epoch": 0, "next_batch": 600, "train_loss": 0.08453510701656342, "lr": 9.999991610977024e-05, "wall_seconds": 201.58378624916077, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 700, "data_epoch": 1, "next_batch": 12, "train_loss": 0.10643576085567474, "lr": 9.999966443936246e-05, "wall_seconds": 234.64547276496887, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 800, "data_epoch": 1, "next_batch": 112, "train_loss": 0.07686172425746918, "lr": 9.999924498962116e-05, "wall_seconds": 268.5875096321106, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 900, "data_epoch": 1, "next_batch": 212, "train_loss": 0.0922837033867836, "lr": 9.999865776195387e-05, "wall_seconds": 300.93454909324646, "gpu_peak_bytes": 8072449536}
+{"optimizer_updates": 1000, "data_epoch": 1, "next_batch": 312, "train_loss": 0.08203106373548508, "lr": 9.999790275833107e-05, "wall_seconds": 334.84219336509705, "gpu_peak_bytes": 8072449536}

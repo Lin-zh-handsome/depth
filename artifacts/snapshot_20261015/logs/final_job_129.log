@@ -1,0 +1,11 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/linzhenghong/miniconda3/envs/gsc-thesis-mimic/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+WARNING: robosuite task zoo environments not imported, possibly because robosuite_task_zoo is not installed...
+Got error: No module named 'robosuite_task_zoo'
+{"reset_id": 100000, "success_at_end": false, "episodes_completed": 1}
+{"reset_id": 100001, "success_at_end": false, "episodes_completed": 2}
+{"reset_id": 100002, "success_at_end": false, "episodes_completed": 3}
+{"reset_id": 100003, "success_at_end": false, "episodes_completed": 4}
+{"reset_id": 100004, "success_at_end": false, "episodes_completed": 5}
+{"reset_id": 100005, "success_at_end": false, "episodes_completed": 6}

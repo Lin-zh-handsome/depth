@@ -1,0 +1,22 @@
+{
+  "benchmark": "mimicgen",
+  "task": "threading_d2",
+  "method": "e3",
+  "seed": 1,
+  "checkpoint_step": 50,
+  "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/checkpoints/epoch_000050.pt",
+  "code_revision": "1bd0c78c11a808f94ae297d9c643bfabff83faa2",
+  "dataset_manifest": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/data/manifests/threading_d2_200.json",
+  "gpu_uuid": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+  "write_status": "atomic_complete",
+  "snapshot_type": "temporary_exact_fp32_ema",
+  "full_resume_checkpoint": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/checkpoints/recovery.pt",
+  "integrity": "actual config, atomic metadata; hashing omitted by user request",
+  "success_count": 2,
+  "n_episodes": 50,
+  "success_rate": 0.04,
+  "success_definition": "official task success over rollout (original DP max reward convention)",
+  "success_once_count": 2,
+  "episodes_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/eval/epoch_000050/episodes.jsonl",
+  "latency_status": "unavailable: this concurrent rollout is not an isolated timing measurement"
+}

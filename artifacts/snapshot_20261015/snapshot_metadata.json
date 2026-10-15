@@ -1,0 +1,47 @@
+{
+  "captured_at_asia_shanghai": "2026-10-15T18:44:47+08:00",
+  "protocol": "four_models_60_train_300_eval",
+  "queue_counts": [
+    {
+      "kind": "eval",
+      "status": "finished",
+      "n": 33
+    },
+    {
+      "kind": "eval",
+      "status": "queued",
+      "n": 266
+    },
+    {
+      "kind": "eval",
+      "status": "running",
+      "n": 1
+    },
+    {
+      "kind": "train",
+      "status": "finished",
+      "n": 4
+    },
+    {
+      "kind": "train",
+      "status": "queued",
+      "n": 50
+    },
+    {
+      "kind": "train",
+      "status": "running",
+      "n": 6
+    }
+  ],
+  "copied_files": 519,
+  "copied_bytes": 4096926069,
+  "source_queue": "jobs/ch3_final_queue.db",
+  "excluded": [
+    "datasets",
+    "all model weights and checkpoints",
+    "raw evaluation rollout trajectories"
+  ],
+  "note": "Running logs and unfinished episode files are partial snapshots. Only complete scheduled evaluation summaries enter official statistics. Historical directories retain their original protocol labels.",
+  "trajectory_files_excluded_from_publication": 2765,
+  "published_snapshot_bytes": 14630021
+}

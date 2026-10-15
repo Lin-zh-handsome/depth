@@ -1,6 +1,26 @@
-task,metric,gsa_pp,token_given_gsa_pp,full_pp,status
-stack_three_d1,best,,,,TODO
-threading_d2,best,,,,TODO
-coffee_d2,best,,,,TODO
-StackCube-v1,best,,,,TODO
-PegInsertionSide-v1,best,,,,TODO
+task,comparison,gain_pp,interpretation,status
+stack_three_d1,M1-M0,,Depth plus GSA increment,TODO
+stack_three_d1,M3-M0,,Depth plus geometry TokenLearner increment,TODO
+stack_three_d1,M2-M1,,TokenLearner increment conditional on common Depth and GSA,TODO
+stack_three_d1,M2-M3,,GSA increment conditional on common Depth and geometry TokenLearner,TODO
+stack_three_d1,M2-M0,,Full method increment,TODO
+threading_d2,M1-M0,,Depth plus GSA increment,TODO
+threading_d2,M3-M0,,Depth plus geometry TokenLearner increment,TODO
+threading_d2,M2-M1,,TokenLearner increment conditional on common Depth and GSA,TODO
+threading_d2,M2-M3,,GSA increment conditional on common Depth and geometry TokenLearner,TODO
+threading_d2,M2-M0,,Full method increment,TODO
+coffee_d2,M1-M0,,Depth plus GSA increment,TODO
+coffee_d2,M3-M0,,Depth plus geometry TokenLearner increment,TODO
+coffee_d2,M2-M1,,TokenLearner increment conditional on common Depth and GSA,TODO
+coffee_d2,M2-M3,,GSA increment conditional on common Depth and geometry TokenLearner,TODO
+coffee_d2,M2-M0,,Full method increment,TODO
+StackCube-v1,M1-M0,,Depth plus GSA increment,TODO
+StackCube-v1,M3-M0,,Depth plus geometry TokenLearner increment,TODO
+StackCube-v1,M2-M1,,TokenLearner increment conditional on common Depth and GSA,TODO
+StackCube-v1,M2-M3,,GSA increment conditional on common Depth and geometry TokenLearner,TODO
+StackCube-v1,M2-M0,,Full method increment,TODO
+PegInsertionSide-v1,M1-M0,,Depth plus GSA increment,TODO
+PegInsertionSide-v1,M3-M0,,Depth plus geometry TokenLearner increment,TODO
+PegInsertionSide-v1,M2-M1,,TokenLearner increment conditional on common Depth and GSA,TODO
+PegInsertionSide-v1,M2-M3,,GSA increment conditional on common Depth and geometry TokenLearner,TODO
+PegInsertionSide-v1,M2-M0,,Full method increment,TODO

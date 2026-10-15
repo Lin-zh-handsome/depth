@@ -1,0 +1,22 @@
+{
+  "operation": "aligned RGB/depth/valid crop, 128 observations per view",
+  "equal_rgb_depth_mask": [
+    true,
+    true,
+    true
+  ],
+  "equal_rgb_gradient": true,
+  "results": {
+    "old_crop": {
+      "single_call_seconds": 1.0472491648979485,
+      "scalar_item_calls": 1536,
+      "local_scalar_calls": 1536
+    },
+    "vectorized_crop": {
+      "single_call_seconds": 0.08002882497385144,
+      "scalar_item_calls": 0,
+      "local_scalar_calls": 0
+    }
+  },
+  "scope": "operational diagnosis only; not a paper efficiency experiment"
+}

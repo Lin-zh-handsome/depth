@@ -1,0 +1,13 @@
+{
+  "mode": "one_task_at_a_time",
+  "task_order": [
+    "threading_d2",
+    "PegInsertionSide-v1",
+    "stack_three_d1",
+    "coffee_d2",
+    "StackCube-v1"
+  ],
+  "active_task": "threading_d2",
+  "switch_condition": "12 complete training runs and 60 complete scheduled evaluations",
+  "timestamp": "2026-10-15T10:37:57.719592+00:00"
+}

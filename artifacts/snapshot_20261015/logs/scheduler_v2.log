@@ -1,0 +1,5 @@
+single GPU scheduler active GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9 pid 4159884
+launched 94 train StackCube-v1 e1 0 pid 4160002 freeMiB 115624
+launched 130 train PegInsertionSide-v1 e1 0 pid 4161579 freeMiB 106230
+launched 103 train StackCube-v1 e6 0 pid 4163170 freeMiB 96837
+launched 139 train PegInsertionSide-v1 e6 0 pid 4164805 freeMiB 87309

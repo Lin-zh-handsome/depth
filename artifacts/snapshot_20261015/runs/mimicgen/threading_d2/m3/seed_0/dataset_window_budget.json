@@ -1,0 +1,9 @@
+{
+  "dataset_window_count": 43992,
+  "batch_size": 64,
+  "batches_per_epoch": 688,
+  "optimizer_updates_per_epoch": 688,
+  "total_optimizer_updates": 172000,
+  "drop_last": false,
+  "gradient_accumulation": 1
+}
