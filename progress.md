@@ -1176,3 +1176,27 @@ Threading M0三种子已完成250轮及全部15次正式评测，Best-of-5依次
 
 ## 本轮新增正式保存点 2026-10-16T15:31:02+08:00
 新增两项完整正式评测：Threading M3种子1第200轮12/50=24%，此前50/100/150轮为10%、10%、14%，故当前暂定最佳24%（尚缺250轮，不是最终五点或三种子统计）；M1种子2第100轮5/50=10%，该种子已评50轮2%和100轮10%。均为success_once（过程中曾成功），固定50回合及reset列表完整。全局8/60训练、54/300正式评测、2700完整回合；3训练实际增长，M3种子0约240轮、种子1约216轮、M1种子2约111轮，当前无评测进程是在等待下一规定保存点。控制器、latest恢复和best权重正常，GPU2均值约71.1%，无暂停或故障；预算/批大小/控制模式/数据/reset/模型未改，无跨任务和额外实验，GPU5不操作。
+
+2026-10-16T07:50:01.508616+00:00 Job 274 train threading_d2/m3/seed_0 finished, exit=0; logs/final_job_274.log
+
+2026-10-16T07:50:01.760754+00:00 Job 305 eval threading_d2/m3/seed_0/point_250 launched PID=279138, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=125253; logs/final_job_305.log
+
+
+## 实际运行状态（自动更新）
+2026-10-16T07:50:04.451115+00:00
+60训练、300正式评测。{"train": {"queued": 49, "finished": 9, "running": 2}, "eval": {"queued": 245, "finished": 54, "running": 1}, "analysis": {}}；完整回合 2700。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## M2成功轨迹热图采集启动 2026-10-16T15:50:14+08:00
+用户要求查看M2 Threading成功完成任务的热图。选择seed2最佳EMA（第200轮），正式评测reset100042同时success_once=True、success_at_end=True。仅运行相同checkpoint/reset的独立注意力分析，不进入300次正式评测或更改成功率。保存双相机RGB/米制Depth、指定中心Query的真实轴向GSA传播注意力及8个Token空间权重，导出PNG/MP4/JSON。沿用GPU2及现有限载控制，不停止正式训练。成功与否必须依据本次真实独立轨迹，不以正式旧记录代替本次结论。
+
+2026-10-16T07:50:34.927939+00:00 Job 276 train threading_d2/m3/seed_2/point_-1 launched PID=280632, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=120396; logs/final_job_276.log
+
+
+## 实际运行状态（自动更新）
+2026-10-16T07:50:38.003754+00:00
+60训练、300正式评测。{"train": {"queued": 48, "finished": 9, "running": 3}, "eval": {"queued": 245, "finished": 54, "running": 1}, "analysis": {}}；完整回合 2700。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## M2真实成功轨迹热图完成 2026-10-16T15:55:50+08:00
+M2 Threading成功轨迹热图已完成：seed2、第200轮best EMA、reset100042，400步/50次重规划，success_once=True且success_at_end=True；首次成功第395步、末次注意力采样第392步。独立采集的400步动作与原正式成功轨迹逐项最大差0，不新增正式评测。主/腕两相机已导出六时间点PNG、末次规划PNG、20秒MP4及JSON来源；原始RGB/米制Depth/GSA轴向传播权重/8个Token空间权重和轴向矩阵保留在analysis/temporal中。100组相机/重规划注意力的归一化和误差分别不超过1.20e-7（GSA）和2.39e-7（Token）。明确GSA为固定Query的真实轴向传播权重，不包含残差/LEPE，不是完整GSA矩阵；没有将特征响应称为注意力。没有按时间推断接近/抓取等阶段。视频按实际重规划采样保持8执行步，非逐步重算注意力。论文产物前缀m2_threading_seed2_epoch200_reset100042；正式训练评测未被停止或改预算，GPU2限载保持。该用户请求独立分析阶段完成，正式任务队列继续。

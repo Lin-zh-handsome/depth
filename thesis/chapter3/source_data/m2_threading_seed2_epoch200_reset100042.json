@@ -1,0 +1,1531 @@
+{
+  "task": "threading_d2",
+  "method": "M2",
+  "seed": 2,
+  "checkpoint_epoch": 200,
+  "reset_id": 100042,
+  "collection_mode": "independent_analysis_rollout",
+  "formal_evaluation_count_unchanged": true,
+  "first_official_success_step": 395,
+  "success_at_end": true,
+  "success_once": true,
+  "formal_action_source": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_2/eval/epoch_000200/reset_100042_trajectory.json",
+  "formal_vs_analysis_actions_max_abs": 0.0,
+  "attention_kind": "actual captured width-to-height GSA query propagation, averaged over heads; excludes residual and LEPE; not a full GSA attention matrix",
+  "token_kind": "all 8 actual softmax spatial weights; not feature response or object segmentation",
+  "attention_query_original_pixel_xy": [
+    44,
+    44
+  ],
+  "attention_sampling": "one observation and heatmap per actual 8-step policy replanning; final map at step392 controls steps393..400; official success first occurs at step395",
+  "numerical_checks": [
+    {
+      "plan_id": 0,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999998807907104,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 0,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999998807907104,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 1,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 1,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 2,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 2,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 3,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 3,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 4,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 4,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 5,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 5,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 6,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 6,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 7,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 7,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 8,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 8,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 2.384185791015625e-07
+    },
+    {
+      "plan_id": 9,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 9,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 10,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 10,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 11,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 11,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 12,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 12,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 13,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 13,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 14,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 14,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 15,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 15,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 16,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 16,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 17,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 17,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 18,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 18,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999998807907104,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 19,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 19,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 20,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 20,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 21,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 21,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 22,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 22,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 23,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 23,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 24,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 24,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 25,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 25,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 26,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 26,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 27,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 27,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 28,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 28,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 29,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 29,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999998807907104,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 30,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 0.0
+    },
+    {
+      "plan_id": 30,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 31,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 31,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 32,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 32,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 33,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 33,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 34,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 34,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 2.384185791015625e-07
+    },
+    {
+      "plan_id": 35,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 35,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 36,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 36,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 37,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 37,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 38,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 38,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 39,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 39,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 40,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 40,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 41,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 41,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 42,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 42,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 43,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 43,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 44,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 44,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 45,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.7881393432617188e-07
+    },
+    {
+      "plan_id": 45,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 46,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 46,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 5.960464477539063e-08
+    },
+    {
+      "plan_id": 47,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 47,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 0.9999999403953552,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 48,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 48,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 49,
+      "camera": "agentview",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0000001192092896,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    },
+    {
+      "plan_id": 49,
+      "camera": "robot0_eye_in_hand",
+      "gsa_shape": [
+        10,
+        10
+      ],
+      "gsa_sum": 1.0,
+      "token_shape": [
+        8,
+        10,
+        10
+      ],
+      "token_sum_max_error": 1.1920928955078125e-07
+    }
+  ],
+  "outputs": {
+    "agentview_png": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/figures/m2_threading_seed2_epoch200_reset100042_agentview.png",
+    "agentview_mp4": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/videos/m2_threading_seed2_epoch200_reset100042_agentview.mp4",
+    "agentview_step392_png": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/figures/m2_threading_seed2_epoch200_reset100042_agentview_step392.png",
+    "robot0_eye_in_hand_png": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/figures/m2_threading_seed2_epoch200_reset100042_robot0_eye_in_hand.png",
+    "robot0_eye_in_hand_mp4": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/videos/m2_threading_seed2_epoch200_reset100042_robot0_eye_in_hand.mp4",
+    "robot0_eye_in_hand_step392_png": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/thesis/chapter3/figures/m2_threading_seed2_epoch200_reset100042_robot0_eye_in_hand_step392.png"
+  }
+}
