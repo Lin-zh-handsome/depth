@@ -1106,3 +1106,14 @@ Threading M0三种子已完成250轮及全部15次正式评测，Best-of-5依次
 
 ## 本轮巡检确认 2026-10-16T11:17:37+08:00
 新增两项完整正式保存点评测：Threading M1种子2第50轮1/50=2%，M3种子1第150轮7/50=14%，均为success_once（过程中曾成功），尚非完整五点Best-of-5。累计51/300次正式评测、2550完整回合、8/60项训练完成，3训练进程继续实际增长；无运行中评测是等待下一指定保存点的正常状态。GPU2平均约70.1%，调度及负载控制存活、无暂停标记，恢复权重保持更新，资源充足，无需修复，不修改预算/批大小/示范/reset/控制模式，不操作GPU5。
+
+2026-10-16T04:04:47.482233+00:00 Job 304 eval threading_d2/m3/seed_0/point_200 launched PID=3544747, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=116386; logs/final_job_304.log
+
+
+## 实际运行状态（自动更新）
+2026-10-16T04:04:50.232841+00:00
+60训练、300正式评测。{"train": {"queued": 49, "finished": 8, "running": 3}, "eval": {"queued": 248, "finished": 51, "running": 1}, "analysis": {}}；完整回合 2550。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-16T12:20:16.879315+08:00
+完整正式评测51/300，共2550回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 51}, {"kind": "eval", "status": "queued", "count": 248}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 8}, {"kind": "train", "status": "queued", "count": 49}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
