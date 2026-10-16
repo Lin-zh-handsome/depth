@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-16T06:28:44.196441+00:00",
+  "timestamp": "2026-10-16T07:30:34.585545+00:00",
   "counts": {
     "train": {
       "queued": 49,
@@ -8,13 +8,12 @@
     },
     "eval": {
       "queued": 246,
-      "finished": 52,
-      "running": 2
+      "finished": 54
     },
     "analysis": {}
   },
-  "scheduled_checkpoint_files": 2,
-  "complete_rollout_episodes": 2600,
+  "scheduled_checkpoint_files": 0,
+  "complete_rollout_episodes": 2700,
   "running": [
     {
       "id": 15,
@@ -32,26 +31,6 @@
       "attempts": 1,
       "max_attempts": 2,
       "started": "2026-10-15T23:07:28.391056+00:00",
-      "finished": null,
-      "exit_code": null,
-      "error": null
-    },
-    {
-      "id": 117,
-      "kind": "eval",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e3",
-      "seed": 2,
-      "checkpoint_step": 100,
-      "status": "running",
-      "prerequisite": null,
-      "config_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_2/config_resolved.json",
-      "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_2/checkpoints/epoch_000100.pt",
-      "pid": 4148130,
-      "attempts": 1,
-      "max_attempts": 2,
-      "started": "2026-10-16T06:02:33.223505+00:00",
       "finished": null,
       "exit_code": null,
       "error": null
@@ -92,26 +71,6 @@
       "attempts": 1,
       "max_attempts": 2,
       "started": "2026-10-15T10:38:30.684483+00:00",
-      "finished": null,
-      "exit_code": null,
-      "error": null
-    },
-    {
-      "id": 309,
-      "kind": "eval",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "m3",
-      "seed": 1,
-      "checkpoint_step": 200,
-      "status": "running",
-      "prerequisite": null,
-      "config_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_1/config_resolved.json",
-      "checkpoint_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_1/checkpoints/epoch_000200.pt",
-      "pid": 3844248,
-      "attempts": 1,
-      "max_attempts": 2,
-      "started": "2026-10-16T05:00:15.741281+00:00",
       "finished": null,
       "exit_code": null,
       "error": null
