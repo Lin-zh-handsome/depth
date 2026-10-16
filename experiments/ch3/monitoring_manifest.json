@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-16T12:20:16.879315+08:00",
-  "previous_poll": "2026-10-16T11:16:56.987108+08:00",
+  "checked_at_asia_shanghai": "2026-10-16T13:24:19.062207+08:00",
+  "previous_poll": "2026-10-16T12:20:16.879315+08:00",
   "protocol": "four_models_60_train_300_eval",
   "counts": [
     {
@@ -11,12 +11,12 @@
     {
       "kind": "eval",
       "status": "queued",
-      "count": 248
+      "count": 247
     },
     {
       "kind": "eval",
       "status": "running",
-      "count": 1
+      "count": 2
     },
     {
       "kind": "train",
@@ -47,7 +47,21 @@
       "pid": 3544747,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 14
+      "episodes_completed": 47
+    },
+    {
+      "id": 309,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 1,
+      "checkpoint_step": 200,
+      "status": "running",
+      "pid": 3844248,
+      "alive": true,
+      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+      "episodes_completed": 3
     },
     {
       "id": 15,
@@ -62,16 +76,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 56800,
-        "data_epoch": 82,
-        "next_batch": 384,
-        "train_loss": 0.06812168657779694,
-        "lr": 7.568426646692942e-05,
-        "wall_seconds": 18735.643093585968,
+        "optimizer_updates": 66100,
+        "data_epoch": 96,
+        "next_batch": 52,
+        "train_loss": 0.03578512743115425,
+        "lr": 6.80394735456354e-05,
+        "wall_seconds": 22596.121072530746,
         "gpu_peak_bytes": 8045516288
       },
-      "metric_age_seconds": 20,
-      "updates_since_last_poll": 19300,
+      "metric_age_seconds": 1,
+      "updates_since_last_poll": 9300,
       "waiting_for_eval": false
     },
     {
@@ -94,8 +108,8 @@
         "batch_size": 64,
         "dataloader_batches": 688
       },
-      "metric_age_seconds": 959,
-      "updates_since_last_poll": 15600,
+      "metric_age_seconds": 4802,
+      "updates_since_last_poll": 0,
       "waiting_for_eval": true
     },
     {
@@ -111,17 +125,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 129200,
-        "data_epoch": 187,
-        "next_batch": 544,
-        "train_loss": 0.013231294229626656,
-        "lr": 1.4596120530036366e-05,
-        "wall_seconds": 63685.41215610504,
-        "gpu_peak_bytes": 8072449536
+        "event": "epoch_complete",
+        "completed_epochs": 200,
+        "optimizer_updates": 137600,
+        "dataset_window_count": 43992,
+        "batch_size": 64,
+        "dataloader_batches": 688
       },
-      "metric_age_seconds": 5,
-      "updates_since_last_poll": 20200,
-      "waiting_for_eval": false
+      "metric_age_seconds": 1566,
+      "updates_since_last_poll": 8400,
+      "waiting_for_eval": true
     }
   ],
   "complete_formal_evaluations": [
@@ -995,11 +1008,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "12:20:16 up 26 days, 19:45, 13 users,  load average: 48.15, 41.79, 58.33",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       119Gi       303Gi       2.7Gi       1.6Ti       1.8Ti\n交换：      2.0Gi       1.7Gi       298Mi",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 113958 MiB, 87 %"
+    "cpu": "13:24:19 up 26 days, 20:49, 14 users,  load average: 24.03, 77.46, 108.97",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       186Gi       131Gi       7.5Gi       1.7Ti       1.8Ti\n交换：      2.0Gi       1.7Gi       298Mi",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 57005 MiB, 100 %"
   },
-  "disk_free_bytes": 1494510268416,
+  "disk_free_bytes": 1425073377280,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
@@ -1037,5 +1050,17 @@
     "files_deleted": 129,
     "bytes_reclaimed": 509967132656
   },
-  "note": "Per-point SR and provisional best are not complete five-point or three-seed statistics."
+  "note": "Per-point SR and provisional best are not complete five-point or three-seed statistics.",
+  "shared_gpu_resource_observation": {
+    "checked_at": "2026-10-16T13:25:22+08:00",
+    "physical_gpu": 2,
+    "other_user_gpu_pid": 3724401,
+    "other_user_gpu_memory_MiB": 54518,
+    "governor_recent_mean_percent": 82.9,
+    "governor_active_fraction": 0.2,
+    "controller_healthy": true,
+    "scientific_protocol_changed": false,
+    "foreign_process_modified": false,
+    "note": "Additional non-campaign GPU2 process observed. Total GPU utilization exceeds the requested 65-75% band while the campaign governor is at its existing 20% minimum duty. Campaign workers remain alive and progressing; do not stop or modify other users or GPU5."
+  }
 }

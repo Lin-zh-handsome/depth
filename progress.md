@@ -1117,3 +1117,18 @@ Threading M0三种子已完成250轮及全部15次正式评测，Best-of-5依次
 
 ## 每小时巡检 2026-10-16T12:20:16.879315+08:00
 完整正式评测51/300，共2550回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 51}, {"kind": "eval", "status": "queued", "count": 248}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 8}, {"kind": "train", "status": "queued", "count": 49}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+2026-10-16T05:00:15.742062+00:00 Job 309 eval threading_d2/m3/seed_1/point_200 launched PID=3844248, GPU=GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, freeMiB=34407; logs/final_job_309.log
+
+
+## 实际运行状态（自动更新）
+2026-10-16T05:00:17.938134+00:00
+60训练、300正式评测。{"train": {"queued": 49, "finished": 8, "running": 3}, "eval": {"queued": 247, "finished": 51, "running": 2}, "analysis": {}}；完整回合 2550。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-16T13:24:19.062207+08:00
+完整正式评测51/300，共2550回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 51}, {"kind": "eval", "status": "queued", "count": 247}, {"kind": "eval", "status": "running", "count": 2}, {"kind": "train", "status": "finished", "count": 8}, {"kind": "train", "status": "queued", "count": 49}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 共享GPU资源变化 2026-10-16T13:25:22+08:00
+无新增完整评测，仍完成8/60训练、51/300评测。M3种子0第200轮评测47/50回合、种子1第200轮3/50；M1种子2约96轮。发现共享GPU2新增其他用户进程PID3724401，占54518MiB显存；整卡近一分钟平均82.9%，本工程负载控制器已达到既定最低运行比例20%，因此当前无法仅靠本工程将整卡稳定到70%。调度器和负载控制器存活，进程/回合有增长，未暂停用户任务、未改模型预算或并行规则、未操作他人进程或GPU5。该资源变化会影响本工程墙钟耗时，应通知用户；不自行换GPU。资源证据写入monitoring_manifest.json的shared_gpu_resource_observation。
