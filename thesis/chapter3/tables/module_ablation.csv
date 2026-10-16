@@ -3,8 +3,8 @@ stack_three_d1,M0,success_once,0,,,TODO,False,False,False,0
 stack_three_d1,M1,success_once,0,,,TODO,True,True,False,0
 stack_three_d1,M2,success_once,0,,,TODO,True,True,True,8
 stack_three_d1,M3,success_once,0,,,TODO,True,False,True,8
-threading_d2,M0,success_once,1,,,TODO,False,False,False,0
-threading_d2,M1,success_once,0,,,TODO,True,True,False,0
+threading_d2,M0,success_once,3,0.12,0.020000000000000004,DONE,False,False,False,0
+threading_d2,M1,success_once,2,,,TODO,True,True,False,0
 threading_d2,M2,success_once,3,0.17333333333333334,0.04163331998932265,DONE,True,True,True,8
 threading_d2,M3,success_once,0,,,TODO,True,False,True,8
 coffee_d2,M0,success_once,0,,,TODO,False,False,False,0

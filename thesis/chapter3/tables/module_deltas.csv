@@ -8,7 +8,7 @@ threading_d2,M1-M0,success_once,,Depth plus GSA increment,TODO
 threading_d2,M3-M0,success_once,,Depth plus geometry TokenLearner increment,TODO
 threading_d2,M2-M1,success_once,,TokenLearner increment conditional on common Depth and GSA,TODO
 threading_d2,M2-M3,success_once,,GSA increment conditional on common Depth and geometry TokenLearner,TODO
-threading_d2,M2-M0,success_once,,Full method increment,TODO
+threading_d2,M2-M0,success_once,5.333333333333334,Full method increment,DONE
 coffee_d2,M1-M0,success_once,,Depth plus GSA increment,TODO
 coffee_d2,M3-M0,success_once,,Depth plus geometry TokenLearner increment,TODO
 coffee_d2,M2-M1,success_once,,TokenLearner increment conditional on common Depth and GSA,TODO

@@ -1,17 +1,17 @@
 {
-  "checked_at_asia_shanghai": "2026-10-15T19:10:17.433551+08:00",
-  "previous_poll": "2026-10-15T18:50:06.852641+08:00",
+  "checked_at_asia_shanghai": "2026-10-16T10:18:09.352046+08:00",
+  "previous_poll": "2026-10-15T19:10:17.433551+08:00",
   "protocol": "four_models_60_train_300_eval",
   "counts": [
     {
       "kind": "eval",
       "status": "finished",
-      "count": 33
+      "count": 49
     },
     {
       "kind": "eval",
       "status": "queued",
-      "count": 265
+      "count": 249
     },
     {
       "kind": "eval",
@@ -21,144 +21,70 @@
     {
       "kind": "train",
       "status": "finished",
-      "count": 4
+      "count": 8
     },
     {
       "kind": "train",
       "status": "queued",
-      "count": 50
+      "count": 49
     },
     {
       "kind": "train",
       "status": "running",
-      "count": 6
+      "count": 3
     }
   ],
   "running": [
     {
-      "id": 129,
+      "id": 116,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "threading_d2",
-      "method": "e0",
-      "seed": 1,
-      "checkpoint_step": 200,
+      "method": "e3",
+      "seed": 2,
+      "checkpoint_step": 50,
       "status": "running",
-      "pid": 453202,
+      "pid": 3033785,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 14
+      "episodes_completed": 9
     },
     {
-      "id": 133,
+      "id": 308,
       "kind": "eval",
       "benchmark": "mimicgen",
       "task": "threading_d2",
-      "method": "e0",
-      "seed": 2,
+      "method": "m3",
+      "seed": 1,
       "checkpoint_step": 150,
       "status": "running",
-      "pid": 506586,
+      "pid": 2998280,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "episodes_completed": 6
+      "episodes_completed": 22
     },
     {
-      "id": 13,
+      "id": 15,
       "kind": "train",
       "benchmark": "mimicgen",
       "task": "threading_d2",
       "method": "e3",
-      "seed": 0,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 3059587,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "optimizer_updates": 99400,
-        "data_epoch": 144,
-        "next_batch": 328,
-        "train_loss": 0.018808510154485703,
-        "lr": 3.8071844663889466e-05,
-        "wall_seconds": 32366.546520471573,
-        "gpu_peak_bytes": 8044621312
-      },
-      "metric_age_seconds": 29,
-      "updates_since_last_poll": 3080,
-      "waiting_for_eval": false
-    },
-    {
-      "id": 14,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e3",
-      "seed": 1,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 3061295,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "optimizer_updates": 92200,
-        "data_epoch": 134,
-        "next_batch": 8,
-        "train_loss": 0.027022620663046837,
-        "lr": 4.4561082186133464e-05,
-        "wall_seconds": 32340.619849920273,
-        "gpu_peak_bytes": 8044621312
-      },
-      "metric_age_seconds": 26,
-      "updates_since_last_poll": 3100,
-      "waiting_for_eval": false
-    },
-    {
-      "id": 17,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e0",
-      "seed": 1,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 3062877,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "event": "epoch_complete",
-        "completed_epochs": 200,
-        "optimizer_updates": 137600,
-        "dataset_window_count": 43992,
-        "batch_size": 64,
-        "dataloader_batches": 688
-      },
-      "metric_age_seconds": 2268,
-      "updates_since_last_poll": 0,
-      "waiting_for_eval": true
-    },
-    {
-      "id": 18,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "e0",
       "seed": 2,
       "checkpoint_step": -1,
       "status": "running",
-      "pid": 3065502,
+      "pid": 2538838,
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
         "event": "epoch_complete",
-        "completed_epochs": 150,
-        "optimizer_updates": 103200,
+        "completed_epochs": 50,
+        "optimizer_updates": 34400,
         "dataset_window_count": 43992,
         "batch_size": 64,
         "dataloader_batches": 688
       },
-      "metric_age_seconds": 1234,
-      "updates_since_last_poll": 0,
+      "metric_age_seconds": 1503,
+      "updates_since_last_poll": null,
       "waiting_for_eval": true
     },
     {
@@ -174,16 +100,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 5600,
-        "data_epoch": 8,
-        "next_batch": 96,
-        "train_loss": 0.08586467802524567,
-        "lr": 9.978196010723244e-05,
-        "wall_seconds": 1908.8002886772156,
+        "optimizer_updates": 106700,
+        "data_epoch": 155,
+        "next_batch": 60,
+        "train_loss": 0.02934623695909977,
+        "lr": 3.170453210983045e-05,
+        "wall_seconds": 56377.47596001625,
         "gpu_peak_bytes": 8072449536
       },
-      "metric_age_seconds": 17,
-      "updates_since_last_poll": 3500,
+      "metric_age_seconds": 20,
+      "updates_since_last_poll": 101100,
       "waiting_for_eval": false
     },
     {
@@ -199,17 +125,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 5300,
-        "data_epoch": 7,
-        "next_batch": 484,
-        "train_loss": 0.06273537874221802,
-        "lr": 9.980684135240494e-05,
-        "wall_seconds": 1868.044086933136,
-        "gpu_peak_bytes": 8072449536
+        "event": "epoch_complete",
+        "completed_epochs": 150,
+        "optimizer_updates": 103200,
+        "dataset_window_count": 43992,
+        "batch_size": 64,
+        "dataloader_batches": 688
       },
-      "metric_age_seconds": 23,
-      "updates_since_last_poll": 3300,
-      "waiting_for_eval": false
+      "metric_age_seconds": 6050,
+      "updates_since_last_poll": 97900,
+      "waiting_for_eval": true
     }
   ],
   "complete_formal_evaluations": [
@@ -571,6 +496,57 @@
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/eval/epoch_000100/eval_summary.json"
     },
     {
+      "id": 108,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0,
+      "checkpoint_step": 150,
+      "status": "finished",
+      "pid": 881910,
+      "episodes_completed": 50,
+      "success_count": 6,
+      "n_episodes": 50,
+      "success_rate": 0.12,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/eval/epoch_000150/eval_summary.json"
+    },
+    {
+      "id": 109,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0,
+      "checkpoint_step": 200,
+      "status": "finished",
+      "pid": 1890513,
+      "episodes_completed": 50,
+      "success_count": 4,
+      "n_episodes": 50,
+      "success_rate": 0.08,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/eval/epoch_000200/eval_summary.json"
+    },
+    {
+      "id": 110,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 0,
+      "checkpoint_step": 250,
+      "status": "finished",
+      "pid": 2537299,
+      "episodes_completed": 50,
+      "success_count": 3,
+      "n_episodes": 50,
+      "success_rate": 0.06,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/eval/epoch_000250/eval_summary.json"
+    },
+    {
       "id": 111,
       "kind": "eval",
       "benchmark": "mimicgen",
@@ -603,6 +579,57 @@
       "success_rate": 0.08,
       "exact_reset_list": true,
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/eval/epoch_000100/eval_summary.json"
+    },
+    {
+      "id": 113,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 1,
+      "checkpoint_step": 150,
+      "status": "finished",
+      "pid": 919669,
+      "episodes_completed": 50,
+      "success_count": 9,
+      "n_episodes": 50,
+      "success_rate": 0.18,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/eval/epoch_000150/eval_summary.json"
+    },
+    {
+      "id": 114,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 1,
+      "checkpoint_step": 200,
+      "status": "finished",
+      "pid": 1924264,
+      "episodes_completed": 50,
+      "success_count": 6,
+      "n_episodes": 50,
+      "success_rate": 0.12,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/eval/epoch_000200/eval_summary.json"
+    },
+    {
+      "id": 115,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e3",
+      "seed": 1,
+      "checkpoint_step": 250,
+      "status": "finished",
+      "pid": 2780481,
+      "episodes_completed": 50,
+      "success_count": 8,
+      "n_episodes": 50,
+      "success_rate": 0.16,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/eval/epoch_000250/eval_summary.json"
     },
     {
       "id": 121,
@@ -741,6 +768,40 @@
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/eval/epoch_000150/eval_summary.json"
     },
     {
+      "id": 129,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "checkpoint_step": 200,
+      "status": "finished",
+      "pid": 453202,
+      "episodes_completed": 50,
+      "success_count": 5,
+      "n_episodes": 50,
+      "success_rate": 0.1,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/eval/epoch_000200/eval_summary.json"
+    },
+    {
+      "id": 130,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 1,
+      "checkpoint_step": 250,
+      "status": "finished",
+      "pid": 1528619,
+      "episodes_completed": 50,
+      "success_count": 3,
+      "n_episodes": 50,
+      "success_rate": 0.06,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/eval/epoch_000250/eval_summary.json"
+    },
+    {
       "id": 131,
       "kind": "eval",
       "benchmark": "mimicgen",
@@ -773,15 +834,151 @@
       "success_rate": 0.04,
       "exact_reset_list": true,
       "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/eval/epoch_000100/eval_summary.json"
+    },
+    {
+      "id": 133,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "checkpoint_step": 150,
+      "status": "finished",
+      "pid": 506586,
+      "episodes_completed": 50,
+      "success_count": 6,
+      "n_episodes": 50,
+      "success_rate": 0.12,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/eval/epoch_000150/eval_summary.json"
+    },
+    {
+      "id": 134,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "checkpoint_step": 200,
+      "status": "finished",
+      "pid": 1609266,
+      "episodes_completed": 50,
+      "success_count": 7,
+      "n_episodes": 50,
+      "success_rate": 0.14,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/eval/epoch_000200/eval_summary.json"
+    },
+    {
+      "id": 135,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "e0",
+      "seed": 2,
+      "checkpoint_step": 250,
+      "status": "finished",
+      "pid": 2448171,
+      "episodes_completed": 50,
+      "success_count": 6,
+      "n_episodes": 50,
+      "success_rate": 0.12,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/eval/epoch_000250/eval_summary.json"
+    },
+    {
+      "id": 301,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 0,
+      "checkpoint_step": 50,
+      "status": "finished",
+      "pid": 1166694,
+      "episodes_completed": 50,
+      "success_count": 8,
+      "n_episodes": 50,
+      "success_rate": 0.16,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_0/eval/epoch_000050/eval_summary.json"
+    },
+    {
+      "id": 302,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 0,
+      "checkpoint_step": 100,
+      "status": "finished",
+      "pid": 2059823,
+      "episodes_completed": 50,
+      "success_count": 9,
+      "n_episodes": 50,
+      "success_rate": 0.18,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_0/eval/epoch_000100/eval_summary.json"
+    },
+    {
+      "id": 303,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 0,
+      "checkpoint_step": 150,
+      "status": "finished",
+      "pid": 2822878,
+      "episodes_completed": 50,
+      "success_count": 9,
+      "n_episodes": 50,
+      "success_rate": 0.18,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_0/eval/epoch_000150/eval_summary.json"
+    },
+    {
+      "id": 306,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 1,
+      "checkpoint_step": 50,
+      "status": "finished",
+      "pid": 1187616,
+      "episodes_completed": 50,
+      "success_count": 5,
+      "n_episodes": 50,
+      "success_rate": 0.1,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_1/eval/epoch_000050/eval_summary.json"
+    },
+    {
+      "id": 307,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 1,
+      "checkpoint_step": 100,
+      "status": "finished",
+      "pid": 2102335,
+      "episodes_completed": 50,
+      "success_count": 5,
+      "n_episodes": 50,
+      "success_rate": 0.1,
+      "exact_reset_list": true,
+      "summary_path": "/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/m3/seed_1/eval/epoch_000100/eval_summary.json"
     }
   ],
   "issues": [],
   "resources": {
-    "cpu": "19:10:17 up 26 days,  2:35, 12 users,  load average: 37.13, 54.37, 49.60",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       163Gi        96Gi       600Mi       1.7Ti       1.8Ti\n交换：      2.0Gi       1.9Gi       109Mi",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 52846 MiB, 100 %"
+    "cpu": "10:18:09 up 26 days, 17:43, 13 users,  load average: 27.24, 58.43, 48.44",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       130Gi       365Gi       2.8Gi       1.5Ti       1.8Ti\n交换：      2.0Gi       1.7Gi       298Mi",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 111521 MiB, 100 %"
   },
-  "disk_free_bytes": 1604737982464,
+  "disk_free_bytes": 1569146343424,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
@@ -816,8 +1013,8 @@
     "success_semantics": "At least one executed environment step reports official task success within the fixed rollout horizon."
   },
   "checkpoint_cleanup": {
-    "files_deleted": 111,
-    "bytes_reclaimed": 486222195084
+    "files_deleted": 127,
+    "bytes_reclaimed": 507327210496
   },
   "note": "Per-point SR and provisional best are not complete five-point or three-seed statistics."
 }

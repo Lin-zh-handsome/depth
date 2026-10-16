@@ -2,4 +2,8 @@ task,method,seed,success_definition,best_sr,best_checkpoint_progress,best_checkp
 threading_d2,M2,0,success_once,0.14,150,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_0/best/best.pt,DONE
 threading_d2,M2,1,success_once,0.16,150,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_1/best/best.pt,DONE
 threading_d2,M2,2,success_once,0.22,200,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e6/seed_2/best/best.pt,DONE
+threading_d2,M1,0,success_once,0.12,150,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_0/best/best.pt,DONE
+threading_d2,M1,1,success_once,0.18,150,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e3/seed_1/best/best.pt,DONE
 threading_d2,M0,0,success_once,0.12,50,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_0/best/best.pt,DONE
+threading_d2,M0,1,success_once,0.1,150,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_1/best/best.pt,DONE
+threading_d2,M0,2,success_once,0.14,200,/home/linzhenghong/project/gsc_dp_chapter3/campaign_v1/runs/mimicgen/threading_d2/e0/seed_2/best/best.pt,DONE
