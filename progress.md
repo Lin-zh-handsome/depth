@@ -1200,3 +1200,11 @@ Threading M0三种子已完成250轮及全部15次正式评测，Best-of-5依次
 
 ## M2真实成功轨迹热图完成 2026-10-16T15:55:50+08:00
 M2 Threading成功轨迹热图已完成：seed2、第200轮best EMA、reset100042，400步/50次重规划，success_once=True且success_at_end=True；首次成功第395步、末次注意力采样第392步。独立采集的400步动作与原正式成功轨迹逐项最大差0，不新增正式评测。主/腕两相机已导出六时间点PNG、末次规划PNG、20秒MP4及JSON来源；原始RGB/米制Depth/GSA轴向传播权重/8个Token空间权重和轴向矩阵保留在analysis/temporal中。100组相机/重规划注意力的归一化和误差分别不超过1.20e-7（GSA）和2.39e-7（Token）。明确GSA为固定Query的真实轴向传播权重，不包含残差/LEPE，不是完整GSA矩阵；没有将特征响应称为注意力。没有按时间推断接近/抓取等阶段。视频按实际重规划采样保持8执行步，非逐步重算注意力。论文产物前缀m2_threading_seed2_epoch200_reset100042；正式训练评测未被停止或改预算，GPU2限载保持。该用户请求独立分析阶段完成，正式任务队列继续。
+
+
+## 每小时巡检 2026-10-16T16:16:19.664120+08:00
+完整正式评测54/300，共2700回合；新增：无。队列[{"kind": "eval", "status": "finished", "count": 54}, {"kind": "eval", "status": "queued", "count": 245}, {"kind": "eval", "status": "running", "count": 1}, {"kind": "train", "status": "finished", "count": 9}, {"kind": "train", "status": "queued", "count": 48}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## GitHub同步准备 2026-10-16T16:25:19+08:00
+用户要求再次推送。同步现有代码、正式成功率表、图表与当前运行状态；数据集、模型权重、原始评测轨迹、注意力张量和视频留在服务器。没有暂停、重启或修改正式实验。

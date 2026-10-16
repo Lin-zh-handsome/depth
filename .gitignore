@@ -26,3 +26,9 @@ __pycache__/
 
 # Raw rollout trajectories stay on the server by user request.
 /artifacts/snapshot_20261015/**/*_trajectory.json
+
+/analysis/temporal/
+
+/thesis/chapter3/videos/
+
+*_trajectory.json

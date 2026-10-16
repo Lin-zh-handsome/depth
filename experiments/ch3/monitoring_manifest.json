@@ -1,6 +1,6 @@
 {
-  "checked_at_asia_shanghai": "2026-10-16T15:30:22.679069+08:00",
-  "previous_poll": "2026-10-16T14:28:22.557372+08:00",
+  "checked_at_asia_shanghai": "2026-10-16T16:16:19.664120+08:00",
+  "previous_poll": "2026-10-16T15:30:22.679069+08:00",
   "protocol": "four_models_60_train_300_eval",
   "counts": [
     {
@@ -11,17 +11,22 @@
     {
       "kind": "eval",
       "status": "queued",
-      "count": 246
+      "count": 245
+    },
+    {
+      "kind": "eval",
+      "status": "running",
+      "count": 1
     },
     {
       "kind": "train",
       "status": "finished",
-      "count": 8
+      "count": 9
     },
     {
       "kind": "train",
       "status": "queued",
-      "count": 49
+      "count": 48
     },
     {
       "kind": "train",
@@ -30,6 +35,20 @@
     }
   ],
   "running": [
+    {
+      "id": 305,
+      "kind": "eval",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 0,
+      "checkpoint_step": 250,
+      "status": "running",
+      "pid": 279138,
+      "alive": true,
+      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+      "episodes_completed": 14
+    },
     {
       "id": 15,
       "kind": "train",
@@ -43,41 +62,16 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 76600,
-        "data_epoch": 111,
-        "next_batch": 232,
-        "train_loss": 0.06146566942334175,
-        "lr": 5.879263164564725e-05,
-        "wall_seconds": 30151.765088796616,
+        "optimizer_updates": 89200,
+        "data_epoch": 129,
+        "next_batch": 448,
+        "train_loss": 0.037375565618276596,
+        "lr": 4.729936199200691e-05,
+        "wall_seconds": 32899.886761665344,
         "gpu_peak_bytes": 8045516288
       },
-      "metric_age_seconds": 9,
-      "updates_since_last_poll": 7800,
-      "waiting_for_eval": false
-    },
-    {
-      "id": 274,
-      "kind": "train",
-      "benchmark": "mimicgen",
-      "task": "threading_d2",
-      "method": "m3",
-      "seed": 0,
-      "checkpoint_step": -1,
-      "status": "running",
-      "pid": 467460,
-      "alive": true,
-      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
-      "latest_metric": {
-        "optimizer_updates": 165300,
-        "data_epoch": 240,
-        "next_batch": 180,
-        "train_loss": 0.01270610373467207,
-        "lr": 3.761108672740543e-07,
-        "wall_seconds": 75130.00905227661,
-        "gpu_peak_bytes": 8072449536
-      },
-      "metric_age_seconds": 1,
-      "updates_since_last_poll": 18400,
+      "metric_age_seconds": 18,
+      "updates_since_last_poll": 12600,
       "waiting_for_eval": false
     },
     {
@@ -93,16 +87,41 @@
       "alive": true,
       "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
       "latest_metric": {
-        "optimizer_updates": 148800,
-        "data_epoch": 216,
-        "next_batch": 192,
-        "train_loss": 0.013662660494446754,
-        "lr": 4.4477567689794605e-06,
-        "wall_seconds": 75085.226313591,
+        "optimizer_updates": 161700,
+        "data_epoch": 235,
+        "next_batch": 20,
+        "train_loss": 0.01943451538681984,
+        "lr": 8.873545434631425e-07,
+        "wall_seconds": 77832.93217611313,
         "gpu_peak_bytes": 8072449536
       },
-      "metric_age_seconds": 11,
-      "updates_since_last_poll": 11200,
+      "metric_age_seconds": 20,
+      "updates_since_last_poll": 12900,
+      "waiting_for_eval": false
+    },
+    {
+      "id": 276,
+      "kind": "train",
+      "benchmark": "mimicgen",
+      "task": "threading_d2",
+      "method": "m3",
+      "seed": 2,
+      "checkpoint_step": -1,
+      "status": "running",
+      "pid": 280632,
+      "alive": true,
+      "visible_gpu": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9",
+      "latest_metric": {
+        "optimizer_updates": 6200,
+        "data_epoch": 9,
+        "next_batch": 8,
+        "train_loss": 0.12079253047704697,
+        "lr": 9.972768810612858e-05,
+        "wall_seconds": 1517.1900718212128,
+        "gpu_peak_bytes": 8072449536
+      },
+      "metric_age_seconds": 16,
+      "updates_since_last_poll": null,
       "waiting_for_eval": false
     }
   ],
@@ -1028,11 +1047,11 @@
   ],
   "issues": [],
   "resources": {
-    "cpu": "15:30:22 up 26 days, 22:55, 14 users,  load average: 23.89, 25.05, 38.91",
-    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       109Gi        58Gi       2.7Gi       1.8Ti       1.8Ti\n交换：      2.0Gi       1.7Gi       305Mi",
-    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 116386 MiB, 83 %"
+    "cpu": "16:16:19 up 26 days, 23:41, 14 users,  load average: 15.56, 25.84, 27.39",
+    "memory": "total        used        free      shared  buff/cache   available\n内存：      2.0Ti       115Gi        43Gi       2.7Gi       1.8Ti       1.8Ti\n交换：      2.0Gi       1.7Gi       305Mi",
+    "gpu2": "GPU-d191b5a1-ec3c-2aa9-8b29-9b6272ac74c9, 113958 MiB, 100 %"
   },
-  "disk_free_bytes": 1357338017792,
+  "disk_free_bytes": 1349154672640,
   "pause_marker_present": false,
   "dataset_manifests_ready": [
     "PegInsertionSide-v1_100.json",
