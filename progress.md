@@ -1084,3 +1084,25 @@ Eight requested checks: real-state MimicGen offline/online parity; Peg source/re
 
 ## 夜间进展核实 2026-10-16T10:19:58+08:00
 Threading M0三种子已完成250轮及全部15次正式评测，Best-of-5依次12%、10%、14%，三种子均值12.00%、样本标准差2.00个百分点，success_once口径（过程中曾成功）。M1种子0/1完成250轮和五点评测，Best分别12%、18%，种子2在第50轮评测，暂不计算三种子最终统计。M3种子0约155轮、种子1第150轮等待其评测，种子2按既定同方法并行上限排队。全局8/60训练、49/300正式评测完成，2450完整回合；3训练、2评测运行。现有进程及更新/回合增长正常，两项训练等待自身评测是有意回压。GPU2近期平均68.9%，调度器467412和负载控制器555733存活；可用内存1.8TiB、磁盘约1461GiB，无暂停标记、无异常、不改预算、不操作GPU5。Threading 12训练/60评测全部完成后才换任务。
+
+2026-10-16T02:56:08.058555+00:00 Job 308 eval threading_d2/m3/seed_1 finished, exit=0; logs/final_job_308.log
+
+
+## 实际运行状态（自动更新）
+2026-10-16T02:56:13.297490+00:00
+60训练、300正式评测。{"train": {"queued": 49, "finished": 8, "running": 3}, "eval": {"queued": 249, "finished": 50, "running": 1}, "analysis": {}}；完整回合 2500。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+2026-10-16T03:08:17.874711+00:00 Job 116 eval threading_d2/e3/seed_2 finished, exit=0; logs/final_job_116.log
+
+
+## 实际运行状态（自动更新）
+2026-10-16T03:08:22.791372+00:00
+60训练、300正式评测。{"train": {"queued": 49, "finished": 8, "running": 3}, "eval": {"queued": 249, "finished": 51}, "analysis": {}}；完整回合 2550。全部工作只用物理GPU2。队列入队不等于实验完成。
+
+
+## 每小时巡检 2026-10-16T11:16:56.987108+08:00
+完整正式评测51/300，共2550回合；新增：threading_d2/e3/seed2/50: 1/50=2%; threading_d2/m3/seed1/150: 7/50=14%。队列[{"kind": "eval", "status": "finished", "count": 51}, {"kind": "eval", "status": "queued", "count": 249}, {"kind": "train", "status": "finished", "count": 8}, {"kind": "train", "status": "queued", "count": 49}, {"kind": "train", "status": "running", "count": 3}]。问题：无。实际进程、GPU2绑定、训练增长和评测部分回合详见experiments/ch3/monitoring_manifest.json；论文源数据由既有导出程序增量更新。
+
+
+## 本轮巡检确认 2026-10-16T11:17:37+08:00
+新增两项完整正式保存点评测：Threading M1种子2第50轮1/50=2%，M3种子1第150轮7/50=14%，均为success_once（过程中曾成功），尚非完整五点Best-of-5。累计51/300次正式评测、2550完整回合、8/60项训练完成，3训练进程继续实际增长；无运行中评测是等待下一指定保存点的正常状态。GPU2平均约70.1%，调度及负载控制存活、无暂停标记，恢复权重保持更新，资源充足，无需修复，不修改预算/批大小/示范/reset/控制模式，不操作GPU5。
